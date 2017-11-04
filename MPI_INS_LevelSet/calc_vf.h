@@ -14,10 +14,11 @@
 #ifndef CALC_VF_H
 #define CALC_VF_H
 
-void calc_vf(vector< vector< vector< double > > > &phi, double &init_vf, double &vf, double &err)
+void calc_vf(double ***phi, double &init_vf, double &vf, double &err)
 {
     double eps=epsilon*max(xlen/(xelem-2), ylen/(yelem-2));
-    vector< vector< vector<double> > > H(xelem, vector< vector<double> >(yelem, vector<double>(zelem,0.0)));
+    double ***H;
+    allocator3(H,xelem,yelem, zelem);
     
     heavy_func(H,  phi, eps);
     

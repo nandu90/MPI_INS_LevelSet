@@ -16,7 +16,7 @@
 
 #include "heap_functions.h"
 
-void interface_nodes(vector< vector< vector<double> > > &phi, vector< vector<int> > &int_cells)
+void interface_nodes(double ***phi, double **int_cells)
 {
     for(int i=1; i<xelem-1; i++)
     {
@@ -220,10 +220,10 @@ void find_ne(vector<int> &ne_i,  vector <int> &ne_j, int i, int j)
 }
 
 
-void compute_phi(int i, int j, vector< vector<double> > &phi2, vector< vector<int> > &tag, int solve_flag)
+void compute_phi(int i, int j, double **phi2, int **tag, int solve_flag)
 {
-    vector<int> ne_i(4,0);
-    vector<int> ne_j(4,0);
+    int ne_i[4];
+    int ne_j[4];
     
     find_ne(ne_i, ne_j, i, j);
     
@@ -295,10 +295,11 @@ void compute_phi(int i, int j, vector< vector<double> > &phi2, vector< vector<in
     
     if(disc < 0.0)
     {
-        cout<<"Solution to neighbour not found"<<endl;
-        cout<<i<<" "<<j<<" "<<xelem<<" "<<yelem<<endl;
-        cout<<xphi<<" "<<xdsq<<" "<<xflag<<endl;
-        cout<<yphi<<" "<<ydsq<<" "<<yflag<<endl;
+      printf("Solution to neighbour not found\n");
+      
+      // <<i<<" "<<j<<" "<<xelem<<" "<<yelem<<endl;
+      // <<xphi<<" "<<xdsq<<" "<<xflag<<endl;
+      //<<yphi<<" "<<ydsq<<" "<<yflag<<endl;
         exit(0);
     }
     
@@ -317,17 +318,19 @@ void compute_phi(int i, int j, vector< vector<double> > &phi2, vector< vector<in
 
 void fast_march(elemsclr &sclr)
 {
-    vector< vector<double> > phi2(xelem, vector<double> (yelem,0.0));
-    vector< vector<int> > tag(xelem, vector<int> (yelem,0));
-    
-    vector< vector<int> > int_cells;
+  double **phi2;
+  allocator(phi2, xelem, yelem);
+  int **tag;
+  int **int_cells;
+  iallocator(tag, xelem, yelem);
+  
     
     /****Calculate interface nodes*****/
     interface_nodes(sclr.phi, int_cells);
-    //cout<<"No of cells on interface; "<<int_cells.size()<<endl;
+    //<<"No of cells on interface; "<<int_cells.size()<<endl;
     /*for(int i=0; i<int_cells.size(); i++)
     {
-        cout<<int_cells[i][0]<<" "<<int_cells[i][1]<<endl;
+        <<int_cells[i][0]<<" "<<int_cells[i][1]<<endl;
     }*/
     
     /*Tag interface nodes as 1*/
@@ -364,11 +367,11 @@ void fast_march(elemsclr &sclr)
     
     if(solve_flag == 1)
     {
-        cout<<"Solving +ve nodes"<<endl;
+      printf("Solving +ve nodes\n");
     }
     else if(solve_flag == -1)
     {
-        cout<<"Solving -ve nodes"<<endl;
+       printf("Solving -ve nodes\n");
     }
     
     /*Tag rest of the nodes as far nodes*/
@@ -384,7 +387,7 @@ void fast_march(elemsclr &sclr)
             }
         }
     }
-    //cout<<"total far nodes "<<count<<endl;
+    //<<"total far nodes "<<count<<endl;
     
     /*Now compute the phi values of interface nodes*/
     for(int k=0; k < int_cells.size(); k++)
@@ -410,8 +413,8 @@ void fast_march(elemsclr &sclr)
     }
     
     
-    vector<double> heap1;
-    vector< vector<int> > index;
+    double *heap;
+    int **index;
     
     int tot_tag=0;
     for(int i=1; i < xelem-1; i++)
@@ -510,11 +513,11 @@ void fast_march(elemsclr &sclr)
             }
         }
         
-        //cout<<heap1.size()<<endl;
-        //cout<<index.size()<<endl;
+        //<<heap1.size()<<endl;
+        //<<index.size()<<endl;
     }
     
-    //cout<<"Total nodes processed "<<ncount<<endl;
+    //<<"Total nodes processed "<<ncount<<endl;
     
     heap1.resize(0);
     index.resize(0);
@@ -525,8 +528,8 @@ void fast_march(elemsclr &sclr)
         goto again;
     }
     
-    //cout<<heap1.size()<<endl;
-    //cout<<index.size()<<endl;
+    //<<heap1.size()<<endl;
+    //<<index.size()<<endl;
     
     for(int i=1; i<xelem-1; i++)
     {
@@ -537,7 +540,7 @@ void fast_march(elemsclr &sclr)
     }
     level_setBC(sclr.phi);
     
-    //cout<<"here"<<endl;
+    //<<"here"<<endl;
     //exit(0);
             
 }

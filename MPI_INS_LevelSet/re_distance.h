@@ -36,7 +36,7 @@ void monitor_res_redist(double &ires, bool &exitflag, int iter, vector< vector<v
     }
     else
     {
-        //cout<<"Step: "<<iter<<" phi residual: "<<res/ires<<endl;//<<" V vel residual: "<<res[1]/ires[1]<<endl;
+        //<<"Step: "<<iter<<" phi residual: "<<res/ires<<endl;//<<" V vel residual: "<<res[1]/ires[1]<<endl;
         
         if(res/ires < tol)
         {
@@ -94,7 +94,7 @@ void re_distance(elemsclr &sclr)
             }
         }
         
-        //cout<<iter<<endl;
+        //<<iter<<endl;
         /*Calculate convection velocites*/
         vector< vector< vector<double> > > grad_phix(xelem, vector< vector<double> >(yelem, vector<double>(zelem,0.0))); 
         vector< vector< vector<double> > > grad_phiy(xelem, vector< vector<double> >(yelem, vector<double>(zelem,0.0)));
@@ -133,9 +133,9 @@ void re_distance(elemsclr &sclr)
                 double mag_phi = sqrt(pow(grad_phix[i][j][0],2.0) + pow(grad_phiy[i][j][0],2.0));
                 ucen[i][j][0] = signnew[i][j][0]*grad_phix[i][j][0]/mag_phi;
                 vcen[i][j][0] = signnew[i][j][0]*grad_phiy[i][j][0]/mag_phi;
-                //cout<<grad_phiy[i][j][0]<<" ";
+                //<<grad_phiy[i][j][0]<<" ";
             }
-            //cout<<endl;
+            //<<endl;
         }
         //exit(0);
         
@@ -188,7 +188,7 @@ void re_distance(elemsclr &sclr)
             for(int j=1; j<yelem-1; j++)
             {
                 phi2[i][j][0] = phistar[i][j][0] + 0.5*deltat *(signnew[i][j][0] + signnew2[i][j][0] + rhsx[i][j] + rhstarx[i][j] + rhsy[i][j] + rhstary[i][j]);
-                //cout<<" "<<phi[i][j][0]<<endl;
+                //<<" "<<phi[i][j][0]<<endl;
             }
         }
         

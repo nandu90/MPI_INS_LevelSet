@@ -38,7 +38,7 @@ void imposeBC(elemsclr &sclr)
     }
 }
 
-void periodicBC(vector< vector<vector<double> > > &scalar)
+void periodicBC(double ***scalar)
 {
     //Periodic BC
     for(int j=0; j<yelem; j++)
@@ -48,7 +48,7 @@ void periodicBC(vector< vector<vector<double> > > &scalar)
     }
 }
 
-void wallBC(vector< vector<vector<double> > > &scalar)
+void wallBC(double ***scalar)
 {
     //Wall BC
     for(int i=0; i<xelem; i++)
@@ -59,7 +59,7 @@ void wallBC(vector< vector<vector<double> > > &scalar)
     }
 }
 
-void walluBC(vector< vector<vector<double> > > &scalar)
+void walluBC(double ***scalar)
 {
     //Wall BC
     for(int i=0; i<xelem; i++)
@@ -71,7 +71,7 @@ void walluBC(vector< vector<vector<double> > > &scalar)
 }
 
 
-void wallvBC(vector< vector<vector<double> > > &scalar)
+void wallvBC(double ***scalar)
 {
     //Wall BC
     for(int i=0; i<xelem; i++)
@@ -84,7 +84,7 @@ void wallvBC(vector< vector<vector<double> > > &scalar)
 }
 
 
-void zerogradBC(vector< vector<vector<double> > > &scalar)
+void zerogradBC(double ***scalar)
 {
     for(int i=0; i<xelem; i++)
     {
@@ -94,7 +94,7 @@ void zerogradBC(vector< vector<vector<double> > > &scalar)
     }
 }
 
-void gradBC(vector< vector<vector<double> > > &scalar)
+void gradBC(double ***scalar)
 {
     for(int i=0; i<xelem; i++)
     {
@@ -104,7 +104,7 @@ void gradBC(vector< vector<vector<double> > > &scalar)
     }
 }
 
-void bothscalarBC(vector< vector<vector<double> > > &scalar)
+void bothscalarBC(double ***scalar)
 {
     //Wall BC
     for(int i=0; i<xelem; i++)
@@ -123,7 +123,7 @@ void bothscalarBC(vector< vector<vector<double> > > &scalar)
     }
 }
 
-void pressureBC(vector< vector<vector<double> > > &scalar)
+void pressureBC(double ***scalar)
 {
     //For advection case
     /*for(int i=0; i<xelem; i++)
@@ -169,7 +169,7 @@ void pressureBC(vector< vector<vector<double> > > &scalar)
     }*/
 }
 
-void vel_BC(vector< vector<vector<double> > > &u, vector< vector<vector<double> > > &v)
+void vel_BC(double ***u, double ***v)
 {
     /***Taking care of left and right direction wall****/
     if(x_bound == 1)
@@ -249,7 +249,7 @@ void vel_BC(vector< vector<vector<double> > > &u, vector< vector<vector<double> 
 }
 
 
-void level_setBC(vector< vector<vector<double> > > &scalar)
+void level_setBC(double ***scalar)
 {
     /****left and right walls*****/
     if(x_bound == 1 || x_bound == 2)
@@ -288,7 +288,7 @@ void level_setBC(vector< vector<vector<double> > > &scalar)
     }
 }
 
-void grad_level_setBC(vector< vector<vector<double> > > &scalar)
+void grad_level_setBC(double ***scalar)
 {
     /****left and right walls*****/
     if(x_bound == 1 || x_bound == 2)
@@ -327,7 +327,7 @@ void grad_level_setBC(vector< vector<vector<double> > > &scalar)
     }
 }
 
-void cell_center_vel_BC(vector< vector<vector<double> > > &u, vector< vector<vector<double> > > &v)
+void cell_center_vel_BC(double ***u, double ***v)
 {
     /***Taking care of left and right direction wall****/
     if(x_bound == 1)

@@ -49,7 +49,7 @@ void pressure(vector< vector< vector<double> > > ustar, vector< vector< vector<d
             a[i][j][4] = hy*hy;
         }
     }
-    //cout<<a[1][1][0]<<" "<<a[1][1][1]<<" "<<a[1][1][2]<<" "<<a[1][1][3]<<" "<<a[1][1][4]<<" "<<endl;
+    //<<a[1][1][0]<<" "<<a[1][1][1]<<" "<<a[1][1][2]<<" "<<a[1][1][3]<<" "<<a[1][1][4]<<" "<<endl;
     //exit(0);
     gs_solver(a,b,p);
 }

@@ -59,9 +59,9 @@ void gridread()
     {
         for(int j=0;j<ynode;j++)
         {
-            cout<<y[i][j]<<" ";
+            <<y[i][j]<<" ";
         }
-        cout<<endl;
+        <<endl;
     }*/
     //Area components of faces of parallelogram
     for(int i=0; i<xelem; i++)

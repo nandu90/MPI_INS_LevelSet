@@ -268,12 +268,12 @@ void rhscalc(elemsclr &sclr, vector< vector<double> > &rhsx, vector< vector<doub
 
             if(iter == 1)
             {
-                //cout<<diffx[i][j]<<" ";
+                //<<diffx[i][j]<<" ";
             }
 
         }
         if(iter == 1){
-        //cout<<endl;
+        //<<endl;
         }
     }
 

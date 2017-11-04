@@ -16,10 +16,12 @@
 
 void direct_redist(elemsclr &sclr)
 {
-    vector< vector<double> > phi2(xelem, vector<double> (yelem,0.0));
-    vector< vector<int> > tag(xelem, vector<int> (yelem,3));
-    vector< vector<int> > int_cells;
-    
+  double **phi2;
+  allocator(phi2, xelem, yelem);
+  int **tag;
+  int **int_cells;
+  iallocator(tag, xelem, yelem);
+  iallocator(int_cells,xelem, yelem);
     
     for(int i=0; i<xelem; i++)
     {

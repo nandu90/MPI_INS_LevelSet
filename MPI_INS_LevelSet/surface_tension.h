@@ -25,7 +25,7 @@ void surface(elemsclr &sclr, vector< vector< vector<double> > > &st_forcex, vect
     heavy_func(H, sclr.phi, eps);
     
     find_density_visc(H, sclr.rho, sclr.mu);
-    //cout<<eps<<endl;
+    //<<eps<<endl;
     
     
     
@@ -45,9 +45,9 @@ void surface(elemsclr &sclr, vector< vector< vector<double> > > &st_forcex, vect
                     //delta[i][j][0] = 3.0*exp(-3.0*sclr.phi[i][j][0]/eps)/(1.0 * pow(1.0 + exp(-3.0*sclr.phi[i][j][0]/eps),2.0));
                     delta[i][j][0] = (1.0/2.0*eps) * (1.0 + cos(PI * sclr.phi[i][j][0]/eps));
                 }
-                //cout<<delta[i][j][0]<<" ";
+                //<<delta[i][j][0]<<" ";
             }
-            //cout<<endl;
+            //<<endl;
         }
         //exit(0);
 
@@ -58,9 +58,9 @@ void surface(elemsclr &sclr, vector< vector< vector<double> > > &st_forcex, vect
              for(int j=1; j<yelem-1; j++)
              {
                  del_scaling[i][j][0] = 2.0*H[i][j][0]*delta[i][j][0];
-                 //cout<<del_scaling[i][j][0]<<" ";
+                 //<<del_scaling[i][j][0]<<" ";
              }
-             //cout<<endl;
+             //<<endl;
          }
          //exit(0);
 
@@ -86,10 +86,10 @@ void surface(elemsclr &sclr, vector< vector< vector<double> > > &st_forcex, vect
                  grad_phix[i][j][0] = (phiRface[i][j][0] - phiRface[i-1][j][0])/area[i][j][1][1];
                  grad_phiy[i][j][0] = (phiRface[i][j][0] - phiRface[i][j-1][0])/area[i][j][0][0];
                  //if(delta[i][j][0] != 0.0){
-                 //cout<<grad_phix[i][j][0]<<" ";
+                 //<<grad_phix[i][j][0]<<" ";
                  //}
              }
-             //cout<<endl;
+             //<<endl;
          }
          //exit(0);
          /*Need to impose BC for grad_phix and grad_phiy*/
@@ -131,15 +131,15 @@ void surface(elemsclr &sclr, vector< vector< vector<double> > > &st_forcex, vect
          {
              for(int i=1; i<xelem-1; i++)
              {
-                 //cout<<i<<" "<<j<<endl;
+                 //<<i<<" "<<j<<endl;
                  curvature[i][j][0] = (pow(grad_phiy[i][j][0],2.0)*grad_phixx[i][j][0] + pow(grad_phix[i][j][0],2.0)*grad_phiyy[i][j][0] - 2.0*grad_phix[i][j][0]*grad_phiy[i][j][0]*grad_phixy[i][j][0]);
                  curvature[i][j][0] = curvature[i][j][0]/pow((pow(grad_phix[i][j][0],2.0) + pow(grad_phiy[i][j][0],2.0)),1.5);
                  /*if(delta[i][j][0] != 0)
                  {
-                 cout<<curvature[i][j][0]<<" ";
+                 <<curvature[i][j][0]<<" ";
                  }*/
              }
-             //cout<<endl;
+             //<<endl;
 
          }
          //exit(0);
@@ -150,9 +150,9 @@ void surface(elemsclr &sclr, vector< vector< vector<double> > > &st_forcex, vect
              {
                  st_forcex[i][j][0] = sf_coeff*curvature[i][j][0]*del_scaling[i][j][0]*grad_phix[i][j][0];
                  st_forcey[i][j][0] = sf_coeff*curvature[i][j][0]*del_scaling[i][j][0]*grad_phiy[i][j][0];
-                 //cout<<st_forcey[i][j][0]<<" ";
+                 //<<st_forcey[i][j][0]<<" ";
              }
-             //cout<<endl;
+             //<<endl;
          }
          //exit(0);
          grad_level_setBC(st_forcex);

@@ -27,16 +27,16 @@ void gs_solver(vector< vector< vector<double> > > &a, vector< vector<double> > &
         for(int i=0; i<xelem; i++)
         {
             tempp[i][j][0] = p[i][j][0];
-            //cout<<b[i][j]<<" ";
+            //<<b[i][j]<<" ";
         }
-        //cout<<endl;
+        //<<endl;
     }
 
     //exit(0);
     int iter;
     for(iter=0; iter< 10000; iter++)
     {
-        //cout<<tempp[1][1][0]<<endl;
+        //<<tempp[1][1][0]<<endl;
         #pragma omp parallel for schedule(dynamic)
         for(int i=1; i<xelem-1; i++)
         {
@@ -48,7 +48,7 @@ void gs_solver(vector< vector< vector<double> > > &a, vector< vector<double> > &
             }
             /*if(i==1)
             {
-                cout<<b[1][1]<<" "<<delp[1][1]<<endl;
+                <<b[1][1]<<" "<<delp[1][1]<<endl;
             }*/
         }
 
@@ -59,7 +59,7 @@ void gs_solver(vector< vector< vector<double> > > &a, vector< vector<double> > &
                 tempp[i][j][0] = delp[i][j];
             }
         }
-        //cout<<tempp[1][1][0]<<endl;
+        //<<tempp[1][1][0]<<endl;
         pressureBC(tempp);
 
         double resnorm=0.0;
@@ -76,22 +76,24 @@ void gs_solver(vector< vector< vector<double> > > &a, vector< vector<double> > &
         if(iter == 0)
         {
             ires = resnorm;
-            //cout<<"Initial residual "<<ires<<endl;
+            //<<"Initial residual "<<ires<<endl;
             //exit(0);
         }
         else
         {
-            //cout<<"Pressure Step: "<<iter<<"residual: "<<resnorm/ires<<endl;
+            //<<"Pressure Step: "<<iter<<"residual: "<<resnorm/ires<<endl;
             if(resnorm / ires < ptol)
             {
-                cout<<"Pressure converged in "<<iter<<" "<<endl;
+	      printf("Pressure converged in %d /n",iter);
+	      //<<"Pressure converged in "<<iter<<" "<<endl;
                 break;
             }
         }
     }
 
     pressureBC(tempp);
-    cout<<"Pressure iterations "<<iter<<endl;
+    printf("Pressure iterations %d \n",iter);
+    //<<"Pressure iterations "<<iter<<endl;
     for(int i=0; i<xelem; i++)
     {
         for(int j=0; j<yelem; j++)

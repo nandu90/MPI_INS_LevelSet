@@ -150,7 +150,7 @@ void rhs_bub(vector< vector<double> > &rhsx, vector< vector<double> > &rhsy, vec
     {
         for(int j=1; j < yelem-1; j++)
         {
-           //cout<<i<<" "<<j<<endl;
+           //<<i<<" "<<j<<endl;
             double phicen, phiL, phiLL, phiLLL, phiR, phiRR, phiRRR;
             if (i == 0)
             {
@@ -253,7 +253,7 @@ void rhs_bub(vector< vector<double> > &rhsx, vector< vector<double> > &rhsy, vec
     {
         for(int j=0; j < yelem-1; j++)
         {
-           //cout<<i<<" "<<j<<endl;
+           //<<i<<" "<<j<<endl;
             double phicen, phiT, phiTT, phiTTT, phiB, phiBB, phiBBB;
             if (j == 0) ///gradient must be 0
             {

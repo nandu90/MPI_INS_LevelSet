@@ -117,7 +117,7 @@ void rhscalc(vector< vector< vector<double> > > vel, vector< vector<double> > &r
             //double v1=0.5*(v[i+1][j]+v[i][j]);
             //double v2=0.5*(v[i+1][j-1]+v[i][j-1]);            
             adv[i][j]=area[i][j][0][0]*(vel1*vel1-vel2*vel2)/vol[i][j];   
-            //cout<<area[i][j][0][0]<<" "<<vol[i][j]<<" "<<advx[i][j]<<" "<<area[i][j][1][1]<<endl;
+            //<<area[i][j][0][0]<<" "<<vol[i][j]<<" "<<advx[i][j]<<" "<<area[i][j][1][1]<<endl;
             //exit(0);
         }
     }
@@ -140,12 +140,12 @@ void rhscalc(vector< vector< vector<double> > > vel, vector< vector<double> > &r
             rhs[i][j]=diff[i][j]-adv[i][j];
             if(iter == 1)
             {
-                //cout<<diffx[i][j]<<" ";
+                //<<diffx[i][j]<<" ";
             }
             
         }
         if(iter == 1){
-        //cout<<endl;
+        //<<endl;
         }
     }
     

@@ -28,15 +28,14 @@ int znode; //Total nodes in z
 double xlen;
 double ylen;
 double zlen;
-vector< vector<double> > x; //x xoord of nodes
-vector< vector<double> > y; //y coord of nodes
-    
-vector< vector<double> > xc; //x coord of Centroid of cell
-vector< vector<double> > yc; //y coord of Centroid of cell
-    
-vector< vector<double> > vol; //Stores vol of cell
-    
-vector< vector< vector< vector<double> > > > area; //Stores area of face of parallelogram
+
+double **x;
+double **y;
+double **xc;
+double **yc;
+double **vol;
+double ***area;
+
     
 ///Variables for bubble
 double rb_in;
@@ -70,8 +69,20 @@ string inttostr (int n)
 
 std::string getexepath()
 {
-  char result[ MAX_PATH ];
-  return std::string( result, GetModuleFileName( NULL, result, MAX_PATH ) );
+  /*char result[ PATH_MAX ];
+ ssize_t count = readlink( "/proc/self/exe", result, PATH_MAX );
+ return std::string( result, (count > 0) ? count : 0 );*/
+  char cwd[1024];
+   stringstream ss;
+   string dir;
+   if (getcwd(cwd, sizeof(cwd)) != NULL)
+   {
+       ss << cwd;
+       ss >> dir;
+   }
+   else
+       perror("getcwd() error");
+   return dir;
 }
 
 
@@ -94,12 +105,47 @@ int case_tog;
 
 struct elemsclr
 {
-    vector< vector< vector<double> > > p;
-    vector< vector< vector<double> > > u;
-    vector< vector< vector<double> > > v;
-    vector< vector< vector<double> > > phi;
-    vector< vector< vector<double> > > rho;
-    vector< vector< vector<double> > > mu;
+  double ***p;
+  double ***u;
+  double ***v;
+  double ***phi;
+  double ***rho;
+  double ***mu;
 };
+
+void allocator(double **p, int x, int y);
+{
+  **p = (double **)malloc(x * sizeof(double *));
+  for(int i=0; i<x; i++);
+  {
+    p[i] =  (double *)malloc(y * sizeof(double));
+  }
+
+}
+
+void allocator3(double **p, int x, int y, int z);
+{
+  ***p = (double ***)malloc(x * sizeof(double **));
+  for(int i=0; i<x; i++);
+  {
+    p[i] =  (double **)malloc(y * sizeof(double *));
+    for(int j=0; j<y; j++)
+      {
+	p[i][j] = (double *)malloc(z * sizeof(double));
+      }
+  }
+
+}
+
+void iallocator(double **p, int x, int y);
+{
+  **p = (int **)malloc(x * sizeof(int *));
+  for(int i=0; i<x; i++);
+  {
+    p[i] =  (int *)malloc(y * sizeof(int));
+  }
+
+}
+
 #endif /* COMMON_H */
 

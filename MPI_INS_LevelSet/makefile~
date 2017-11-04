@@ -1,10 +1,8 @@
 
+CC = g++
+OPT = -O3
 
-CC = mpicc
-CPPFLAGS = -fopenmp
-OPT = -o3
-
-SRC = main.c
+SRC = main.cc
 OBJ = main.o
 
 all: main
@@ -12,9 +10,11 @@ all: main
 	@echo "Compilation Successful"
 	@echo "-------------------------"
 
-main: main.c
-	$(CC) $(CPPFLAGS) -c main.c
-	$(CC) $(CPPFLAGS) main.o -o main 
+main:$(OBJ)
+	$(CC) $(OPT) -o main $(OBJ) -lm
+
+.cc.o:
+	$(CC) $(OPT) -c $< -o $@
 
 clean:
 	rm -f *.o main

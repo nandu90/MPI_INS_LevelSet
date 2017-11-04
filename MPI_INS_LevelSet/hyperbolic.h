@@ -97,7 +97,7 @@ void hyperbolic(elemsclr &sclr)
             for(int j=1; j<yelem-1; j++)
             {
                 phi2[i][j][0] = phistar[i][j][0] + 0.5*deltat *(rhs[i][j] + rhstar[i][j]);
-                //cout<<" "<<phi[i][j][0]<<endl;
+                //<<" "<<phi[i][j][0]<<endl;
             }
         }
         

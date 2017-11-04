@@ -25,7 +25,7 @@ void calcp(elemsclr &sclr)
                 sclr.p[i][j][k] = (-4800*xc[i][j] + 96)*nu;
             }
         }
-        //cout<<endl;
+        //<<endl;
     }
     
     /*for(int i=1; i < xelem-1; i++)
@@ -64,12 +64,13 @@ void monitor_res(vector<double> &ires, bool &exitflag, int iter, elemsclr sclr, 
         for(int i=0; i<3; i++)
         {
             ires[i]=res[i];
-            //cout<<ires[i]<<endl;
+            //<<ires[i]<<endl;
         }
     }
     else
     {
-        cout<<" U vel residual: "<<res[0]/ires[0]<<" V vel residual: "<<res[1]/ires[1];
+      printf(" U vel residual: %.6f V vel residual: %.6f",res[0]/ires[0],res[1]/ires[1]);
+      //<<" U vel residual: "<<res[0]/ires[0]<<" V vel residual: "<<res[1]/ires[1];
         
         if(res[0]/ires[0] < tol && res[1]/ires[1] <  tol)
         {

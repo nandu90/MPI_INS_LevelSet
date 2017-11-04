@@ -21,7 +21,7 @@ void find_density_visc(vector< vector< vector<double> > > &H, vector< vector< ve
     {
         for(int j=0; j<yelem; j++)
         {
-            //cout<<i<<" "<<rhog + (rhof -rhog)*H[i][j][0]<<" "<<H[i][j][0]<< endl;
+            //<<i<<" "<<rhog + (rhof -rhog)*H[i][j][0]<<" "<<H[i][j][0]<< endl;
             rho[i][j][0] = rhog + (rhof -rhog)*H[i][j][0];
             mu[i][j][0] = mug + (muf -mug)*H[i][j][0];
         }
@@ -47,9 +47,9 @@ void heavy_func(vector< vector< vector<double> > > &H, vector< vector< vector<do
                     //H[i][j][0] = 1.0/(1.0 + exp(-3.0*sclr.phi[i][j][0]/eps));
                     H[i][j][0] = 0.5 + phi[i][j][0]/(2.0*eps) + (1.0/(2.0*PI)*sin(PI * phi[i][j][0]/eps));
                 }
-                //cout<<H[i][j][0]<<" ";
+                //<<H[i][j][0]<<" ";
             }
-            //cout<<endl;
+            //<<endl;
         }
         //exit(0);
         level_setBC(H);
@@ -70,9 +70,9 @@ void delta_func(vector< vector< vector<double> > > &delta, vector< vector< vecto
                 //delta[i][j][0] = 3.0*exp(-3.0*sclr.phi[i][j][0]/eps)/(1.0 * pow(1.0 + exp(-3.0*sclr.phi[i][j][0]/eps),2.0));
                 delta[i][j][0] = (1.0/2.0*eps) * (1.0 + cos(PI * phi[i][j][0]/eps));
             }
-            //cout<<delta[i][j][0]<<" ";
+            //<<delta[i][j][0]<<" ";
         }
-        //cout<<endl;
+        //<<endl;
     }
     //exit(0);
 }
@@ -100,10 +100,10 @@ void grad_func(vector< vector< vector<double> > > &grad_phi, vector< vector< vec
              grad_phix[i][j][0] = (phiRface[i][j][0] - phiRface[i-1][j][0])/area[i][j][1][1];
              grad_phiy[i][j][0] = (phiRface[i][j][0] - phiRface[i][j-1][0])/area[i][j][0][0];
              //if(delta[i][j][0] != 0.0){
-             //cout<<grad_phix[i][j][0]<<" ";
+             //<<grad_phix[i][j][0]<<" ";
              //}
          }
-         //cout<<endl;
+         //<<endl;
      }
      //exit(0);
      /*Need to impose BC for grad_phix and grad_phiy*/

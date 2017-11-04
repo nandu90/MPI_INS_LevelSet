@@ -1,27 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /*
- * File:   main.cpp
+ * File:   2phase.cpp
  * Author: nsaini3
  *
- * Created on October 18, 2016, 2:22 PM
+ * Created on November 1, 2017
  */
 
 #define PI 3.1415926535897
-#include <iostream>
 # include <stdlib.h>
 # include <math.h>
-# include <fstream>
-#include <cmath>
 #include <time.h>
-#include <algorithm>
-#include <sstream>
-#include <string>
-#include <vector>
 #include <fenv.h>
 #include <stdio.h>
 #include <limits.h>
@@ -30,12 +18,9 @@
 #include <sys/stat.h>
 #include <errno.h>
 #include <time.h>
-#include <cctype>
-#include <cstring>
-#include <windows.h>
 #include <omp.h>
+#include <mpi.h>
 
-using namespace std;
 
 #include "common.h"
 
@@ -59,18 +44,20 @@ using namespace std;
 #include "bub_advect.h"
 #include "re_distance.h"
 #include "hyperbolic.h"
-#include "fast_march.h"
-#include "direct_redist.h"
+//#include "fast_march.h"
+//#include "direct_redist.h"
 #include "calc_vf.h"
+
 
 
 int main()
 {
     ///Catches mathematical exceptions
     //feenableexcept(FE_INVALID | FE_OVERFLOW |FE_DIVBYZERO);
-
-    mkdir((getexepath()+"../../../../output").c_str());//,S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
-    mkdir((getexepath()+"../../../../laststep").c_str());//,S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+ 
+ 
+    mkdir((getexepath()+"/output").c_str(),S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+    mkdir((getexepath()+"/laststep").c_str(),S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
 
     time_t t1,t2;
     t1 = time(0);
@@ -87,33 +74,14 @@ int main()
     ynode=yelem+1; //Include 2 ghost nodes
 
     ///*******Resize the vectors and initialize data structures*******//
-    x.resize(xnode);
-    y.resize(xnode);
-    for(int i=0; i < xnode; i++)
-    {
-        x[i].resize(ynode,0.0);
-        y[i].resize(ynode,0.0);
-    }
+    allocator(x,xnode,ynode);
+    allocator(y,xnode,ynode);
 
-    xc.resize(xelem);
-    yc.resize(xelem);
-    vol.resize(xelem);
-    area.resize(xelem);
-    for(int i=0; i<xelem; i++)
-    {
-        xc[i].resize(yelem,0.0);
-        yc[i].resize(yelem,0.0);
-        vol[i].resize(yelem,0.0);
-        area[i].resize(yelem);
-        for(int j=0; j<yelem; j++)
-        {
-            area[i][j].resize(2);
-            for(int k=0; k<2; k++)
-            {
-                area[i][j][k].resize(2,0.0);
-            }
-        }
-    }
+    allocator(xc,xelem,yelem);
+    allocator(yc,xelem,yelem);
+    allocator(vol,xelem,yelem);
+
+    allocator3(area,xelem,yelem,2);
 
     /*****Read grid and populate element and node vectors******/
     gridread();
@@ -122,30 +90,12 @@ int main()
     /****Initialize solution vectors*****/
     elemsclr sclr;
 
-    sclr.p.resize(xelem);
-    sclr.u.resize(xelem);
-    sclr.v.resize(xelem);
-    sclr.phi.resize(xelem);
-    sclr.rho.resize(xelem);
-    sclr.mu.resize(xelem);
-    for(int i=0; i<xelem; i++)
-    {
-        sclr.p[i].resize(yelem);
-        sclr.u[i].resize(yelem);
-        sclr.v[i].resize(yelem);
-        sclr.phi[i].resize(yelem);
-        sclr.rho[i].resize(yelem);
-        sclr.mu[i].resize(yelem);
-        for(int j=0; j<yelem; j++)
-        {
-            sclr.p[i][j].resize(zelem,0.0);
-            sclr.u[i][j].resize(zelem,0.0);
-            sclr.v[i][j].resize(zelem,0.0);
-            sclr.phi[i][j].resize(zelem,0.0);
-            sclr.rho[i][j].resize(zelem,rhof);
-            sclr.mu[i][j].resize(zelem,muf);
-        }
-    }
+    allocator3(sclr.p,xelem,yelem,zelem);
+    allocator3(sclr.u,xelem,yelem,zelem);
+    allocator3(sclr.v,xelem,yelem,zelem);
+    allocator3(sclr.phi,xelem,yelem,zelem);
+    allocator3(sclr.rho,xelem,yelem,zelem);
+    allocator3(sclr.mu,xelem,yelem,zelem);
 
     initialize(sclr);
 
@@ -179,16 +129,19 @@ int main()
 
     //fast_march(sclr);
 
-
-    vector<double> ires(3,0.0);
+    double *ires = (double *) malloc(3 * sizeof(double));
     bool exitflag = false;
     int iter;
     int print_count=0;
     double deltat=advect_deltat;
     double init_vf=0.0;
 
-    ofstream out;
-    out.open("sim_out.txt",ios::trunc);
+    FILE *out = fopen("sim_out.txt","w");
+    if(out == NULL)
+      {
+	printf("Error opening sim_out.txt!\n");
+	exit(0);
+      }
 
 
     for(iter=startstep; iter<itermax; iter++)
@@ -196,8 +149,11 @@ int main()
 
         if(flow_solve == 1)
         {
-            vector< vector< vector<double> > > utemp(xelem, vector<vector <double> >(yelem, vector <double> (zelem,0.0)));
-            vector< vector< vector<double> > > vtemp(xelem, vector<vector <double> >(yelem, vector <double> (zelem,0.0)));
+	  double ***utemp;
+	  allocator3(utemp,xelem,yelem,zelem);
+	  double ***vtemp;
+	  allocator3(vtemp,xelem,yelem,zelem);
+	  
             for(int i=1;i<xelem-1;i++)
             {
                 for(int j=1;j<yelem-1;j++)
@@ -206,12 +162,15 @@ int main()
                     vtemp[i][j][0]=sclr.v[i][j][0];
                 }
             }
-            vector< vector<double> > rhsx(xelem, vector<double> (yelem,0.0));
-            vector< vector<double> > rhsy(xelem, vector<double> (yelem,0.0));
+	    double **rhsx, **rhsy;
+	    allocator(rhsx,xelem,yelem);
+	    allocator(rhsy,xelem,yelem);
             rhscalc(sclr, rhsx, rhsy, iter, exitflag);
 
-            vector< vector< vector<double> > > ustar(xelem, vector<vector <double> >(yelem, vector <double> (zelem,0.0)));
-            vector< vector< vector<double> > > vstar(xelem, vector<vector <double> >(yelem, vector <double> (zelem,0.0)));
+           double ***ustar;
+	  allocator3(ustar,xelem,yelem,zelem);
+	  double ***vstar;
+	  allocator3(vstar,xelem,yelem,zelem);
             //Predictor Step
             #pragma omp parallel for schedule(dynamic)
             for(int i=1; i<xelem-1; i++)
@@ -227,8 +186,10 @@ int main()
 
             ///****Calculate contribution from source term - Surface tension force
             /**Note that surface tension force is calculated at the centre of cell at i,j (where p and phi are stored)*/
-            vector< vector< vector<double> > > st_forcex(xelem, vector< vector<double> >(yelem, vector<double>(zelem,0.0)));
-            vector< vector< vector<double> > > st_forcey(xelem, vector< vector<double> >(yelem, vector<double>(zelem,0.0)));
+            double ***st_forcex;
+	  allocator3(st_forcex,xelem,yelem,zelem);
+	  double ***st_forcey;
+	  allocator3(st_forcey,xelem,yelem,zelem);
 
 
             surface(sclr,st_forcex, st_forcey);
@@ -259,22 +220,22 @@ int main()
 
             vel_BC(sclr.u, sclr.v);
 
-            cout<<"Step: "<<iter+1;
-            out<<"Step: "<<iter+1;
+	    printf("Step: %d\n",iter+1);
+	    fprintf(out,"Step: %d\n",iter+1);
             if(exitflag == false && sol_type == 0)
             {
                 monitor_res(ires, exitflag, iter, sclr,utemp,vtemp);
             }
             if(exitflag == true && sol_type == 0)
             {
-                cout<<"Flow solution converged"<<endl;
+	      printf("Flow solution converged\n");
                 break;
             }
         }
         if(flow_solve == 0)
         {
-            cout<<"Step: "<<iter+1;
-            out<<"Step: "<<iter+1;
+	  printf("Step: %d",iter+1);
+	   fprintf(out,"Step: %d\n",iter+1);
         }
         /****Bubble Advection and re-distance solvers*****/
         if(advect_solve == 1)
@@ -288,7 +249,6 @@ int main()
             else if(redist_method == 2)
             {
                 fast_march(sclr);
-                //cout<<"here2"<<endl;
             }
 
             else if(redist_method == 3)
@@ -315,8 +275,8 @@ int main()
         {
             double cfl;
             timestep_calc(sclr, deltat, cfl);
-            cout<<" CFL number: "<<cfl<<" time step: "<<deltat;
-            out<<" CFL number: "<<cfl<<" time step: "<<deltat;
+	    printf("CFL number: %.6f time step: %.6f\n",cfl,deltat);
+	    fprintf(out,"CFL number: %.6f time step: %.6f\n",cfl,deltat);
         }
 
 
@@ -324,11 +284,11 @@ int main()
         double vf = 0.0;
         double err = 0.0;
         calc_vf(sclr.phi, init_vf, vf, err);
-        cout<<"Void fraction: "<<vf<<"%"<<" Error in vf: "<<err<<"%"<<endl<<endl;
-        out<<"Void fraction: "<<vf<<"%"<<" Error in vf: "<<err<<"%"<<endl<<endl;
+	printf("Void Fraction: %.6f\% Error in vf: %.6f\%\n\n",vf ,err);
+	fprintf(out,"Void Fraction: %.6f\% Error in vf: %.6f\%\n\n",vf ,err);
 
-        cout<<endl;
-        out<<endl;
+        printf("\n");
+	fprintf(out,"\n");
     }
 
 
@@ -339,9 +299,9 @@ int main()
 
     t2 = time(0);
     double seconds = difftime(t2,t1);
-    cout<<"Total run time: "<<seconds<<" secs"<<endl;
-    out<<"Total run time: "<<seconds<<" secs"<<endl;
-    out.close();
+    printf("Total run time: %.6f secs\n",secs);
+    fprintf("Total run time: %.6f secs\n",secs);
+    fclose(out);
 
 }
 

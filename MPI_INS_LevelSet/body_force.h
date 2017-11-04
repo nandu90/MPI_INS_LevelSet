@@ -14,13 +14,14 @@
 #ifndef BODY_FORCE_H
 #define BODY_FORCE_H
 
-void body(elemsclr &sclr, vector< vector< vector<double> > > &st_forcex, vector< vector< vector<double> > > &st_forcey)
+void body(elemsclr &sclr, double ***st_forcex, double ***st_forcey)
 {
      /**Compute eps based on grid size*/
     double eps = epsilon*max(xlen/(xelem-2), ylen/(yelem-2));
     
     /**Compute Heavyside function**/
-    vector< vector< vector<double> > > H(xelem, vector< vector<double> >(yelem, vector<double>(zelem,0.0)));
+    double ***H;
+    allocator3(H,xelem,yelem,zelem);
     
     heavy_func(H, sclr.phi, eps);
     double line = 2.5*2.0*rb_in;
