@@ -15,7 +15,7 @@
 #define RE_DISTANCE_H
 
 #include "rhs_bub_redist.h"
-void monitor_res_redist(double &ires, bool &exitflag, int iter, vector< vector<vector<double> > > phi, vector< vector<vector<double> > > phitemp)
+void monitor_res_redist(double &ires, bool &exitflag, int iter, double ***phi,  double ***phitemp)
 {
     double res=0.0;
     for(int i=1; i<xelem-1; i++)
@@ -51,7 +51,8 @@ void monitor_res_redist(double &ires, bool &exitflag, int iter, vector< vector<v
 void re_distance(elemsclr &sclr)
 {
     /***Store phi values in a separate matrix***/
-    vector< vector<vector<double> > > phi2(xelem, vector<vector<double> > (yelem,vector<double> (zelem,0.0)));
+  double ***phi2;
+  allocator3(phi2, xelem, yelem, zelem);
     for(int i=0; i< xelem; i++)
     {
         for(int j=0; j< yelem; j++)
@@ -73,9 +74,11 @@ void re_distance(elemsclr &sclr)
     for(int iter=0; iter < re_loops; iter++)
     {
         /**Compute Heavyside function**/
-        vector< vector< vector<double> > > H(xelem, vector< vector<double> >(yelem, vector<double>(zelem,0.0)));
+      double ***H;
+      allocator3(H, xelem, yelem, zelem);
         //heavy(H,phi2,eps);
-        
+      double ***signnew;
+      allocator3(signnew, xelem, yelem, zelem);
         vector< vector< vector<double> > > signnew(xelem, vector< vector<double> >(yelem, vector<double>(zelem,0.0)));
         for(int i=0; i<xelem; i++)
         {

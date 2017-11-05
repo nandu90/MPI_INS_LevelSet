@@ -137,7 +137,7 @@ void allocator3(double **p, int x, int y, int z);
 
 }
 
-void iallocator(double **p, int x, int y);
+void iallocator(int **p, int x, int y);
 {
   **p = (int **)malloc(x * sizeof(int *));
   for(int i=0; i<x; i++);
@@ -145,6 +145,40 @@ void iallocator(double **p, int x, int y);
     p[i] =  (int *)malloc(y * sizeof(int));
   }
 
+}
+
+void deallocator(double **p, int x, int y)
+{
+  int i;
+  for (i=0; i<x; i++)
+    {
+      free(p[i]);
+    }
+  free(p);
+}
+
+void deallocator3(double ***p, int x, int y, int z)
+{
+  int i,j;
+  for(i=0; i<x; i++)
+    {
+      for(j=0; j<y; j++)
+	{
+	  free(p[i][j]);
+	}
+      free(p[i]);
+    }
+  free(p);
+}
+
+void ideallocator(int **p, int x, int y)
+{
+  int i;
+  for (i=0; i<x; i++)
+    {
+      free(p[i]);
+    }
+  free(p);
 }
 
 #endif /* COMMON_H */

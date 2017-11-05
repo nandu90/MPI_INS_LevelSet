@@ -18,7 +18,8 @@
 void hyperbolic(elemsclr &sclr)
 {
     /***Store phi values in a separate matrix***/
-    vector< vector<vector<double> > > phi2(xelem, vector<vector<double> > (yelem,vector<double> (zelem,0.0)));
+  double ***phi2;
+  allocator3(phi2, xelem, yelem, zelem);
     for(int i=0; i< xelem; i++)
     {
         for(int j=0; j< yelem; j++)
@@ -38,9 +39,10 @@ void hyperbolic(elemsclr &sclr)
     bool exitflag = false;
     
     /****Heavyside and delta functions for volume constraint***/
-    vector< vector< vector<double> > > H(xelem, vector< vector<double> >(yelem, vector<double>(zelem,0.0)));
-    vector< vector< vector<double> > > delta(xelem, vector< vector<double> >(yelem, vector<double>(zelem,0.0)));
-    vector< vector< vector<double> > > grad_phi(xelem, vector< vector<double> >(yelem, vector<double>(zelem,0.0)));
+    double ***H, ***delta, ***grad_phi;
+    allocator3(H, xelem, yelem, zelem);
+    allocator3(delta, xelem, yelem, zelem);
+    allocator3(grad_phi, xelem, yelem, zelem);
     heavy_func(H,sclr.phi,eps);
     delta_func(delta,sclr.phi,eps);
     grad_func(grad_phi, sclr.phi);
@@ -49,10 +51,12 @@ void hyperbolic(elemsclr &sclr)
     
     for(int iter=0; iter < re_loops; iter++)
     {
-        vector< vector< vector<double> > > lambda(xelem, vector< vector<double> >(yelem, vector<double>(zelem,0.0)));
-        
-        
-        vector< vector<vector<double> > > temp_phi2(xelem, vector<vector<double> > (yelem,vector<double> (zelem,0.0)));
+      double ***lambda;
+      allocator3(lambda, xelem, yelem, zelem);
+
+      double ***temp_phi2;
+       allocator3(temp_phi2, xelem, yelem, zelem);
+       
         for(int i=1;i<xelem-1;i++)
         {
             for(int j=1;j<yelem-1;j++)
@@ -63,13 +67,14 @@ void hyperbolic(elemsclr &sclr)
         
                 
         /*****Now onto calculating fluxes******/
-        vector< vector<double> > rhs(xelem, vector<double> (yelem,0.0));
+	double **rhs;
+	allocator(rhs, xelem, yelem);
         
         rhs_redist2(rhs, phi2, sclr.phi);
         
         
-        
-        vector< vector<vector<double> > > phistar(xelem, vector<vector<double> > (yelem,vector<double> (zelem,0.0)));
+        double ***phistar;
+	allocator3(phistar, xelem, yelem, zelem);
         
         for(int i=1; i<xelem-1; i++) 
         {
@@ -87,8 +92,10 @@ void hyperbolic(elemsclr &sclr)
         
         //bothscalarBC(phistar);
         level_setBC(phistar);
-                
-        vector< vector<double> > rhstar(xelem, vector<double> (yelem,0.0));
+
+	double **rhstar;
+	allocator(rhstar, xelem, yelem);
+	
         //Calculate the star fluxes
         rhs_redist2(rhstar, phistar, sclr.phi);
         
@@ -120,7 +127,11 @@ void hyperbolic(elemsclr &sclr)
             break;
         }
         
-        
+        deallocator3(lambda, xelem, yelem, zelem);
+	deallocator3(temp_phi2, xelem, yelem, zelem);
+	deallocator3(phistar, xelem, yelem, zelem);
+	deallocator(rhs, xelem, yelem);
+	deallocator(rhstar, xelem, yelem);
     }
     
     
@@ -132,6 +143,10 @@ void hyperbolic(elemsclr &sclr)
             sclr.phi[i][j][0] = phi2[i][j][0];
         }
     }
+
+    deallocator3(H, xelem, yelem, zelem);
+    deallocator3(delta, xelem, yelem, zelem);
+    deallocator3(grad_phi, xelem, yelem, zelem);    
 }
 
 #endif /* RE_DISTANCE2_H */

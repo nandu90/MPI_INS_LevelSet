@@ -16,12 +16,13 @@
 
 #include "gauss_siedel.h"
 
-void pressure(vector< vector< vector<double> > > ustar, vector< vector< vector<double> > > vstar, vector< vector< vector<double> > > &p, double deltat)
+void pressure(double ***ustar, double ***vstar, double ***p, double deltat)
 {
     double rho=1.0;
 
     /****Calculate the RHS of matrix****/
-    vector< vector<double> > b(xelem, vector<double> (yelem,0.0));
+    double **b;
+    allocator(b, xelem, yelem);
     #pragma omp parallel for schedule(dynamic)
     for(int i=1; i<xelem-1; i++)
     {
@@ -34,7 +35,8 @@ void pressure(vector< vector< vector<double> > > ustar, vector< vector< vector<d
         }
     }
 
-    vector< vector< vector<double> > > a(xelem, (vector< vector<double> >(yelem, vector<double>(5,0.0))));
+    double ***a;
+    allocator3(a, xelem, yelem, 5);
     #pragma omp parallel for schedule(dynamic)
     for(int i=1; i<xelem-1; i++)
     {
@@ -52,6 +54,8 @@ void pressure(vector< vector< vector<double> > > ustar, vector< vector< vector<d
     //<<a[1][1][0]<<" "<<a[1][1][1]<<" "<<a[1][1][2]<<" "<<a[1][1][3]<<" "<<a[1][1][4]<<" "<<endl;
     //exit(0);
     gs_solver(a,b,p);
+    dealloactor3(a, xelem, yelem, 5);
+    deallocator(b, xelem, yelem);
 }
 
 #endif /* PRESSURE_SOLVER_H */

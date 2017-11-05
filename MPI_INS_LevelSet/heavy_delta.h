@@ -15,7 +15,7 @@
 #define HEAVY_DELTA_H
 
 
-void find_density_visc(vector< vector< vector<double> > > &H, vector< vector< vector<double> > > &rho, vector< vector< vector<double> > > &mu)
+void find_density_visc(double ***H, double ***rho, double ***mu)
 {
     for(int i=0; i<xelem; i++)
     {
@@ -28,7 +28,7 @@ void find_density_visc(vector< vector< vector<double> > > &H, vector< vector< ve
     }
 }
 
-void heavy_func(vector< vector< vector<double> > > &H, vector< vector< vector<double> > > &phi, double eps)
+void heavy_func(double ***H, double ***phi, double eps)
 {
     for(int i=1; i<xelem-1; i++)
         {
@@ -55,7 +55,7 @@ void heavy_func(vector< vector< vector<double> > > &H, vector< vector< vector<do
         level_setBC(H);
 }
 
-void delta_func(vector< vector< vector<double> > > &delta, vector< vector< vector<double> > > &phi, double eps)
+void delta_func(double ***delta, double ***phi, double eps)
 {
     for(int i=1; i<xelem-1; i++)
     {
@@ -77,13 +77,15 @@ void delta_func(vector< vector< vector<double> > > &delta, vector< vector< vecto
     //exit(0);
 }
 
-void grad_func(vector< vector< vector<double> > > &grad_phi, vector< vector< vector<double> > > &phi)
+void grad_func(double ***grad_phi, double ***phi)
 {
-    vector< vector< vector<double> > > grad_phix(xelem, vector< vector<double> >(yelem, vector<double>(zelem,0.0))); 
-     vector< vector< vector<double> > > grad_phiy(xelem, vector< vector<double> >(yelem, vector<double>(zelem,0.0))); 
-     
-     vector< vector< vector<double> > > phiRface(xelem, vector< vector<double> >(yelem, vector<double>(zelem,0.0)));
-     vector< vector< vector<double> > > phiTface(xelem, vector< vector<double> >(yelem, vector<double>(zelem,0.0)));
+  double ***grad_phix, ***grad_phiy;
+  allocate(grad_phix, xelem, yelem, zelem);
+  allocate(grad_phiy, xelem, yelem, zelem);
+
+  double ***phiRface, ***phiTface;
+  allocate(phiRface, xelem, yelem, zelem);
+  allocate(phiTface, xelem, yelem, zelem);
      for(int i=0; i<xelem-1; i++)
      {
          for(int j=0; j<yelem-1; j++)
@@ -117,10 +119,15 @@ void grad_func(vector< vector< vector<double> > > &grad_phi, vector< vector< vec
              grad_phi[i][j][0] = sqrt(pow(grad_phix[i][j][0],2.0) + pow(grad_phiy[i][j][0],2.0));
          }
      }
+
+     deallocator3(grad_phix, xelem, yelem, zelem);
+     deallocator3(grad_phiy, xelem, yelem, zelem);
+     deallocator3(phiRface, xelem, yelem, zelem);
+     deallocator3(phiTface, xelem, yelem, zelem);
 }
 
 
-void vol_contraint(vector< vector< vector<double> > > &phi2, vector< vector< vector<double> > > &phi, vector< vector< vector<double> > > &grad_phi, vector< vector< vector<double> > > &delta, double deltat)
+void vol_contraint(double ***phi2, double ***phi, double ***grad_phi, double ***delta, double deltat)
 {
     for(int i=0; i<xelem; i++)
     {

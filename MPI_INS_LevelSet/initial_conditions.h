@@ -14,7 +14,7 @@
 #ifndef INITIAL_CONDITIONS_H
 #define INITIAL_CONDITIONS_H
 
-void initialize_phi(vector< vector<vector<double> > > &phi)
+void initialize_phi(double ***phi)
 {
     for (int i=0; i<xelem; i++)
     {
@@ -180,7 +180,8 @@ void initialize(elemsclr &sclr)
     level_setBC(sclr.phi);
     double eps = epsilon*max(xlen/(xelem-2), ylen/(yelem-2));
 
-    vector< vector< vector<double> > > H(xelem, vector< vector<double> >(yelem, vector<double>(zelem,0.0)));
+    double ***H;
+    allocator3(H, xelem, yelem, zelem);
 
     heavy_func(H, sclr.phi, eps);
 
@@ -250,7 +251,7 @@ void initialize(elemsclr &sclr)
     level_setBC(sclr.mu);
 
 
-
+    deallocator3(H, xelem, yelem, zelem);
 
 }
 #endif /* INITIAL_CONDITIONS_H */
