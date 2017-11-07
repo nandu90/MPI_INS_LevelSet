@@ -140,11 +140,12 @@ double hj_weno(double vel1, double vel2, double phicen, double phi1, double phi1
 }
 
 
-void rhs_bub(vector< vector<double> > &rhsx, vector< vector<double> > &rhsy, vector< vector<vector<double> > > ucen, vector< vector<vector<double> > > vcen, vector< vector<vector<double> > > phi)
+void rhs_bub(double **rhsx, double **rhsy, double ***ucen, double ***vcen, double ***phi)
 {
     /*First of, find the value of phi at cell edges and store it*/
-    vector< vector<double> > gradx(xelem, vector<double> (yelem,0.0));
-    vector< vector<double> > grady(xelem, vector<double> (yelem,0.0));
+  double **gradx, **grady;
+  allocator(gradx, xelem, yelem);
+  allocator(grady, xelem, yelem);
     #pragma omp parallel for schedule(dynamic)
     for (int i=0; i < xelem-1; i++)
     {
@@ -373,6 +374,8 @@ void rhs_bub(vector< vector<double> > &rhsx, vector< vector<double> > &rhsy, vec
         }
         //exit(0);
     }
+    deallocator(gradx, xelem, yelem);
+    deallocator(grady, xelem, yelem);
 }
 
 #endif /* RHS_BUB_H */

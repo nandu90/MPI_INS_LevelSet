@@ -41,9 +41,13 @@ void calcp(elemsclr &sclr)
     }*/
 }
 
-void monitor_res(vector<double> &ires, bool &exitflag, int iter, elemsclr sclr, vector< vector<vector<double> > > utemp,  vector< vector<vector<double> > > vtemp)
+void monitor_res(double *ires, bool &exitflag, int iter, elemsclr sclr, double ***utemp,  double ***vtemp)
 {
-    vector<double> res(3,0.0);
+  double res[3];
+  for (int i=0; i<3; i++)
+    {
+      res[i] = 0.0;
+    }
     for(int i=1; i<xelem-1; i++)
     {
         for(int j=1; j<yelem-1; j++)

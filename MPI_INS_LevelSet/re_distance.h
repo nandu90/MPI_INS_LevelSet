@@ -79,7 +79,6 @@ void re_distance(elemsclr &sclr)
         //heavy(H,phi2,eps);
       double ***signnew;
       allocator3(signnew, xelem, yelem, zelem);
-        vector< vector< vector<double> > > signnew(xelem, vector< vector<double> >(yelem, vector<double>(zelem,0.0)));
         for(int i=0; i<xelem; i++)
         {
             for(int j=0; j<yelem; j++)
@@ -87,8 +86,9 @@ void re_distance(elemsclr &sclr)
                 signnew[i][j][0] = 2.0*(H[i][j][0] -0.5);
             }
         }
-        
-        vector< vector<vector<double> > > temp_phi2(xelem, vector<vector<double> > (yelem,vector<double> (zelem,0.0)));
+        double ***temp_phi2;
+	allocator3(temp_phi2, xelem, yelem, zelem);
+
         for(int i=1;i<xelem-1;i++)
         {
             for(int j=1;j<yelem-1;j++)
@@ -99,11 +99,15 @@ void re_distance(elemsclr &sclr)
         
         //<<iter<<endl;
         /*Calculate convection velocites*/
-        vector< vector< vector<double> > > grad_phix(xelem, vector< vector<double> >(yelem, vector<double>(zelem,0.0))); 
-        vector< vector< vector<double> > > grad_phiy(xelem, vector< vector<double> >(yelem, vector<double>(zelem,0.0)));
-        
-        vector< vector< vector<double> > > phiRface(xelem, vector< vector<double> >(yelem, vector<double>(zelem,0.0)));
-        vector< vector< vector<double> > > phiTface(xelem, vector< vector<double> >(yelem, vector<double>(zelem,0.0)));
+	double ***grad_phix;
+	double ***grad_phiy;
+	double ***phiRface;
+	double ***phiTface;
+	allocator3(grad_phix, xelem, yelem, zelem);
+	allocator3(grad_phiy, xelem, yelem, zelem);
+	allocator3(phiRface, xelem, yelem, zelem);
+	allocator3(phiTface, xelem, yelem, zelem);
+
         for(int i=0; i<xelem-1; i++)
         {
             for(int j=0; j<yelem-1; j++)
@@ -125,9 +129,11 @@ void re_distance(elemsclr &sclr)
         periodicBC(grad_phiy);
         gradBC(grad_phix);
         gradBC(grad_phiy);
-        
-        vector< vector<vector<double> > > ucen(xelem, vector<vector<double> > (yelem,vector<double> (zelem,0.0))); //Stored at cell centers
-        vector< vector<vector<double> > > vcen(xelem, vector<vector<double> > (yelem,vector<double> (zelem,0.0)));
+
+	double ***ucen;
+	double ***vcen;
+	allocator3(ucen, xelem, yelem, zelem);
+	allocator3(vcen, xelem, yelem, zelem);
         
         for(int j=1; j<yelem-1; j++)
         {
@@ -151,12 +157,17 @@ void re_distance(elemsclr &sclr)
         
         
         /*****Now onto calculating fluxes******/
-        vector< vector<double> > rhsx(xelem, vector<double> (yelem,0.0));
-        vector< vector<double> > rhsy(xelem, vector<double> (yelem,0.0));
+	double **rhsx;
+	double **rhsy;
+	allocator(rhsx, xelem, yelem);
+	allocator(rhsy, xelem, yelem);
+
         
         rhs_bub(rhsx, rhsy, ucen, vcen, phi2);
-        
-        vector< vector<vector<double> > > phistar(xelem, vector<vector<double> > (yelem,vector<double> (zelem,0.0)));
+
+	double ***phistar;
+	allocator3(phistar, xelem, yelem, zelem);
+
         for(int i=1; i<xelem-1; i++) 
         {
             for(int j=1; j<yelem-1; j++)
@@ -167,16 +178,22 @@ void re_distance(elemsclr &sclr)
         periodicBC(phistar);
         zerogradBC(phistar);
         //bothscalarBC(phistar);
-                
-        vector< vector<double> > rhstarx(xelem, vector<double> (yelem,0.0));
-        vector< vector<double> > rhstary(xelem, vector<double> (yelem,0.0));
+
+	double **rhstarx;
+	double **rhstary;
+	allocator(rhstarx, xelem, yelem);
+	allocator(rhstary, xelem, yelem);
         //Calculate the star fluxes
         rhs_bub(rhstarx, rhstary, ucen, vcen, phistar);
-        
-        vector< vector< vector<double> > > Hstar(xelem, vector< vector<double> >(yelem, vector<double>(zelem,0.0)));
+
+	double ***Hstar;
+	allocator3(Hstar, xelem, yelem, zelem);
+
 //        /heavy(Hstar,phistar,eps);
-        
-        vector< vector< vector<double> > > signnew2(xelem, vector< vector<double> >(yelem, vector<double>(zelem,0.0)));
+	double ***signnew2;
+	allocator3(signnew2, xelem, yelem, zelem);
+	
+
         for(int i=0; i<xelem; i++)
         {
             for(int j=0; j<yelem; j++)
@@ -203,7 +220,23 @@ void re_distance(elemsclr &sclr)
             monitor_res_redist(ires, exitflag, iter,  phi2,  temp_phi2);
         }
         
-        
+	deallocator3(H, xelem, yelem, zelem);
+	deallocator3(signnew, xelem, yelem, zelem);
+	deallocator3(temp_phi2, xelem, yelem, zelem);
+	deallocator3(grad_phix, xelem, yelem, zelem);
+	deallocator3(grad_phiy, xelem, yelem, zelem);
+	deallocator3(phiRface, xelem, yelem, zelem);
+	deallocator3(phiTface, xelem, yelem, zelem);
+	deallocator3(ucen, xelem, yelem, zelem);
+	deallocator3(vcen, xelem, yelem, zelem);
+	deallocator3(phistar, xelem, yelem, zelem);
+	deallocator3(Hstar, xelem, yelem, zelem);
+	deallocator3(signnew2, xelem, yelem, zelem);
+	deallocator(rhsx, xelem, yelem);
+	deallocator(rhsy, xelem, yelem);
+	deallocator(rhstarx, xelem, yelem);
+	deallocator(rhstary, xelem, yelem);
+	
     }
     
     
@@ -215,6 +248,7 @@ void re_distance(elemsclr &sclr)
             sclr.phi[i][j][0] = phi2[i][j][0];
         }
     }
+    deallocator3(phi2, xelem, yelem, zelem);
 }
 
 #endif /* RE_DISTANCE_H */

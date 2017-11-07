@@ -14,11 +14,14 @@
 #ifndef GAUSS_SIEDEL_H
 #define GAUSS_SIEDEL_H
 
-void gs_solver(vector< vector< vector<double> > > &a, vector< vector<double> > &b, vector< vector< vector<double> > > &p)
+void gs_solver(double ***a, double **b, double ***p)
 {
-    vector< vector< vector<double> > > tempp(xelem, (vector< vector<double> >(yelem, vector<double>(zelem,0.0))));
-    vector< vector<double> > delp(xelem, vector<double> (yelem,0.0));
-    vector< vector<double> > d(xelem, vector<double> (yelem,0.0));
+  double ***tempp;
+  double **delp;
+  double **d;
+  allocator3(tempp, xelem, yelem, zelem);
+  allocator(delp, xelem, yelem);
+  allocator(d, xelem, yelem);
 
     double ires;
 
@@ -101,7 +104,9 @@ void gs_solver(vector< vector< vector<double> > > &a, vector< vector<double> > &
             p[i][j][0] = tempp[i][j][0];
         }
     }
-
+    deallocator3(tempp, xelem, yelem, zelem);
+    deallocator(delp, xelem, yelem);
+    deallocator(d, xelem, yelem);
 }
 
 #endif /* GAUSS_SIEDEL_H */

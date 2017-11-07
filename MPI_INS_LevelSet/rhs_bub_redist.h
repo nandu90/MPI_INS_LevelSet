@@ -14,11 +14,10 @@
 #ifndef RHS_BUB_REDIST_H
 #define RHS_BUB_REDIST_H
 
-void rhs_redist(vector< vector<double> > &rhsx, vector< vector<double> > &rhsy, vector< vector<vector<double> > > ucen, vector< vector<vector<double> > > vcen, vector< vector<vector<double> > > phi)
+void rhs_redist(double **rhsx, double **rhsy, double ***ucen, double ***vcen, double ***phi)
 {
     /*First of, find the value of phi at cell edges and store it*/
-    vector< vector<double> > gradx(xelem, vector<double> (yelem,0.0));
-    vector< vector<double> > grady(xelem, vector<double> (yelem,0.0));
+  double **gradx, **grady;
     for (int i=0; i < xelem-1; i++)
     {
         for(int j=1; j < yelem-1; j++)
@@ -188,6 +187,8 @@ void rhs_redist(vector< vector<double> > &rhsx, vector< vector<double> > &rhsy, 
 
         }
     }
+    deallocator(gradx, xelem, yelem);
+    deallocator(gradx, xelem, yelem);
 }
 
 
@@ -210,7 +211,7 @@ double signof(double a)
     return result;
 }
 
-void rhs_redist2(vector< vector<double> > &rhs, vector< vector<vector<double> > > phi2, vector< vector<vector<double> > > phi)
+void rhs_redist2(double **rhs, double ***phi2, double ***phi)
 {
     double dxbarplus[xelem][yelem];
     double dxbarminus[xelem][yelem];

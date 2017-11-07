@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -34,7 +35,7 @@ double **y;
 double **xc;
 double **yc;
 double **vol;
-double ***area;
+double ****area;
 
     
 ///Variables for bubble
@@ -60,33 +61,8 @@ int startstep;
 double gx;
 double gy;
 
-string inttostr (int n)
-{
-    stringstream ss;
-    ss<<n;
-    return ss.str();
-}
 
-std::string getexepath()
-{
-  /*char result[ PATH_MAX ];
- ssize_t count = readlink( "/proc/self/exe", result, PATH_MAX );
- return std::string( result, (count > 0) ? count : 0 );*/
-  char cwd[1024];
-   stringstream ss;
-   string dir;
-   if (getcwd(cwd, sizeof(cwd)) != NULL)
-   {
-       ss << cwd;
-       ss >> dir;
-   }
-   else
-       perror("getcwd() error");
-   return dir;
-}
-
-
-/*****Some Simulation Control variables****/
+//Some Simulation Control variables/
 int sf_toggle;
 int flow_solve;
 int p_solver;
@@ -101,6 +77,26 @@ int redist_method;
 int case_tog;
 
 
+char* getexepath()
+{
+  static char cwd[1024];
+  getcwd(cwd,sizeof(cwd));
+  return cwd;
+}
+
+char* concat(char s1[], char s2[])
+{
+    char* result = malloc(strlen(s1)+strlen(s2)+1);//+1 for the null-terminator
+    //in real code you would check for errors in malloc here
+    strcpy(result, s1);
+    strcat(result, s2);
+    return result;
+}
+
+
+
+
+
 
 
 struct elemsclr
@@ -113,23 +109,33 @@ struct elemsclr
   double ***mu;
 };
 
-void allocator(double **p, int x, int y);
+void allocator(double ***p, int x, int y)
 {
-  **p = (double **)malloc(x * sizeof(double *));
-  for(int i=0; i<x; i++);
+  int i,j;
+  *p = (double **)malloc(x * sizeof(double *));
+  for(i=0; i<x; i++);
   {
-    p[i] =  (double *)malloc(y * sizeof(double));
+    (*p)[i] =  (double *)malloc(y * sizeof(double));
   }
 
+  /*printf("%d %d", x, y);
+  for(i=0; i<x; i++)
+    {
+      for(j=0; j<y; j++)
+	{
+	  p[i][j] = 0.0;
+	}
+	}*/	
 }
 
-void allocator3(double **p, int x, int y, int z);
+void allocator3(double ***p, int x, int y, int z)
 {
-  ***p = (double ***)malloc(x * sizeof(double **));
-  for(int i=0; i<x; i++);
+  int i,j;
+  p = (double ***)malloc(x * sizeof(double **));
+  for(i=0; i<x; i++)
   {
     p[i] =  (double **)malloc(y * sizeof(double *));
-    for(int j=0; j<y; j++)
+    for(j=0; j<y; j++)
       {
 	p[i][j] = (double *)malloc(z * sizeof(double));
       }
@@ -137,10 +143,30 @@ void allocator3(double **p, int x, int y, int z);
 
 }
 
-void iallocator(int **p, int x, int y);
+void allocator4(double ****p, int x, int y, int z, int w)
 {
-  **p = (int **)malloc(x * sizeof(int *));
-  for(int i=0; i<x; i++);
+  int i,j,k;
+  p = (double ****)malloc(x * sizeof(double ***));
+  for(i=0; i<x; i++)
+  {
+    p[i] =  (double ***)malloc(y * sizeof(double **));
+    for(j=0; j<y; j++)
+      {
+	p[i][j] = (double **)malloc(z * sizeof(double *));
+	for(k=0; k<z; k++)
+	  {
+	    p[i][j][k] = (double *) malloc(w * sizeof(double));
+	  }
+      }
+  }
+
+}
+
+void iallocator(int **p, int x, int y)
+{
+  int i;
+  p = (int **)malloc(x * sizeof(int *));
+  for(i=0; i<x; i++)
   {
     p[i] =  (int *)malloc(y * sizeof(int));
   }
@@ -171,6 +197,24 @@ void deallocator3(double ***p, int x, int y, int z)
   free(p);
 }
 
+void deallocator4(double ****p, int x, int y, int z, int w)
+{
+  int i,j,k;
+  for(i=0; i<x; i++)
+    {
+      for(j=0; j<y; j++)
+	{
+	  for(k=0; k<z; k++)
+	    {
+	      free(p[i][j][k]);
+	    }
+	  free(p[i][j]);
+	}
+      free(p[i]);
+    }
+  free(p);
+}
+
 void ideallocator(int **p, int x, int y)
 {
   int i;
@@ -180,6 +224,8 @@ void ideallocator(int **p, int x, int y)
     }
   free(p);
 }
+
+
 
 #endif /* COMMON_H */
 

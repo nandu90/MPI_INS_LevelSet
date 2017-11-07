@@ -16,267 +16,311 @@
 
 void control()
 {
-    ifstream controlfile;
-    controlfile.open("control.txt");
-    string line;
+  FILE *controlfile = fopen("control.txt","r");
+  if(controlfile == NULL)
+      {
+	printf("Error opening control.txt!\n");
+	exit(0);
+      }
+  
+    char* line = NULL;
+    ssize_t size;
+    size_t len = 0;
+
+    char delim [1] = " ";
+    char* word = NULL;
     
-    while(getline(controlfile,line))
+    while((size = getline(&line, &len, controlfile)) != -1)
     {
-        string junk;
-        istringstream ss(line);
-        ss>>junk;
-        string junk2;
+      
+      word = strtok(line, delim);
+      while(word != NULL)
+	{
+	  //printf("%s\n",word);
+	  if(strcmp(word,"xlen") == 0)
+	    {
+	      word = strtok(NULL,delim);
+	      xlen = atof(word);
+	    }
+	  if(strcmp(word,"ylen") == 0)
+	    {
+	      word = strtok(NULL,delim);
+	      ylen = atof(word);
+	    }
+	  if(strcmp(word,"zlen") == 0)
+	    {
+	      word = strtok(NULL,delim);
+	      zlen = atof(word);
+	    }
+	  if(strcmp(word,"xelem") == 0)
+	    {
+	      word = strtok(NULL,delim);
+	      xelem = atoi(word);
+	    }
+	  if(strcmp(word,"yelem") == 0)
+	    {
+	      word = strtok(NULL,delim);
+	      yelem = atoi(word);
+	    }
+	  if(strcmp(word,"zelem") == 0)
+	    {
+	      word = strtok(NULL,delim);
+	      zelem = atoi(word);
+	    }
+	  if(strcmp(word,"Max_Iterations") == 0)
+	    {
+	      word = strtok(NULL,delim);
+	      itermax = atoi(word);
+	    }
+	  if(strcmp(word,"Kinematic_viscosity") == 0)
+	    {
+	      word = strtok(NULL,delim);
+	      nu = atof(word);
+	    }
+	  if(strcmp(word,"Tolerance_x") == 0)
+	    {
+	      word = strtok(NULL,delim);
+	      tol = atof(word);
+	    }
+	  if(strcmp(word,"Bubble_radius") == 0)
+	    {
+	      word = strtok(NULL,delim);
+	      rb_in = atof(word);
+	    }
+	  if(strcmp(word,"x_pos_of_bubble") == 0)
+	    {
+	      word = strtok(NULL,delim);
+	      xb_in = atof(word);
+	    }
+	  if(strcmp(word,"y_pos_of_bubble") == 0)
+	    {
+	      word = strtok(NULL,delim);
+	      yb_in = atof(word);
+	    }
+	  if(strcmp(word,"advect_steps") == 0)
+	    {
+	      word = strtok(NULL,delim);
+	      advect_steps = atoi(word);
+	    }
+	  if(strcmp(word,"advect_deltat") == 0)
+	    {
+	      word = strtok(NULL,delim);
+	      advect_deltat = atof(word);
+	    }
+	  if(strcmp(word,"Solution_read") == 0)
+	    {
+	      word = strtok(NULL,delim);
+	      solnread = atoi(word);
+	    }
+	  if(strcmp(word,"Liquid_density") == 0)
+	    {
+	      word = strtok(NULL,delim);
+	      rhof = atof(word);
+	    }
+	  if(strcmp(word,"Liquid_viscosity") == 0)
+	    {
+	      word = strtok(NULL,delim);
+	      muf = atof(word);
+	    }
+	  if(strcmp(word,"Gas_density") == 0)
+	    {
+	      word = strtok(NULL,delim);
+	      rhog = atof(word);
+	    }
+	  if(strcmp(word,"Gas_viscosity") == 0)
+	    {
+	      word = strtok(NULL,delim);
+	      mug = atof(word);
+	    }
+	  if(strcmp(word,"Epsilon") == 0)
+	    {
+	      word = strtok(NULL,delim);
+	      epsilon = atof(word);
+	    }
+	  if(strcmp(word,"Surface_tension_coefficient") == 0)
+	    {
+	      word = strtok(NULL,delim);
+	      sf_coeff = atof(word);
+	    }
+	  if(strcmp(word,"GS_relaxation_factor") == 0)
+	    {
+	      word = strtok(NULL,delim);
+	      relax = atof(word);
+	    }
+	  if(strcmp(word,"Tolerance_p") == 0)
+	    {
+	      word = strtok(NULL,delim);
+	      ptol = atof(word);
+	    }
+	  if(strcmp(word,"Re_distance_timestep") == 0)
+	    {
+	      word = strtok(NULL,delim);
+	      re_time = atof(word);
+	    }
+	  if(strcmp(word,"Re_distance_loops") == 0)
+	    {
+	      word = strtok(NULL,delim);
+	      re_loops = atof(word);
+	    }
+	  if(strcmp(word,"print_gap") == 0)
+	    {
+	      word = strtok(NULL,delim);
+	      print_gap = atoi(word);
+	    }
+	  if(strcmp(word,"Start_step") == 0)
+	    {
+	      word = strtok(NULL,delim);
+	      startstep = atoi(word);
+	    }
+	  if(strcmp(word,"Surface_tension") == 0)
+	    {
+	      word = strtok(NULL,delim);
+	      sf_toggle = atoi(word);
+	    }
+	  if(strcmp(word,"Solve_flow") == 0)
+	    {
+	      word = strtok(NULL,delim);
+	      flow_solve = atoi(word);
+	    }
+	  if(strcmp(word,"Variable_density_pressure_solver") == 0)
+	    {
+	      word = strtok(NULL,delim);
+	      p_solver = atoi(word);
+	    }
+	  if(strcmp(word,"Advect_bubble") == 0)
+	    {
+	      word = strtok(NULL,delim);
+	      advect_solve = atoi(word);
+	    }
+	  if(strcmp(word,"Void_fraction_control") == 0)
+	    {
+	      word = strtok(NULL,delim);
+	      vf_control = atoi(word);
+	    }
+	  if(strcmp(word,"Re-distance_method") == 0)
+	    {
+	      word = strtok(NULL,delim);
+	      redist_method = atoi(word);
+	    }
+	   if(strcmp(word,"max_CFL") == 0)
+	    {
+	      word = strtok(NULL,delim);
+	      max_cfl = atof(word);
+	    }
+	   if(strcmp(word,"gx") == 0)
+	    {
+	      word = strtok(NULL,delim);
+	      gx = atof(word);
+	    }
+	   if(strcmp(word,"gy") == 0)
+	    {
+	      word = strtok(NULL,delim);
+	      gy = atof(word);
+	    }
+
+	   if(strcmp(word,"bub_advect_scheme") == 0)
+	     {
+	       word = strtok(NULL, delim);
+	       if(strcmp(word,"book\n") == 0)
+		 {
+		   bub_conv_scheme=1;
+		 }
+	       else if(strcmp(word,"HJ-WENO\n") == 0)
+		 {
+		   bub_conv_scheme=2;
+		 }
+	     }
+
+	   if(strcmp(word,"x-boundary") == 0)
+	     {
+	       word = strtok(NULL, delim);
+	       if(strcmp(word,"no-slip\n") == 0)
+		 {
+		   x_bound=1;
+		 }
+	       else if(strcmp(word,"slip\n") == 0)
+		 {
+		   x_bound=2;
+		 }
+	       else if(strcmp(word,"periodic\n") == 0)
+		 {
+		   x_bound=3;
+		 }
+	     }
+
+	   if(strcmp(word,"y-boundary") == 0)
+	     {
+	       word = strtok(NULL, delim);
+	       if(strcmp(word,"no-slip\n") == 0)
+		 {
+		   y_bound=1;
+		 }
+	       else if(strcmp(word,"slip\n") == 0)
+		 {
+		   y_bound=2;
+		 }
+	       else if(strcmp(word,"periodic\n") == 0)
+		 {
+		   y_bound=3;
+		 }
+	     }
+	   if(strcmp(word,"Solver_type") == 0)
+	     {
+	       word = strtok(NULL, delim);
+	       if(strcmp(word,"steady-state\n") == 0)
+		 {
+		   sol_type=0;
+		 }
+	       else if(strcmp(word,"transient\n") == 0)
+		 {
+		   sol_type=1;
+		 }
+	     }
+	   if(strcmp(word,"Time_control") == 0)
+	     {
+	       word = strtok(NULL, delim);
+	       if(strcmp(word,"CFL-based\n") == 0)
+		 {
+		   time_control=1;
+		 }
+	       else if(strcmp(word,"constant_time\n") == 0)
+		 {
+		   time_control=2;
+		 }
+	     }
+	   if(strcmp(word,"Case") == 0)
+	     {
+	       word = strtok(NULL, delim);
+	       if(strcmp(word,"vortex\n") == 0)
+		 {
+		   case_tog=1;
+		 }
+	       else if(strcmp(word,"bubble_rise\n") == 0)
+		 {
+		   case_tog=2;
+		 }
+	       else if(strcmp(word,"bubble_break\n") == 0)
+		 {
+		   case_tog=3;
+		 }
+	       else if(strcmp(word,"zalesak\n") == 0)
+		 {
+		   case_tog=4;
+		 }
+	       else if(strcmp(word,"homework\n") == 0)
+		 {
+		   case_tog=5;
+		 }
+	     }
+	   word = strtok(NULL,delim);
+	}
         
-        if(junk.compare("xlen") == 0)
-        {
-            ss>>xlen;
-        }
-        else if(junk.compare("ylen") == 0)
-        {
-            ss>>ylen;
-        }
-        else if(junk.compare("zlen") == 0)
-        {
-            ss>>zlen;
-        }
-        else if(junk.compare("xelem") == 0)
-        {
-            ss>>xelem;
-        }
-        else if(junk.compare("yelem") == 0)
-        {
-            ss>>yelem;
-        }
-        else if(junk.compare("zelem") == 0)
-        {
-            ss>>zelem;
-        }
-        else if(junk.compare("Max_Iterations") == 0)
-        {
-            ss>>itermax;
-        }
-        else if(junk.compare("Kinematic_viscosity") == 0)
-        {
-            ss>>nu;
-        }
-        else if(junk.compare("Tolerance_x") == 0)
-        {
-            ss>>tol;
-        }
-        else if(junk.compare("Bubble_radius") == 0)
-        {
-            ss>>rb_in;
-        }
-        else if(junk.compare("x_pos_of_bubble") == 0)
-        {
-            ss>>xb_in;
-        }
-        else if(junk.compare("y_pos_of_bubble") == 0)
-        {
-            ss>>yb_in;
-        }
-        else if(junk.compare("advect_steps") == 0)
-        {
-            ss>>advect_steps;
-        }
-        else if(junk.compare("advect_deltat") == 0)
-        {
-            ss>>advect_deltat;
-        }
-        else if(junk.compare("Solution_read") == 0)
-        {
-            ss>>solnread;
-        }
-        else if(junk.compare("bub_advect_scheme") == 0)
-        {
-            ss>>junk2;
-            if(junk2.compare("book") == 0)
-            {
-                bub_conv_scheme=1;
-            }
-            else if(junk2.compare("HJ-WENO") == 0)
-            {
-                bub_conv_scheme=2;
-            }
-            
-        }
-        else if(junk.compare("Liquid_density") == 0)
-        {
-            ss>>rhof;
-        }
-        else if(junk.compare("Gas_density") == 0)
-        {
-            ss>>rhog;
-        }
-        else if(junk.compare("Liquid_viscosity") == 0)
-        {
-            ss>>muf;
-        }
-        else if(junk.compare("Gas_viscosity") == 0)
-        {
-            ss>>mug;
-        }
-        else if(junk.compare("Epsilon") == 0)
-        {
-            ss>>epsilon;
-        }
-        else if(junk.compare("Surface_tension_coefficient") == 0)
-        {
-            ss>>sf_coeff;
-        }
-        else if(junk.compare("GS_relaxation_factor") == 0)
-        {
-            ss>>relax;
-        }
-        else if(junk.compare("Tolerance_p") == 0)
-        {
-            ss>>ptol;
-        }
-        else if(junk.compare("Re_distance_timestep") == 0)
-        {
-            ss>>re_time;
-        }
-        else if(junk.compare("Re_distance_loops") == 0)
-        {
-            ss>>re_loops;
-        }
-        else if(junk.compare("print_gap") == 0)
-        {
-            ss>>print_gap;
-        }
-        
-        else if(junk.compare("Start_step") == 0)
-        {
-            ss>>startstep;
-        }
-        
-        else if(junk.compare("Surface_tension") == 0)
-        {
-            ss>>sf_toggle;
-        }
-        else if(junk.compare("Solve_flow") == 0)
-        {
-            ss>>flow_solve;
-        }
-        else if(junk.compare("Variable_density_pressure_solver") == 0)
-        {
-            ss>>p_solver;
-        }
-        else if(junk.compare("Advect_bubble") == 0)
-        {
-            ss>>advect_solve;
-        }
-        else if(junk.compare("Void_fraction_control") == 0)
-        {
-            ss>>vf_control;
-        }
-        else if(junk.compare("Re-distance_method") == 0)
-        {
-            ss>>redist_method;
-        }
-        else if(junk.compare("x-boundary") == 0)
-        {
-            ss>>junk2;
-            if(junk2.compare("no-slip") == 0)
-            {
-                x_bound=1;
-            }
-            else if(junk2.compare("slip") == 0)
-            {
-                x_bound=2;
-            }
-            else if(junk2.compare("periodic") == 0)
-            {
-                x_bound=3;
-            }
-            
-        }
-        
-        else if(junk.compare("y-boundary") == 0)
-        {
-            ss>>junk2;
-            if(junk2.compare("no-slip") == 0)
-            {
-                y_bound=1;
-            }
-            else if(junk2.compare("slip") == 0)
-            {
-                y_bound=2;
-            }
-            else if(junk2.compare("periodic") == 0)
-            {
-                y_bound=3;
-            }
-            
-        }
-        
-        else if(junk.compare("Solver_type") == 0)
-        {
-            ss>>junk2;
-            if(junk2.compare("steady-state") == 0)
-            {
-                sol_type=0;
-            }
-            else if(junk2.compare("transient") == 0)
-            {
-                sol_type=1;
-            }
-            
-        }
-        
-        else if(junk.compare("Time_control") == 0)
-        {
-            ss>>junk2;
-            if(junk2.compare("CFL-based") == 0)
-            {
-                time_control=1;
-            }
-            else if(junk2.compare("constant_time") == 0)
-            {
-                time_control=2;
-            }
-            
-        }
-        
-        else if(junk.compare("max_CFL") == 0)
-        {
-            ss>>max_cfl;
-        }
-        else if(junk.compare("gx") == 0)
-        {
-            ss>>gx;
-        }
-        else if(junk.compare("gy") == 0)
-        {
-            ss>>gy;
-        }
-        
-        else if(junk.compare("Case") == 0)
-        {
-            ss>>junk2;
-            if(junk2.compare("vortex") == 0)
-            {
-                case_tog=1;
-            }
-            else if(junk2.compare("bubble_rise") == 0)
-            {
-                case_tog=2;
-            }
-            else if(junk2.compare("bubble_break") == 0)
-            {
-                case_tog=3;
-            }
-            else if(junk2.compare("zalesak") == 0)
-            {
-                case_tog=4;
-            }
-            else if(junk2.compare("homework") == 0)
-            {
-                case_tog=5;
-            }
-        }
-    }
-    controlfile.close();
+     }
+    fclose(controlfile);
+
+    // printf("%d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d\n",xelem, yelem, zelem, advect_steps, solnread, bub_conv_scheme, print_gap, startstep, sf_toggle, flow_solve, p_solver, x_bound, y_bound, advect_solve, sol_type, vf_control, time_control, redist_method, case_tog);
+
+    //printf("%f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f",nu, cfl, tol, xlen, ylen, zlen, rb_in, xb_in, yb_in, advect_deltat, rhof, rhog, muf, mug, epsilon, sf_coeff, relax, ptol, re_time, re_loops, gx, gy, max_cfl);
 }
 
 #endif /* CONTROL_H */

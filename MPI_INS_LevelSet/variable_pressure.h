@@ -16,10 +16,11 @@
 
 #include "gauss_siedel.h"
 
-void variable_pressure(vector< vector< vector<double> > > &ustar, vector< vector< vector<double> > > &vstar, vector< vector< vector<double> > > &p, double deltat, vector< vector< vector<double> > > &rho, vector< vector< vector<double> > > &stx, vector< vector< vector<double> > > &sty)
+void variable_pressure(double ***ustar, double ***vstar, double ***p, double deltat, double ***rho, double ***stx, double ***sty)
 {
     /****Calculate the RHS of matrix****/
-    vector< vector<double> > b(xelem, vector<double> (yelem,0.0));
+  double **b;
+  allocate(b, xelem, yelem);
     
     for(int i=1; i<xelem-1; i++)
     {
@@ -66,8 +67,9 @@ void variable_pressure(vector< vector< vector<double> > > &ustar, vector< vector
             elem_rho[i][j][3] = 0.5*(rho[i][j][0] + rho[i][j-1][0]);
         }
     }
-    
-    vector< vector< vector<double> > > a(xelem, (vector< vector<double> >(yelem, vector<double>(5,0.0))));
+
+    double ***a;
+    allocator3(a, xelem, yelem, 5);
     
     for(int i=1; i<xelem-1; i++)
     {
@@ -85,6 +87,8 @@ void variable_pressure(vector< vector< vector<double> > > &ustar, vector< vector
     }
     
     gs_solver(a,b,p);
+    deallocator3(a, xelem, yelem, 5);
+    deallocator(b, xelem, yelem);
 }
 
 #endif /* VARIABLE_PRESSURE_H */

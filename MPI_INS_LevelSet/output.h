@@ -86,7 +86,7 @@ void output(elemsclr sclr,int iter)
 
 
 
-void output_vtk(elemsclr &sclr,int iter)//, vector< vector< vector<double> > > &stx, vector< vector< vector<double> > > &sty)
+void output_vtk(elemsclr &sclr,int iter)//, 
 {
   FILE *out = fopen(getexepath()+"/output/out_00"+inttostr(iter)+".vts","w");
    if(out == NULL)

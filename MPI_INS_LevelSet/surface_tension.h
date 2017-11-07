@@ -14,13 +14,14 @@
 #ifndef SURFACE_TENSION_H
 #define SURFACE_TENSION_H
 
-void surface(elemsclr &sclr, vector< vector< vector<double> > > &st_forcex, vector< vector< vector<double> > > &st_forcey)
+void surface(elemsclr &sclr, double ***st_forcex, double ***st_forcey)
 {
     /**Compute eps based on grid size*/
     double eps = epsilon*max(xlen/(xelem-2), ylen/(yelem-2));
     
     /**Compute Heavyside function**/
-    vector< vector< vector<double> > > H(xelem, vector< vector<double> >(yelem, vector<double>(zelem,0.0)));
+    double ***H;
+    allocator3(H, xelem, yelem, zelem);
     
     heavy_func(H, sclr.phi, eps);
     
@@ -31,7 +32,8 @@ void surface(elemsclr &sclr, vector< vector< vector<double> > > &st_forcex, vect
     
     if(sf_toggle == 1)
     {
-        vector< vector< vector<double> > > delta(xelem, vector< vector<double> >(yelem, vector<double>(zelem,0.0)));
+      double ***delta;
+      allocator3(delta, xelem, yelem, zelem);
         for(int i=1; i<xelem-1; i++)
         {
             for(int j=1; j<yelem-1; j++)
@@ -50,8 +52,9 @@ void surface(elemsclr &sclr, vector< vector< vector<double> > > &st_forcex, vect
             //<<endl;
         }
         //exit(0);
+	double ***del_scaling;
+	allocator3(del_scaling, xelem, yelem, zelem);
 
-         vector< vector< vector<double> > > del_scaling(xelem, vector< vector<double> >(yelem, vector<double>(zelem,0.0))); 
          //This is equivalent to marker function
          for(int i=1 ; i<xelem-1; i++)
          {
@@ -65,11 +68,14 @@ void surface(elemsclr &sclr, vector< vector< vector<double> > > &st_forcex, vect
          //exit(0);
 
          /***Now calculate gradient of level set for ultimately calculating curvature*/
-         vector< vector< vector<double> > > grad_phix(xelem, vector< vector<double> >(yelem, vector<double>(zelem,0.0))); 
-         vector< vector< vector<double> > > grad_phiy(xelem, vector< vector<double> >(yelem, vector<double>(zelem,0.0))); 
-
-         vector< vector< vector<double> > > phiRface(xelem, vector< vector<double> >(yelem, vector<double>(zelem,0.0)));
-         vector< vector< vector<double> > > phiTface(xelem, vector< vector<double> >(yelem, vector<double>(zelem,0.0)));
+	 double ***grad_phix;
+	 double ***grad_phiy;
+	 double ***phiRface;
+	 double ***phiTface;
+	 allocator3(phiRface, xelem, yelem, zelem);
+	 allocator3(phiTface, xelem, yelem, zelem);
+	 allocator3(grad_phiy, xelem, yelem, zelem);
+	 allocator3(grad_phix, xelem, yelem, zelem);
          for(int i=0; i<xelem-1; i++)
          {
              for(int j=0; j<yelem-1; j++)
@@ -97,13 +103,18 @@ void surface(elemsclr &sclr, vector< vector< vector<double> > > &st_forcex, vect
          grad_level_setBC(grad_phiy);
 
          /***Compute double and mixed derivatives***/
-         vector< vector< vector<double> > > grad_phixx(xelem, vector< vector<double> >(yelem, vector<double>(zelem,0.0)));
-         vector< vector< vector<double> > > grad_phixy(xelem, vector< vector<double> >(yelem, vector<double>(zelem,0.0)));
-         vector< vector< vector<double> > > grad_phiyy(xelem, vector< vector<double> >(yelem, vector<double>(zelem,0.0)));
-
-         vector< vector< vector<double> > > phixRface(xelem, vector< vector<double> >(yelem, vector<double>(zelem,0.0)));
-         vector< vector< vector<double> > > phiyTface(xelem, vector< vector<double> >(yelem, vector<double>(zelem,0.0)));
-         vector< vector< vector<double> > > phixTface(xelem, vector< vector<double> >(yelem, vector<double>(zelem,0.0)));
+	 double ***grad_phixx;
+	 double ***grad_phixy;
+	 double ***grad_phiyy;
+	 double ***phixRface;
+	 double ***phiyTface;
+	 double ***phixTface;
+	 allocator3(grad_phixx, xelem, yelem, zelem);
+	 allocator3(grad_phixy, xelem, yelem, zelem);
+	 allocator3(grad_phiyy, xelem, yelem, zelem);
+	 allocator3(phixRface, xelem, yelem, zelem);
+	 allocator3(phiyTface, xelem, yelem, zelem);
+	 allocator3(phixTface, xelem, yelem, zelem);
 
          for(int i=0; i<xelem - 1; i++)
          {
@@ -124,8 +135,9 @@ void surface(elemsclr &sclr, vector< vector< vector<double> > > &st_forcex, vect
                  grad_phixy[i][j][0] = (phixTface[i][j][0] - phixTface[i][j-1][0])/area[i][j][0][0];
              }
          }
+	 double ***curvature;
+	 allocator3(curvature, xelem, yelem, zelem);
 
-         vector< vector< vector<double> > > curvature(xelem, vector< vector<double> >(yelem, vector<double>(zelem,0.0)));
 
          for(int j=1; j<yelem-1; j++)
          {
@@ -157,8 +169,23 @@ void surface(elemsclr &sclr, vector< vector< vector<double> > > &st_forcex, vect
          //exit(0);
          grad_level_setBC(st_forcex);
          grad_level_setBC(st_forcey);
-         
+
+	 deallocator3(curvature, xelem, yelem, zelem);
+	 deallocator3(grad_phixx, xelem, yelem, zelem);
+	 deallocator3(grad_phixy, xelem, yelem, zelem);
+	 deallocator3(grad_phiyy, xelem, yelem, zelem);
+	 deallocator3(phixRface, xelem, yelem, zelem);
+	 deallocator3(phiyTface, xelem, yelem, zelem);
+	 deallocator3(phixTface, xelem, yelem, zelem);
+	 deallocator3(grad_phix, xelem, yelem, zelem);
+	 deallocator3(grad_phiy, xelem, yelem, zelem);
+	 deallocator3(phiRface, xelem, yelem, zelem);
+	 deallocator3(phiTface, xelem, yelem, zelem);
+	 deallocator3(del_scaling, xelem, yelem, zelem);
+	 deallocator3(delta, xelem, yelem, zelem);
+	 
     }
+    deallocator3(H, xelem, yelem, zelem);
 }
 
 #endif /* SURFACE_TENSION_H */

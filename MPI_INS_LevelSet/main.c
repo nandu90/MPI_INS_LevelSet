@@ -7,8 +7,8 @@
  */
 
 #define PI 3.1415926535897
-# include <stdlib.h>
-# include <math.h>
+#include <stdlib.h>
+#include <math.h>
 #include <time.h>
 #include <fenv.h>
 #include <stdio.h>
@@ -20,6 +20,7 @@
 #include <time.h>
 #include <omp.h>
 #include <mpi.h>
+#include <string.h>
 
 
 #include "common.h"
@@ -27,26 +28,24 @@
 
 
 //Include user generated header files. Must come after global variable decalaration
-#include "grid.h"
 #include "control.h"
-#include "output.h"
-#include "read_write.h"
-#include "bound_cond.h"
-#include "pressure_solver.h"
-#include "variable_pressure.h"
-#include "heavy_delta.h"
-#include "initial_conditions.h"
-#include "surface_tension.h"
-#include "body_force.h"
-#include "rhs.h"
-#include "functions.h"
-#include "rhs_bub.h"
-#include "bub_advect.h"
-#include "re_distance.h"
-#include "hyperbolic.h"
-//#include "fast_march.h"
-//#include "direct_redist.h"
-#include "calc_vf.h"
+#include "grid.h"
+//#include "output.h"
+//#include "read_write.h"
+//#include "bound_cond.h"
+//#include "pressure_solver.h"
+//#include "variable_pressure.h"
+//#include "heavy_delta.h"
+//#include "initial_conditions.h"
+//#include "surface_tension.h"
+//#include "body_force.h"
+//#include "rhs.h"
+//#include "functions.h"
+//#include "rhs_bub.h"
+//#include "bub_advect.h"
+//#include "re_distance.h"
+//#include "hyperbolic.h"
+//#include "calc_vf.h"
 
 
 
@@ -54,40 +53,55 @@ int main()
 {
     ///Catches mathematical exceptions
     //feenableexcept(FE_INVALID | FE_OVERFLOW |FE_DIVBYZERO);
- 
- 
-    mkdir((getexepath()+"/output").c_str(),S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
-    mkdir((getexepath()+"/laststep").c_str(),S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
 
+  //Create necessary ouput directories//
+  char* path;
+  path = concat(getexepath(), "/output");
+  mkdir(path, S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+  memset(path,0,strlen(path));
+  path = concat(getexepath(),"/laststep");
+  mkdir(path, S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+  free(path);
+  /////////////////////////////////////
+  
+    
     time_t t1,t2;
     t1 = time(0);
-    //********Read control file******/
+    //Read control file/
 
-    omp_set_num_threads(4);
+    omp_set_num_threads(1);
 
     control();
-
+    
 
     xelem=xelem+2; //Include 2 ghost cells
     yelem=yelem+2; //Include 2 ghost cells
     xnode=xelem+1; //Include 2 ghost nodes
     ynode=yelem+1; //Include 2 ghost nodes
-
-    ///*******Resize the vectors and initialize data structures*******//
-    allocator(x,xnode,ynode);
-    allocator(y,xnode,ynode);
+    
+    ///Resize the vectors and initialize data structures//
+    allocator(&x,xnode,ynode);
+    int i,j;
+    for(i=0; i<xnode; i++)
+      {
+	for(j=0; j<ynode; j++)
+	  {
+	    x[i][j] = 0.0;
+	  }
+      }
+    /*allocator(y,xnode,ynode);
 
     allocator(xc,xelem,yelem);
     allocator(yc,xelem,yelem);
     allocator(vol,xelem,yelem);
 
-    allocator3(area,xelem,yelem,2);
-
-    /*****Read grid and populate element and node vectors******/
+    //allocator4(area,xelem,yelem,2,2);
+    
+    //Read grid and populate element and node vectors/
     gridread();
 
-
-    /****Initialize solution vectors*****/
+    
+    //Initialize solution vectors/
     elemsclr sclr;
 
     allocator3(sclr.p,xelem,yelem,zelem);
@@ -99,12 +113,12 @@ int main()
 
     initialize(sclr);
 
-    /*Read from file is startstep != 0*/
+    //Read from file is startstep != 0/
     read(sclr);
 
     if(case_tog == 1)
     {
-    /*Velocity field for vortex*/
+      //Velocity field for vortex/
         for(int i=0; i<xelem; i++)
         {
             for(int j=0; j<yelem; j++)
@@ -116,7 +130,7 @@ int main()
     }
     else if(case_tog == 4)
     {
-    /*Velocity field for zalesak*/
+      //Velocity field for zalesak/
         for(int i=0; i<xelem; i++)
         {
             for(int j=0; j<yelem; j++)
@@ -184,8 +198,8 @@ int main()
 
             vel_BC(ustar, vstar);
 
-            ///****Calculate contribution from source term - Surface tension force
-            /**Note that surface tension force is calculated at the centre of cell at i,j (where p and phi are stored)*/
+            ///Calculate contribution from source term - Surface tension force
+            //Note that surface tension force is calculated at the centre of cell at i,j (where p and phi are stored)/
             double ***st_forcex;
 	  allocator3(st_forcex,xelem,yelem,zelem);
 	  double ***st_forcey;
@@ -237,7 +251,7 @@ int main()
 	  printf("Step: %d",iter+1);
 	   fprintf(out,"Step: %d\n",iter+1);
         }
-        /****Bubble Advection and re-distance solvers*****/
+        //Bubble Advection and re-distance solvers/
         if(advect_solve == 1)
         {
             bub_advect(sclr, iter, deltat);
@@ -269,7 +283,7 @@ int main()
         }
 
 
-        /*****Determine time step based on CFL*****/
+        /Determine time step based on CFL/
 
         if(time_control == 1)
         {
@@ -280,7 +294,7 @@ int main()
         }
 
 
-        /****Determine Void Fraction*****/
+        //Determine Void Fraction/
         double vf = 0.0;
         double err = 0.0;
         calc_vf(sclr.phi, init_vf, vf, err);
@@ -303,5 +317,14 @@ int main()
     fprintf("Total run time: %.6f secs\n",secs);
     fclose(out);
 
+    deallocator(x,xnode,ynode);
+    deallocator(y,xnode,ynode);
+
+    deallocator(xc,xelem,yelem);
+    deallocator(yc,xelem,yelem);
+    deallocator(vol,xelem,yelem);
+
+    deallocator4(area,xelem,yelem,2,2);
+*/
 }
 

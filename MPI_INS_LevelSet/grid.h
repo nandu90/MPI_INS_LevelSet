@@ -18,7 +18,7 @@ void gridread()
 {
     double deltax=xlen/(xelem-2);
     double deltay=ylen/(yelem-2);
-    
+
     //Assign coordinates
     for(int i=1; i<xnode-1; i++)
     {

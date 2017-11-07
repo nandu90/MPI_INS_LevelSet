@@ -60,7 +60,7 @@ void quick(double u1R, double u1L, double u1T, double u1B, double u2R, double u2
     }
 }
 
-void rhscalc(elemsclr &sclr, vector< vector<double> > &rhsx, vector< vector<double> > &rhsy, int iter, bool exitflag)
+void rhscalc(elemsclr &sclr, double **rhsx, double **rhsy, int iter, bool exitflag)
 {
 
 
@@ -69,8 +69,9 @@ void rhscalc(elemsclr &sclr, vector< vector<double> > &rhsx, vector< vector<doub
 
     //***Calculate contribution from advection
     //Note for index i,j the CV under consideration is the CV between i,j and i+1,j
-    vector< vector<double> > advx(xelem, vector<double>(yelem,0.0));
-    vector< vector<double> > advy(xelem, vector<double>(yelem,0.0));
+  double **advx, **advy;
+  allocator(advx, xelem, yelem);
+  allocator(advy, xelem, yelem);
 
     #pragma omp parallel for schedule(dynamic)
     for(int i=0; i<xelem-1; i++)
@@ -172,8 +173,9 @@ void rhscalc(elemsclr &sclr, vector< vector<double> > &rhsx, vector< vector<doub
 
 
     //***Calculate contribution from diffusion
-    vector< vector<double> > diffx(xelem, vector<double>(yelem,0.0));
-    vector< vector<double> > diffy(xelem, vector<double>(yelem,0.0));
+    double **diffx, **diffy;
+    allocator(diffx, xelem, yelem);
+    allocator(diffy, xelem, yelem);
     #pragma omp parallel for schedule(dynamic)
     for(int i=0; i<xelem-1; i++)
     {
@@ -277,6 +279,10 @@ void rhscalc(elemsclr &sclr, vector< vector<double> > &rhsx, vector< vector<doub
         }
     }
 
+    deallocate(diffx, xelem, yelem);
+    deallocate(diffy, xelem, yelem);
+    deallocate(advx, xelem, yelem);
+    deallocate(advy, xelem, yelem);
 }
 
 #endif /* RHS_H */
