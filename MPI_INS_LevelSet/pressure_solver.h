@@ -22,7 +22,7 @@ void pressure(double ***ustar, double ***vstar, double ***p, double deltat)
 
     /****Calculate the RHS of matrix****/
     double **b;
-    allocator(b, xelem, yelem);
+    allocator(&b, xelem, yelem);
     #pragma omp parallel for schedule(dynamic)
     for(int i=1; i<xelem-1; i++)
     {
@@ -36,7 +36,7 @@ void pressure(double ***ustar, double ***vstar, double ***p, double deltat)
     }
 
     double ***a;
-    allocator3(a, xelem, yelem, 5);
+    allocator3(&a, xelem, yelem, 5);
     #pragma omp parallel for schedule(dynamic)
     for(int i=1; i<xelem-1; i++)
     {
@@ -54,8 +54,8 @@ void pressure(double ***ustar, double ***vstar, double ***p, double deltat)
     //<<a[1][1][0]<<" "<<a[1][1][1]<<" "<<a[1][1][2]<<" "<<a[1][1][3]<<" "<<a[1][1][4]<<" "<<endl;
     //exit(0);
     gs_solver(a,b,p);
-    dealloactor3(a, xelem, yelem, 5);
-    deallocator(b, xelem, yelem);
+    deallocator3(&a, xelem, yelem, 5);
+    deallocator(&b, xelem, yelem);
 }
 
 #endif /* PRESSURE_SOLVER_H */

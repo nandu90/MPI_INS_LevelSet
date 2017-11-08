@@ -14,11 +14,11 @@
 #ifndef CALC_VF_H
 #define CALC_VF_H
 
-void calc_vf(double ***phi, double &init_vf, double &vf, double &err)
+void calc_vf(double ***phi, double *init_vf, double *vf, double *err)
 {
     double eps=epsilon*max(xlen/(xelem-2), ylen/(yelem-2));
     double ***H;
-    allocator3(H,xelem,yelem, zelem);
+    allocator3(&H,xelem,yelem, zelem);
     
     heavy_func(H,  phi, eps);
     
@@ -26,19 +26,19 @@ void calc_vf(double ***phi, double &init_vf, double &vf, double &err)
     {
         for(int j=1; j<yelem-1; j++)
         {
-            vf += (1.0 - H[i][j][0])*area[i][j][0][0]*area[i][j][1][1];
+	  (*vf) += (1.0 - H[i][j][0])*area[i][j][0][0]*area[i][j][1][1];
         }
     }
     
     double totvol = xlen*ylen;
-    vf = vf*100.0/totvol;
+    (*vf) = (*vf)*100.0/totvol;
     
-    if(init_vf == 0.0)
+    if((*init_vf) == 0.0)
     {
-        init_vf = vf;
+      (*init_vf) = (*vf);
     }
     
-    err = (vf - init_vf)*100.0/init_vf;
+    (*err) = ((*vf) - (*init_vf))*100.0/(*init_vf);
     
     
 }

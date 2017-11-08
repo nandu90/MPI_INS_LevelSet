@@ -17,16 +17,16 @@
 
 
 
-void bub_advect(elemsclr &sclr, int iter, double deltat)
+void bub_advect(struct elemsclr sclr, int iter, double deltat)
 {
 
 
     ///Interpolate velocity at cell edges to cell centers
   double ***ucen;
-  allocator3(ucen,xelem,yelem,zelem);
+  allocator3(&ucen,xelem,yelem,zelem);
 
   double ***vcen;
-  allocator3(ucen,xelem,yelem,zelem);
+  allocator3(&vcen,xelem,yelem,zelem);
   
     for(int i=1; i < xelem-1; i++)
     {
@@ -51,13 +51,13 @@ void bub_advect(elemsclr &sclr, int iter, double deltat)
 
     double **rhsx;
     double **rhsy;
-    allocate(rhsx, xelem, yelem);
-    allocate(rhsy, xelem, yelem);
+    allocator(&rhsx, xelem, yelem);
+    allocator(&rhsy, xelem, yelem);
     //Calculate the fluxes
     rhs_bub(rhsx, rhsy, ucen, vcen, sclr.phi);
 
     double ***phistar;
-    allocator3(phistar, xelem, yelem, zelem);
+    allocator3(&phistar, xelem, yelem, zelem);
     
     #pragma omp parallel for schedule(dynamic)
     for(int i=1; i<xelem-1; i++)
@@ -72,8 +72,8 @@ void bub_advect(elemsclr &sclr, int iter, double deltat)
 
     double **rhstarx;
     double **rhstary;
-    allocate(rhstarx, xelem, yelem);
-    allocate(rhstary, xelem, yelem);
+    allocator(&rhstarx, xelem, yelem);
+    allocator(&rhstary, xelem, yelem);
     //Calculate the star fluxes
     rhs_bub(rhstarx, rhstary, ucen, vcen, phistar);
     #pragma omp parallel for schedule(dynamic)
@@ -89,7 +89,14 @@ void bub_advect(elemsclr &sclr, int iter, double deltat)
 
     level_setBC(sclr.phi);
 
-
+    deallocator(&rhstarx, xelem, yelem);
+    deallocator(&rhstary, xelem, yelem);
+    deallocator3(&phistar, xelem, yelem, zelem);
+    deallocator(&rhsx, xelem, yelem);
+    deallocator(&rhsy, xelem, yelem);
+    deallocator3(&ucen,xelem,yelem,zelem);
+    deallocator3(&vcen,xelem,yelem,zelem);
+    
 }
 
 #endif /* BUB_ADVECT_H */

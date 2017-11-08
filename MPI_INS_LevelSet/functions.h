@@ -14,7 +14,7 @@
 #ifndef FUNCTIONS_H
 #define FUNCTIONS_H
 
-void calcp(elemsclr &sclr)
+void calcp(struct elemsclr sclr)
 {
     for(int i=0; i<xelem; i++)
     {
@@ -41,7 +41,7 @@ void calcp(elemsclr &sclr)
     }*/
 }
 
-void monitor_res(double *ires, bool &exitflag, int iter, elemsclr sclr, double ***utemp,  double ***vtemp)
+void monitor_res(double *ires, bool *exitflag, int iter, struct elemsclr sclr, double ***utemp,  double ***vtemp)
 {
   double res[3];
   for (int i=0; i<3; i++)
@@ -78,17 +78,17 @@ void monitor_res(double *ires, bool &exitflag, int iter, elemsclr sclr, double *
         
         if(res[0]/ires[0] < tol && res[1]/ires[1] <  tol)
         {
-            exitflag=true;
+            *exitflag=true;
         }
     }
     
 }
 
 
-void timestep_calc(elemsclr &sclr, double &deltat, double &cfl)
+void timestep_calc(struct elemsclr sclr, double *deltat, double *cfl)
 {
     /*****Find the existing maximum cfl of the domain***/
-    cfl=0.0;
+    *cfl=0.0;
     int reqi, reqj;
     for(int i=1; i<xelem-1; i++)
     {
@@ -101,18 +101,18 @@ void timestep_calc(elemsclr &sclr, double &deltat, double &cfl)
             surf_int = surf_int + area[i][j][1][1]* (fabs(sclr.v[i][j][0] - sclr.v[i][j-1][0]));*/
             
             double temp_cfl = 0.0;
-            if(cfl == 0.0)
+            if(*cfl == 0.0)
             {
-                cfl = surf_int*deltat/(area[i][j][0][0]*area[i][j][1][1]);
+	      *cfl = surf_int*(*deltat)/(area[i][j][0][0]*area[i][j][1][1]);
                 reqi = i;
                 reqj = j;
             }
             else
             {
-                double temp_cfl = surf_int*deltat/(area[i][j][0][0]*area[i][j][1][1]);
-                if(temp_cfl > cfl)
+	      double temp_cfl = surf_int*(*deltat)/(area[i][j][0][0]*area[i][j][1][1]);
+                if(temp_cfl > *cfl)
                 {
-                    cfl = temp_cfl;
+                    *cfl = temp_cfl;
                     reqi = i;
                     reqj = j;
                 }
@@ -122,13 +122,13 @@ void timestep_calc(elemsclr &sclr, double &deltat, double &cfl)
     
     
     
-    if(cfl < max_cfl)
+    if(*cfl < max_cfl)
     {
-        cfl = cfl + 0.01*(max_cfl - cfl);
+        *cfl = *cfl + 0.01*(max_cfl - *cfl);
     }
     else
     {
-        cfl = max_cfl;
+        *cfl = max_cfl;
     }
     
     double surf_int = area[reqi][reqj][0][0]* (fabs(sclr.u[reqi][reqj][0]) + fabs(sclr.u[reqi-1][reqj][0]));
@@ -137,7 +137,7 @@ void timestep_calc(elemsclr &sclr, double &deltat, double &cfl)
     /*double surf_int = area[reqi][reqj][0][0]* (fabs(sclr.u[reqi][reqj][0] - sclr.u[reqi-1][reqj][0]));
     surf_int = surf_int + area[reqi][reqj][1][1]* (fabs(sclr.v[reqi][reqj][0] - sclr.v[reqi][reqj-1][0]));*/
     
-    deltat = cfl * area[reqi][reqj][0][0]*area[reqi][reqj][1][1]/surf_int;
+    *deltat = *cfl * area[reqi][reqj][0][0]*area[reqi][reqj][1][1]/surf_int;
     
     //deltat = advect_deltat;
     

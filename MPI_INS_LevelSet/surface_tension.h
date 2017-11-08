@@ -14,14 +14,14 @@
 #ifndef SURFACE_TENSION_H
 #define SURFACE_TENSION_H
 
-void surface(elemsclr &sclr, double ***st_forcex, double ***st_forcey)
+void surface(struct elemsclr sclr, double ***st_forcex, double ***st_forcey)
 {
     /**Compute eps based on grid size*/
     double eps = epsilon*max(xlen/(xelem-2), ylen/(yelem-2));
     
     /**Compute Heavyside function**/
     double ***H;
-    allocator3(H, xelem, yelem, zelem);
+    allocator3(&H, xelem, yelem, zelem);
     
     heavy_func(H, sclr.phi, eps);
     
@@ -33,7 +33,7 @@ void surface(elemsclr &sclr, double ***st_forcex, double ***st_forcey)
     if(sf_toggle == 1)
     {
       double ***delta;
-      allocator3(delta, xelem, yelem, zelem);
+      allocator3(&delta, xelem, yelem, zelem);
         for(int i=1; i<xelem-1; i++)
         {
             for(int j=1; j<yelem-1; j++)
@@ -53,7 +53,7 @@ void surface(elemsclr &sclr, double ***st_forcex, double ***st_forcey)
         }
         //exit(0);
 	double ***del_scaling;
-	allocator3(del_scaling, xelem, yelem, zelem);
+	allocator3(&del_scaling, xelem, yelem, zelem);
 
          //This is equivalent to marker function
          for(int i=1 ; i<xelem-1; i++)
@@ -72,10 +72,10 @@ void surface(elemsclr &sclr, double ***st_forcex, double ***st_forcey)
 	 double ***grad_phiy;
 	 double ***phiRface;
 	 double ***phiTface;
-	 allocator3(phiRface, xelem, yelem, zelem);
-	 allocator3(phiTface, xelem, yelem, zelem);
-	 allocator3(grad_phiy, xelem, yelem, zelem);
-	 allocator3(grad_phix, xelem, yelem, zelem);
+	 allocator3(&phiRface, xelem, yelem, zelem);
+	 allocator3(&phiTface, xelem, yelem, zelem);
+	 allocator3(&grad_phiy, xelem, yelem, zelem);
+	 allocator3(&grad_phix, xelem, yelem, zelem);
          for(int i=0; i<xelem-1; i++)
          {
              for(int j=0; j<yelem-1; j++)
@@ -109,12 +109,12 @@ void surface(elemsclr &sclr, double ***st_forcex, double ***st_forcey)
 	 double ***phixRface;
 	 double ***phiyTface;
 	 double ***phixTface;
-	 allocator3(grad_phixx, xelem, yelem, zelem);
-	 allocator3(grad_phixy, xelem, yelem, zelem);
-	 allocator3(grad_phiyy, xelem, yelem, zelem);
-	 allocator3(phixRface, xelem, yelem, zelem);
-	 allocator3(phiyTface, xelem, yelem, zelem);
-	 allocator3(phixTface, xelem, yelem, zelem);
+	 allocator3(&grad_phixx, xelem, yelem, zelem);
+	 allocator3(&grad_phixy, xelem, yelem, zelem);
+	 allocator3(&grad_phiyy, xelem, yelem, zelem);
+	 allocator3(&phixRface, xelem, yelem, zelem);
+	 allocator3(&phiyTface, xelem, yelem, zelem);
+	 allocator3(&phixTface, xelem, yelem, zelem);
 
          for(int i=0; i<xelem - 1; i++)
          {
@@ -136,7 +136,7 @@ void surface(elemsclr &sclr, double ***st_forcex, double ***st_forcey)
              }
          }
 	 double ***curvature;
-	 allocator3(curvature, xelem, yelem, zelem);
+	 allocator3(&curvature, xelem, yelem, zelem);
 
 
          for(int j=1; j<yelem-1; j++)
@@ -170,22 +170,22 @@ void surface(elemsclr &sclr, double ***st_forcex, double ***st_forcey)
          grad_level_setBC(st_forcex);
          grad_level_setBC(st_forcey);
 
-	 deallocator3(curvature, xelem, yelem, zelem);
-	 deallocator3(grad_phixx, xelem, yelem, zelem);
-	 deallocator3(grad_phixy, xelem, yelem, zelem);
-	 deallocator3(grad_phiyy, xelem, yelem, zelem);
-	 deallocator3(phixRface, xelem, yelem, zelem);
-	 deallocator3(phiyTface, xelem, yelem, zelem);
-	 deallocator3(phixTface, xelem, yelem, zelem);
-	 deallocator3(grad_phix, xelem, yelem, zelem);
-	 deallocator3(grad_phiy, xelem, yelem, zelem);
-	 deallocator3(phiRface, xelem, yelem, zelem);
-	 deallocator3(phiTface, xelem, yelem, zelem);
-	 deallocator3(del_scaling, xelem, yelem, zelem);
-	 deallocator3(delta, xelem, yelem, zelem);
+	 deallocator3(&curvature, xelem, yelem, zelem);
+	 deallocator3(&grad_phixx, xelem, yelem, zelem);
+	 deallocator3(&grad_phixy, xelem, yelem, zelem);
+	 deallocator3(&grad_phiyy, xelem, yelem, zelem);
+	 deallocator3(&phixRface, xelem, yelem, zelem);
+	 deallocator3(&phiyTface, xelem, yelem, zelem);
+	 deallocator3(&phixTface, xelem, yelem, zelem);
+	 deallocator3(&grad_phix, xelem, yelem, zelem);
+	 deallocator3(&grad_phiy, xelem, yelem, zelem);
+	 deallocator3(&phiRface, xelem, yelem, zelem);
+	 deallocator3(&phiTface, xelem, yelem, zelem);
+	 deallocator3(&del_scaling, xelem, yelem, zelem);
+	 deallocator3(&delta, xelem, yelem, zelem);
 	 
     }
-    deallocator3(H, xelem, yelem, zelem);
+    deallocator3(&H, xelem, yelem, zelem);
 }
 
 #endif /* SURFACE_TENSION_H */

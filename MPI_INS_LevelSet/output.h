@@ -14,7 +14,7 @@
 #ifndef OUTPUT_H
 #define OUTPUT_H
 
-void output(elemsclr sclr,int iter)
+void output(struct elemsclr sclr,int iter)
 {
 
     double sum=0;
@@ -79,16 +79,24 @@ void output(elemsclr sclr,int iter)
 
     printf("2-norm of Error = %.6f\n",error);
     //<<"2-Norm of Error  = "<<error<<endl;
-    printf("Overall Order = %.6f\n",-log10(fabs(error));
+    printf("Overall Order = %.6f\n",-log10(fabs(error)));
 	   //<<"Overall Order = "<<-log10(fabs(error))<<endl;
     //output2.close();
 }
 
 
 
-void output_vtk(elemsclr &sclr,int iter)//, 
+void output_vtk(struct elemsclr sclr,int iter)//, 
 {
-  FILE *out = fopen(getexepath()+"/output/out_00"+inttostr(iter)+".vts","w");
+  char* path;
+  char buffer[12];
+  path = concat(getexepath(), "/output/out_00");
+  snprintf(buffer,12,"%d",iter);
+  path = concat(path,buffer);
+  path = concat(path,".vts");
+  
+  FILE *out = fopen(path,"w");
+  free(path);
    if(out == NULL)
       {
 	printf("Error opening output.dat!\n");

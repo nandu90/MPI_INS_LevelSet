@@ -318,6 +318,8 @@ void control()
      }
     fclose(controlfile);
 
+    free(word);
+    free(line);
     // printf("%d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d\n",xelem, yelem, zelem, advect_steps, solnread, bub_conv_scheme, print_gap, startstep, sf_toggle, flow_solve, p_solver, x_bound, y_bound, advect_solve, sol_type, vf_control, time_control, redist_method, case_tog);
 
     //printf("%f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f",nu, cfl, tol, xlen, ylen, zlen, rb_in, xb_in, yb_in, advect_deltat, rhof, rhog, muf, mug, epsilon, sf_coeff, relax, ptol, re_time, re_loops, gx, gy, max_cfl);

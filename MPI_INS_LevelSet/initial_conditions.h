@@ -170,7 +170,7 @@ void initialize_phi(double ***phi)
 }
 
 
-void initialize(elemsclr &sclr)
+void initialize(struct elemsclr sclr)
 {
     //calcp(sclr); //For the simple advection case
     //pressureBC(sclr.p);
@@ -181,7 +181,7 @@ void initialize(elemsclr &sclr)
     double eps = epsilon*max(xlen/(xelem-2), ylen/(yelem-2));
 
     double ***H;
-    allocator3(H, xelem, yelem, zelem);
+    allocator3(&H, xelem, yelem, zelem);
 
     heavy_func(H, sclr.phi, eps);
 
@@ -251,7 +251,7 @@ void initialize(elemsclr &sclr)
     level_setBC(sclr.mu);
 
 
-    deallocator3(H, xelem, yelem, zelem);
+    deallocator3(&H, xelem, yelem, zelem);
 
 }
 #endif /* INITIAL_CONDITIONS_H */

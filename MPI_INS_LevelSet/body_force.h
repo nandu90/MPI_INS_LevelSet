@@ -14,14 +14,14 @@
 #ifndef BODY_FORCE_H
 #define BODY_FORCE_H
 
-void body(elemsclr &sclr, double ***st_forcex, double ***st_forcey)
+void body(struct elemsclr sclr, double ***st_forcex, double ***st_forcey)
 {
      /**Compute eps based on grid size*/
     double eps = epsilon*max(xlen/(xelem-2), ylen/(yelem-2));
     
     /**Compute Heavyside function**/
     double ***H;
-    allocator3(H,xelem,yelem,zelem);
+    allocator3(&H,xelem,yelem,zelem);
     
     heavy_func(H, sclr.phi, eps);
     double line = 2.5*2.0*rb_in;
@@ -35,6 +35,7 @@ void body(elemsclr &sclr, double ***st_forcex, double ***st_forcey)
             
         }
     }
+    deallocator3(&H,xelem,yelem,zelem);
 }
 
 #endif /* BODY_FORCE_H */

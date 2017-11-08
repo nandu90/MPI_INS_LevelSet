@@ -21,6 +21,7 @@
 #include <omp.h>
 #include <mpi.h>
 #include <string.h>
+#include <stdbool.h>
 
 
 #include "common.h"
@@ -30,22 +31,22 @@
 //Include user generated header files. Must come after global variable decalaration
 #include "control.h"
 #include "grid.h"
-//#include "output.h"
-//#include "read_write.h"
-//#include "bound_cond.h"
-//#include "pressure_solver.h"
-//#include "variable_pressure.h"
-//#include "heavy_delta.h"
-//#include "initial_conditions.h"
-//#include "surface_tension.h"
-//#include "body_force.h"
-//#include "rhs.h"
-//#include "functions.h"
-//#include "rhs_bub.h"
-//#include "bub_advect.h"
-//#include "re_distance.h"
-//#include "hyperbolic.h"
-//#include "calc_vf.h"
+#include "output.h"
+#include "read_write.h"
+#include "bound_cond.h"
+#include "pressure_solver.h"
+#include "variable_pressure.h"
+#include "heavy_delta.h"
+#include "initial_conditions.h"
+#include "surface_tension.h"
+#include "body_force.h"
+#include "rhs.h"
+#include "functions.h"
+#include "rhs_bub.h"
+#include "bub_advect.h"
+#include "re_distance.h"
+#include "hyperbolic.h"
+#include "calc_vf.h"
 
 
 
@@ -81,41 +82,33 @@ int main()
     
     ///Resize the vectors and initialize data structures//
     allocator(&x,xnode,ynode);
-    int i,j;
-    for(i=0; i<xnode; i++)
-      {
-	for(j=0; j<ynode; j++)
-	  {
-	    x[i][j] = 0.0;
-	  }
-      }
-    /*allocator(y,xnode,ynode);
+    allocator(&y,xnode,ynode);
 
-    allocator(xc,xelem,yelem);
-    allocator(yc,xelem,yelem);
-    allocator(vol,xelem,yelem);
-
-    //allocator4(area,xelem,yelem,2,2);
+    allocator(&xc,xelem,yelem);
+    allocator(&yc,xelem,yelem);
+    allocator(&vol,xelem,yelem);
+    
+    allocator4(&area,xelem,yelem,2,2);
     
     //Read grid and populate element and node vectors/
     gridread();
 
     
     //Initialize solution vectors/
-    elemsclr sclr;
-
-    allocator3(sclr.p,xelem,yelem,zelem);
-    allocator3(sclr.u,xelem,yelem,zelem);
-    allocator3(sclr.v,xelem,yelem,zelem);
-    allocator3(sclr.phi,xelem,yelem,zelem);
-    allocator3(sclr.rho,xelem,yelem,zelem);
-    allocator3(sclr.mu,xelem,yelem,zelem);
-
+    struct elemsclr sclr;
+    
+    allocator3(&sclr.p,xelem,yelem,zelem);
+    allocator3(&sclr.u,xelem,yelem,zelem);
+    allocator3(&sclr.v,xelem,yelem,zelem);
+    allocator3(&sclr.phi,xelem,yelem,zelem);
+    allocator3(&sclr.rho,xelem,yelem,zelem);
+    allocator3(&sclr.mu,xelem,yelem,zelem);
+    
     initialize(sclr);
-
+    
     //Read from file is startstep != 0/
-    read(sclr);
-
+    prevfileread(sclr);
+    
     if(case_tog == 1)
     {
       //Velocity field for vortex/
@@ -142,7 +135,7 @@ int main()
     }
 
     //fast_march(sclr);
-
+    
     double *ires = (double *) malloc(3 * sizeof(double));
     bool exitflag = false;
     int iter;
@@ -157,16 +150,16 @@ int main()
 	exit(0);
       }
 
-
+    
     for(iter=startstep; iter<itermax; iter++)
     {
 
         if(flow_solve == 1)
         {
 	  double ***utemp;
-	  allocator3(utemp,xelem,yelem,zelem);
+	  allocator3(&utemp,xelem,yelem,zelem);
 	  double ***vtemp;
-	  allocator3(vtemp,xelem,yelem,zelem);
+	  allocator3(&vtemp,xelem,yelem,zelem);
 	  
             for(int i=1;i<xelem-1;i++)
             {
@@ -177,14 +170,14 @@ int main()
                 }
             }
 	    double **rhsx, **rhsy;
-	    allocator(rhsx,xelem,yelem);
-	    allocator(rhsy,xelem,yelem);
+	    allocator(&rhsx,xelem,yelem);
+	    allocator(&rhsy,xelem,yelem);
             rhscalc(sclr, rhsx, rhsy, iter, exitflag);
 
            double ***ustar;
-	  allocator3(ustar,xelem,yelem,zelem);
+	  allocator3(&ustar,xelem,yelem,zelem);
 	  double ***vstar;
-	  allocator3(vstar,xelem,yelem,zelem);
+	  allocator3(&vstar,xelem,yelem,zelem);
             //Predictor Step
             #pragma omp parallel for schedule(dynamic)
             for(int i=1; i<xelem-1; i++)
@@ -201,9 +194,9 @@ int main()
             ///Calculate contribution from source term - Surface tension force
             //Note that surface tension force is calculated at the centre of cell at i,j (where p and phi are stored)/
             double ***st_forcex;
-	  allocator3(st_forcex,xelem,yelem,zelem);
+	  allocator3(&st_forcex,xelem,yelem,zelem);
 	  double ***st_forcey;
-	  allocator3(st_forcey,xelem,yelem,zelem);
+	  allocator3(&st_forcey,xelem,yelem,zelem);
 
 
             surface(sclr,st_forcex, st_forcey);
@@ -238,13 +231,23 @@ int main()
 	    fprintf(out,"Step: %d\n",iter+1);
             if(exitflag == false && sol_type == 0)
             {
-                monitor_res(ires, exitflag, iter, sclr,utemp,vtemp);
+                monitor_res(ires, &exitflag, iter, sclr,utemp,vtemp);
             }
             if(exitflag == true && sol_type == 0)
             {
 	      printf("Flow solution converged\n");
                 break;
             }
+
+	    deallocator3(&utemp,xelem,yelem,zelem);
+	    deallocator3(&vtemp,xelem,yelem,zelem);
+	    deallocator3(&ustar,xelem,yelem,zelem);
+	    deallocator3(&vstar,xelem,yelem,zelem);
+	    deallocator3(&st_forcex,xelem,yelem,zelem);
+	    deallocator3(&st_forcey,xelem,yelem,zelem);
+	    deallocator(&rhsx,xelem,yelem);
+	    deallocator(&rhsy,xelem,yelem);
+	    
         }
         if(flow_solve == 0)
         {
@@ -262,12 +265,16 @@ int main()
             }
             else if(redist_method == 2)
             {
-                fast_march(sclr);
+	      printf("Fast March not present. Use hyperbolic\n");
+	      exit(1);
+	      //fast_march(sclr);
             }
 
             else if(redist_method == 3)
             {
-                direct_redist(sclr);
+	      printf("direct re-distance not present. Use hyperbolic\n");
+	      exit(1);
+	      //direct_redist(sclr);
             }
 
         }
@@ -283,12 +290,12 @@ int main()
         }
 
 
-        /Determine time step based on CFL/
+        //Determine time step based on CFL/
 
         if(time_control == 1)
         {
             double cfl;
-            timestep_calc(sclr, deltat, cfl);
+            timestep_calc(sclr, &deltat, &cfl);
 	    printf("CFL number: %.6f time step: %.6f\n",cfl,deltat);
 	    fprintf(out,"CFL number: %.6f time step: %.6f\n",cfl,deltat);
         }
@@ -297,34 +304,45 @@ int main()
         //Determine Void Fraction/
         double vf = 0.0;
         double err = 0.0;
-        calc_vf(sclr.phi, init_vf, vf, err);
-	printf("Void Fraction: %.6f\% Error in vf: %.6f\%\n\n",vf ,err);
-	fprintf(out,"Void Fraction: %.6f\% Error in vf: %.6f\%\n\n",vf ,err);
+        calc_vf(sclr.phi, &init_vf, &vf, &err);
+	printf("Void Fraction: %.6f%% Error in vf: %.6f%%\n\n",vf ,err);
+	fprintf(out,"Void Fraction: %.6f%% Error in vf: %.6f%%\n\n",vf ,err);
 
         printf("\n");
 	fprintf(out,"\n");
+    
     }
 
 
-
+    
     output_vtk(sclr,iter);
-    write(sclr);
+    
 
 
     t2 = time(0);
-    double seconds = difftime(t2,t1);
+    double secs = difftime(t2,t1);
     printf("Total run time: %.6f secs\n",secs);
-    fprintf("Total run time: %.6f secs\n",secs);
+    fprintf(out,"Total run time: %.6f secs\n",secs);
     fclose(out);
+    
+    free(ires);
+    filewrite(sclr);
 
-    deallocator(x,xnode,ynode);
-    deallocator(y,xnode,ynode);
+    deallocator3(&sclr.p,xelem,yelem,zelem);
+    deallocator3(&sclr.u,xelem,yelem,zelem);
+    deallocator3(&sclr.v,xelem,yelem,zelem);
+    deallocator3(&sclr.phi,xelem,yelem,zelem);
+    deallocator3(&sclr.rho,xelem,yelem,zelem);
+    deallocator3(&sclr.mu,xelem,yelem,zelem);
+    
+    deallocator(&x,xnode,ynode);
+    deallocator(&y,xnode,ynode);
 
-    deallocator(xc,xelem,yelem);
-    deallocator(yc,xelem,yelem);
-    deallocator(vol,xelem,yelem);
+    deallocator(&xc,xelem,yelem);
+    deallocator(&yc,xelem,yelem);
+    deallocator(&vol,xelem,yelem);
 
-    deallocator4(area,xelem,yelem,2,2);
-*/
+    deallocator4(&area,xelem,yelem,2,2);
+
 }
 

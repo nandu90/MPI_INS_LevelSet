@@ -144,8 +144,8 @@ void rhs_bub(double **rhsx, double **rhsy, double ***ucen, double ***vcen, doubl
 {
     /*First of, find the value of phi at cell edges and store it*/
   double **gradx, **grady;
-  allocator(gradx, xelem, yelem);
-  allocator(grady, xelem, yelem);
+  allocator(&gradx, xelem, yelem);
+  allocator(&grady, xelem, yelem);
     #pragma omp parallel for schedule(dynamic)
     for (int i=0; i < xelem-1; i++)
     {
@@ -374,8 +374,8 @@ void rhs_bub(double **rhsx, double **rhsy, double ***ucen, double ***vcen, doubl
         }
         //exit(0);
     }
-    deallocator(gradx, xelem, yelem);
-    deallocator(grady, xelem, yelem);
+    deallocator(&gradx, xelem, yelem);
+    deallocator(&grady, xelem, yelem);
 }
 
 #endif /* RHS_BUB_H */

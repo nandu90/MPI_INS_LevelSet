@@ -80,12 +80,12 @@ void delta_func(double ***delta, double ***phi, double eps)
 void grad_func(double ***grad_phi, double ***phi)
 {
   double ***grad_phix, ***grad_phiy;
-  allocate(grad_phix, xelem, yelem, zelem);
-  allocate(grad_phiy, xelem, yelem, zelem);
+  allocator3(&grad_phix, xelem, yelem, zelem);
+  allocator3(&grad_phiy, xelem, yelem, zelem);
 
   double ***phiRface, ***phiTface;
-  allocate(phiRface, xelem, yelem, zelem);
-  allocate(phiTface, xelem, yelem, zelem);
+  allocator3(&phiRface, xelem, yelem, zelem);
+  allocator3(&phiTface, xelem, yelem, zelem);
      for(int i=0; i<xelem-1; i++)
      {
          for(int j=0; j<yelem-1; j++)
@@ -120,10 +120,10 @@ void grad_func(double ***grad_phi, double ***phi)
          }
      }
 
-     deallocator3(grad_phix, xelem, yelem, zelem);
-     deallocator3(grad_phiy, xelem, yelem, zelem);
-     deallocator3(phiRface, xelem, yelem, zelem);
-     deallocator3(phiTface, xelem, yelem, zelem);
+     deallocator3(&grad_phix, xelem, yelem, zelem);
+     deallocator3(&grad_phiy, xelem, yelem, zelem);
+     deallocator3(&phiRface, xelem, yelem, zelem);
+     deallocator3(&phiTface, xelem, yelem, zelem);
 }
 
 

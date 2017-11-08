@@ -95,10 +95,6 @@ char* concat(char s1[], char s2[])
 
 
 
-
-
-
-
 struct elemsclr
 {
   double ***p;
@@ -113,91 +109,122 @@ void allocator(double ***p, int x, int y)
 {
   int i,j;
   *p = (double **)malloc(x * sizeof(double *));
-  for(i=0; i<x; i++);
+  for(i=0; i<x; i++)
   {
     (*p)[i] =  (double *)malloc(y * sizeof(double));
   }
 
-  /*printf("%d %d", x, y);
+    for(i=0; i<x; i++)
+    {
+      for(j=0; j<y; j++)
+	{
+	  (*p)[i][j] = 0.0;
+	}
+    }	
+}
+
+void allocator3(double ****p, int x, int y, int z)
+{
+  int i,j,k;
+  *p = (double ***)malloc(x * sizeof(double **));
+  for(i=0; i<x; i++)
+  {
+    (*p)[i] =  (double **)malloc(y * sizeof(double *));
+    for(j=0; j<y; j++)
+      {
+	(*p)[i][j] = (double *)malloc(z * sizeof(double));
+      }
+  }
+
   for(i=0; i<x; i++)
     {
       for(j=0; j<y; j++)
 	{
-	  p[i][j] = 0.0;
+	  for(k=0; k<z; k++)
+	    {
+	      (*p)[i][j][k] = 0.0;
+	    }
 	}
-	}*/	
-}
-
-void allocator3(double ***p, int x, int y, int z)
-{
-  int i,j;
-  p = (double ***)malloc(x * sizeof(double **));
-  for(i=0; i<x; i++)
-  {
-    p[i] =  (double **)malloc(y * sizeof(double *));
-    for(j=0; j<y; j++)
-      {
-	p[i][j] = (double *)malloc(z * sizeof(double));
-      }
-  }
+    }
 
 }
 
-void allocator4(double ****p, int x, int y, int z, int w)
+void allocator4(double *****p, int x, int y, int z, int w)
 {
-  int i,j,k;
-  p = (double ****)malloc(x * sizeof(double ***));
+  int i,j,k,l;
+  *p = (double ****)malloc(x * sizeof(double ***));
   for(i=0; i<x; i++)
   {
-    p[i] =  (double ***)malloc(y * sizeof(double **));
+    (*p)[i] =  (double ***)malloc(y * sizeof(double **));
     for(j=0; j<y; j++)
       {
-	p[i][j] = (double **)malloc(z * sizeof(double *));
+	(*p)[i][j] = (double **)malloc(z * sizeof(double *));
 	for(k=0; k<z; k++)
 	  {
-	    p[i][j][k] = (double *) malloc(w * sizeof(double));
+	    (*p)[i][j][k] = (double *) malloc(w * sizeof(double));
 	  }
       }
   }
 
+  for(i=0; i<x; i++)
+    {
+      for(j=0; j<y; j++)
+	{
+	  for(k=0; k<z; k++)
+	    {
+	      for(l=0; l<w; l++)
+		{
+		  (*p)[i][j][k][l] = 0.0;
+		}
+	    }
+	}
+    }
+
 }
 
-void iallocator(int **p, int x, int y)
+void iallocator(int ***p, int x, int y)
 {
-  int i;
-  p = (int **)malloc(x * sizeof(int *));
+  int i,j;
+  (*p) = (int **)malloc(x * sizeof(int *));
   for(i=0; i<x; i++)
   {
-    p[i] =  (int *)malloc(y * sizeof(int));
+    (*p)[i] =  (int *)malloc(y * sizeof(int));
   }
 
+  for(i=0; i<x; i++)
+    {
+      for(j=0; j<y; j++)
+	{
+	  (*p)[i][j] = 0;
+	}
+    }
 }
 
-void deallocator(double **p, int x, int y)
+void deallocator(double ***p, int x, int y)
 {
   int i;
   for (i=0; i<x; i++)
     {
-      free(p[i]);
+      free((*p)[i]);
     }
-  free(p);
+  free(*p);
 }
 
-void deallocator3(double ***p, int x, int y, int z)
+void deallocator3(double ****p, int x, int y, int z)
 {
   int i,j;
   for(i=0; i<x; i++)
     {
       for(j=0; j<y; j++)
 	{
-	  free(p[i][j]);
+	  free((*p)[i][j]);
 	}
-      free(p[i]);
+      free((*p)[i]);
     }
-  free(p);
+  free(*p);
 }
 
-void deallocator4(double ****p, int x, int y, int z, int w)
+void deallocator4(double *****p, int x, int y, int z, int w)
 {
   int i,j,k;
   for(i=0; i<x; i++)
@@ -206,26 +233,48 @@ void deallocator4(double ****p, int x, int y, int z, int w)
 	{
 	  for(k=0; k<z; k++)
 	    {
-	      free(p[i][j][k]);
+	      free((*p)[i][j][k]);
 	    }
-	  free(p[i][j]);
+	  free((*p)[i][j]);
 	}
-      free(p[i]);
+      free((*p)[i]);
     }
-  free(p);
+  free(*p);
 }
 
-void ideallocator(int **p, int x, int y)
+void ideallocator(int ***p, int x, int y)
 {
   int i;
   for (i=0; i<x; i++)
     {
-      free(p[i]);
+      free((*p)[i]);
     }
-  free(p);
+  free(*p);
 }
 
+double max(double a, double b)
+{
+  if(a > b)
+    {
+      return a;
+    }
+  else
+    {
+      return b;
+    }
+}
 
+double min(double a, double b)
+{
+  if(a > b)
+    {
+      return b;
+    }
+  else
+    {
+      return a;
+    }
+}
 
 #endif /* COMMON_H */
 

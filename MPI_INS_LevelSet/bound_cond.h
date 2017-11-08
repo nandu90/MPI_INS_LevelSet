@@ -14,10 +14,11 @@
 #ifndef BOUND_COND_H
 #define BOUND_COND_H
 
-void imposeBC(elemsclr &sclr)
+void imposeBC(struct elemsclr sclr)
 {
     //Wall BC
-    for(int i=0; i<xelem; i++)
+  int i,j;
+    for( i=0; i<xelem; i++)
     {
         sclr.u[i][0][0] = -sclr.u[i][1][0];
         sclr.u[i][yelem-1][0]= -sclr.u[i][yelem-2][0];
@@ -28,7 +29,7 @@ void imposeBC(elemsclr &sclr)
     }
     
     //Periodic BC
-    for(int j=0; j<yelem; j++)
+    for( j=0; j<yelem; j++)
     {
         sclr.u[0][j][0] = sclr.u[xelem-2][j][0];
         sclr.u[xelem-1][j][0] = sclr.u[1][j][0];
@@ -40,8 +41,9 @@ void imposeBC(elemsclr &sclr)
 
 void periodicBC(double ***scalar)
 {
+  int j;
     //Periodic BC
-    for(int j=0; j<yelem; j++)
+    for( j=0; j<yelem; j++)
     {
         scalar[0][j][0] = scalar[xelem-2][j][0];
         scalar[xelem-1][j][0] = scalar[1][j][0];
@@ -50,8 +52,9 @@ void periodicBC(double ***scalar)
 
 void wallBC(double ***scalar)
 {
+  int i;
     //Wall BC
-    for(int i=0; i<xelem; i++)
+    for( i=0; i<xelem; i++)
     {
         scalar[i][0][0] = -scalar[i][1][0];
         scalar[i][yelem-1][0]= -scalar[i][yelem-2][0];
@@ -61,8 +64,9 @@ void wallBC(double ***scalar)
 
 void walluBC(double ***scalar)
 {
+  int i;
     //Wall BC
-    for(int i=0; i<xelem; i++)
+    for( i=0; i<xelem; i++)
     {
         scalar[i][0][0] = -scalar[i][1][0];
         scalar[i][yelem-1][0]= -scalar[i][yelem-2][0];
@@ -73,8 +77,9 @@ void walluBC(double ***scalar)
 
 void wallvBC(double ***scalar)
 {
+  int i;
     //Wall BC
-    for(int i=0; i<xelem; i++)
+    for( i=0; i<xelem; i++)
     {
         scalar[i][0][0] = 0.0;
         scalar[i][yelem-1][0]= 0.0;
@@ -86,7 +91,8 @@ void wallvBC(double ***scalar)
 
 void zerogradBC(double ***scalar)
 {
-    for(int i=0; i<xelem; i++)
+  int i;
+    for( i=0; i<xelem; i++)
     {
         scalar[i][0][0] = scalar[i][1][0];
         scalar[i][yelem-1][0]= scalar[i][yelem-2][0];
@@ -96,7 +102,8 @@ void zerogradBC(double ***scalar)
 
 void gradBC(double ***scalar)
 {
-    for(int i=0; i<xelem; i++)
+  int i,j;
+    for( i=0; i<xelem; i++)
     {
         scalar[i][0][0] = 0.0;
         scalar[i][yelem-1][0]= 0.0;
@@ -106,8 +113,9 @@ void gradBC(double ***scalar)
 
 void bothscalarBC(double ***scalar)
 {
+  int i,j;
     //Wall BC
-    for(int i=0; i<xelem; i++)
+    for( i=0; i<xelem; i++)
     {
         scalar[i][0][0] = -scalar[i][1][0];
         scalar[i][yelem-1][0]= -scalar[i][yelem-2][0];
@@ -115,7 +123,7 @@ void bothscalarBC(double ***scalar)
     }
     
     //Periodic BC
-    for(int j=0; j<yelem; j++)
+    for( j=0; j<yelem; j++)
     {
         scalar[0][j][0] = scalar[xelem-2][j][0];
         scalar[xelem-1][j][0] = scalar[1][j][0];
@@ -125,8 +133,9 @@ void bothscalarBC(double ***scalar)
 
 void pressureBC(double ***scalar)
 {
+  int i,j;
     //For advection case
-    /*for(int i=0; i<xelem; i++)
+    /*for( i=0; i<xelem; i++)
     {
         scalar[i][0][0] = scalar[i][1][0];
         scalar[i][yelem-1][0]= scalar[i][yelem-2][0];
@@ -134,7 +143,7 @@ void pressureBC(double ***scalar)
     }
     
     
-    for(int j=0; j<yelem; j++)
+    for( j=0; j<yelem; j++)
     {
         scalar[0][j][0] = (-4800*xc[0][j] + 96)*nu;//scalar[1][j][0] + 4800.0*area[1][j][1][1];
         scalar[xelem-1][j][0] = scalar[xelem-2][j][0] - 4800*nu*area[xelem-2][j][1][1];
@@ -142,7 +151,7 @@ void pressureBC(double ***scalar)
     }*/
     
     //For Bubble breakup and bubble rise case
-    for(int i=0; i<xelem; i++)
+    for( i=0; i<xelem; i++)
     {
         scalar[i][0][0] = scalar[i][1][0];
         scalar[i][yelem-1][0]= 0.0;
@@ -150,16 +159,16 @@ void pressureBC(double ***scalar)
     }
     
     
-    for(int j=0; j<yelem; j++)
+    for( j=0; j<yelem; j++)
     {
         scalar[0][j][0] = scalar[1][j][0];//scalar[1][j][0] + 4800.0*area[1][j][1][1];
         scalar[xelem-1][j][0] = scalar[xelem-2][j][0];
         
     }
     
-    /*for(int i=1; i<xelem-1; i++)
+    /*for( i=1; i<xelem-1; i++)
     {
-        for(int j=1; j<yelem-1; j++)
+        for( j=1; j<yelem-1; j++)
         {
             if(yc[i][j] >  line)
             {
@@ -171,10 +180,11 @@ void pressureBC(double ***scalar)
 
 void vel_BC(double ***u, double ***v)
 {
+  int i,j;
     /***Taking care of left and right direction wall****/
     if(x_bound == 1)
     {
-        for(int j=0; j<yelem; j++)
+        for( j=0; j<yelem; j++)
         {
             u[0][j][0] = 0.0;
             u[xelem-1][j][0] = 0.0;
@@ -186,7 +196,7 @@ void vel_BC(double ***u, double ***v)
     }
     else if(x_bound == 2)
     {
-        for(int j=0; j<yelem; j++)
+        for( j=0; j<yelem; j++)
         {
             u[0][j][0] = u[1][j][0];
             u[xelem-2][j][0] = u[xelem-3][j][0];
@@ -198,7 +208,7 @@ void vel_BC(double ***u, double ***v)
     }
     else if(x_bound == 3)
     {
-        for(int j=0; j<yelem; j++)
+        for( j=0; j<yelem; j++)
         {
             u[0][j][0] = u[xelem-2][j][0];
             u[xelem-1][j][0] = u[1][j][0];
@@ -211,7 +221,7 @@ void vel_BC(double ***u, double ***v)
     /****Now take care of up and down walls****/
     if(y_bound == 1)
     {
-        for(int i=0; i<xelem; i++)
+        for( i=0; i<xelem; i++)
         {
             u[i][0][0] = -u[i][1][0];
             u[i][yelem-1][0]= -u[i][yelem-2][0];
@@ -223,7 +233,7 @@ void vel_BC(double ***u, double ***v)
     }
     else if(y_bound == 2)
     {
-        for(int i=0; i<xelem; i++)
+        for( i=0; i<xelem; i++)
         {
             u[i][0][0] = u[i][1][0];
             u[i][yelem-1][0]= u[i][yelem-2][0];
@@ -236,7 +246,7 @@ void vel_BC(double ***u, double ***v)
     }
     else if(y_bound == 3)
     {
-        for(int i=0; i<xelem; i++)
+        for( i=0; i<xelem; i++)
         {
             u[i][0][0] = u[i][yelem-2][0];
             u[i][yelem-1][0] = u[i][1][0];
@@ -251,10 +261,11 @@ void vel_BC(double ***u, double ***v)
 
 void level_setBC(double ***scalar)
 {
+  int i,j;
     /****left and right walls*****/
     if(x_bound == 1 || x_bound == 2)
     {
-        for(int j=0; j<yelem; j++)
+        for( j=0; j<yelem; j++)
         {
             scalar[0][j][0] = scalar[1][j][0];
             scalar[xelem-1][j][0] = scalar[xelem-2][j][0];
@@ -262,7 +273,7 @@ void level_setBC(double ***scalar)
     }
     else if(x_bound == 3)
     {
-        for(int j=0; j<yelem; j++)
+        for( j=0; j<yelem; j++)
         {
             scalar[0][j][0] = scalar[xelem-2][j][0];
             scalar[xelem-1][j][0] = scalar[1][j][0];
@@ -272,7 +283,7 @@ void level_setBC(double ***scalar)
     /****Top and bottom walls***/
     if(y_bound == 1 || y_bound == 2)
     {
-        for(int i=0; i<xelem; i++)
+        for( i=0; i<xelem; i++)
         {
             scalar[i][0][0] = scalar[i][1][0];
             scalar[i][yelem-1][0] = scalar[i][yelem-2][0];
@@ -280,7 +291,7 @@ void level_setBC(double ***scalar)
     }
     else if(y_bound == 3)
     {
-        for(int i=0; i<xelem; i++)
+        for( i=0; i<xelem; i++)
         {
             scalar[i][0][0] = scalar[i][yelem-2][0];
             scalar[i][yelem-1][0] = scalar[i][1][0];
@@ -290,10 +301,11 @@ void level_setBC(double ***scalar)
 
 void grad_level_setBC(double ***scalar)
 {
+  int i,j;
     /****left and right walls*****/
     if(x_bound == 1 || x_bound == 2)
     {
-        for(int j=0; j<yelem; j++)
+        for( j=0; j<yelem; j++)
         {
             scalar[0][j][0] = 0.0;
             scalar[xelem-1][j][0] = 0.0;
@@ -301,7 +313,7 @@ void grad_level_setBC(double ***scalar)
     }
     else if(x_bound == 3)
     {
-        for(int j=0; j<yelem; j++)
+        for( j=0; j<yelem; j++)
         {
             scalar[0][j][0] = scalar[xelem-2][j][0];
             scalar[xelem-1][j][0] = scalar[1][j][0];
@@ -311,7 +323,7 @@ void grad_level_setBC(double ***scalar)
     /****Top and bottom walls***/
     if(y_bound == 1 || y_bound == 2)
     {
-        for(int i=0; i<xelem; i++)
+        for( i=0; i<xelem; i++)
         {
             scalar[i][0][0] = 0.0;
             scalar[i][yelem-1][0] = 0.0;
@@ -319,7 +331,7 @@ void grad_level_setBC(double ***scalar)
     }
     else if(y_bound == 3)
     {
-        for(int i=0; i<xelem; i++)
+        for( i=0; i<xelem; i++)
         {
             scalar[i][0][0] = scalar[i][yelem-2][0];
             scalar[i][yelem-1][0] = scalar[i][1][0];
@@ -329,10 +341,11 @@ void grad_level_setBC(double ***scalar)
 
 void cell_center_vel_BC(double ***u, double ***v)
 {
+  int i,j;
     /***Taking care of left and right direction wall****/
     if(x_bound == 1)
     {
-        for(int j=0; j<yelem; j++)
+        for( j=0; j<yelem; j++)
         {
             u[0][j][0] = -u[1][j][0];
             u[xelem-1][j][0] = -u[xelem-2][j][0];
@@ -343,7 +356,7 @@ void cell_center_vel_BC(double ***u, double ***v)
     }
     else if(x_bound == 2)
     {
-        for(int j=0; j<yelem; j++)
+        for( j=0; j<yelem; j++)
         {
             u[0][j][0] = u[1][j][0];
             u[xelem-1][j][0] = u[xelem-2][j][0];
@@ -354,7 +367,7 @@ void cell_center_vel_BC(double ***u, double ***v)
     }
     else if(x_bound == 3)
     {
-        for(int j=0; j<yelem; j++)
+        for( j=0; j<yelem; j++)
         {
             u[0][j][0] = u[xelem-2][j][0];
             u[xelem-1][j][0] = u[1][j][0];
@@ -367,7 +380,7 @@ void cell_center_vel_BC(double ***u, double ***v)
     /****Now take care of up and down walls****/
     if(y_bound == 1)
     {
-        for(int i=0; i<xelem; i++)
+        for( i=0; i<xelem; i++)
         {
             u[i][0][0] = -u[i][1][0];
             u[i][yelem-1][0]= -u[i][yelem-2][0];
@@ -378,7 +391,7 @@ void cell_center_vel_BC(double ***u, double ***v)
     }
     else if(y_bound == 2)
     {
-        for(int i=0; i<xelem; i++)
+        for( i=0; i<xelem; i++)
         {
             u[i][0][0] = u[i][1][0];
             u[i][yelem-1][0]= u[i][yelem-2][0];
@@ -390,7 +403,7 @@ void cell_center_vel_BC(double ***u, double ***v)
     }
     else if(y_bound == 3)
     {
-        for(int i=0; i<xelem; i++)
+        for( i=0; i<xelem; i++)
         {
             u[i][0][0] = u[i][yelem-2][0];
             u[i][yelem-1][0] = u[i][1][0];

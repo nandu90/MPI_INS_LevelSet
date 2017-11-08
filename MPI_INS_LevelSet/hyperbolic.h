@@ -15,11 +15,11 @@
 #define HYPERBOLIC_H
 
 
-void hyperbolic(elemsclr &sclr)
+void hyperbolic(struct elemsclr sclr)
 {
     /***Store phi values in a separate matrix***/
   double ***phi2;
-  allocator3(phi2, xelem, yelem, zelem);
+  allocator3(&phi2, xelem, yelem, zelem);
     for(int i=0; i< xelem; i++)
     {
         for(int j=0; j< yelem; j++)
@@ -40,9 +40,9 @@ void hyperbolic(elemsclr &sclr)
     
     /****Heavyside and delta functions for volume constraint***/
     double ***H, ***delta, ***grad_phi;
-    allocator3(H, xelem, yelem, zelem);
-    allocator3(delta, xelem, yelem, zelem);
-    allocator3(grad_phi, xelem, yelem, zelem);
+    allocator3(&H, xelem, yelem, zelem);
+    allocator3(&delta, xelem, yelem, zelem);
+    allocator3(&grad_phi, xelem, yelem, zelem);
     heavy_func(H,sclr.phi,eps);
     delta_func(delta,sclr.phi,eps);
     grad_func(grad_phi, sclr.phi);
@@ -52,10 +52,10 @@ void hyperbolic(elemsclr &sclr)
     for(int iter=0; iter < re_loops; iter++)
     {
       double ***lambda;
-      allocator3(lambda, xelem, yelem, zelem);
+      allocator3(&lambda, xelem, yelem, zelem);
 
       double ***temp_phi2;
-       allocator3(temp_phi2, xelem, yelem, zelem);
+       allocator3(&temp_phi2, xelem, yelem, zelem);
        
         for(int i=1;i<xelem-1;i++)
         {
@@ -68,13 +68,13 @@ void hyperbolic(elemsclr &sclr)
                 
         /*****Now onto calculating fluxes******/
 	double **rhs;
-	allocator(rhs, xelem, yelem);
+	allocator(&rhs, xelem, yelem);
         
         rhs_redist2(rhs, phi2, sclr.phi);
         
         
         double ***phistar;
-	allocator3(phistar, xelem, yelem, zelem);
+	allocator3(&phistar, xelem, yelem, zelem);
         
         for(int i=1; i<xelem-1; i++) 
         {
@@ -94,7 +94,7 @@ void hyperbolic(elemsclr &sclr)
         level_setBC(phistar);
 
 	double **rhstar;
-	allocator(rhstar, xelem, yelem);
+	allocator(&rhstar, xelem, yelem);
 	
         //Calculate the star fluxes
         rhs_redist2(rhstar, phistar, sclr.phi);
@@ -120,18 +120,18 @@ void hyperbolic(elemsclr &sclr)
         
         if(exitflag == false)
         {
-            monitor_res_redist(ires, exitflag, iter,  phi2,  temp_phi2);
+            monitor_res_redist(&ires, &exitflag, iter,  phi2,  temp_phi2);
         }
         else
         {
             break;
         }
         
-        deallocator3(lambda, xelem, yelem, zelem);
-	deallocator3(temp_phi2, xelem, yelem, zelem);
-	deallocator3(phistar, xelem, yelem, zelem);
-	deallocator(rhs, xelem, yelem);
-	deallocator(rhstar, xelem, yelem);
+        deallocator3(&lambda, xelem, yelem, zelem);
+	deallocator3(&temp_phi2, xelem, yelem, zelem);
+	deallocator3(&phistar, xelem, yelem, zelem);
+	deallocator(&rhs, xelem, yelem);
+	deallocator(&rhstar, xelem, yelem);
     }
     
     
@@ -144,9 +144,9 @@ void hyperbolic(elemsclr &sclr)
         }
     }
 
-    deallocator3(H, xelem, yelem, zelem);
-    deallocator3(delta, xelem, yelem, zelem);
-    deallocator3(grad_phi, xelem, yelem, zelem);    
+    deallocator3(&H, xelem, yelem, zelem);
+    deallocator3(&delta, xelem, yelem, zelem);
+    deallocator3(&grad_phi, xelem, yelem, zelem);    
 }
 
 #endif /* RE_DISTANCE2_H */

@@ -20,7 +20,7 @@ void variable_pressure(double ***ustar, double ***vstar, double ***p, double del
 {
     /****Calculate the RHS of matrix****/
   double **b;
-  allocate(b, xelem, yelem);
+  allocator(&b, xelem, yelem);
     
     for(int i=1; i<xelem-1; i++)
     {
@@ -69,7 +69,7 @@ void variable_pressure(double ***ustar, double ***vstar, double ***p, double del
     }
 
     double ***a;
-    allocator3(a, xelem, yelem, 5);
+    allocator3(&a, xelem, yelem, 5);
     
     for(int i=1; i<xelem-1; i++)
     {
@@ -87,8 +87,8 @@ void variable_pressure(double ***ustar, double ***vstar, double ***p, double del
     }
     
     gs_solver(a,b,p);
-    deallocator3(a, xelem, yelem, 5);
-    deallocator(b, xelem, yelem);
+    deallocator3(&a, xelem, yelem, 5);
+    deallocator(&b, xelem, yelem);
 }
 
 #endif /* VARIABLE_PRESSURE_H */

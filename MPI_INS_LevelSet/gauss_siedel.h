@@ -19,9 +19,9 @@ void gs_solver(double ***a, double **b, double ***p)
   double ***tempp;
   double **delp;
   double **d;
-  allocator3(tempp, xelem, yelem, zelem);
-  allocator(delp, xelem, yelem);
-  allocator(d, xelem, yelem);
+  allocator3(&tempp, xelem, yelem, zelem);
+  allocator(&delp, xelem, yelem);
+  allocator(&d, xelem, yelem);
 
     double ires;
 
@@ -87,7 +87,7 @@ void gs_solver(double ***a, double **b, double ***p)
             //<<"Pressure Step: "<<iter<<"residual: "<<resnorm/ires<<endl;
             if(resnorm / ires < ptol)
             {
-	      printf("Pressure converged in %d /n",iter);
+	      printf("Pressure converged in %d \n",iter);
 	      //<<"Pressure converged in "<<iter<<" "<<endl;
                 break;
             }
@@ -104,9 +104,9 @@ void gs_solver(double ***a, double **b, double ***p)
             p[i][j][0] = tempp[i][j][0];
         }
     }
-    deallocator3(tempp, xelem, yelem, zelem);
-    deallocator(delp, xelem, yelem);
-    deallocator(d, xelem, yelem);
+    deallocator3(&tempp, xelem, yelem, zelem);
+    deallocator(&delp, xelem, yelem);
+    deallocator(&d, xelem, yelem);
 }
 
 #endif /* GAUSS_SIEDEL_H */

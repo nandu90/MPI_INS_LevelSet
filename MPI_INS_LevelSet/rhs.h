@@ -14,53 +14,53 @@
 #ifndef RHS_H
 #define RHS_H
 
-void flux(double u1R, double u1L, double u1T, double u1B, double u2R, double u2L, double u2T, double u2B, int dir, double &flux1, double &flux2)
+void flux(double u1R, double u1L, double u1T, double u1B, double u2R, double u2L, double u2T, double u2B, int dir, double *flux1, double *flux2)
 {
     if(dir ==1)
     {
-         flux1 = pow(u1R + u1L,2.0)/4.0;
-         flux2 = (u2R +u2L)*0.5 * (u2T + u2B)*0.5;
+         *flux1 = pow(u1R + u1L,2.0)/4.0;
+         *flux2 = (u2R +u2L)*0.5 * (u2T + u2B)*0.5;
     }
     else if (dir == 2)
     {
-        flux1 = (u1R +u1L)*0.5 * (u1T + u1B)*0.5;
-        flux2 =  pow(u2T + u2B,2.0)/4.0;
+        *flux1 = (u1R +u1L)*0.5 * (u1T + u1B)*0.5;
+        *flux2 =  pow(u2T + u2B,2.0)/4.0;
     }
 }
 
 
 
 
-void quick(double u1R, double u1L, double u1T, double u1B, double u2R, double u2L, double u2T, double u2B, double u11, double u22, int dir, double &flux1, double &flux2)
+void quick(double u1R, double u1L, double u1T, double u1B, double u2R, double u2L, double u2T, double u2B, double u11, double u22, int dir, double *flux1, double *flux2)
 {
     if(dir==1)
     {
         if(u1L+u1R > 0.0)
         {
-            flux1 = 0.125*(-u11 + 6*u1L + 3*u1R);
+            *flux1 = 0.125*(-u11 + 6*u1L + 3*u1R);
         }
         else
         {
-            flux1 = 0.125*(-u22 + 6*u1R + 3*u1L);
+            *flux1 = 0.125*(-u22 + 6*u1R + 3*u1L);
         }
 
-        flux2 = (u2R +u2L)*0.5 * (u2T + u2B)*0.5;
+        *flux2 = (u2R +u2L)*0.5 * (u2T + u2B)*0.5;
     }
     else if(dir ==2)
     {
-        flux1 = (u1R +u1L)*0.5 * (u1T + u1B)*0.5;
+        *flux1 = (u1R +u1L)*0.5 * (u1T + u1B)*0.5;
         if(u2B+u2T > 0.0)
         {
-            flux2 = 0.125*(-u11 + 6*u2B + 3*u2T);
+            *flux2 = 0.125*(-u11 + 6*u2B + 3*u2T);
         }
         else
         {
-            flux2 = 0.125*(-u22 + 6*u2T + 3*u2B);
+            *flux2 = 0.125*(-u22 + 6*u2T + 3*u2B);
         }
     }
 }
 
-void rhscalc(elemsclr &sclr, double **rhsx, double **rhsy, int iter, bool exitflag)
+void rhscalc(struct elemsclr sclr, double **rhsx, double **rhsy, int iter, bool exitflag)
 {
 
 
@@ -70,8 +70,8 @@ void rhscalc(elemsclr &sclr, double **rhsx, double **rhsy, int iter, bool exitfl
     //***Calculate contribution from advection
     //Note for index i,j the CV under consideration is the CV between i,j and i+1,j
   double **advx, **advy;
-  allocator(advx, xelem, yelem);
-  allocator(advy, xelem, yelem);
+  allocator(&advx, xelem, yelem);
+  allocator(&advy, xelem, yelem);
 
     #pragma omp parallel for schedule(dynamic)
     for(int i=0; i<xelem-1; i++)
@@ -116,7 +116,7 @@ void rhscalc(elemsclr &sclr, double **rhsx, double **rhsy, int iter, bool exitfl
 
 
             double flux1, flux2;
-            flux(u1R, u1L, u1T, u1B, u2R, u2L, u2T, u2B, 1, flux1, flux2);
+            flux(u1R, u1L, u1T, u1B, u2R, u2L, u2T, u2B, 1, &flux1, &flux2);
             //quick(u1R, u1L, u1T, u1B, u2R, u2L, u2T, u2B, u1LL, u1RR, 1, flux1, flux2);
             advx[i][j]=(area[i][j][0][0]*flux1 + area[i][j][1][1]*flux2)/vol[i][j];
 
@@ -165,7 +165,7 @@ void rhscalc(elemsclr &sclr, double **rhsx, double **rhsy, int iter, bool exitfl
 
 
             double flux1, flux2;
-            flux(v1R, v1L, v1T, v1B, v2R, v2L, v2T, v2B, 2, flux1, flux2);
+            flux(v1R, v1L, v1T, v1B, v2R, v2L, v2T, v2B, 2, &flux1, &flux2);
             //quick(v1R, v1L, v1T, v1B, v2R, v2L, v2T, v2B, v2BB, v2TT, 2, flux1, flux2);
             advy[i][j]=(area[i][j][0][0]*flux1 + area[i][j][1][1]*flux2)/vol[i][j];
         }
@@ -174,8 +174,8 @@ void rhscalc(elemsclr &sclr, double **rhsx, double **rhsy, int iter, bool exitfl
 
     //***Calculate contribution from diffusion
     double **diffx, **diffy;
-    allocator(diffx, xelem, yelem);
-    allocator(diffy, xelem, yelem);
+    allocator(&diffx, xelem, yelem);
+    allocator(&diffy, xelem, yelem);
     #pragma omp parallel for schedule(dynamic)
     for(int i=0; i<xelem-1; i++)
     {
@@ -279,10 +279,10 @@ void rhscalc(elemsclr &sclr, double **rhsx, double **rhsy, int iter, bool exitfl
         }
     }
 
-    deallocate(diffx, xelem, yelem);
-    deallocate(diffy, xelem, yelem);
-    deallocate(advx, xelem, yelem);
-    deallocate(advy, xelem, yelem);
+    deallocator(&diffx, xelem, yelem);
+    deallocator(&diffy, xelem, yelem);
+    deallocator(&advx, xelem, yelem);
+    deallocator(&advy, xelem, yelem);
 }
 
 #endif /* RHS_H */

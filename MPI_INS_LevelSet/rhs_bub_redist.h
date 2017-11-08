@@ -18,6 +18,8 @@ void rhs_redist(double **rhsx, double **rhsy, double ***ucen, double ***vcen, do
 {
     /*First of, find the value of phi at cell edges and store it*/
   double **gradx, **grady;
+  allocator(&gradx, xelem, yelem);
+  allocator(&grady, xelem, yelem);
     for (int i=0; i < xelem-1; i++)
     {
         for(int j=1; j < yelem-1; j++)
@@ -187,8 +189,8 @@ void rhs_redist(double **rhsx, double **rhsy, double ***ucen, double ***vcen, do
 
         }
     }
-    deallocator(gradx, xelem, yelem);
-    deallocator(gradx, xelem, yelem);
+    deallocator(&gradx, xelem, yelem);
+    deallocator(&grady, xelem, yelem);
 }
 
 

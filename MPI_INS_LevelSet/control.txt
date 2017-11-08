@@ -1,6 +1,6 @@
 /******************Input Section*******************//
 Max_Iterations 10 //5141 2808
-Start_step 0
+Start_step 1
 xlen 3
 ylen 3.5
 zlen 0                     // Set = 0 for 2-D
@@ -44,7 +44,7 @@ Variable_density_pressure_solver 2    #0 - off; 1 - constant density; 2 - variab
 Surface_tension 1
 Advect_bubble 1
 Void_fraction_control 1
-Re-distance_method 2               #0 - off; 1 - hyperbolic; 2 - fastmarch; 3 - direct
+Re-distance_method 1               #0 - off; 1 - hyperbolic; 2 - fastmarch; 3 - direct
 
 
 /*************Boundary Conditions*****************/
