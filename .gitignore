@@ -3,3 +3,8 @@ MPI_INS_LevelSet/main
 MPI_INS_LevelSet/main.o
 MPI_INS_LevelSet/output
 MPI_INS_LevelSet/laststep
+
+C_INS_LevelSet/main
+C_INS_LevelSet/main.o
+C_INS_LevelSet/output
+C_INS_LevelSet/laststep

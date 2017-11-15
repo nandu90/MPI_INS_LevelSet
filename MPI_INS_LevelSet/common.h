@@ -15,17 +15,31 @@
 #ifndef COMMON_H
 #define COMMON_H
 
+//MPI relevant variables
+int myrank;
+int master;
+int nprocs;
+
 ///Global Variable declaration (so that we do not have to pass around information between functions)
 double nu;
 double cfl;
 double tol;
 int itermax;
+
+//Local nodes and elements//
 int xelem; //Total elem in x
 int yelem; //Total elem in y
 int zelem; //Total elem in z
 int xnode; //Total nodes in x
 int ynode; //Total nodes in y
-int znode; //Total nodes in z 
+int znode; //Total nodes in z
+/////////////////////////////
+//Global nodes and elements//
+int gxelem; //Total elem in x
+int gyelem; //Total elem in y
+int gzelem; //Total elem in z
+/////////////////////////////
+
 double xlen;
 double ylen;
 double zlen;

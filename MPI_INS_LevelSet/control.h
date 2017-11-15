@@ -55,17 +55,17 @@ void control()
 	  if(strcmp(word,"xelem") == 0)
 	    {
 	      word = strtok(NULL,delim);
-	      xelem = atoi(word);
+	      gxelem = atoi(word);
 	    }
 	  if(strcmp(word,"yelem") == 0)
 	    {
 	      word = strtok(NULL,delim);
-	      yelem = atoi(word);
+	      gyelem = atoi(word);
 	    }
 	  if(strcmp(word,"zelem") == 0)
 	    {
 	      word = strtok(NULL,delim);
-	      zelem = atoi(word);
+	      gzelem = atoi(word);
 	    }
 	  if(strcmp(word,"Max_Iterations") == 0)
 	    {

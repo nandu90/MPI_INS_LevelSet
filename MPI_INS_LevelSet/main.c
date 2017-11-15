@@ -1,4 +1,9 @@
-
+/*
+Notes:
+-  3d groundwater flow problem using 2d decomposition for reference - /home/nsaini3/PGREM3D/flow
+-  Conjugate gradient solver - /home/nsaini3/blas_tar/solverc/source
+-  BiCGstab or GMRES solver - /home/nsaini3/PGREM3D/trans/
+ */
 /*
  * File:   2phase.cpp
  * Author: nsaini3
@@ -30,6 +35,7 @@
 
 //Include user generated header files. Must come after global variable decalaration
 #include "control.h"
+#include "partition.h"
 #include "grid.h"
 #include "output.h"
 #include "read_write.h"
@@ -55,27 +61,43 @@ int main(int argc, char **argv)
     ///Catches mathematical exceptions
     //feenableexcept(FE_INVALID | FE_OVERFLOW |FE_DIVBYZERO);
 
-  
+  //MPI relevant variables/
+  MPI_Status status;
+
+  MPI_Init(&argc, &argv);
+  MPI_Comm_size(MPI_COMM_WORLD, &nprocs);
+  MPI_Comm_rank(MPI_COMM_WORLD, &myrank);
+  master = 0;
+
+  double time1 = MPI_Wtime();
+
   //Create necessary ouput directories//
-  char* path;
-  path = concat(getexepath(), "/output");
-  mkdir(path, S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
-  memset(path,0,strlen(path));
-  path = concat(getexepath(),"/laststep");
-  mkdir(path, S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
-  free(path);
-  /////////////////////////////////////
+  //Let only the master create directory
+  if(myrank == master)
+    {
+      char* path;
+      path = concat(getexepath(), "/output");
+      mkdir(path, S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+      memset(path,0,strlen(path));
+      path = concat(getexepath(),"/laststep");
+      mkdir(path, S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+      free(path);
+    }
+/////////////////////////////////////
   
     
-    time_t t1,t2;
-    t1 = time(0);
     //Read control file/
+  //Lets not worry about openmp at the moment
+  //    omp_set_num_threads(1);
 
-    omp_set_num_threads(1);
-
+  //All processors may read the control file
     control();
-    
 
+    
+    //Routine to partition the mesh
+    partition();
+    
+    /*
     xelem=xelem+2; //Include 2 ghost cells
     yelem=yelem+2; //Include 2 ghost cells
     xnode=xelem+1; //Include 2 ghost nodes
@@ -320,11 +342,7 @@ int main(int argc, char **argv)
     
 
 
-    t2 = time(0);
-    double secs = difftime(t2,t1);
-    printf("Total run time: %.6f secs\n",secs);
-    fprintf(out,"Total run time: %.6f secs\n",secs);
-    fclose(out);
+    
     
     free(ires);
     filewrite(sclr);
@@ -344,6 +362,14 @@ int main(int argc, char **argv)
     deallocator(&vol,xelem,yelem);
 
     deallocator4(&area,xelem,yelem,2,2);
+
+    double time2 = MPI_Wtime();
+    double secs = time2-time1;
+    printf("Total run time: %.6f secs\n",secs);
+    fprintf(out,"Total run time: %.6f secs\n",secs);
+    fclose(out);
+    */
+
 
 }
 
