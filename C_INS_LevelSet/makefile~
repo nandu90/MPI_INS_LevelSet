@@ -1,0 +1,20 @@
+
+CC = g++
+OPT = -O3
+
+SRC = main.cc
+OBJ = main.o
+
+all: main
+	@echo "-------------------------"
+	@echo "Compilation Successful"
+	@echo "-------------------------"
+
+main:$(OBJ)
+	$(CC) $(OPT) -o main $(OBJ) -lm
+
+.cc.o:
+	$(CC) $(OPT) -c $< -o $@
+
+clean:
+	rm -f *.o main

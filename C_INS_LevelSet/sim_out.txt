@@ -1,0 +1,37 @@
+Step: 2
+Void Fraction: 32.834678% Error in vf: 0.000000%
+
+
+Step: 3
+Void Fraction: 32.819948% Error in vf: -0.044860%
+
+
+Step: 4
+Void Fraction: 32.805655% Error in vf: -0.088391%
+
+
+Step: 5
+Void Fraction: 32.773536% Error in vf: -0.186210%
+
+
+Step: 6
+Void Fraction: 32.761326% Error in vf: -0.223396%
+
+
+Step: 7
+Void Fraction: 32.755692% Error in vf: -0.240555%
+
+
+Step: 8
+Void Fraction: 32.748712% Error in vf: -0.261813%
+
+
+Step: 9
+Void Fraction: 32.738989% Error in vf: -0.291425%
+
+
+Step: 10
+Void Fraction: 32.732555% Error in vf: -0.311021%
+
+
+Total run time: 7.000000 secs
