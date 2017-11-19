@@ -19,6 +19,7 @@
 int myrank;
 int master;
 int nprocs;
+int procm, procn; //Processor matrix m X n
 
 ///Global Variable declaration (so that we do not have to pass around information between functions)
 double nu;

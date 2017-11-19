@@ -36,7 +36,7 @@ Notes:
 //Include user generated header files. Must come after global variable decalaration
 #include "control.h"
 #include "partition.h"
-#include "grid.h"
+/*#include "grid.h"
 #include "output.h"
 #include "read_write.h"
 #include "bound_cond.h"
@@ -52,7 +52,7 @@ Notes:
 #include "bub_advect.h"
 #include "re_distance.h"
 #include "hyperbolic.h"
-#include "calc_vf.h"
+#include "calc_vf.h"*/
 
 
 
@@ -370,6 +370,6 @@ int main(int argc, char **argv)
     fclose(out);
     */
 
-
+    MPI_Finalize();
 }
 

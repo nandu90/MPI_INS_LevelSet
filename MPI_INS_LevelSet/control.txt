@@ -1,11 +1,11 @@
-/******************Input Section*******************//
+ /******************Input Section*******************//
 Max_Iterations 10 //5141 2808
 Start_step 1
 xlen 3
 ylen 3.5
 zlen 0                     // Set = 0 for 2-D
-xelem 60
-yelem 70
+xelem 71
+yelem 67
 zelem 1                    // Set = 1 for 2-D
 Kinematic_viscosity 10e-5
 Tolerance_x 1e-2
