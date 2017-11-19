@@ -20,6 +20,8 @@ int myrank;
 int master;
 int nprocs;
 int procm, procn; //Processor matrix m X n
+int elemm, elemn; //Mode of number of elements on each processor
+int **iBC;        //Determines if a particular cell is a boundary or interior cell
 
 ///Global Variable declaration (so that we do not have to pass around information between functions)
 double nu;

@@ -16,9 +16,10 @@
 
 void initialize_phi(double ***phi)
 {
-    for (int i=0; i<xelem; i++)
+  int i,j;
+    for (i=0; i<xelem; i++)
     {
-        for (int j=0; j<yelem; j++)
+        for (j=0; j<yelem; j++)
         {
             phi[i][j][0] = sqrt(pow(xb_in - xc[i][j],2) + pow(yb_in - yc[i][j],2)) - rb_in;
         }
@@ -28,9 +29,9 @@ void initialize_phi(double ***phi)
     /******Zalesak Problem*****/
     if(case_tog == 4)
     {
-        for (int i=0; i<xelem; i++)
+        for (i=0; i<xelem; i++)
         {
-            for (int j=0; j<yelem; j++)
+            for (j=0; j<yelem; j++)
             {
                 double a,b,c,d;
                 a=(0.5-0.03)*100.0;
@@ -51,7 +52,7 @@ void initialize_phi(double ***phi)
                     dist[3] = sqrt(pow(xc[i][j]-a,2.0) + pow(yc[i][j]-d,2.0));
 
                     int min = 0;
-                    for (int i=1; i<4; i++)
+                    for (i=1; i<4; i++)
                     {
                         if(dist[min] > dist[i])
                         {
@@ -137,9 +138,9 @@ void initialize_phi(double ***phi)
             }
         }
 
-        for(int i=0; i<xelem; i++)
+        for(i=0; i<xelem; i++)
         {
-            for(int j=0; j<yelem; j++)
+            for(j=0; j<yelem; j++)
             {
                 phi[i][j][0] = -phi[i][j][0];
             }
@@ -147,17 +148,17 @@ void initialize_phi(double ***phi)
 
 
         double temp_phi[xelem][yelem];
-        for(int i=0; i<xelem; i++)
+        for(i=0; i<xelem; i++)
         {
-            for(int j=0; j<yelem; j++)
+            for(j=0; j<yelem; j++)
             {
                 temp_phi[i][j] = phi[i][j][0];
             }
         }
 
-        for(int i=0; i<xelem; i++)
+        for(i=0; i<xelem; i++)
         {
-            for(int j=0; j<yelem; j++)
+            for(j=0; j<yelem; j++)
             {
                 double cir = sqrt(pow(xc[i][j]-50.0,2.0) + pow(yc[i][j]-75.0,2.0)) - 15.0;
                 if(phi[i][j][0] < 0.0)
@@ -172,6 +173,7 @@ void initialize_phi(double ***phi)
 
 void initialize(struct elemsclr sclr)
 {
+  int i,j;
     //calcp(sclr); //For the simple advection case
     //pressureBC(sclr.p);
 
@@ -191,17 +193,17 @@ void initialize(struct elemsclr sclr)
     {
     double line = 2.5*2.0*rb_in;
     double temp_phi[xelem][yelem];
-    for(int i=0; i<xelem; i++)
+    for(i=0; i<xelem; i++)
     {
-        for(int j=0; j<yelem; j++)
+        for(j=0; j<yelem; j++)
         {
             temp_phi[i][j] = line - yc[i][j];
         }
     }
 
-    for(int i=0; i<xelem; i++)
+    for(i=0; i<xelem; i++)
     {
-        for(int j=0; j<yelem; j++)
+        for(j=0; j<yelem; j++)
         {
             if(fabs(temp_phi[i][j]) < fabs(sclr.phi[i][j][0]))
             {
@@ -213,9 +215,9 @@ void initialize(struct elemsclr sclr)
     }
 
     /****Pressure*****/
-    /*for(int i=1; i<xelem-1; i++)
+    /*for(i=1; i<xelem-1; i++)
     {
-        for(int j=1; j<yelem-1; j++)
+        for(j=1; j<yelem-1; j++)
         {
             if(yc[i][j] < line)
             {
@@ -231,9 +233,9 @@ void initialize(struct elemsclr sclr)
 
 
 
-    /*for(int i=1; i<xelem-1; i++)
+    /*for(i=1; i<xelem-1; i++)
     {
-        for(int j=1; j<yelem-1; j++)
+        for(j=1; j<yelem-1; j++)
         {
             if(H[i][j][0] < 1.0 && yc[i][j] < line)
             {

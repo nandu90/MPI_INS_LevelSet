@@ -16,22 +16,25 @@
 
 void gridread()
 {
-    double deltax=xlen/(xelem-2);
-    double deltay=ylen/(yelem-2);
+  int i,j,k;
+    double deltax=xlen/(gxelem);
+    double deltay=ylen/(gyelem);
 
+    double firstx = (myrank%procm)*elemm*deltax;
+    double firsty = (double)floor(myrank/procm)*elemn*deltay;
     //Assign coordinates
-    for(int i=1; i<xnode-1; i++)
+    for(i=1; i<xnode-1; i++)
     {
-        for(int j=1; j<ynode-1; j++)
+        for(j=1; j<ynode-1; j++)
         {
-            x[i][j] = (i-1)*deltax;
-            y[i][j] = (j-1)*deltay;
+            x[i][j] = firstx + (i-1)*deltax;
+            y[i][j] = firsty + (j-1)*deltay;
         }
     }
     
     //Generate ghost nodes
     //Add cells on both sides of x
-    for(int j=1; j < ynode-1; j++)
+    for(j=1; j < ynode-1; j++)
     {
         x[0][j]=2*x[1][j]-x[2][j];
         y[0][j]=2*y[1][j]-y[2][j];
@@ -39,7 +42,7 @@ void gridread()
         y[xnode-1][j] = 2*y[xnode-2][j]-y[xnode-3][j];
     }
     
-    for(int i=1; i < xnode-1; i++)
+    for(i=1; i < xnode-1; i++)
     {
         x[i][0]=2*x[i][1]-x[i][2];
         y[i][0]=2*y[i][1]-y[i][2];
@@ -55,18 +58,18 @@ void gridread()
     y[xnode-1][0] = 2*y[xnode-2][0]-y[xnode-3][0];
     x[xnode-1][ynode-1] =  2*x[xnode-2][ynode-1]-x[xnode-3][ynode-1];
     y[xnode-1][ynode-1] =  2*y[xnode-2][ynode-1]-y[xnode-3][ynode-1];
-    /*for(int i=0;i<xnode;i++)
+    /*for(i=0;i<xnode;i++)
     {
-        for(int j=0;j<ynode;j++)
+        for(j=0;j<ynode;j++)
         {
             <<y[i][j]<<" ";
         }
         <<endl;
     }*/
     //Area components of faces of parallelogram
-    for(int i=0; i<xelem; i++)
+    for(i=0; i<xelem; i++)
     {
-        for(int j=0; j<yelem; j++)
+        for(j=0; j<yelem; j++)
         {
             area[i][j][0][0] = y[i+1][j+1] - y[i+1][j];
             area[i][j][0][1] = -(x[i+1][j+1] - x[i+1][j]);
@@ -75,9 +78,9 @@ void gridread()
         }
     }
     
-    for(int i=0; i<xelem; i++)
+    for(i=0; i<xelem; i++)
     {
-        for(int j=0; j<yelem; j++)
+        for(j=0; j<yelem; j++)
         {
             //Heron's Formula for area of triangle (area of cell)
             double a=sqrt(pow(x[i][j]-x[i+1][j],2)+pow(y[i][j]-y[i+1][j],2));
@@ -96,6 +99,8 @@ void gridread()
             yc[i][j]=0.25*(y[i][j]+y[i+1][j]+y[i+1][j+1]+y[i][j+1]);
         }
     }
+
+    //printf("X and y limits in %d with m x n = %d %d are: %.5f %.5f %.5f %.5f\n",myrank+1,xelem-2, yelem-2,x[0][0], x[xnode-1][0], y[0][0],y[0][ynode-1]);
 }
 
 #endif /* GRID_H */

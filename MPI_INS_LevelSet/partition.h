@@ -86,7 +86,8 @@ void partition()
       n = (int)floor(gyelem/np);
       m = (int)floor(gxelem/mp);
     
-
+      elemm = m;
+      elemn = n;
 
       
       if(gxelem > mp*m)

@@ -1,0 +1,10 @@
+
+
+#ifndef COMMU_H
+#define COMMU_H
+
+void genibc()
+{
+
+}
+#endif

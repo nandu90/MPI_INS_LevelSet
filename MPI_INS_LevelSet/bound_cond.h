@@ -20,15 +20,27 @@ void imposeBC(struct elemsclr sclr)
   int i,j;
     for( i=0; i<xelem; i++)
     {
-        sclr.u[i][0][0] = -sclr.u[i][1][0];
-        sclr.u[i][yelem-1][0]= -sclr.u[i][yelem-2][0];
+      if(iBC[i][0] == 2)
+	{
+	  sclr.u[i][0][0] = -sclr.u[i][1][0];
         
-        sclr.v[i][0][0] = 0.0;
-        sclr.v[i][yelem-1][0] = 0.0;
-        sclr.v[i][yelem-2][0] = 0.0;
+	  sclr.v[i][0][0] = 0.0;
+	}
+    }
+    for( i=0; i<xelem; i++)
+    {
+      if(iBC[i][yelem-1] == 2)
+	{
+	  sclr.u[i][yelem-1][0]= -sclr.u[i][yelem-2][0];
+        
+	  sclr.v[i][yelem-1][0] = 0.0;
+	  sclr.v[i][yelem-2][0] = 0.0;
+	}
     }
     
     //Periodic BC
+    //To be handled differently
+    /*
     for( j=0; j<yelem; j++)
     {
         sclr.u[0][j][0] = sclr.u[xelem-2][j][0];
@@ -36,7 +48,9 @@ void imposeBC(struct elemsclr sclr)
         
         sclr.v[0][j][0] = sclr.v[xelem-2][j][0];
         sclr.v[xelem-1][j][0] = sclr.v[1][j][0];
-    }
+	}*/
+
+    
 }
 
 void periodicBC(double ***scalar)
@@ -56,8 +70,8 @@ void wallBC(double ***scalar)
     //Wall BC
     for( i=0; i<xelem; i++)
     {
-        scalar[i][0][0] = -scalar[i][1][0];
-        scalar[i][yelem-1][0]= -scalar[i][yelem-2][0];
+      if(iBC[i][0] == 2)scalar[i][0][0] = -scalar[i][1][0];
+      if(iBC[i][yelem-1] == 2)scalar[i][yelem-1][0]= -scalar[i][yelem-2][0];
         
     }
 }
@@ -68,8 +82,8 @@ void walluBC(double ***scalar)
     //Wall BC
     for( i=0; i<xelem; i++)
     {
-        scalar[i][0][0] = -scalar[i][1][0];
-        scalar[i][yelem-1][0]= -scalar[i][yelem-2][0];
+        if(iBC[i][0] == 2)scalar[i][0][0] = -scalar[i][1][0];
+        if(iBC[i][yelem-1] == 2)scalar[i][yelem-1][0]= -scalar[i][yelem-2][0];
         
     }
 }
@@ -81,9 +95,9 @@ void wallvBC(double ***scalar)
     //Wall BC
     for( i=0; i<xelem; i++)
     {
-        scalar[i][0][0] = 0.0;
-        scalar[i][yelem-1][0]= 0.0;
-        scalar[i][yelem-2][0]= 0.0;
+        if(iBC[i][0] == 2)scalar[i][0][0] = 0.0;
+        if(iBC[i][yelem-1] == 2)scalar[i][yelem-1][0]= 0.0;
+        if(iBC[i][yelem-1] == 2)scalar[i][yelem-2][0]= 0.0;
         
     }
 }
@@ -94,8 +108,8 @@ void zerogradBC(double ***scalar)
   int i;
     for( i=0; i<xelem; i++)
     {
-        scalar[i][0][0] = scalar[i][1][0];
-        scalar[i][yelem-1][0]= scalar[i][yelem-2][0];
+        if(iBC[i][0] == 2)scalar[i][0][0] = scalar[i][1][0];
+        if(iBC[i][yelem-1] == 2)scalar[i][yelem-1][0]= scalar[i][yelem-2][0];
         
     }
 }
@@ -105,8 +119,8 @@ void gradBC(double ***scalar)
   int i,j;
     for( i=0; i<xelem; i++)
     {
-        scalar[i][0][0] = 0.0;
-        scalar[i][yelem-1][0]= 0.0;
+        if(iBC[i][0] == 2)scalar[i][0][0] = 0.0;
+        if(iBC[i][yelem-1] == 2)scalar[i][yelem-1][0]= 0.0;
         
     }
 }
@@ -117,8 +131,8 @@ void bothscalarBC(double ***scalar)
     //Wall BC
     for( i=0; i<xelem; i++)
     {
-        scalar[i][0][0] = -scalar[i][1][0];
-        scalar[i][yelem-1][0]= -scalar[i][yelem-2][0];
+        if(iBC[i][0] == 2)scalar[i][0][0] = -scalar[i][1][0];
+        if(iBC[i][yelem-1] == 2)scalar[i][yelem-1][0]= -scalar[i][yelem-2][0];
         
     }
     
@@ -153,16 +167,16 @@ void pressureBC(double ***scalar)
     //For Bubble breakup and bubble rise case
     for( i=0; i<xelem; i++)
     {
-        scalar[i][0][0] = scalar[i][1][0];
-        scalar[i][yelem-1][0]= 0.0;
+        if(iBC[i][0] == 2)scalar[i][0][0] = scalar[i][1][0];
+        if(iBC[i][yelem-1] == 2)scalar[i][yelem-1][0]= 0.0;
         
     }
     
     
     for( j=0; j<yelem; j++)
     {
-        scalar[0][j][0] = scalar[1][j][0];//scalar[1][j][0] + 4800.0*area[1][j][1][1];
-        scalar[xelem-1][j][0] = scalar[xelem-2][j][0];
+        if(iBC[0][j] == 2)scalar[0][j][0] = scalar[1][j][0];//scalar[1][j][0] + 4800.0*area[1][j][1][1];
+        if(iBC[0][xelem-1] == 2)scalar[xelem-1][j][0] = scalar[xelem-2][j][0];
         
     }
     
@@ -186,35 +200,35 @@ void vel_BC(double ***u, double ***v)
     {
         for( j=0; j<yelem; j++)
         {
-            u[0][j][0] = 0.0;
-            u[xelem-1][j][0] = 0.0;
-            u[xelem-2][j][0] = 0.0;
+            if(iBC[0][j] == 2)u[0][j][0] = 0.0;
+            if(iBC[xelem-1][j] == 2)u[xelem-1][j][0] = 0.0;
+            if(iBC[xelem-1][j] == 2)u[xelem-2][j][0] = 0.0;
             
-            v[0][j][0] = -v[1][j][0];
-            v[xelem-1][j][0] = -v[xelem-2][j][0];
+            if(iBC[0][j] == 2)v[0][j][0] = -v[1][j][0];
+            if(iBC[xelem-1][j] == 2)v[xelem-1][j][0] = -v[xelem-2][j][0];
         }
     }
     else if(x_bound == 2)
     {
         for( j=0; j<yelem; j++)
         {
-            u[0][j][0] = u[1][j][0];
-            u[xelem-2][j][0] = u[xelem-3][j][0];
-            u[xelem-1][j][0] = u[xelem-2][j][0];
+            if(iBC[0][j] == 2)u[0][j][0] = u[1][j][0];
+            if(iBC[xelem-1][j] == 2)u[xelem-2][j][0] = u[xelem-3][j][0];
+            if(iBC[xelem-1][j] == 2)u[xelem-1][j][0] = u[xelem-2][j][0];
             
-            v[0][j][0] = v[1][j][0];
-            v[xelem-1][j][0] = v[xelem-2][j][0];
+            if(iBC[0][j] == 2)v[0][j][0] = v[1][j][0];
+            if(iBC[xelem-1][j] == 2)v[xelem-1][j][0] = v[xelem-2][j][0];
         }
     }
     else if(x_bound == 3)
     {
         for( j=0; j<yelem; j++)
         {
-            u[0][j][0] = u[xelem-2][j][0];
-            u[xelem-1][j][0] = u[1][j][0];
+            if(iBC[0][j] == 2)u[0][j][0] = u[xelem-2][j][0];
+            if(iBC[xelem-1][j] == 2)u[xelem-1][j][0] = u[1][j][0];
         
-            v[0][j][0] = v[xelem-2][j][0];
-            v[xelem-1][j][0] = v[1][j][0];
+            if(iBC[0][j] == 2)v[0][j][0] = v[xelem-2][j][0];
+            if(iBC[xelem-1][j] == 2)v[xelem-1][j][0] = v[1][j][0];
         }
     }
     
@@ -223,24 +237,24 @@ void vel_BC(double ***u, double ***v)
     {
         for( i=0; i<xelem; i++)
         {
-            u[i][0][0] = -u[i][1][0];
-            u[i][yelem-1][0]= -u[i][yelem-2][0];
+            if(iBC[i][0] == 2)u[i][0][0] = -u[i][1][0];
+            if(iBC[i][yelem-1] == 2)u[i][yelem-1][0]= -u[i][yelem-2][0];
 
-            v[i][0][0] = 0.0;
-            v[i][yelem-1][0] = 0.0;
-            v[i][yelem-2][0] = 0.0;
+            if(iBC[i][0] == 2)v[i][0][0] = 0.0;
+            if(iBC[i][yelem-1] == 2)v[i][yelem-1][0] = 0.0;
+            if(iBC[i][yelem-1] == 2)v[i][yelem-2][0] = 0.0;
         }
     }
     else if(y_bound == 2)
     {
         for( i=0; i<xelem; i++)
         {
-            u[i][0][0] = u[i][1][0];
-            u[i][yelem-1][0]= u[i][yelem-2][0];
+            if(iBC[i][0] == 2)u[i][0][0] = u[i][1][0];
+            if(iBC[i][yelem-1] == 2)u[i][yelem-1][0]= u[i][yelem-2][0];
 
-            v[i][0][0] = v[i][1][0];
-            v[i][yelem-2][0] = v[i][yelem-3][0];
-            v[i][yelem-1][0] = v[i][yelem-2][0];
+            if(iBC[i][0] == 2)v[i][0][0] = v[i][1][0];
+            if(iBC[i][yelem-1] == 2)v[i][yelem-2][0] = v[i][yelem-3][0];
+            if(iBC[i][yelem-1] == 2)v[i][yelem-1][0] = v[i][yelem-2][0];
             
         }
     }
@@ -248,11 +262,11 @@ void vel_BC(double ***u, double ***v)
     {
         for( i=0; i<xelem; i++)
         {
-            u[i][0][0] = u[i][yelem-2][0];
-            u[i][yelem-1][0] = u[i][1][0];
+            if(iBC[i][0] == 2)u[i][0][0] = u[i][yelem-2][0];
+            if(iBC[i][yelem-1] == 2)u[i][yelem-1][0] = u[i][1][0];
             
-            v[i][0][0] = v[i][yelem-2][0];
-            v[i][yelem-1][0] = v[i][1][0];
+            if(iBC[i][0] == 2)v[i][0][0] = v[i][yelem-2][0];
+            if(iBC[i][yelem-1] == 2)v[i][yelem-1][0] = v[i][1][0];
         }
     }
     
@@ -267,16 +281,16 @@ void level_setBC(double ***scalar)
     {
         for( j=0; j<yelem; j++)
         {
-            scalar[0][j][0] = scalar[1][j][0];
-            scalar[xelem-1][j][0] = scalar[xelem-2][j][0];
+            if(iBC[0][j] == 2)scalar[0][j][0] = scalar[1][j][0];
+            if(iBC[xelem-1][j] == 2)scalar[xelem-1][j][0] = scalar[xelem-2][j][0];
         }
     }
     else if(x_bound == 3)
     {
         for( j=0; j<yelem; j++)
         {
-            scalar[0][j][0] = scalar[xelem-2][j][0];
-            scalar[xelem-1][j][0] = scalar[1][j][0];
+            if(iBC[0][j] == 2)scalar[0][j][0] = scalar[xelem-2][j][0];
+            if(iBC[xelem-1][j] == 2)scalar[xelem-1][j][0] = scalar[1][j][0];
         }
     }
     
@@ -285,16 +299,16 @@ void level_setBC(double ***scalar)
     {
         for( i=0; i<xelem; i++)
         {
-            scalar[i][0][0] = scalar[i][1][0];
-            scalar[i][yelem-1][0] = scalar[i][yelem-2][0];
+            if(iBC[i][0] == 2)scalar[i][0][0] = scalar[i][1][0];
+            if(iBC[i][yelem-1] == 2)scalar[i][yelem-1][0] = scalar[i][yelem-2][0];
         }
     }
     else if(y_bound == 3)
     {
         for( i=0; i<xelem; i++)
         {
-            scalar[i][0][0] = scalar[i][yelem-2][0];
-            scalar[i][yelem-1][0] = scalar[i][1][0];
+            if(iBC[i][0] == 2)scalar[i][0][0] = scalar[i][yelem-2][0];
+            if(iBC[i][yelem-1] == 2)scalar[i][yelem-1][0] = scalar[i][1][0];
         }
     }
 }
@@ -307,16 +321,16 @@ void grad_level_setBC(double ***scalar)
     {
         for( j=0; j<yelem; j++)
         {
-            scalar[0][j][0] = 0.0;
-            scalar[xelem-1][j][0] = 0.0;
+            if(iBC[0][j] == 2)scalar[0][j][0] = 0.0;
+            if(iBC[xelem-1][j] == 2)scalar[xelem-1][j][0] = 0.0;
         }
     }
     else if(x_bound == 3)
     {
         for( j=0; j<yelem; j++)
         {
-            scalar[0][j][0] = scalar[xelem-2][j][0];
-            scalar[xelem-1][j][0] = scalar[1][j][0];
+            if(iBC[0][j] == 2)scalar[0][j][0] = scalar[xelem-2][j][0];
+            if(iBC[xelem-1][j] == 2)scalar[xelem-1][j][0] = scalar[1][j][0];
         }
     }
     
@@ -325,16 +339,16 @@ void grad_level_setBC(double ***scalar)
     {
         for( i=0; i<xelem; i++)
         {
-            scalar[i][0][0] = 0.0;
-            scalar[i][yelem-1][0] = 0.0;
+            if(iBC[i][0] == 2)scalar[i][0][0] = 0.0;
+            if(iBC[i][yelem-1] == 2)scalar[i][yelem-1][0] = 0.0;
         }
     }
     else if(y_bound == 3)
     {
         for( i=0; i<xelem; i++)
         {
-            scalar[i][0][0] = scalar[i][yelem-2][0];
-            scalar[i][yelem-1][0] = scalar[i][1][0];
+            if(iBC[i][0] == 2)scalar[i][0][0] = scalar[i][yelem-2][0];
+            if(iBC[i][yelem-1] == 2)scalar[i][yelem-1][0] = scalar[i][1][0];
         }
     }
 }
@@ -347,33 +361,33 @@ void cell_center_vel_BC(double ***u, double ***v)
     {
         for( j=0; j<yelem; j++)
         {
-            u[0][j][0] = -u[1][j][0];
-            u[xelem-1][j][0] = -u[xelem-2][j][0];
+            if(iBC[0][j] == 2)u[0][j][0] = -u[1][j][0];
+            if(iBC[xelem-1][j] == 2)u[xelem-1][j][0] = -u[xelem-2][j][0];
             
-            v[0][j][0] = -v[1][j][0];
-            v[xelem-1][j][0] = -v[xelem-2][j][0];
+            if(iBC[0][j] == 2)v[0][j][0] = -v[1][j][0];
+            if(iBC[xelem-1][j] == 2)v[xelem-1][j][0] = -v[xelem-2][j][0];
         }
     }
     else if(x_bound == 2)
     {
         for( j=0; j<yelem; j++)
         {
-            u[0][j][0] = u[1][j][0];
-            u[xelem-1][j][0] = u[xelem-2][j][0];
+            if(iBC[0][j] == 2)u[0][j][0] = u[1][j][0];
+            if(iBC[xelem-1][j] == 2)u[xelem-1][j][0] = u[xelem-2][j][0];
             
-            v[0][j][0] = v[1][j][0];
-            v[xelem-1][j][0] = v[xelem-2][j][0];
+            if(iBC[0][j] == 2)v[0][j][0] = v[1][j][0];
+            if(iBC[xelem-1][j] == 2)v[xelem-1][j][0] = v[xelem-2][j][0];
         }
     }
     else if(x_bound == 3)
     {
         for( j=0; j<yelem; j++)
         {
-            u[0][j][0] = u[xelem-2][j][0];
-            u[xelem-1][j][0] = u[1][j][0];
+            if(iBC[0][j] == 2)u[0][j][0] = u[xelem-2][j][0];
+            if(iBC[xelem-1][j] == 2)u[xelem-1][j][0] = u[1][j][0];
         
-            v[0][j][0] = v[xelem-2][j][0];
-            v[xelem-1][j][0] = v[1][j][0];
+            if(iBC[0][j] == 2)v[0][j][0] = v[xelem-2][j][0];
+            if(iBC[xelem-1][j] == 2)v[xelem-1][j][0] = v[1][j][0];
         }
     }
     
@@ -382,22 +396,22 @@ void cell_center_vel_BC(double ***u, double ***v)
     {
         for( i=0; i<xelem; i++)
         {
-            u[i][0][0] = -u[i][1][0];
-            u[i][yelem-1][0]= -u[i][yelem-2][0];
+            if(iBC[i][0] == 2)u[i][0][0] = -u[i][1][0];
+            if(iBC[i][yelem-1] == 2)u[i][yelem-1][0]= -u[i][yelem-2][0];
 
-            v[i][0][0] = -v[i][1][0];
-            v[i][yelem-1][0]= -v[i][yelem-2][0];
+            if(iBC[i][0] == 2)v[i][0][0] = -v[i][1][0];
+            if(iBC[i][yelem-1] == 2)v[i][yelem-1][0]= -v[i][yelem-2][0];
         }
     }
     else if(y_bound == 2)
     {
         for( i=0; i<xelem; i++)
         {
-            u[i][0][0] = u[i][1][0];
-            u[i][yelem-1][0]= u[i][yelem-2][0];
+            if(iBC[i][0] == 2)u[i][0][0] = u[i][1][0];
+            if(iBC[i][yelem-1] == 2)u[i][yelem-1][0]= u[i][yelem-2][0];
 
-            v[i][0][0] = v[i][1][0];
-            v[i][yelem-1][0]= v[i][yelem-2][0];
+            if(iBC[i][0] == 2)v[i][0][0] = v[i][1][0];
+            if(iBC[i][yelem-1] == 2)v[i][yelem-1][0]= v[i][yelem-2][0];
             
         }
     }
@@ -405,11 +419,11 @@ void cell_center_vel_BC(double ***u, double ***v)
     {
         for( i=0; i<xelem; i++)
         {
-            u[i][0][0] = u[i][yelem-2][0];
-            u[i][yelem-1][0] = u[i][1][0];
+            if(iBC[i][0] == 2)u[i][0][0] = u[i][yelem-2][0];
+            if(iBC[i][yelem-1] == 2)u[i][yelem-1][0] = u[i][1][0];
             
-            v[i][0][0] = v[i][yelem-2][0];
-            v[i][yelem-1][0] = v[i][1][0];
+            if(iBC[i][0] == 2)v[i][0][0] = v[i][yelem-2][0];
+            if(iBC[i][yelem-1] == 2)v[i][yelem-1][0] = v[i][1][0];
         }
     }
     

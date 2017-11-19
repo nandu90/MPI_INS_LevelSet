@@ -36,15 +36,16 @@ Notes:
 //Include user generated header files. Must come after global variable decalaration
 #include "control.h"
 #include "partition.h"
-/*#include "grid.h"
-#include "output.h"
-#include "read_write.h"
+#include "grid.h"
+#include "commu.h"
+/*#include "output.h"
+  #include "read_write.h"*/
 #include "bound_cond.h"
-#include "pressure_solver.h"
-#include "variable_pressure.h"
+/*#include "pressure_solver.h"
+#include "variable_pressure.h"*/
 #include "heavy_delta.h"
 #include "initial_conditions.h"
-#include "surface_tension.h"
+/*#include "surface_tension.h"
 #include "body_force.h"
 #include "rhs.h"
 #include "functions.h"
@@ -97,7 +98,7 @@ int main(int argc, char **argv)
     //Routine to partition the mesh
     partition();
     
-    /*
+    
     xelem=xelem+2; //Include 2 ghost cells
     yelem=yelem+2; //Include 2 ghost cells
     xnode=xelem+1; //Include 2 ghost nodes
@@ -110,13 +111,15 @@ int main(int argc, char **argv)
     allocator(&xc,xelem,yelem);
     allocator(&yc,xelem,yelem);
     allocator(&vol,xelem,yelem);
+    iallocator(&iBC,xelem,yelem);
     
     allocator4(&area,xelem,yelem,2,2);
     
     //Read grid and populate element and node vectors/
     gridread();
+    genibc();
 
-    
+      
     //Initialize solution vectors/
     struct elemsclr sclr;
     
@@ -128,6 +131,7 @@ int main(int argc, char **argv)
     allocator3(&sclr.mu,xelem,yelem,zelem);
     
     initialize(sclr);
+    /*
     
     //Read from file is startstep != 0/
     prevfileread(sclr);
@@ -356,7 +360,7 @@ int main(int argc, char **argv)
     
     deallocator(&x,xnode,ynode);
     deallocator(&y,xnode,ynode);
-
+    ideallocator(&iBC,xelem,yelem);
     deallocator(&xc,xelem,yelem);
     deallocator(&yc,xelem,yelem);
     deallocator(&vol,xelem,yelem);
