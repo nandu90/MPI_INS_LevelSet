@@ -183,7 +183,14 @@ void rhs_bub(double **rhsx, double **rhsy, double ***ucen, double ***vcen, doubl
                 phiR=phi[i+1][j][0];
                 if(x_bound == 1 || x_bound == 2)
                 {
-                    phiRR=phiR;
+		  if(iBC[i+1][j]==2)
+		    {
+		      phiRR=phiR;
+		    }
+		  else
+		    {
+		      phiRR=phi[i+1][j][0];
+		    }
                 }
                 else if(x_bound == 3)
                 {
@@ -261,6 +268,7 @@ void rhs_bub(double **rhsx, double **rhsy, double ***ucen, double ***vcen, doubl
                 phicen = phi[i][j][0];
                 if(y_bound ==1 || y_bound ==2)
                 {
+		  
                     phiB = phicen;
                 }
                 else if(y_bound == 3)
@@ -285,20 +293,26 @@ void rhs_bub(double **rhsx, double **rhsy, double ***ucen, double ***vcen, doubl
                 phiT=phi[i][j+1][0];
                 if(y_bound == 1 || y_bound == 2)
                 {
-                    phiTT = phiT;
+		  if(iBC[i][j+1] == 2)
+		    {
+		      phiTT = phiT;
+		    }
+		  else
+		    {
+		      phiTT = phi[i][j+1][0];
+		    }
                 }
                 else if(y_bound == 3)
                 {
                     phiTT = phi[i][2][0];
                 }
-                phiTT=phicen;
                 phiTTT=phicen;
             }
 
             else if(j == 1)
             {
                 phicen = phi[i][j][0];
-                phiB=phicen;
+                phiB=phi[i][j-1][0];
                 phiBB=phicen;
                 phiBBB=phicen;
                 phiT=phi[i][j+1][0];
@@ -323,7 +337,7 @@ void rhs_bub(double **rhsx, double **rhsy, double ***ucen, double ***vcen, doubl
                 phiBB=phi[i][j-2][0];
                 phiBBB=phi[i][j-3][0];
                 phiT=phi[i][j+1][0];
-                phiTT=phiT;
+                phiTT=phi[i][j+2][0];
                 phiTTT=phiT;
             }
 
