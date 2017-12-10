@@ -133,7 +133,7 @@ void partition()
       int send[2];
       int recv[2];
       
-      //if(myrank == master)printf("in here %d %d\n",mp,np);
+      //Array to inform io routine output_xml that how many elements are on each processor
       io_info = (int **)malloc(nprocs*sizeof(int *));
       for(i=0; i<nprocs; i++)
 	{

@@ -23,12 +23,12 @@ void gridread()
     double firstx = (myrank%procm)*elemm*deltax;
     double firsty = (double)floor(myrank/procm)*elemn*deltay;
     //Assign coordinates
-    for(i=1; i<xnode-1; i++)
+    for(i=2; i<xnode-2; i++)
     {
-        for(j=1; j<ynode-1; j++)
+        for(j=2; j<ynode-2; j++)
         {
-            x[i][j] = firstx + (i-1)*deltax;
-            y[i][j] = firsty + (j-1)*deltay;
+            x[i][j] = firstx + (i-2)*deltax;
+            y[i][j] = firsty + (j-2)*deltay;
         }
     }
     
@@ -36,18 +36,24 @@ void gridread()
     //Add cells on both sides of x
     for(j=1; j < ynode-1; j++)
     {
-        x[0][j]=2*x[1][j]-x[2][j];
-        y[0][j]=2*y[1][j]-y[2][j];
-        x[xnode-1][j] = 2*x[xnode-2][j]-x[xnode-3][j];
-        y[xnode-1][j] = 2*y[xnode-2][j]-y[xnode-3][j];
+      for(i=1; i>=0;i--)
+	{
+	  x[i][j]=2*x[i+1][j]-x[i+2][j];
+	  y[i][j]=2*y[i+1][j]-y[i+2][j];
+	  x[xnode-1-i][j] = 2*x[xnode-2-i][j]-x[xnode-3-i][j];
+	  y[xnode-1-i][j] = 2*y[xnode-2-i][j]-y[xnode-3-i][j];
+	}
     }
     
     for(i=1; i < xnode-1; i++)
     {
-        x[i][0]=2*x[i][1]-x[i][2];
-        y[i][0]=2*y[i][1]-y[i][2];
-        x[i][ynode-1] = 2*x[i][ynode-2]-x[i][ynode-3];
-        y[i][ynode-1] = 2*y[i][ynode-2]-y[i][ynode-3];
+      for(j=1; j>=0; j--)
+	{
+	  x[i][j]=2*x[i][1+j]-x[i][2+j];
+	  y[i][j]=2*y[i][1+j]-y[i][2+j];
+	  x[i][ynode-1-j] = 2*x[i][ynode-2-j]-x[i][ynode-3-j];
+	  y[i][ynode-1-j] = 2*y[i][ynode-2-j]-y[i][ynode-3-j];
+	}
     }
     //Not required but assign proper coordinates to corner ghost nodes
     x[0][0] = 2*x[0][1]-x[0][2];

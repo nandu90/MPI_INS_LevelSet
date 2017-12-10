@@ -148,18 +148,25 @@ void rhs_bub(double **rhsx, double **rhsy, double ***ucen, double ***vcen, doubl
   allocator3(&gradx, xelem, yelem,zelem);
   allocator3(&grady, xelem, yelem,zelem);
 
-    for (i=0; i < xelem-1; i++)
+    for (i=1; i < xelem-2; i++)
     {
-        for(j=1; j < yelem-1; j++)
+        for(j=2; j < yelem-2; j++)
         {
            //<<i<<" "<<j<<endl;
             double phicen, phiL, phiLL, phiLLL, phiR, phiRR, phiRRR;
-            if (i == 0)
+            if (i == 1)
             {
                 phicen = phi[i][j][0];
                 if(x_bound == 1 || x_bound == 2)
                 {
-		  phiL = phicen;
+		  if(iBC[i][j]==2)
+		    {
+		      phiL = phicen;
+		    }
+		  else
+		    {
+		      phiL = phi[i-1][j][0];
+		    }
                 }
                 else if(x_bound == 3)
                 {
@@ -174,7 +181,7 @@ void rhs_bub(double **rhsx, double **rhsy, double ***ucen, double ***vcen, doubl
 
             }
 
-            else if (i == xelem-2)
+            else if (i == xelem-3)
             {
                 phicen = phi[i][j][0];
                 phiL=phi[i-1][j][0];
@@ -183,7 +190,14 @@ void rhs_bub(double **rhsx, double **rhsy, double ***ucen, double ***vcen, doubl
                 phiR=phi[i+1][j][0];
                 if(x_bound == 1 || x_bound == 2)
                 {
-                    phiRR=phiR;
+		  if(iBC[i+1][j]==2)
+		    {
+		      phiRR=phiR;
+		    }
+		  else
+		    {
+		      phiRR = phi[i+2][j][0];
+		    }
                 }
                 else if(x_bound == 3)
                 {
@@ -193,7 +207,7 @@ void rhs_bub(double **rhsx, double **rhsy, double ***ucen, double ***vcen, doubl
                 phiRRR=phi[3][j][0];
             }
 
-            else if(i == 1)
+            else if(i == 2)
             {
                 phicen = phi[i][j][0];
                 phiL=phi[i-1][j][0];
@@ -203,7 +217,7 @@ void rhs_bub(double **rhsx, double **rhsy, double ***ucen, double ***vcen, doubl
                 phiRR=phi[i+2][j][0];
                 phiRRR=phi[i+3][j][0];
             }
-            else if(i == 2)
+            else if(i == 3)
             {
                 phicen = phi[i][j][0];
                 phiL=phi[i-1][j][0];
@@ -214,7 +228,7 @@ void rhs_bub(double **rhsx, double **rhsy, double ***ucen, double ***vcen, doubl
                 phiRRR=phi[i+3][j][0];
             }
 
-            else if (i == xelem-3)
+            else if (i == xelem-4)
             {
                 phicen = phi[i][j][0];
                 phiL=phi[i-1][j][0];
@@ -250,24 +264,30 @@ void rhs_bub(double **rhsx, double **rhsy, double ***ucen, double ***vcen, doubl
 
     }
 
-    for (i=1; i < xelem-1; i++)
+    for (i=2; i < xelem-2; i++)
     {
-        for(j=0; j < yelem-1; j++)
+        for(j=1; j < yelem-2; j++)
         {
            //<<i<<" "<<j<<endl;
             double phicen, phiT, phiTT, phiTTT, phiB, phiBB, phiBBB;
-            if (j == 0) ///gradient must be 0
+            if (j == 1) ///gradient must be 0
             {
                 phicen = phi[i][j][0];
                 if(y_bound ==1 || y_bound ==2)
                 {
-                    phiB = phicen;
+		  if(iBC[i][j] == 2)
+		    {
+		      phiB = phicen;
+		    }
+		  else
+		    {
+		      phiB = phi[i][j-1][0];
+		    }
                 }
                 else if(y_bound == 3)
                 {
                     phiB = phi[i][yelem-3][0];
                 }
-                phiB=phicen;
                 phiBB=phicen;
                 phiBBB=phicen;
                 phiT=phi[i][j+1][0];
@@ -276,7 +296,7 @@ void rhs_bub(double **rhsx, double **rhsy, double ***ucen, double ***vcen, doubl
 
             }
 
-            else if (j == yelem-2)
+            else if (j == yelem-3)
             {
                 phicen = phi[i][j][0];
                 phiB=phi[i][j-1][0];
@@ -285,27 +305,33 @@ void rhs_bub(double **rhsx, double **rhsy, double ***ucen, double ***vcen, doubl
                 phiT=phi[i][j+1][0];
                 if(y_bound == 1 || y_bound == 2)
                 {
-                    phiTT = phiT;
+		  if(iBC[i][j+1] == 2)
+		    {
+		      phiTT = phiT;
+		    }
+		  else
+		    {
+		      phiTT = phi[i][j+2][0];
+		    }
                 }
                 else if(y_bound == 3)
                 {
                     phiTT = phi[i][2][0];
                 }
-                phiTT=phicen;
                 phiTTT=phicen;
             }
 
-            else if(j == 1)
+            else if(j == 2)
             {
                 phicen = phi[i][j][0];
-                phiB=phicen;
+                phiB=phi[i][j-1][0];
                 phiBB=phicen;
                 phiBBB=phicen;
                 phiT=phi[i][j+1][0];
                 phiTT=phi[i][j+2][0];
                 phiTTT=phi[i][j+3][0];
             }
-            else if(j == 2)
+            else if(j == 3)
             {
                 phicen = phi[i][j][0];
                 phiB=phi[i][j-1][0];
@@ -316,14 +342,14 @@ void rhs_bub(double **rhsx, double **rhsy, double ***ucen, double ***vcen, doubl
                 phiTTT=phi[i][j+3][0];
             }
 
-            else if (j == yelem-3)
+            else if (j == yelem-4)
             {
                 phicen = phi[i][j][0];
                 phiB=phi[i][j-1][0];
                 phiBB=phi[i][j-2][0];
                 phiBBB=phi[i][j-3][0];
                 phiT=phi[i][j+1][0];
-                phiTT=phiT;
+                phiTT=phi[i][j+2][0];
                 phiTTT=phiT;
             }
 
@@ -355,9 +381,9 @@ void rhs_bub(double **rhsx, double **rhsy, double ***ucen, double ***vcen, doubl
     commu(gradx);
     commu(grady);
     /*Now calculate the fluxes at the faces. Note v velocity is not yet regarded*/
-    for (i=1; i<xelem-1; i++)
+    for (i=2; i<xelem-2; i++)
     {
-        for (j=1; j< yelem-1; j++)
+        for (j=2; j< yelem-2; j++)
         {
             if(bub_conv_scheme == 2)
             {

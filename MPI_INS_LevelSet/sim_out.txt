@@ -1,4001 +1,4001 @@
 Step: 1
-Void Fraction: 5.681316% Error in vf: 0.000000%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 2
-Void Fraction: 5.681148% Error in vf: -0.002969%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 3
-Void Fraction: 5.680987% Error in vf: -0.005801%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 4
-Void Fraction: 5.680831% Error in vf: -0.008548%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 5
-Void Fraction: 5.680677% Error in vf: -0.011248%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 6
-Void Fraction: 5.680527% Error in vf: -0.013899%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 7
-Void Fraction: 5.680377% Error in vf: -0.016536%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 8
-Void Fraction: 5.680224% Error in vf: -0.019219%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 9
-Void Fraction: 5.680068% Error in vf: -0.021966%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 10
-Void Fraction: 5.679908% Error in vf: -0.024787%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 11
-Void Fraction: 5.679740% Error in vf: -0.027747%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 12
-Void Fraction: 5.679565% Error in vf: -0.030829%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 13
-Void Fraction: 5.679379% Error in vf: -0.034102%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 14
-Void Fraction: 5.679184% Error in vf: -0.037535%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 15
-Void Fraction: 5.678979% Error in vf: -0.041143%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 16
-Void Fraction: 5.678763% Error in vf: -0.044937%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 17
-Void Fraction: 5.678537% Error in vf: -0.048923%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 18
-Void Fraction: 5.678299% Error in vf: -0.053103%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 19
-Void Fraction: 5.678051% Error in vf: -0.057472%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 20
-Void Fraction: 5.677792% Error in vf: -0.062029%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 21
-Void Fraction: 5.677524% Error in vf: -0.066756%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 22
-Void Fraction: 5.677247% Error in vf: -0.071631%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 23
-Void Fraction: 5.676961% Error in vf: -0.076663%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 24
-Void Fraction: 5.676667% Error in vf: -0.081843%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 25
-Void Fraction: 5.676365% Error in vf: -0.087146%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 26
-Void Fraction: 5.676057% Error in vf: -0.092575%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 27
-Void Fraction: 5.675742% Error in vf: -0.098123%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 28
-Void Fraction: 5.675420% Error in vf: -0.103784%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 29
-Void Fraction: 5.675092% Error in vf: -0.109555%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 30
-Void Fraction: 5.674757% Error in vf: -0.115449%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 31
-Void Fraction: 5.674415% Error in vf: -0.121466%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 32
-Void Fraction: 5.674067% Error in vf: -0.127590%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 33
-Void Fraction: 5.673715% Error in vf: -0.133797%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 34
-Void Fraction: 5.673358% Error in vf: -0.140086%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 35
-Void Fraction: 5.672995% Error in vf: -0.146474%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 36
-Void Fraction: 5.672626% Error in vf: -0.152957%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 37
-Void Fraction: 5.672253% Error in vf: -0.159524%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 38
-Void Fraction: 5.671876% Error in vf: -0.166158%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 39
-Void Fraction: 5.671495% Error in vf: -0.172863%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 40
-Void Fraction: 5.671109% Error in vf: -0.179666%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 41
-Void Fraction: 5.670716% Error in vf: -0.186574%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 42
-Void Fraction: 5.670319% Error in vf: -0.193568%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 43
-Void Fraction: 5.669916% Error in vf: -0.200659%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 44
-Void Fraction: 5.669507% Error in vf: -0.207860%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 45
-Void Fraction: 5.669092% Error in vf: -0.215174%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 46
-Void Fraction: 5.668669% Error in vf: -0.222607%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 47
-Void Fraction: 5.668239% Error in vf: -0.230175%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 48
-Void Fraction: 5.667801% Error in vf: -0.237893%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 49
-Void Fraction: 5.667354% Error in vf: -0.245764%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 50
-Void Fraction: 5.666897% Error in vf: -0.253800%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 51
-Void Fraction: 5.666430% Error in vf: -0.262019%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 52
-Void Fraction: 5.665954% Error in vf: -0.270407%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 53
-Void Fraction: 5.665469% Error in vf: -0.278931%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 54
-Void Fraction: 5.664978% Error in vf: -0.287574%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 55
-Void Fraction: 5.664479% Error in vf: -0.296361%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 56
-Void Fraction: 5.663973% Error in vf: -0.305263%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 57
-Void Fraction: 5.663460% Error in vf: -0.314294%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 58
-Void Fraction: 5.662940% Error in vf: -0.323451%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 59
-Void Fraction: 5.662416% Error in vf: -0.332669%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 60
-Void Fraction: 5.661898% Error in vf: -0.341800%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 61
-Void Fraction: 5.661396% Error in vf: -0.350622%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 62
-Void Fraction: 5.660931% Error in vf: -0.358814%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 63
-Void Fraction: 5.660519% Error in vf: -0.366056%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 64
-Void Fraction: 5.660181% Error in vf: -0.372019%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 65
-Void Fraction: 5.659932% Error in vf: -0.376390%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 66
-Void Fraction: 5.659792% Error in vf: -0.378854%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 67
-Void Fraction: 5.659775% Error in vf: -0.379163%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 68
-Void Fraction: 5.659891% Error in vf: -0.377125%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 69
-Void Fraction: 5.660148% Error in vf: -0.372588%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 70
-Void Fraction: 5.660553% Error in vf: -0.365463%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 71
-Void Fraction: 5.661110% Error in vf: -0.355670%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 72
-Void Fraction: 5.661819% Error in vf: -0.343182%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 73
-Void Fraction: 5.662684% Error in vf: -0.327963%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 74
-Void Fraction: 5.663705% Error in vf: -0.309992%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 75
-Void Fraction: 5.664886% Error in vf: -0.289206%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 76
-Void Fraction: 5.666232% Error in vf: -0.265513%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 77
-Void Fraction: 5.667748% Error in vf: -0.238821%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 78
-Void Fraction: 5.669440% Error in vf: -0.209040%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 79
-Void Fraction: 5.671313% Error in vf: -0.176077%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 80
-Void Fraction: 5.673371% Error in vf: -0.139857%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 81
-Void Fraction: 5.675619% Error in vf: -0.100279%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 82
-Void Fraction: 5.678065% Error in vf: -0.057229%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 83
-Void Fraction: 5.680715% Error in vf: -0.010583%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 84
-Void Fraction: 5.683577% Error in vf: 0.039787%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 85
-Void Fraction: 5.686656% Error in vf: 0.093995%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 86
-Void Fraction: 5.689961% Error in vf: 0.152156%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 87
-Void Fraction: 5.693494% Error in vf: 0.214354%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 88
-Void Fraction: 5.697261% Error in vf: 0.280656%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 89
-Void Fraction: 5.701261% Error in vf: 0.351067%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 90
-Void Fraction: 5.705493% Error in vf: 0.425556%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 91
-Void Fraction: 5.709955% Error in vf: 0.504083%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 92
-Void Fraction: 5.714643% Error in vf: 0.586595%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 93
-Void Fraction: 5.719555% Error in vf: 0.673055%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 94
-Void Fraction: 5.724686% Error in vf: 0.763378%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 95
-Void Fraction: 5.730033% Error in vf: 0.857483%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 96
-Void Fraction: 5.735590% Error in vf: 0.955305%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 97
-Void Fraction: 5.741355% Error in vf: 1.056771%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 98
-Void Fraction: 5.747324% Error in vf: 1.161843%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 99
-Void Fraction: 5.753495% Error in vf: 1.270454%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 100
-Void Fraction: 5.759864% Error in vf: 1.382555%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 101
-Void Fraction: 5.766428% Error in vf: 1.498107%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 102
-Void Fraction: 5.773186% Error in vf: 1.617044%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 103
-Void Fraction: 5.780131% Error in vf: 1.739290%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 104
-Void Fraction: 5.787260% Error in vf: 1.864768%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 105
-Void Fraction: 5.794567% Error in vf: 1.993394%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 106
-Void Fraction: 5.802050% Error in vf: 2.125104%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 107
-Void Fraction: 5.809704% Error in vf: 2.259822%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 108
-Void Fraction: 5.817525% Error in vf: 2.397484%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 109
-Void Fraction: 5.825512% Error in vf: 2.538072%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 110
-Void Fraction: 5.833664% Error in vf: 2.681562%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 111
-Void Fraction: 5.841980% Error in vf: 2.827940%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 112
-Void Fraction: 5.850461% Error in vf: 2.977207%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 113
-Void Fraction: 5.859105% Error in vf: 3.129359%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 114
-Void Fraction: 5.867912% Error in vf: 3.284370%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 115
-Void Fraction: 5.876878% Error in vf: 3.442192%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 116
-Void Fraction: 5.885999% Error in vf: 3.602738%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 117
-Void Fraction: 5.895270% Error in vf: 3.765922%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 118
-Void Fraction: 5.904685% Error in vf: 3.931644%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 119
-Void Fraction: 5.914240% Error in vf: 4.099828%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 120
-Void Fraction: 5.923931% Error in vf: 4.270396%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 121
-Void Fraction: 5.933749% Error in vf: 4.443207%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 122
-Void Fraction: 5.943687% Error in vf: 4.618132%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 123
-Void Fraction: 5.953743% Error in vf: 4.795128%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 124
-Void Fraction: 5.963912% Error in vf: 4.974123%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 125
-Void Fraction: 5.974189% Error in vf: 5.155015%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 126
-Void Fraction: 5.984569% Error in vf: 5.337723%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 127
-Void Fraction: 5.995049% Error in vf: 5.522180%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 128
-Void Fraction: 6.005622% Error in vf: 5.708293%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 129
-Void Fraction: 6.016286% Error in vf: 5.895981%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 130
-Void Fraction: 6.027034% Error in vf: 6.085174%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 131
-Void Fraction: 6.037866% Error in vf: 6.275825%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 132
-Void Fraction: 6.048776% Error in vf: 6.467866%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 133
-Void Fraction: 6.059762% Error in vf: 6.661227%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 134
-Void Fraction: 6.070820% Error in vf: 6.855868%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 135
-Void Fraction: 6.081950% Error in vf: 7.051778%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 136
-Void Fraction: 6.093152% Error in vf: 7.248943%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 137
-Void Fraction: 6.104423% Error in vf: 7.447344%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 138
-Void Fraction: 6.115765% Error in vf: 7.646979%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 139
-Void Fraction: 6.127179% Error in vf: 7.847882%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 140
-Void Fraction: 6.138666% Error in vf: 8.050067%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 141
-Void Fraction: 6.150225% Error in vf: 8.253528%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 142
-Void Fraction: 6.161854% Error in vf: 8.458218%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 143
-Void Fraction: 6.173550% Error in vf: 8.664088%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 144
-Void Fraction: 6.185311% Error in vf: 8.871097%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 145
-Void Fraction: 6.197133% Error in vf: 9.079175%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 146
-Void Fraction: 6.209010% Error in vf: 9.288235%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 147
-Void Fraction: 6.220939% Error in vf: 9.498196%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 148
-Void Fraction: 6.232915% Error in vf: 9.708997%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 149
-Void Fraction: 6.244935% Error in vf: 9.920566%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 150
-Void Fraction: 6.256995% Error in vf: 10.132845%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 151
-Void Fraction: 6.269093% Error in vf: 10.345789%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 152
-Void Fraction: 6.281225% Error in vf: 10.559333%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 153
-Void Fraction: 6.293389% Error in vf: 10.773437%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 154
-Void Fraction: 6.305584% Error in vf: 10.988084%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 155
-Void Fraction: 6.317809% Error in vf: 11.203262%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 156
-Void Fraction: 6.330062% Error in vf: 11.418942%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 157
-Void Fraction: 6.342343% Error in vf: 11.635104%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 158
-Void Fraction: 6.354650% Error in vf: 11.851717%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 159
-Void Fraction: 6.366980% Error in vf: 12.068751%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 160
-Void Fraction: 6.379334% Error in vf: 12.286206%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 161
-Void Fraction: 6.391714% Error in vf: 12.504097%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 162
-Void Fraction: 6.404116% Error in vf: 12.722395%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 163
-Void Fraction: 6.416539% Error in vf: 12.941070%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 164
-Void Fraction: 6.428984% Error in vf: 13.160114%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 165
-Void Fraction: 6.441450% Error in vf: 13.379542%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 166
-Void Fraction: 6.453940% Error in vf: 13.599378%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 167
-Void Fraction: 6.466453% Error in vf: 13.819619%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 168
-Void Fraction: 6.478988% Error in vf: 14.040265%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 169
-Void Fraction: 6.491547% Error in vf: 14.261327%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 170
-Void Fraction: 6.504132% Error in vf: 14.482830%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 171
-Void Fraction: 6.516741% Error in vf: 14.704771%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 172
-Void Fraction: 6.529373% Error in vf: 14.927123%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 173
-Void Fraction: 6.542028% Error in vf: 15.149864%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 174
-Void Fraction: 6.554702% Error in vf: 15.372951%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 175
-Void Fraction: 6.567393% Error in vf: 15.596321%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 176
-Void Fraction: 6.580096% Error in vf: 15.819925%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 177
-Void Fraction: 6.592813% Error in vf: 16.043753%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 178
-Void Fraction: 6.605542% Error in vf: 16.267802%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 179
-Void Fraction: 6.618281% Error in vf: 16.492039%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 180
-Void Fraction: 6.631028% Error in vf: 16.716408%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 181
-Void Fraction: 6.643780% Error in vf: 16.940866%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 182
-Void Fraction: 6.656536% Error in vf: 17.165391%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 183
-Void Fraction: 6.669296% Error in vf: 17.389985%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 184
-Void Fraction: 6.682061% Error in vf: 17.614665%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 185
-Void Fraction: 6.694831% Error in vf: 17.839429%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 186
-Void Fraction: 6.707605% Error in vf: 18.064281%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 187
-Void Fraction: 6.720385% Error in vf: 18.289226%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 188
-Void Fraction: 6.733170% Error in vf: 18.514256%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 189
-Void Fraction: 6.745958% Error in vf: 18.739347%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 190
-Void Fraction: 6.758747% Error in vf: 18.964457%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 191
-Void Fraction: 6.771535% Error in vf: 19.189553%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 192
-Void Fraction: 6.784322% Error in vf: 19.414619%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 193
-Void Fraction: 6.797107% Error in vf: 19.639652%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 194
-Void Fraction: 6.809889% Error in vf: 19.864635%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 195
-Void Fraction: 6.822668% Error in vf: 20.089560%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 196
-Void Fraction: 6.835443% Error in vf: 20.314430%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 197
-Void Fraction: 6.848216% Error in vf: 20.539256%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 198
-Void Fraction: 6.860988% Error in vf: 20.764055%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 199
-Void Fraction: 6.873758% Error in vf: 20.988836%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 200
-Void Fraction: 6.886527% Error in vf: 21.213588%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 201
-Void Fraction: 6.899294% Error in vf: 21.438308%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 202
-Void Fraction: 6.912058% Error in vf: 21.662971%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 203
-Void Fraction: 6.924817% Error in vf: 21.887543%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 204
-Void Fraction: 6.937569% Error in vf: 22.111997%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 205
-Void Fraction: 6.950313% Error in vf: 22.336321%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 206
-Void Fraction: 6.963052% Error in vf: 22.560541%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 207
-Void Fraction: 6.975786% Error in vf: 22.784685%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 208
-Void Fraction: 6.988517% Error in vf: 23.008757%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 209
-Void Fraction: 7.001242% Error in vf: 23.232743%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 210
-Void Fraction: 7.013961% Error in vf: 23.456622%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 211
-Void Fraction: 7.026673% Error in vf: 23.680369%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 212
-Void Fraction: 7.039377% Error in vf: 23.903977%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 213
-Void Fraction: 7.052074% Error in vf: 24.127461%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 214
-Void Fraction: 7.064764% Error in vf: 24.350838%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 215
-Void Fraction: 7.077449% Error in vf: 24.574116%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 216
-Void Fraction: 7.090129% Error in vf: 24.797298%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 217
-Void Fraction: 7.102803% Error in vf: 25.020369%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 218
-Void Fraction: 7.115469% Error in vf: 25.243320%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 219
-Void Fraction: 7.128128% Error in vf: 25.466143%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 220
-Void Fraction: 7.140779% Error in vf: 25.688818%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 221
-Void Fraction: 7.153420% Error in vf: 25.911317%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 222
-Void Fraction: 7.166050% Error in vf: 26.133614%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 223
-Void Fraction: 7.178666% Error in vf: 26.355679%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 224
-Void Fraction: 7.191268% Error in vf: 26.577493%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 225
-Void Fraction: 7.203856% Error in vf: 26.799066%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 226
-Void Fraction: 7.216430% Error in vf: 27.020396%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 227
-Void Fraction: 7.228990% Error in vf: 27.241468%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 228
-Void Fraction: 7.241534% Error in vf: 27.462262%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 229
-Void Fraction: 7.254062% Error in vf: 27.682764%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 230
-Void Fraction: 7.266571% Error in vf: 27.902957%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 231
-Void Fraction: 7.279063% Error in vf: 28.122835%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 232
-Void Fraction: 7.291536% Error in vf: 28.342377%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 233
-Void Fraction: 7.303990% Error in vf: 28.561577%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 234
-Void Fraction: 7.316426% Error in vf: 28.780471%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 235
-Void Fraction: 7.328846% Error in vf: 28.999088%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 236
-Void Fraction: 7.341252% Error in vf: 29.217443%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 237
-Void Fraction: 7.353644% Error in vf: 29.435561%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 238
-Void Fraction: 7.366022% Error in vf: 29.653446%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 239
-Void Fraction: 7.378388% Error in vf: 29.871096%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 240
-Void Fraction: 7.390740% Error in vf: 30.088519%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 241
-Void Fraction: 7.403081% Error in vf: 30.305729%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 242
-Void Fraction: 7.415409% Error in vf: 30.522725%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 243
-Void Fraction: 7.427725% Error in vf: 30.739512%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 244
-Void Fraction: 7.440030% Error in vf: 30.956097%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 245
-Void Fraction: 7.452324% Error in vf: 31.172487%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 246
-Void Fraction: 7.464607% Error in vf: 31.388681%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 247
-Void Fraction: 7.476878% Error in vf: 31.604674%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 248
-Void Fraction: 7.489137% Error in vf: 31.820463%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 249
-Void Fraction: 7.501385% Error in vf: 32.036045%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 250
-Void Fraction: 7.513621% Error in vf: 32.251405%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 251
-Void Fraction: 7.525842% Error in vf: 32.466517%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 252
-Void Fraction: 7.538048% Error in vf: 32.681363%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 253
-Void Fraction: 7.550238% Error in vf: 32.895930%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 254
-Void Fraction: 7.562412% Error in vf: 33.110215%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 255
-Void Fraction: 7.574571% Error in vf: 33.324226%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 256
-Void Fraction: 7.586714% Error in vf: 33.537962%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 257
-Void Fraction: 7.598841% Error in vf: 33.751409%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 258
-Void Fraction: 7.610950% Error in vf: 33.964551%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 259
-Void Fraction: 7.623039% Error in vf: 34.177342%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 260
-Void Fraction: 7.635107% Error in vf: 34.389756%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 261
-Void Fraction: 7.647152% Error in vf: 34.601769%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 262
-Void Fraction: 7.659173% Error in vf: 34.813363%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 263
-Void Fraction: 7.671173% Error in vf: 35.024568%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 264
-Void Fraction: 7.683153% Error in vf: 35.235435%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 265
-Void Fraction: 7.695115% Error in vf: 35.445994%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 266
-Void Fraction: 7.707061% Error in vf: 35.656253%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 267
-Void Fraction: 7.718989% Error in vf: 35.866207%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 268
-Void Fraction: 7.730899% Error in vf: 36.075845%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 269
-Void Fraction: 7.742791% Error in vf: 36.285159%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 270
-Void Fraction: 7.754664% Error in vf: 36.494147%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 271
-Void Fraction: 7.766520% Error in vf: 36.702820%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 272
-Void Fraction: 7.778358% Error in vf: 36.911192%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 273
-Void Fraction: 7.790180% Error in vf: 37.119288%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 274
-Void Fraction: 7.801988% Error in vf: 37.327118%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 275
-Void Fraction: 7.813780% Error in vf: 37.534686%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 276
-Void Fraction: 7.825558% Error in vf: 37.741981%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 277
-Void Fraction: 7.837318% Error in vf: 37.948982%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 278
-Void Fraction: 7.849060% Error in vf: 38.155664%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 279
-Void Fraction: 7.860784% Error in vf: 38.362017%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 280
-Void Fraction: 7.872489% Error in vf: 38.568050%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 281
-Void Fraction: 7.884177% Error in vf: 38.773768%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 282
-Void Fraction: 7.895846% Error in vf: 38.979162%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 283
-Void Fraction: 7.907497% Error in vf: 39.184235%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 284
-Void Fraction: 7.919130% Error in vf: 39.389003%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 285
-Void Fraction: 7.930746% Error in vf: 39.593466%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 286
-Void Fraction: 7.942345% Error in vf: 39.797618%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 287
-Void Fraction: 7.953924% Error in vf: 40.001428%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 288
-Void Fraction: 7.965482% Error in vf: 40.204871%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 289
-Void Fraction: 7.977019% Error in vf: 40.407930%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 290
-Void Fraction: 7.988533% Error in vf: 40.610607%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 291
-Void Fraction: 8.000027% Error in vf: 40.812920%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 292
-Void Fraction: 8.011502% Error in vf: 41.014901%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 293
-Void Fraction: 8.022961% Error in vf: 41.216583%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 294
-Void Fraction: 8.034404% Error in vf: 41.417997%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 295
-Void Fraction: 8.045832% Error in vf: 41.619156%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 296
-Void Fraction: 8.057246% Error in vf: 41.820055%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 297
-Void Fraction: 8.068645% Error in vf: 42.020693%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 298
-Void Fraction: 8.080028% Error in vf: 42.221055%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 299
-Void Fraction: 8.091394% Error in vf: 42.421118%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 300
-Void Fraction: 8.102741% Error in vf: 42.620848%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 301
-Void Fraction: 8.114068% Error in vf: 42.820208%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 302
-Void Fraction: 8.125373% Error in vf: 43.019195%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 303
-Void Fraction: 8.136657% Error in vf: 43.217815%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 304
-Void Fraction: 8.147921% Error in vf: 43.416079%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 305
-Void Fraction: 8.159165% Error in vf: 43.613998%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 306
-Void Fraction: 8.170390% Error in vf: 43.811569%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 307
-Void Fraction: 8.181594% Error in vf: 44.008777%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 308
-Void Fraction: 8.192777% Error in vf: 44.205613%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 309
-Void Fraction: 8.203938% Error in vf: 44.402063%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 310
-Void Fraction: 8.215076% Error in vf: 44.598114%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 311
-Void Fraction: 8.226192% Error in vf: 44.793774%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 312
-Void Fraction: 8.237287% Error in vf: 44.989052%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 313
-Void Fraction: 8.248360% Error in vf: 45.183966%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 314
-Void Fraction: 8.259414% Error in vf: 45.378534%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 315
-Void Fraction: 8.270449% Error in vf: 45.572766%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 316
-Void Fraction: 8.281465% Error in vf: 45.766655%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 317
-Void Fraction: 8.292460% Error in vf: 45.960189%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 318
-Void Fraction: 8.303435% Error in vf: 46.153360%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 319
-Void Fraction: 8.314389% Error in vf: 46.346178%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 320
-Void Fraction: 8.325325% Error in vf: 46.538666%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 321
-Void Fraction: 8.336243% Error in vf: 46.730832%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 322
-Void Fraction: 8.347142% Error in vf: 46.922684%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 323
-Void Fraction: 8.358025% Error in vf: 47.114237%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 324
-Void Fraction: 8.368892% Error in vf: 47.305516%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 325
-Void Fraction: 8.379745% Error in vf: 47.496537%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 326
-Void Fraction: 8.390582% Error in vf: 47.687289%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 327
-Void Fraction: 8.401403% Error in vf: 47.877756%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 328
-Void Fraction: 8.412207% Error in vf: 48.067924%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 329
-Void Fraction: 8.422993% Error in vf: 48.257777%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 330
-Void Fraction: 8.433760% Error in vf: 48.447289%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 331
-Void Fraction: 8.444506% Error in vf: 48.636428%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 332
-Void Fraction: 8.455229% Error in vf: 48.825178%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 333
-Void Fraction: 8.465931% Error in vf: 49.013551%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 334
-Void Fraction: 8.476612% Error in vf: 49.201543%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 335
-Void Fraction: 8.487270% Error in vf: 49.389149%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 336
-Void Fraction: 8.497906% Error in vf: 49.576361%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 337
-Void Fraction: 8.508519% Error in vf: 49.763166%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 338
-Void Fraction: 8.519109% Error in vf: 49.949560%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 339
-Void Fraction: 8.529675% Error in vf: 50.135537%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 340
-Void Fraction: 8.540216% Error in vf: 50.321081%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 341
-Void Fraction: 8.550732% Error in vf: 50.506186%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 342
-Void Fraction: 8.561224% Error in vf: 50.690856%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 343
-Void Fraction: 8.571692% Error in vf: 50.875103%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 344
-Void Fraction: 8.582136% Error in vf: 51.058940%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 345
-Void Fraction: 8.592557% Error in vf: 51.242372%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 346
-Void Fraction: 8.602956% Error in vf: 51.425408%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 347
-Void Fraction: 8.613334% Error in vf: 51.608076%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 348
-Void Fraction: 8.623693% Error in vf: 51.790404%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 349
-Void Fraction: 8.634033% Error in vf: 51.972411%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 350
-Void Fraction: 8.644356% Error in vf: 52.154109%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 351
-Void Fraction: 8.654661% Error in vf: 52.335487%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 352
-Void Fraction: 8.664948% Error in vf: 52.516563%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 353
-Void Fraction: 8.675219% Error in vf: 52.697336%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 354
-Void Fraction: 8.685473% Error in vf: 52.877824%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 355
-Void Fraction: 8.695711% Error in vf: 53.058042%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 356
-Void Fraction: 8.705935% Error in vf: 53.237994%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 357
-Void Fraction: 8.716143% Error in vf: 53.417677%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 358
-Void Fraction: 8.726336% Error in vf: 53.597083%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 359
-Void Fraction: 8.736512% Error in vf: 53.776193%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 360
-Void Fraction: 8.746669% Error in vf: 53.954972%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 361
-Void Fraction: 8.756805% Error in vf: 54.133389%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 362
-Void Fraction: 8.766920% Error in vf: 54.311427%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 363
-Void Fraction: 8.777014% Error in vf: 54.489086%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 364
-Void Fraction: 8.787085% Error in vf: 54.666362%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 365
-Void Fraction: 8.797135% Error in vf: 54.843251%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 366
-Void Fraction: 8.807162% Error in vf: 55.019739%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 367
-Void Fraction: 8.817164% Error in vf: 55.195803%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 368
-Void Fraction: 8.827142% Error in vf: 55.371416%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 369
-Void Fraction: 8.837092% Error in vf: 55.546566%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 370
-Void Fraction: 8.847017% Error in vf: 55.721248%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 371
-Void Fraction: 8.856914% Error in vf: 55.895455%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 372
-Void Fraction: 8.866784% Error in vf: 56.069182%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 373
-Void Fraction: 8.876628% Error in vf: 56.242447%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 374
-Void Fraction: 8.886445% Error in vf: 56.415258%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 375
-Void Fraction: 8.896238% Error in vf: 56.587628%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 376
-Void Fraction: 8.906008% Error in vf: 56.759596%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 377
-Void Fraction: 8.915757% Error in vf: 56.931195%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 378
-Void Fraction: 8.925487% Error in vf: 57.102450%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 379
-Void Fraction: 8.935198% Error in vf: 57.273381%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 380
-Void Fraction: 8.944891% Error in vf: 57.443992%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 381
-Void Fraction: 8.954566% Error in vf: 57.614280%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 382
-Void Fraction: 8.964222% Error in vf: 57.784243%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 383
-Void Fraction: 8.973859% Error in vf: 57.953870%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 384
-Void Fraction: 8.983476% Error in vf: 58.123144%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 385
-Void Fraction: 8.993073% Error in vf: 58.292074%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 386
-Void Fraction: 9.002652% Error in vf: 58.460677%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 387
-Void Fraction: 9.012214% Error in vf: 58.628977%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 388
-Void Fraction: 9.021759% Error in vf: 58.796982%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 389
-Void Fraction: 9.031286% Error in vf: 58.964684%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 390
-Void Fraction: 9.040796% Error in vf: 59.132065%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 391
-Void Fraction: 9.050286% Error in vf: 59.299104%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 392
-Void Fraction: 9.059755% Error in vf: 59.465778%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 393
-Void Fraction: 9.069202% Error in vf: 59.632065%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 394
-Void Fraction: 9.078627% Error in vf: 59.797960%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 395
-Void Fraction: 9.088030% Error in vf: 59.963461%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 396
-Void Fraction: 9.097411% Error in vf: 60.128573%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 397
-Void Fraction: 9.106769% Error in vf: 60.293301%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 398
-Void Fraction: 9.116106% Error in vf: 60.457635%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 399
-Void Fraction: 9.125419% Error in vf: 60.621562%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 400
-Void Fraction: 9.134708% Error in vf: 60.785063%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 401
-Void Fraction: 9.143972% Error in vf: 60.948118%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 402
-Void Fraction: 9.153209% Error in vf: 61.110710%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 403
-Void Fraction: 9.162420% Error in vf: 61.272831%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 404
-Void Fraction: 9.171604% Error in vf: 61.434495%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 405
-Void Fraction: 9.180765% Error in vf: 61.595735%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 406
-Void Fraction: 9.189903% Error in vf: 61.756576%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 407
-Void Fraction: 9.199019% Error in vf: 61.917032%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 408
-Void Fraction: 9.208114% Error in vf: 62.077120%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 409
-Void Fraction: 9.217189% Error in vf: 62.236851%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 410
-Void Fraction: 9.226243% Error in vf: 62.396231%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 411
-Void Fraction: 9.235278% Error in vf: 62.555259%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 412
-Void Fraction: 9.244293% Error in vf: 62.713923%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 413
-Void Fraction: 9.253285% Error in vf: 62.872208%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 414
-Void Fraction: 9.262256% Error in vf: 63.030102%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 415
-Void Fraction: 9.271203% Error in vf: 63.187593%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 416
-Void Fraction: 9.280127% Error in vf: 63.344667%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 417
-Void Fraction: 9.289027% Error in vf: 63.501321%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 418
-Void Fraction: 9.297903% Error in vf: 63.657557%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 419
-Void Fraction: 9.306756% Error in vf: 63.813384%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 420
-Void Fraction: 9.315586% Error in vf: 63.968803%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 421
-Void Fraction: 9.324393% Error in vf: 64.123819%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 422
-Void Fraction: 9.333178% Error in vf: 64.278439%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 423
-Void Fraction: 9.341940% Error in vf: 64.432673%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 424
-Void Fraction: 9.350682% Error in vf: 64.586534%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 425
-Void Fraction: 9.359402% Error in vf: 64.740029%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 426
-Void Fraction: 9.368101% Error in vf: 64.893153%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 427
-Void Fraction: 9.376779% Error in vf: 65.045894%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 428
-Void Fraction: 9.385434% Error in vf: 65.198240%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 429
-Void Fraction: 9.394066% Error in vf: 65.350170%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 430
-Void Fraction: 9.402674% Error in vf: 65.501675%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 431
-Void Fraction: 9.411257% Error in vf: 65.652756%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 432
-Void Fraction: 9.419816% Error in vf: 65.803416%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 433
-Void Fraction: 9.428351% Error in vf: 65.953644%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 434
-Void Fraction: 9.436862% Error in vf: 66.103447%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 435
-Void Fraction: 9.445350% Error in vf: 66.252848%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 436
-Void Fraction: 9.453816% Error in vf: 66.401863%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 437
-Void Fraction: 9.462261% Error in vf: 66.550506%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 438
-Void Fraction: 9.470685% Error in vf: 66.698788%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 439
-Void Fraction: 9.479090% Error in vf: 66.846728%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 440
-Void Fraction: 9.487476% Error in vf: 66.994333%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 441
-Void Fraction: 9.495843% Error in vf: 67.141609%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 442
-Void Fraction: 9.504192% Error in vf: 67.288554%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 443
-Void Fraction: 9.512521% Error in vf: 67.435160%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 444
-Void Fraction: 9.520830% Error in vf: 67.581417%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 445
-Void Fraction: 9.529119% Error in vf: 67.727317%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 446
-Void Fraction: 9.537388% Error in vf: 67.872857%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 447
-Void Fraction: 9.545636% Error in vf: 68.018034%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 448
-Void Fraction: 9.553863% Error in vf: 68.162837%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 449
-Void Fraction: 9.562067% Error in vf: 68.307251%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 450
-Void Fraction: 9.570249% Error in vf: 68.451256%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 451
-Void Fraction: 9.578406% Error in vf: 68.594845%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 452
-Void Fraction: 9.586541% Error in vf: 68.738025%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 453
-Void Fraction: 9.594652% Error in vf: 68.880802%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 454
-Void Fraction: 9.602741% Error in vf: 69.023165%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 455
-Void Fraction: 9.610805% Error in vf: 69.165103%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 456
-Void Fraction: 9.618844% Error in vf: 69.306613%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 457
-Void Fraction: 9.626859% Error in vf: 69.447688%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 458
-Void Fraction: 9.634849% Error in vf: 69.588319%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 459
-Void Fraction: 9.642813% Error in vf: 69.728496%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 460
-Void Fraction: 9.650750% Error in vf: 69.868207%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 461
-Void Fraction: 9.658661% Error in vf: 70.007456%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 462
-Void Fraction: 9.666547% Error in vf: 70.146252%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 463
-Void Fraction: 9.674407% Error in vf: 70.284607%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 464
-Void Fraction: 9.682243% Error in vf: 70.422540%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 465
-Void Fraction: 9.690057% Error in vf: 70.560065%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 466
-Void Fraction: 9.697848% Error in vf: 70.697202%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 467
-Void Fraction: 9.705619% Error in vf: 70.833977%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 468
-Void Fraction: 9.713370% Error in vf: 70.970410%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 469
-Void Fraction: 9.721102% Error in vf: 71.106514%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 470
-Void Fraction: 9.728817% Error in vf: 71.242298%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 471
-Void Fraction: 9.736513% Error in vf: 71.377765%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 472
-Void Fraction: 9.744191% Error in vf: 71.512909%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 473
-Void Fraction: 9.751850% Error in vf: 71.647722%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 474
-Void Fraction: 9.759490% Error in vf: 71.782192%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 475
-Void Fraction: 9.767110% Error in vf: 71.916318%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 476
-Void Fraction: 9.774710% Error in vf: 72.050095%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 477
-Void Fraction: 9.782290% Error in vf: 72.183508%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 478
-Void Fraction: 9.789848% Error in vf: 72.316544%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 479
-Void Fraction: 9.797384% Error in vf: 72.449193%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 480
-Void Fraction: 9.804898% Error in vf: 72.581452%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 481
-Void Fraction: 9.812390% Error in vf: 72.713312%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 482
-Void Fraction: 9.819858% Error in vf: 72.844767%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 483
-Void Fraction: 9.827303% Error in vf: 72.975807%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 484
-Void Fraction: 9.834724% Error in vf: 73.106426%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 485
-Void Fraction: 9.842120% Error in vf: 73.236623%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 486
-Void Fraction: 9.849493% Error in vf: 73.366399%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 487
-Void Fraction: 9.856843% Error in vf: 73.495759%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 488
-Void Fraction: 9.864169% Error in vf: 73.624713%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 489
-Void Fraction: 9.871473% Error in vf: 73.753277%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 490
-Void Fraction: 9.878756% Error in vf: 73.881463%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 491
-Void Fraction: 9.886017% Error in vf: 74.009274%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 492
-Void Fraction: 9.893257% Error in vf: 74.136712%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 493
-Void Fraction: 9.900477% Error in vf: 74.263790%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 494
-Void Fraction: 9.907677% Error in vf: 74.390518%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 495
-Void Fraction: 9.914857% Error in vf: 74.516897%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 496
-Void Fraction: 9.922017% Error in vf: 74.642928%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 497
-Void Fraction: 9.929157% Error in vf: 74.768605%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 498
-Void Fraction: 9.936277% Error in vf: 74.893924%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 499
-Void Fraction: 9.943377% Error in vf: 75.018888%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 500
-Void Fraction: 9.950456% Error in vf: 75.143501%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 501
-Void Fraction: 9.957516% Error in vf: 75.267767%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 502
-Void Fraction: 9.964557% Error in vf: 75.391692%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 503
-Void Fraction: 9.971578% Error in vf: 75.515271%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 504
-Void Fraction: 9.978578% Error in vf: 75.638494%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 505
-Void Fraction: 9.985558% Error in vf: 75.761354%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 506
-Void Fraction: 9.992517% Error in vf: 75.883835%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 507
-Void Fraction: 9.999453% Error in vf: 76.005919%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 508
-Void Fraction: 10.006365% Error in vf: 76.127591%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 509
-Void Fraction: 10.013254% Error in vf: 76.248841%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 510
-Void Fraction: 10.020118% Error in vf: 76.369659%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 511
-Void Fraction: 10.026958% Error in vf: 76.490044%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 512
-Void Fraction: 10.033772% Error in vf: 76.609994%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 513
-Void Fraction: 10.040562% Error in vf: 76.729510%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 514
-Void Fraction: 10.047328% Error in vf: 76.848593%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 515
-Void Fraction: 10.054068% Error in vf: 76.967236%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 516
-Void Fraction: 10.060784% Error in vf: 77.085437%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 517
-Void Fraction: 10.067473% Error in vf: 77.203187%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 518
-Void Fraction: 10.074137% Error in vf: 77.320475%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 519
-Void Fraction: 10.080774% Error in vf: 77.437295%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 520
-Void Fraction: 10.087384% Error in vf: 77.553651%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 521
-Void Fraction: 10.093970% Error in vf: 77.669562%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 522
-Void Fraction: 10.100531% Error in vf: 77.785044%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 523
-Void Fraction: 10.107068% Error in vf: 77.900112%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 524
-Void Fraction: 10.113583% Error in vf: 78.014791%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 525
-Void Fraction: 10.120078% Error in vf: 78.129104%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 526
-Void Fraction: 10.126553% Error in vf: 78.243073%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 527
-Void Fraction: 10.133009% Error in vf: 78.356709%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 528
-Void Fraction: 10.139447% Error in vf: 78.470030%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 529
-Void Fraction: 10.145868% Error in vf: 78.583047%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 530
-Void Fraction: 10.152272% Error in vf: 78.695768%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 531
-Void Fraction: 10.158659% Error in vf: 78.808197%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 532
-Void Fraction: 10.165030% Error in vf: 78.920339%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 533
-Void Fraction: 10.171385% Error in vf: 79.032195%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 534
-Void Fraction: 10.177724% Error in vf: 79.143775%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 535
-Void Fraction: 10.184048% Error in vf: 79.255081%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 536
-Void Fraction: 10.190356% Error in vf: 79.366105%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 537
-Void Fraction: 10.196647% Error in vf: 79.476838%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 538
-Void Fraction: 10.202921% Error in vf: 79.587270%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 539
-Void Fraction: 10.209177% Error in vf: 79.697390%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 540
-Void Fraction: 10.215415% Error in vf: 79.807183%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 541
-Void Fraction: 10.221633% Error in vf: 79.916640%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 542
-Void Fraction: 10.227832% Error in vf: 80.025753%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 543
-Void Fraction: 10.234012% Error in vf: 80.134520%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 544
-Void Fraction: 10.240172% Error in vf: 80.242944%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 545
-Void Fraction: 10.246313% Error in vf: 80.351035%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 546
-Void Fraction: 10.252434% Error in vf: 80.458787%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 547
-Void Fraction: 10.258537% Error in vf: 80.566196%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 548
-Void Fraction: 10.264620% Error in vf: 80.673267%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 549
-Void Fraction: 10.270683% Error in vf: 80.779994%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 550
-Void Fraction: 10.276727% Error in vf: 80.886374%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 551
-Void Fraction: 10.282751% Error in vf: 80.992403%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 552
-Void Fraction: 10.288754% Error in vf: 81.098074%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 553
-Void Fraction: 10.294738% Error in vf: 81.203388%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 554
-Void Fraction: 10.300700% Error in vf: 81.308344%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 555
-Void Fraction: 10.306643% Error in vf: 81.412941%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 556
-Void Fraction: 10.312566% Error in vf: 81.517188%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 557
-Void Fraction: 10.318469% Error in vf: 81.621104%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 558
-Void Fraction: 10.324355% Error in vf: 81.724703%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 559
-Void Fraction: 10.330223% Error in vf: 81.827990%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 560
-Void Fraction: 10.336074% Error in vf: 81.930967%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 561
-Void Fraction: 10.341907% Error in vf: 82.033642%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 562
-Void Fraction: 10.347723% Error in vf: 82.136021%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 563
-Void Fraction: 10.353523% Error in vf: 82.238101%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 564
-Void Fraction: 10.359306% Error in vf: 82.339886%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 565
-Void Fraction: 10.365072% Error in vf: 82.441382%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 566
-Void Fraction: 10.370822% Error in vf: 82.542595%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 567
-Void Fraction: 10.376556% Error in vf: 82.643525%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 568
-Void Fraction: 10.382275% Error in vf: 82.744177%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 569
-Void Fraction: 10.387977% Error in vf: 82.844556%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 570
-Void Fraction: 10.393665% Error in vf: 82.944660%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 571
-Void Fraction: 10.399336% Error in vf: 83.044482%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 572
-Void Fraction: 10.404990% Error in vf: 83.144010%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 573
-Void Fraction: 10.410627% Error in vf: 83.243229%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 574
-Void Fraction: 10.416246% Error in vf: 83.342119%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 575
-Void Fraction: 10.421845% Error in vf: 83.440668%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 576
-Void Fraction: 10.427423% Error in vf: 83.538862%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 577
-Void Fraction: 10.432981% Error in vf: 83.636685%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 578
-Void Fraction: 10.438517% Error in vf: 83.734130%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 579
-Void Fraction: 10.444031% Error in vf: 83.831185%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 580
-Void Fraction: 10.449522% Error in vf: 83.927840%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 581
-Void Fraction: 10.454990% Error in vf: 84.024085%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 582
-Void Fraction: 10.460435% Error in vf: 84.119914%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 583
-Void Fraction: 10.465855% Error in vf: 84.215319%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 584
-Void Fraction: 10.471250% Error in vf: 84.310290%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 585
-Void Fraction: 10.476621% Error in vf: 84.404816%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 586
-Void Fraction: 10.481965% Error in vf: 84.498889%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 587
-Void Fraction: 10.487284% Error in vf: 84.592508%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 588
-Void Fraction: 10.492578% Error in vf: 84.685682%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 589
-Void Fraction: 10.497846% Error in vf: 84.778411%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 590
-Void Fraction: 10.503089% Error in vf: 84.870692%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 591
-Void Fraction: 10.508306% Error in vf: 84.962522%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 592
-Void Fraction: 10.513498% Error in vf: 85.053909%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 593
-Void Fraction: 10.518665% Error in vf: 85.144860%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 594
-Void Fraction: 10.523808% Error in vf: 85.235383%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 595
-Void Fraction: 10.528927% Error in vf: 85.325490%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 596
-Void Fraction: 10.534023% Error in vf: 85.415188%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 597
-Void Fraction: 10.539096% Error in vf: 85.504480%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 598
-Void Fraction: 10.544146% Error in vf: 85.593365%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 599
-Void Fraction: 10.549173% Error in vf: 85.681845%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 600
-Void Fraction: 10.554177% Error in vf: 85.769920%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 601
-Void Fraction: 10.559157% Error in vf: 85.857585%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 602
-Void Fraction: 10.564115% Error in vf: 85.944846%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 603
-Void Fraction: 10.569049% Error in vf: 86.031704%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 604
-Void Fraction: 10.573962% Error in vf: 86.118164%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 605
-Void Fraction: 10.578851% Error in vf: 86.204227%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 606
-Void Fraction: 10.583718% Error in vf: 86.289888%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 607
-Void Fraction: 10.588561% Error in vf: 86.375140%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 608
-Void Fraction: 10.593381% Error in vf: 86.459970%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 609
-Void Fraction: 10.598175% Error in vf: 86.544363%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 610
-Void Fraction: 10.602945% Error in vf: 86.628312%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 611
-Void Fraction: 10.607688% Error in vf: 86.711811%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 612
-Void Fraction: 10.612407% Error in vf: 86.794860%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 613
-Void Fraction: 10.617099% Error in vf: 86.877458%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 614
-Void Fraction: 10.621766% Error in vf: 86.959595%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 615
-Void Fraction: 10.626406% Error in vf: 87.041265%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 616
-Void Fraction: 10.631019% Error in vf: 87.122466%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 617
-Void Fraction: 10.635606% Error in vf: 87.203200%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 618
-Void Fraction: 10.640166% Error in vf: 87.283469%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 619
-Void Fraction: 10.644700% Error in vf: 87.363268%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 620
-Void Fraction: 10.649207% Error in vf: 87.442593%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 621
-Void Fraction: 10.653686% Error in vf: 87.521444%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 622
-Void Fraction: 10.658139% Error in vf: 87.599814%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 623
-Void Fraction: 10.662564% Error in vf: 87.677698%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 624
-Void Fraction: 10.666961% Error in vf: 87.755091%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 625
-Void Fraction: 10.671330% Error in vf: 87.831992%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 626
-Void Fraction: 10.675670% Error in vf: 87.908397%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 627
-Void Fraction: 10.679982% Error in vf: 87.984295%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 628
-Void Fraction: 10.684265% Error in vf: 88.059682%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 629
-Void Fraction: 10.688519% Error in vf: 88.134552%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 630
-Void Fraction: 10.692743% Error in vf: 88.208902%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 631
-Void Fraction: 10.696938% Error in vf: 88.282735%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 632
-Void Fraction: 10.701104% Error in vf: 88.356061%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 633
-Void Fraction: 10.705241% Error in vf: 88.428887%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 634
-Void Fraction: 10.709351% Error in vf: 88.501228%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 635
-Void Fraction: 10.713433% Error in vf: 88.573087%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 636
-Void Fraction: 10.717489% Error in vf: 88.644471%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 637
-Void Fraction: 10.721518% Error in vf: 88.715392%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 638
-Void Fraction: 10.725522% Error in vf: 88.785857%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 639
-Void Fraction: 10.729499% Error in vf: 88.855873%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 640
-Void Fraction: 10.733452% Error in vf: 88.925439%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 641
-Void Fraction: 10.737379% Error in vf: 88.994557%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 642
-Void Fraction: 10.741280% Error in vf: 89.063227%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 643
-Void Fraction: 10.745156% Error in vf: 89.131448%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 644
-Void Fraction: 10.749006% Error in vf: 89.199216%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 645
-Void Fraction: 10.752831% Error in vf: 89.266543%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 646
-Void Fraction: 10.756631% Error in vf: 89.333428%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 647
-Void Fraction: 10.760406% Error in vf: 89.399877%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 648
-Void Fraction: 10.764157% Error in vf: 89.465894%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 649
-Void Fraction: 10.767883% Error in vf: 89.531480%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 650
-Void Fraction: 10.771584% Error in vf: 89.596631%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 651
-Void Fraction: 10.775262% Error in vf: 89.661365%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 652
-Void Fraction: 10.778916% Error in vf: 89.725683%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 653
-Void Fraction: 10.782547% Error in vf: 89.789589%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 654
-Void Fraction: 10.786154% Error in vf: 89.853078%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 655
-Void Fraction: 10.789737% Error in vf: 89.916147%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 656
-Void Fraction: 10.793296% Error in vf: 89.978787%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 657
-Void Fraction: 10.796830% Error in vf: 90.040988%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 658
-Void Fraction: 10.800338% Error in vf: 90.102746%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 659
-Void Fraction: 10.803821% Error in vf: 90.164054%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 660
-Void Fraction: 10.807279% Error in vf: 90.224913%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 661
-Void Fraction: 10.810711% Error in vf: 90.285323%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 662
-Void Fraction: 10.814118% Error in vf: 90.345284%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 663
-Void Fraction: 10.817498% Error in vf: 90.404776%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 664
-Void Fraction: 10.820851% Error in vf: 90.463797%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 665
-Void Fraction: 10.824177% Error in vf: 90.522354%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 666
-Void Fraction: 10.827477% Error in vf: 90.580424%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 667
-Void Fraction: 10.830749% Error in vf: 90.638026%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 668
-Void Fraction: 10.833994% Error in vf: 90.695142%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 669
-Void Fraction: 10.837213% Error in vf: 90.751802%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 670
-Void Fraction: 10.840406% Error in vf: 90.807996%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 671
-Void Fraction: 10.843570% Error in vf: 90.863686%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 672
-Void Fraction: 10.846709% Error in vf: 90.918947%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 673
-Void Fraction: 10.849822% Error in vf: 90.973745%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 674
-Void Fraction: 10.852910% Error in vf: 91.028084%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 675
-Void Fraction: 10.855972% Error in vf: 91.081992%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 676
-Void Fraction: 10.859010% Error in vf: 91.135455%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 677
-Void Fraction: 10.862024% Error in vf: 91.188509%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 678
-Void Fraction: 10.865015% Error in vf: 91.241162%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 679
-Void Fraction: 10.867985% Error in vf: 91.293430%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 680
-Void Fraction: 10.870933% Error in vf: 91.345326%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 681
-Void Fraction: 10.873862% Error in vf: 91.396887%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 682
-Void Fraction: 10.876771% Error in vf: 91.448087%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 683
-Void Fraction: 10.879665% Error in vf: 91.499013%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 684
-Void Fraction: 10.882538% Error in vf: 91.549594%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 685
-Void Fraction: 10.885393% Error in vf: 91.599843%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 686
-Void Fraction: 10.888232% Error in vf: 91.649813%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 687
-Void Fraction: 10.891051% Error in vf: 91.699432%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 688
-Void Fraction: 10.893854% Error in vf: 91.748773%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 689
-Void Fraction: 10.896637% Error in vf: 91.797753%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 690
-Void Fraction: 10.899407% Error in vf: 91.846518%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 691
-Void Fraction: 10.902154% Error in vf: 91.894867%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 692
-Void Fraction: 10.904889% Error in vf: 91.942999%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 693
-Void Fraction: 10.907603% Error in vf: 91.990775%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 694
-Void Fraction: 10.910300% Error in vf: 92.038252%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 695
-Void Fraction: 10.912979% Error in vf: 92.085399%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 696
-Void Fraction: 10.915638% Error in vf: 92.132199%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 697
-Void Fraction: 10.918278% Error in vf: 92.178675%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 698
-Void Fraction: 10.920899% Error in vf: 92.224808%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 699
-Void Fraction: 10.923501% Error in vf: 92.270602%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 700
-Void Fraction: 10.926083% Error in vf: 92.316047%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 701
-Void Fraction: 10.928645% Error in vf: 92.361144%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 702
-Void Fraction: 10.931188% Error in vf: 92.405907%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 703
-Void Fraction: 10.933716% Error in vf: 92.450394%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 704
-Void Fraction: 10.936219% Error in vf: 92.494452%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 705
-Void Fraction: 10.938707% Error in vf: 92.538254%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 706
-Void Fraction: 10.941181% Error in vf: 92.581790%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 707
-Void Fraction: 10.943628% Error in vf: 92.624875%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 708
-Void Fraction: 10.946058% Error in vf: 92.667638%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 709
-Void Fraction: 10.948475% Error in vf: 92.710188%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 710
-Void Fraction: 10.950865% Error in vf: 92.752255%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 711
-Void Fraction: 10.953245% Error in vf: 92.794143%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 712
-Void Fraction: 10.955599% Error in vf: 92.835579%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 713
-Void Fraction: 10.957952% Error in vf: 92.876999%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 714
-Void Fraction: 10.960266% Error in vf: 92.917715%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 715
-Void Fraction: 10.962578% Error in vf: 92.958422%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 716
-Void Fraction: 10.964866% Error in vf: 92.998696%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 717
-Void Fraction: 10.967138% Error in vf: 93.038684%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 718
-Void Fraction: 10.969387% Error in vf: 93.078273%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 719
-Void Fraction: 10.971623% Error in vf: 93.117626%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 720
-Void Fraction: 10.973834% Error in vf: 93.156541%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 721
-Void Fraction: 10.976034% Error in vf: 93.195256%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 722
-Void Fraction: 10.978212% Error in vf: 93.233598%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 723
-Void Fraction: 10.980370% Error in vf: 93.271587%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 724
-Void Fraction: 10.982512% Error in vf: 93.309292%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 725
-Void Fraction: 10.984634% Error in vf: 93.346639%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 726
-Void Fraction: 10.986749% Error in vf: 93.383857%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 727
-Void Fraction: 10.988840% Error in vf: 93.420665%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 728
-Void Fraction: 10.990916% Error in vf: 93.457210%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 729
-Void Fraction: 10.992980% Error in vf: 93.493534%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 730
-Void Fraction: 10.995037% Error in vf: 93.529743%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 731
-Void Fraction: 10.997067% Error in vf: 93.565479%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 732
-Void Fraction: 10.999086% Error in vf: 93.601009%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 733
-Void Fraction: 11.001092% Error in vf: 93.636330%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 734
-Void Fraction: 11.003077% Error in vf: 93.671267%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 735
-Void Fraction: 11.005058% Error in vf: 93.706138%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 736
-Void Fraction: 11.007006% Error in vf: 93.740415%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 737
-Void Fraction: 11.008970% Error in vf: 93.774994%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 738
-Void Fraction: 11.010882% Error in vf: 93.808651%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 739
-Void Fraction: 11.012810% Error in vf: 93.842571%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 740
-Void Fraction: 11.014705% Error in vf: 93.875936%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 741
-Void Fraction: 11.016595% Error in vf: 93.909203%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 742
-Void Fraction: 11.018458% Error in vf: 93.941997%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 743
-Void Fraction: 11.020309% Error in vf: 93.974580%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 744
-Void Fraction: 11.022126% Error in vf: 94.006559%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 745
-Void Fraction: 11.023938% Error in vf: 94.038458%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 746
-Void Fraction: 11.025715% Error in vf: 94.069729%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 747
-Void Fraction: 11.027491% Error in vf: 94.100986%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 748
-Void Fraction: 11.029233% Error in vf: 94.131647%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 749
-Void Fraction: 11.030961% Error in vf: 94.162057%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 750
-Void Fraction: 11.032689% Error in vf: 94.192486%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 751
-Void Fraction: 11.034388% Error in vf: 94.222381%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 752
-Void Fraction: 11.036062% Error in vf: 94.251849%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 753
-Void Fraction: 11.037719% Error in vf: 94.281010%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 754
-Void Fraction: 11.039381% Error in vf: 94.310277%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 755
-Void Fraction: 11.041059% Error in vf: 94.339803%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 756
-Void Fraction: 11.042679% Error in vf: 94.368313%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 757
-Void Fraction: 11.044295% Error in vf: 94.396760%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 758
-Void Fraction: 11.045936% Error in vf: 94.425648%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 759
-Void Fraction: 11.047510% Error in vf: 94.453346%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 760
-Void Fraction: 11.049119% Error in vf: 94.481672%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 761
-Void Fraction: 11.050662% Error in vf: 94.508829%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 762
-Void Fraction: 11.052213% Error in vf: 94.536127%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 763
-Void Fraction: 11.053786% Error in vf: 94.563821%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 764
-Void Fraction: 11.055285% Error in vf: 94.590211%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 765
-Void Fraction: 11.056824% Error in vf: 94.617295%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 766
-Void Fraction: 11.058310% Error in vf: 94.643445%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 767
-Void Fraction: 11.059820% Error in vf: 94.670035%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 768
-Void Fraction: 11.061278% Error in vf: 94.695684%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 769
-Void Fraction: 11.062746% Error in vf: 94.721522%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 770
-Void Fraction: 11.064171% Error in vf: 94.746614%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 771
-Void Fraction: 11.065606% Error in vf: 94.771876%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 772
-Void Fraction: 11.066984% Error in vf: 94.796130%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 773
-Void Fraction: 11.068386% Error in vf: 94.820800%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 774
-Void Fraction: 11.069766% Error in vf: 94.845087%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 775
-Void Fraction: 11.071130% Error in vf: 94.869103%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 776
-Void Fraction: 11.072461% Error in vf: 94.892533%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 777
-Void Fraction: 11.073810% Error in vf: 94.916271%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 778
-Void Fraction: 11.075138% Error in vf: 94.939654%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 779
-Void Fraction: 11.076390% Error in vf: 94.961686%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 780
-Void Fraction: 11.077723% Error in vf: 94.985151%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 781
-Void Fraction: 11.079032% Error in vf: 95.008188%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 782
-Void Fraction: 11.080304% Error in vf: 95.030579%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 783
-Void Fraction: 11.081564% Error in vf: 95.052759%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 784
-Void Fraction: 11.082858% Error in vf: 95.075542%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 785
-Void Fraction: 11.084083% Error in vf: 95.097100%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 786
-Void Fraction: 11.085322% Error in vf: 95.118906%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 787
-Void Fraction: 11.086555% Error in vf: 95.140614%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 788
-Void Fraction: 11.087761% Error in vf: 95.161825%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 789
-Void Fraction: 11.088950% Error in vf: 95.182761%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 790
-Void Fraction: 11.090150% Error in vf: 95.203882%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 791
-Void Fraction: 11.091296% Error in vf: 95.224062%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 792
-Void Fraction: 11.092519% Error in vf: 95.245579%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 793
-Void Fraction: 11.093646% Error in vf: 95.265414%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 794
-Void Fraction: 11.094788% Error in vf: 95.285512%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 795
-Void Fraction: 11.095909% Error in vf: 95.305257%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 796
-Void Fraction: 11.097049% Error in vf: 95.325320%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 797
-Void Fraction: 11.098109% Error in vf: 95.343976%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 798
-Void Fraction: 11.099235% Error in vf: 95.363799%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 799
-Void Fraction: 11.100298% Error in vf: 95.382511%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 800
-Void Fraction: 11.101375% Error in vf: 95.401462%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 801
-Void Fraction: 11.102408% Error in vf: 95.419652%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 802
-Void Fraction: 11.103470% Error in vf: 95.438345%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 803
-Void Fraction: 11.104482% Error in vf: 95.456141%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 804
-Void Fraction: 11.105501% Error in vf: 95.474078%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 805
-Void Fraction: 11.106535% Error in vf: 95.492285%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 806
-Void Fraction: 11.107545% Error in vf: 95.510058%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 807
-Void Fraction: 11.108472% Error in vf: 95.526381%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 808
-Void Fraction: 11.109516% Error in vf: 95.544763%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 809
-Void Fraction: 11.110530% Error in vf: 95.562596%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 810
-Void Fraction: 11.111485% Error in vf: 95.579408%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 811
-Void Fraction: 11.112437% Error in vf: 95.596174%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 812
-Void Fraction: 11.113474% Error in vf: 95.614426%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 813
-Void Fraction: 11.114341% Error in vf: 95.629690%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 814
-Void Fraction: 11.115304% Error in vf: 95.646630%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 815
-Void Fraction: 11.116255% Error in vf: 95.663367%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 816
-Void Fraction: 11.117138% Error in vf: 95.678914%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 817
-Void Fraction: 11.118032% Error in vf: 95.694656%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 818
-Void Fraction: 11.118964% Error in vf: 95.711059%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 819
-Void Fraction: 11.119779% Error in vf: 95.725398%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 820
-Void Fraction: 11.120723% Error in vf: 95.742016%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 821
-Void Fraction: 11.121552% Error in vf: 95.756604%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 822
-Void Fraction: 11.122366% Error in vf: 95.770931%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 823
-Void Fraction: 11.123226% Error in vf: 95.786065%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 824
-Void Fraction: 11.124026% Error in vf: 95.800161%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 825
-Void Fraction: 11.124833% Error in vf: 95.814362%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 826
-Void Fraction: 11.125656% Error in vf: 95.828851%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 827
-Void Fraction: 11.126512% Error in vf: 95.843915%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 828
-Void Fraction: 11.127226% Error in vf: 95.856483%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 829
-Void Fraction: 11.128116% Error in vf: 95.872148%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 830
-Void Fraction: 11.128816% Error in vf: 95.884457%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 831
-Void Fraction: 11.129604% Error in vf: 95.898327%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 832
-Void Fraction: 11.130354% Error in vf: 95.911537%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 833
-Void Fraction: 11.131078% Error in vf: 95.924285%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 834
-Void Fraction: 11.131797% Error in vf: 95.936928%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 835
-Void Fraction: 11.132570% Error in vf: 95.950535%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 836
-Void Fraction: 11.133241% Error in vf: 95.962348%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 837
-Void Fraction: 11.133985% Error in vf: 95.975442%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 838
-Void Fraction: 11.134599% Error in vf: 95.986260%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 839
-Void Fraction: 11.135319% Error in vf: 95.998928%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 840
-Void Fraction: 11.135981% Error in vf: 96.010575%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 841
-Void Fraction: 11.136590% Error in vf: 96.021292%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 842
-Void Fraction: 11.137286% Error in vf: 96.033550%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 843
-Void Fraction: 11.137861% Error in vf: 96.043675%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 844
-Void Fraction: 11.138489% Error in vf: 96.054722%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 845
-Void Fraction: 11.139137% Error in vf: 96.066129%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 846
-Void Fraction: 11.139678% Error in vf: 96.075655%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 847
-Void Fraction: 11.140206% Error in vf: 96.084942%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 848
-Void Fraction: 11.140878% Error in vf: 96.096767%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 849
-Void Fraction: 11.141359% Error in vf: 96.105240%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 850
-Void Fraction: 11.141872% Error in vf: 96.114268%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 851
-Void Fraction: 11.142357% Error in vf: 96.122814%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 852
-Void Fraction: 11.142904% Error in vf: 96.132429%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 853
-Void Fraction: 11.143394% Error in vf: 96.141067%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 854
-Void Fraction: 11.143851% Error in vf: 96.149096%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 855
-Void Fraction: 11.144269% Error in vf: 96.156461%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 856
-Void Fraction: 11.144690% Error in vf: 96.163868%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 857
-Void Fraction: 11.145137% Error in vf: 96.171732%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 858
-Void Fraction: 11.145477% Error in vf: 96.177717%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 859
-Void Fraction: 11.145935% Error in vf: 96.185790%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 860
-Void Fraction: 11.146258% Error in vf: 96.191473%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 861
-Void Fraction: 11.146646% Error in vf: 96.198299%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 862
-Void Fraction: 11.146980% Error in vf: 96.204189%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 863
-Void Fraction: 11.147324% Error in vf: 96.210227%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 864
-Void Fraction: 11.147519% Error in vf: 96.213670%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 865
-Void Fraction: 11.147861% Error in vf: 96.219694%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 866
-Void Fraction: 11.148114% Error in vf: 96.224144%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 867
-Void Fraction: 11.148415% Error in vf: 96.229438%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 868
-Void Fraction: 11.148623% Error in vf: 96.233091%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 869
-Void Fraction: 11.148793% Error in vf: 96.236100%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 870
-Void Fraction: 11.149014% Error in vf: 96.239975%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 871
-Void Fraction: 11.149168% Error in vf: 96.242690%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 872
-Void Fraction: 11.149419% Error in vf: 96.247108%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 873
-Void Fraction: 11.149453% Error in vf: 96.247705%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 874
-Void Fraction: 11.149655% Error in vf: 96.251272%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 875
-Void Fraction: 11.149712% Error in vf: 96.252271%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 876
-Void Fraction: 11.149793% Error in vf: 96.253685%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 877
-Void Fraction: 11.149799% Error in vf: 96.253803%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 878
-Void Fraction: 11.149932% Error in vf: 96.256136%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 879
-Void Fraction: 11.149814% Error in vf: 96.254063%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 880
-Void Fraction: 11.149865% Error in vf: 96.254962%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 881
-Void Fraction: 11.149828% Error in vf: 96.254306%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 882
-Void Fraction: 11.149818% Error in vf: 96.254127%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 883
-Void Fraction: 11.149758% Error in vf: 96.253072%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 884
-Void Fraction: 11.149567% Error in vf: 96.249722%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 885
-Void Fraction: 11.149461% Error in vf: 96.247842%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 886
-Void Fraction: 11.149344% Error in vf: 96.245785%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 887
-Void Fraction: 11.149212% Error in vf: 96.243459%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 888
-Void Fraction: 11.149014% Error in vf: 96.239974%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 889
-Void Fraction: 11.148844% Error in vf: 96.236998%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 890
-Void Fraction: 11.148592% Error in vf: 96.232558%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 891
-Void Fraction: 11.148414% Error in vf: 96.229414%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 892
-Void Fraction: 11.148047% Error in vf: 96.222966%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 893
-Void Fraction: 11.147753% Error in vf: 96.217786%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 894
-Void Fraction: 11.147443% Error in vf: 96.212335%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 895
-Void Fraction: 11.147051% Error in vf: 96.205437%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 896
-Void Fraction: 11.146784% Error in vf: 96.200723%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 897
-Void Fraction: 11.146267% Error in vf: 96.191627%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 898
-Void Fraction: 11.145891% Error in vf: 96.185020%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 899
-Void Fraction: 11.145434% Error in vf: 96.176961%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 900
-Void Fraction: 11.144949% Error in vf: 96.168435%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 901
-Void Fraction: 11.144552% Error in vf: 96.161436%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 902
-Void Fraction: 11.143945% Error in vf: 96.150751%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 903
-Void Fraction: 11.143440% Error in vf: 96.141876%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 904
-Void Fraction: 11.142777% Error in vf: 96.130206%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 905
-Void Fraction: 11.142275% Error in vf: 96.121362%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 906
-Void Fraction: 11.141624% Error in vf: 96.109901%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 907
-Void Fraction: 11.140999% Error in vf: 96.098907%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 908
-Void Fraction: 11.140291% Error in vf: 96.086437%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 909
-Void Fraction: 11.139704% Error in vf: 96.076104%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 910
-Void Fraction: 11.138860% Error in vf: 96.061257%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 911
-Void Fraction: 11.138207% Error in vf: 96.049762%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 912
-Void Fraction: 11.137388% Error in vf: 96.035348%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 913
-Void Fraction: 11.136721% Error in vf: 96.023602%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 914
-Void Fraction: 11.135831% Error in vf: 96.007938%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 915
-Void Fraction: 11.134999% Error in vf: 95.993295%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 916
-Void Fraction: 11.134147% Error in vf: 95.978306%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 917
-Void Fraction: 11.133384% Error in vf: 95.964878%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 918
-Void Fraction: 11.132474% Error in vf: 95.948844%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 919
-Void Fraction: 11.131534% Error in vf: 95.932301%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 920
-Void Fraction: 11.130671% Error in vf: 95.917112%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 921
-Void Fraction: 11.129785% Error in vf: 95.901515%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 922
-Void Fraction: 11.128688% Error in vf: 95.882210%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 923
-Void Fraction: 11.127747% Error in vf: 95.865649%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 924
-Void Fraction: 11.126791% Error in vf: 95.848821%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 925
-Void Fraction: 11.125724% Error in vf: 95.830047%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 926
-Void Fraction: 11.124692% Error in vf: 95.811872%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 927
-Void Fraction: 11.123651% Error in vf: 95.793548%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 928
-Void Fraction: 11.122610% Error in vf: 95.775238%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 929
-Void Fraction: 11.121484% Error in vf: 95.755418%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 930
-Void Fraction: 11.120316% Error in vf: 95.734860%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 931
-Void Fraction: 11.119185% Error in vf: 95.714946%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 932
-Void Fraction: 11.118059% Error in vf: 95.695123%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 933
-Void Fraction: 11.116880% Error in vf: 95.674376%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 934
-Void Fraction: 11.115710% Error in vf: 95.653771%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 935
-Void Fraction: 11.114489% Error in vf: 95.632284%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 936
-Void Fraction: 11.113225% Error in vf: 95.610033%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 937
-Void Fraction: 11.112014% Error in vf: 95.588726%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 938
-Void Fraction: 11.110710% Error in vf: 95.565765%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 939
-Void Fraction: 11.109503% Error in vf: 95.544521%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 940
-Void Fraction: 11.108115% Error in vf: 95.520104%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 941
-Void Fraction: 11.106876% Error in vf: 95.498289%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 942
-Void Fraction: 11.105500% Error in vf: 95.474065%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 943
-Void Fraction: 11.104179% Error in vf: 95.450812%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 944
-Void Fraction: 11.102770% Error in vf: 95.426020%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 945
-Void Fraction: 11.101473% Error in vf: 95.403191%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 946
-Void Fraction: 11.100102% Error in vf: 95.379048%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 947
-Void Fraction: 11.098645% Error in vf: 95.353409%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 948
-Void Fraction: 11.097242% Error in vf: 95.328710%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 949
-Void Fraction: 11.095899% Error in vf: 95.305080%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 950
-Void Fraction: 11.094403% Error in vf: 95.278750%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 951
-Void Fraction: 11.093030% Error in vf: 95.254573%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 952
-Void Fraction: 11.091657% Error in vf: 95.230408%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 953
-Void Fraction: 11.090127% Error in vf: 95.203474%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 954
-Void Fraction: 11.088652% Error in vf: 95.177525%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 955
-Void Fraction: 11.087253% Error in vf: 95.152891%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 956
-Void Fraction: 11.085771% Error in vf: 95.126811%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 957
-Void Fraction: 11.084349% Error in vf: 95.101774%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 958
-Void Fraction: 11.082921% Error in vf: 95.076641%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 959
-Void Fraction: 11.081488% Error in vf: 95.051420%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 960
-Void Fraction: 11.079954% Error in vf: 95.024411%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 961
-Void Fraction: 11.078511% Error in vf: 94.999026%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 962
-Void Fraction: 11.077059% Error in vf: 94.973462%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 963
-Void Fraction: 11.075579% Error in vf: 94.947409%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 964
-Void Fraction: 11.074140% Error in vf: 94.922091%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 965
-Void Fraction: 11.072637% Error in vf: 94.895634%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 966
-Void Fraction: 11.071166% Error in vf: 94.869741%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 967
-Void Fraction: 11.069682% Error in vf: 94.843616%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 968
-Void Fraction: 11.068157% Error in vf: 94.816776%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 969
-Void Fraction: 11.066707% Error in vf: 94.791258%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 970
-Void Fraction: 11.065167% Error in vf: 94.764153%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 971
-Void Fraction: 11.063671% Error in vf: 94.737820%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 972
-Void Fraction: 11.062162% Error in vf: 94.711244%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 973
-Void Fraction: 11.060652% Error in vf: 94.684673%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 974
-Void Fraction: 11.059146% Error in vf: 94.658164%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 975
-Void Fraction: 11.057623% Error in vf: 94.631350%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 976
-Void Fraction: 11.056112% Error in vf: 94.604762%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 977
-Void Fraction: 11.054593% Error in vf: 94.578032%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 978
-Void Fraction: 11.053066% Error in vf: 94.551147%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 979
-Void Fraction: 11.051543% Error in vf: 94.524337%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 980
-Void Fraction: 11.050080% Error in vf: 94.498595%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 981
-Void Fraction: 11.048497% Error in vf: 94.470718%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 982
-Void Fraction: 11.047022% Error in vf: 94.444762%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 983
-Void Fraction: 11.045504% Error in vf: 94.418043%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 984
-Void Fraction: 11.043985% Error in vf: 94.391316%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 985
-Void Fraction: 11.042532% Error in vf: 94.365727%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 986
-Void Fraction: 11.040992% Error in vf: 94.338629%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 987
-Void Fraction: 11.039547% Error in vf: 94.313195%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 988
-Void Fraction: 11.038056% Error in vf: 94.286948%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 989
-Void Fraction: 11.036461% Error in vf: 94.258871%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 990
-Void Fraction: 11.034986% Error in vf: 94.232913%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 991
-Void Fraction: 11.033535% Error in vf: 94.207369%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 992
-Void Fraction: 11.032072% Error in vf: 94.181628%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 993
-Void Fraction: 11.030530% Error in vf: 94.154484%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 994
-Void Fraction: 11.029077% Error in vf: 94.128900%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 995
-Void Fraction: 11.027613% Error in vf: 94.103129%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 996
-Void Fraction: 11.026132% Error in vf: 94.077071%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 997
-Void Fraction: 11.024665% Error in vf: 94.051245%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 998
-Void Fraction: 11.023185% Error in vf: 94.025202%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 999
-Void Fraction: 11.021698% Error in vf: 93.999022%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
 Step: 1000
-Void Fraction: 11.020205% Error in vf: 93.972738%
+Void Fraction: 0.000000% Error in vf: 0.000000%
 
 
-Total run time: 2.903512 secs
+Total run time: 2.597171 secs

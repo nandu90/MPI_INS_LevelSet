@@ -98,9 +98,9 @@ void output_xml(struct elemsclr sclr,int iter)
       fprintf(out,"<CellData></CellData>\n");
       fprintf(out,"<Points>\n");
       fprintf(out,"<DataArray NumberOfComponents=\"3\" format=\"ascii\" type =\"Float32\" Name=\"mesh\">\n");
-      for(j=1; j<ynode-1; j++)
+      for(j=2; j<ynode-2; j++)
 	{
-	  for(i=1; i<xnode-1; i++)
+	  for(i=2; i<xnode-2; i++)
 	    {
 	      fprintf(out,"%.6f %.6f 0.0\n",x[i][j],y[i][j]);
 	    }
@@ -109,9 +109,9 @@ void output_xml(struct elemsclr sclr,int iter)
       fprintf(out,"</Points>\n");
       fprintf(out,"<PointData>\n");
       fprintf(out,"<DataArray NumberOfComponents=\"1\" format=\"ascii\" type =\"Float32\" Name=\"phi\">\n");
-      for(j=1; j<ynode-1; j++)
+      for(j=2; j<ynode-2; j++)
 	{
-	  for(i=1; i<xnode-1; i++)
+	  for(i=2; i<xnode-2; i++)
 	    {
 	      double phinode=0.25*(sclr.phi[i][j][0]+sclr.phi[i-1][j][0]+sclr.phi[i-1][j-1][0]+sclr.phi[i][j-1][0]);
 	      fprintf(out,"%.6f\n",phinode);
@@ -120,9 +120,9 @@ void output_xml(struct elemsclr sclr,int iter)
 
       fprintf(out,"</DataArray>\n");
       fprintf(out,"<DataArray NumberOfComponents=\"1\" format=\"ascii\" type =\"Float32\" Name=\"u\">\n");
-      for(j=1; j<ynode-1; j++)
+      for(j=2; j<ynode-2; j++)
 	{
-	  for(i=1; i<xnode-1; i++)
+	  for(i=2; i<xnode-2; i++)
 	    {
 	      
 	      double unode=0.5*(sclr.u[i-1][j][0]+sclr.u[i-1][j-1][0]);
@@ -132,9 +132,9 @@ void output_xml(struct elemsclr sclr,int iter)
 
       fprintf(out,"</DataArray>\n");
       fprintf(out,"<DataArray NumberOfComponents=\"1\" format=\"ascii\" type =\"Float32\" Name=\"v\">\n");
-      for(j=1; j<ynode-1; j++)
+      for(j=2; j<ynode-2; j++)
 	{
-	  for(i=1; i<xnode-1; i++)
+	  for(i=2; i<xnode-2; i++)
 	    {
 	      
 	      double vnode=0.5*(sclr.v[i-1][j][0]+sclr.v[i-1][j-1][0]);
@@ -144,9 +144,9 @@ void output_xml(struct elemsclr sclr,int iter)
       fprintf(out,"</DataArray>\n");
 
       fprintf(out,"<DataArray NumberOfComponents=\"1\" format=\"ascii\" type =\"Float32\" Name=\"mu\">\n");
-      for(j=1; j<ynode-1; j++)
+      for(j=2; j<ynode-2; j++)
 	{
-	  for(i=1; i<xnode-1; i++)
+	  for(i=2; i<xnode-2; i++)
 	    {
 	       double munode=0.25*(sclr.mu[i][j][0]+sclr.mu[i-1][j][0]+sclr.mu[i-1][j-1][0]+sclr.mu[i][j-1][0]);
 	       fprintf(out,"%.6f\n",munode);
@@ -156,9 +156,9 @@ void output_xml(struct elemsclr sclr,int iter)
       fprintf(out,"</DataArray>\n");
 
       fprintf(out,"<DataArray NumberOfComponents=\"1\" format=\"ascii\" type =\"Float32\" Name=\"rho\">\n");
-      for(j=1; j<ynode-1; j++)
+      for(j=2; j<ynode-2; j++)
 	{
-	  for(i=1; i<xnode-1; i++)
+	  for(i=2; i<xnode-2; i++)
 	    {
 	      
 	      double rhonode=0.25*(sclr.rho[i][j][0]+sclr.rho[i-1][j][0]+sclr.rho[i-1][j-1][0]+sclr.rho[i][j-1][0]);
@@ -168,9 +168,9 @@ void output_xml(struct elemsclr sclr,int iter)
       fprintf(out,"</DataArray>\n");
 
       fprintf(out,"<DataArray NumberOfComponents=\"1\" format=\"ascii\" type =\"Float32\" Name=\"p\">\n");
-      for(j=1; j<ynode-1; j++)
+      for(j=2; j<ynode-2; j++)
 	{
-	  for(i=1; i<xnode-1; i++)
+	  for(i=2; i<xnode-2; i++)
 	    {
 	      
 	      double pnode=0.25*(sclr.p[i][j][0]+sclr.p[i-1][j][0]+sclr.p[i-1][j-1][0]+sclr.p[i][j-1][0]);

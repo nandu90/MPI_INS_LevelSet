@@ -99,10 +99,10 @@ int main(int argc, char **argv)
     partition();
     
     
-    xelem=xelem+2; //Include 2 ghost cells
-    yelem=yelem+2; //Include 2 ghost cells
-    xnode=xelem+1; //Include 2 ghost nodes
-    ynode=yelem+1; //Include 2 ghost nodes
+    xelem=xelem+4; //Include 2 ghost cells on each side
+    yelem=yelem+4; //Include 2 ghost cells on each side
+    xnode=xelem+1; //
+    ynode=yelem+1; //
     
     ///Resize the vectors and initialize data structures//
     allocator(&x,xnode,ynode);
@@ -193,7 +193,7 @@ int main(int argc, char **argv)
     for(iter=startstep; iter<itermax; iter++)
       {
 
-      /*if(flow_solve == 1)
+	/*if(flow_solve == 1)
         {
 	  double ***utemp;
 	  allocator3(&utemp,xelem,yelem,zelem);
@@ -288,6 +288,8 @@ int main(int argc, char **argv)
 	    deallocator(&rhsy,xelem,yelem);
 	    
 	    }*/
+
+
 	if(flow_solve == 0 && myrank == master)
 	  {
 	    printf("Step: %d",iter+1);
@@ -334,7 +336,7 @@ int main(int argc, char **argv)
         if(time_control == 1)
         {
             double cfl;
-            timestep_calc(sclr, &deltat, &cfl);
+            //timestep_calc(sclr, &deltat, &cfl);
 	    if(myrank == master)
 	      {
 		printf("CFL number: %.6f time step: %.6f\n",cfl,deltat);
@@ -346,7 +348,7 @@ int main(int argc, char **argv)
         //Determine Void Fraction/
         double vf = 0.0;
         double err = 0.0;
-        calc_vf(sclr.phi, &init_vf, &vf, &err);
+        //calc_vf(sclr.phi, &init_vf, &vf, &err);
 	if(myrank == master)
 	  {
 	    printf("Void Fraction: %.6f%% Error in vf: %.6f%%\n\n",vf ,err);
@@ -358,8 +360,6 @@ int main(int argc, char **argv)
     
     }
 
-
-    
 
 
     
