@@ -32,9 +32,9 @@ void find_density_visc(double ***H, double ***rho, double ***mu)
 void heavy_func(double ***H, double ***phi, double eps)
 {
   int i,j;
-    for(i=1; i<xelem-1; i++)
+    for(i=0; i<xelem; i++)
         {
-            for(j=1; j<yelem-1; j++)
+            for(j=0; j<yelem; j++)
             {
                 if(phi[i][j][0] < -eps)
                 {

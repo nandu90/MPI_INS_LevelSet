@@ -17,22 +17,25 @@
 #include "rhs_bub_redist.h"
 void monitor_res_redist(double *ires, bool *exitflag, int iter, double ***phi,  double ***phitemp)
 {
+  int i,j;
     double res=0.0;
-    for(int i=1; i<xelem-1; i++)
+    for(i=1; i<xelem-1; i++)
     {
-        for(int j=1; j<yelem-1; j++)
+        for(j=1; j<yelem-1; j++)
         {
             res=res + pow(phi[i][j][0]-phitemp[i][j][0],2.0)*vol[i][j];
         }
     }
     
+    double buf = res;
+    MPI_Allreduce(&buf,&res,1,MPI_DOUBLE,MPI_SUM,MPI_COMM_WORLD);
     res=sqrt(res);
     
     
     
     if(iter == 0)
     {
-            *ires=res;
+      (*ires)=res;
     }
     else
     {
@@ -50,12 +53,13 @@ void monitor_res_redist(double *ires, bool *exitflag, int iter, double ***phi,  
 
 void re_distance(struct elemsclr sclr)
 {
+  int i,j;
     /***Store phi values in a separate matrix***/
   double ***phi2;
   allocator3(&phi2, xelem, yelem, zelem);
-    for(int i=0; i< xelem; i++)
+    for(i=0; i< xelem; i++)
     {
-        for(int j=0; j< yelem; j++)
+        for(j=0; j< yelem; j++)
         {
             phi2[i][j][0] = sclr.phi[i][j][0];
         }
@@ -71,7 +75,8 @@ void re_distance(struct elemsclr sclr)
     
     bool exitflag = false;
     
-    for(int iter=0; iter < re_loops; iter++)
+    int iter;
+    for(iter=0; iter < re_loops; iter++)
     {
         /**Compute Heavyside function**/
       double ***H;
@@ -79,9 +84,9 @@ void re_distance(struct elemsclr sclr)
         //heavy(H,phi2,eps);
       double ***signnew;
       allocator3(&signnew, xelem, yelem, zelem);
-        for(int i=0; i<xelem; i++)
+        for(i=0; i<xelem; i++)
         {
-            for(int j=0; j<yelem; j++)
+            for(j=0; j<yelem; j++)
             {
                 signnew[i][j][0] = 2.0*(H[i][j][0] -0.5);
             }
@@ -89,9 +94,9 @@ void re_distance(struct elemsclr sclr)
         double ***temp_phi2;
 	allocator3(&temp_phi2, xelem, yelem, zelem);
 
-        for(int i=1;i<xelem-1;i++)
+        for(i=1;i<xelem-1;i++)
         {
-            for(int j=1;j<yelem-1;j++)
+            for(j=1;j<yelem-1;j++)
             {
                 temp_phi2[i][j][0]=phi2[i][j][0];
             }
@@ -108,18 +113,18 @@ void re_distance(struct elemsclr sclr)
 	allocator3(&phiRface, xelem, yelem, zelem);
 	allocator3(&phiTface, xelem, yelem, zelem);
 
-        for(int i=0; i<xelem-1; i++)
+        for(i=0; i<xelem-1; i++)
         {
-            for(int j=0; j<yelem-1; j++)
+            for(j=0; j<yelem-1; j++)
             {
                 phiRface[i][j][0] = 0.5*(phi2[i+1][j][0] + phi2[i][j][0]);
                 phiTface[i][j][0] = 0.5*(phi2[i][j+1][0] + phi2[i][j][0]);
             }
         }
 
-        for(int j=1; j<yelem-1; j++)
+        for(j=1; j<yelem-1; j++)
         {
-            for(int i=1; i<xelem-1; i++)
+            for(i=1; i<xelem-1; i++)
             {
                 grad_phix[i][j][0] = (phiRface[i][j][0] - phiRface[i-1][j][0])/area[i][j][1][1];
                 grad_phiy[i][j][0] = (phiRface[i][j][0] - phiRface[i][j-1][0])/area[i][j][0][0];
@@ -135,9 +140,9 @@ void re_distance(struct elemsclr sclr)
 	allocator3(&ucen, xelem, yelem, zelem);
 	allocator3(&vcen, xelem, yelem, zelem);
         
-        for(int j=1; j<yelem-1; j++)
+        for(j=1; j<yelem-1; j++)
         {
-            for(int i=1; i<xelem-1; i++)
+            for(i=1; i<xelem-1; i++)
             {
                 double mag_phi = sqrt(pow(grad_phix[i][j][0],2.0) + pow(grad_phiy[i][j][0],2.0));
                 ucen[i][j][0] = signnew[i][j][0]*grad_phix[i][j][0]/mag_phi;
@@ -168,9 +173,9 @@ void re_distance(struct elemsclr sclr)
 	double ***phistar;
 	allocator3(&phistar, xelem, yelem, zelem);
 
-        for(int i=1; i<xelem-1; i++) 
+        for(i=1; i<xelem-1; i++) 
         {
-            for(int j=1; j<yelem-1; j++)
+            for(j=1; j<yelem-1; j++)
             {
                 phistar[i][j][0] = phi2[i][j][0] + deltat * (signnew[i][j][0] + rhsx[i][j] + rhsy[i][j]);
             }
@@ -194,18 +199,18 @@ void re_distance(struct elemsclr sclr)
 	allocator3(&signnew2, xelem, yelem, zelem);
 	
 
-        for(int i=0; i<xelem; i++)
+        for(i=0; i<xelem; i++)
         {
-            for(int j=0; j<yelem; j++)
+            for(j=0; j<yelem; j++)
             {
                 signnew2[i][j][0] = 2.0*(Hstar[i][j][0] -0.5);
             }
         }
         
         
-        for(int i=1; i<xelem-1; i++)
+        for(i=1; i<xelem-1; i++)
         {
-            for(int j=1; j<yelem-1; j++)
+            for(j=1; j<yelem-1; j++)
             {
                 phi2[i][j][0] = phistar[i][j][0] + 0.5*deltat *(signnew[i][j][0] + signnew2[i][j][0] + rhsx[i][j] + rhstarx[i][j] + rhsy[i][j] + rhstary[i][j]);
                 //<<" "<<phi[i][j][0]<<endl;
@@ -241,9 +246,9 @@ void re_distance(struct elemsclr sclr)
     
     
     /*Reassign values*/
-    for(int i=0; i< xelem; i++)
+    for(i=0; i< xelem; i++)
     {
-        for(int j=0; j< yelem; j++)
+        for(j=0; j< yelem; j++)
         {
             sclr.phi[i][j][0] = phi2[i][j][0];
         }

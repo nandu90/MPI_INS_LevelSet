@@ -142,14 +142,15 @@ double hj_weno(double vel1, double vel2, double phicen, double phi1, double phi1
 
 void rhs_bub(double **rhsx, double **rhsy, double ***ucen, double ***vcen, double ***phi)
 {
+  int i,j,k;
     /*First of, find the value of phi at cell edges and store it*/
-  double **gradx, **grady;
-  allocator(&gradx, xelem, yelem);
-  allocator(&grady, xelem, yelem);
-    #pragma omp parallel for schedule(dynamic)
-    for (int i=0; i < xelem-1; i++)
+  double ***gradx, ***grady;
+  allocator3(&gradx, xelem, yelem,zelem);
+  allocator3(&grady, xelem, yelem,zelem);
+
+    for (i=0; i < xelem-1; i++)
     {
-        for(int j=1; j < yelem-1; j++)
+        for(j=1; j < yelem-1; j++)
         {
            //<<i<<" "<<j<<endl;
             double phicen, phiL, phiLL, phiLLL, phiR, phiRR, phiRRR;
@@ -158,7 +159,7 @@ void rhs_bub(double **rhsx, double **rhsy, double ***ucen, double ***vcen, doubl
                 phicen = phi[i][j][0];
                 if(x_bound == 1 || x_bound == 2)
                 {
-                    phiL = phicen;
+		  phiL = phicen;
                 }
                 else if(x_bound == 3)
                 {
@@ -238,21 +239,20 @@ void rhs_bub(double **rhsx, double **rhsy, double ***ucen, double ***vcen, doubl
 
             if(bub_conv_scheme == 1)
             {
-                gradx[i][j] = phi_at_edge(ucen[i+1][j][0], ucen[i][j][0], phiR, phicen, phiRR, phiL);
+                gradx[i][j][0] = phi_at_edge(ucen[i+1][j][0], ucen[i][j][0], phiR, phicen, phiRR, phiL);
             }
             else if(bub_conv_scheme == 2)
             {
-                gradx[i][j] = hj_weno(ucen[i+1][j][0], ucen[i][j][0], phicen, phiL, phiLL, phiLLL, phiR, phiRR, phiRRR, area[i][j][1][1]);
+                gradx[i][j][0] = hj_weno(ucen[i+1][j][0], ucen[i][j][0], phicen, phiL, phiLL, phiLLL, phiR, phiRR, phiRRR, area[i][j][1][1]);
             }
         }
 
 
     }
 
-    #pragma omp parallel for schedule(dynamic)
-    for (int i=1; i < xelem-1; i++)
+    for (i=1; i < xelem-1; i++)
     {
-        for(int j=0; j < yelem-1; j++)
+        for(j=0; j < yelem-1; j++)
         {
            //<<i<<" "<<j<<endl;
             double phicen, phiT, phiTT, phiTTT, phiB, phiBB, phiBBB;
@@ -341,32 +341,33 @@ void rhs_bub(double **rhsx, double **rhsy, double ***ucen, double ***vcen, doubl
 
             if(bub_conv_scheme == 1)
             {
-                grady[i][j] = phi_at_edge(vcen[i][j+1][0], vcen[i][j][0], phiT, phicen, phiTT, phiB);
+                grady[i][j][0] = phi_at_edge(vcen[i][j+1][0], vcen[i][j][0], phiT, phicen, phiTT, phiB);
             }
             else if(bub_conv_scheme == 2)
             {
-                grady[i][j] = hj_weno(vcen[i][j+1][0], vcen[i][j][0], phicen, phiB, phiBB, phiBBB, phiT, phiTT, phiTTT, area[i][j][0][0]);
+                grady[i][j][0] = hj_weno(vcen[i][j+1][0], vcen[i][j][0], phicen, phiB, phiBB, phiBBB, phiT, phiTT, phiTTT, area[i][j][0][0]);
             }
         }
 
 
     }
 
+    commu(gradx);
+    commu(grady);
     /*Now calculate the fluxes at the faces. Note v velocity is not yet regarded*/
-    #pragma omp parallel for schedule(dynamic)
-    for (int i=1; i<xelem-1; i++)
+    for (i=1; i<xelem-1; i++)
     {
-        for (int j=1; j< yelem-1; j++)
+        for (j=1; j< yelem-1; j++)
         {
             if(bub_conv_scheme == 2)
             {
-                rhsx[i][j] = -ucen[i][j][0]*(gradx[i][j]);
-                rhsy[i][j] = -vcen[i][j][0]*(grady[i][j]);
+                rhsx[i][j] = -ucen[i][j][0]*(gradx[i][j][0]);
+                rhsy[i][j] = -vcen[i][j][0]*(grady[i][j][0]);
             }
             else if(bub_conv_scheme == 1)
             {
-                rhsx[i][j] = -(0.5*(ucen[i][j][0] + ucen[i+1][j][0])*gradx[i][j]*area[i][j][0][0] - 0.5*(ucen[i][j][0] + ucen[i-1][j][0])*gradx[i-1][j]*area[i-1][j][0][0])/vol[i][j];
-                rhsy[i][j] = -(0.5*(vcen[i][j][0] + vcen[i][j+1][0])*grady[i][j]*area[i][j][1][1] - 0.5*(vcen[i][j][0] + vcen[i][j-1][0])*grady[i][j-1]*area[i][j-1][0][0])/vol[i][j];
+                rhsx[i][j] = -(0.5*(ucen[i][j][0] + ucen[i+1][j][0])*gradx[i][j][0]*area[i][j][0][0] - 0.5*(ucen[i][j][0] + ucen[i-1][j][0])*gradx[i-1][j][0]*area[i-1][j][0][0])/vol[i][j];
+                rhsy[i][j] = -(0.5*(vcen[i][j][0] + vcen[i][j+1][0])*grady[i][j][0]*area[i][j][1][1] - 0.5*(vcen[i][j][0] + vcen[i][j-1][0])*grady[i][j-1][0]*area[i][j-1][0][0])/vol[i][j];
             }
 
 
@@ -374,8 +375,8 @@ void rhs_bub(double **rhsx, double **rhsy, double ***ucen, double ***vcen, doubl
         }
         //exit(0);
     }
-    deallocator(&gradx, xelem, yelem);
-    deallocator(&grady, xelem, yelem);
+    deallocator3(&gradx, xelem, yelem,zelem);
+    deallocator3(&grady, xelem, yelem,zelem);
 }
 
 #endif /* RHS_BUB_H */

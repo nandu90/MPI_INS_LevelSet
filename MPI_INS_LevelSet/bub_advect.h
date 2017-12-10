@@ -20,7 +20,7 @@
 void bub_advect(struct elemsclr sclr, int iter, double deltat)
 {
 
-
+  int i,j,k;
     ///Interpolate velocity at cell edges to cell centers
   double ***ucen;
   allocator3(&ucen,xelem,yelem,zelem);
@@ -28,23 +28,25 @@ void bub_advect(struct elemsclr sclr, int iter, double deltat)
   double ***vcen;
   allocator3(&vcen,xelem,yelem,zelem);
   
-    for(int i=1; i < xelem-1; i++)
+    for(i=1; i < xelem-1; i++)
     {
-        for(int j=1; j < yelem-1; j++)
+        for(j=1; j < yelem-1; j++)
         {
             ucen[i][j][0]=0.5*(sclr.u[i][j][0] + sclr.u[i-1][j][0]);
             vcen[i][j][0]=0.5*(sclr.v[i][j][0] + sclr.v[i][j-1][0]);
         }
     }
+    
+    commu(ucen);
+    commu(vcen);
     cell_center_vel_BC(ucen,vcen);
 
 
-
 //    Main bubble iteration loop
-    if(iter == 0)
+    /*if(iter == 0)
     {
-        output_vtk(sclr,iter);
-    }
+        output_xml(sclr,iter);
+	}*/
 
 
 
@@ -59,15 +61,15 @@ void bub_advect(struct elemsclr sclr, int iter, double deltat)
     double ***phistar;
     allocator3(&phistar, xelem, yelem, zelem);
     
-    #pragma omp parallel for schedule(dynamic)
-    for(int i=1; i<xelem-1; i++)
+    for(i=1; i<xelem-1; i++)
     {
-        for(int j=1; j<yelem-1; j++)
+        for(j=1; j<yelem-1; j++)
         {
             phistar[i][j][0] = sclr.phi[i][j][0] + deltat * (rhsx[i][j] + rhsy[i][j]);
         }
     }
 
+    commu(phistar);
     level_setBC(phistar);
 
     double **rhstarx;
@@ -76,10 +78,10 @@ void bub_advect(struct elemsclr sclr, int iter, double deltat)
     allocator(&rhstary, xelem, yelem);
     //Calculate the star fluxes
     rhs_bub(rhstarx, rhstary, ucen, vcen, phistar);
-    #pragma omp parallel for schedule(dynamic)
-    for(int i=1; i<xelem-1; i++)
+
+    for(i=1; i<xelem-1; i++)
     {
-        for(int j=1; j<yelem-1; j++)
+        for(j=1; j<yelem-1; j++)
         {
             //<<phi[i][j][0];
             sclr.phi[i][j][0] = sclr.phi[i][j][0] + 0.5*deltat *(rhsx[i][j] + rhstarx[i][j] + rhsy[i][j] + rhstary[i][j]);
@@ -87,6 +89,7 @@ void bub_advect(struct elemsclr sclr, int iter, double deltat)
         }
     }
 
+    commu(sclr.phi);
     level_setBC(sclr.phi);
 
     deallocator(&rhstarx, xelem, yelem);

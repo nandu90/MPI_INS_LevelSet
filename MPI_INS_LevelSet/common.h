@@ -16,12 +16,32 @@
 #define COMMON_H
 
 //MPI relevant variables
+//MPI_STATUS status;
 int myrank;
 int master;
 int nprocs;
 int procm, procn; //Processor matrix m X n
 int elemm, elemn; //Mode of number of elements on each processor
 int **iBC;        //Determines if a particular cell is a boundary or interior cell
+int bhailog[4];
+double **sendptr;
+double **recvptr;
+int **io_info;
+
+struct bhaiarray
+{
+  double *sendrbuf;
+  double *recvrbuf;
+  
+  double *sendlbuf;
+  double *recvlbuf;
+
+  double *sendubuf;
+  double *recvubuf;
+  
+  double *senddbuf;
+  double *recvdbuf;
+}bhai;
 
 ///Global Variable declaration (so that we do not have to pass around information between functions)
 double nu;
@@ -41,6 +61,9 @@ int znode; //Total nodes in z
 int gxelem; //Total elem in x
 int gyelem; //Total elem in y
 int gzelem; //Total elem in z
+int gxnode;
+int gynode;
+int gznode;
 /////////////////////////////
 
 double xlen;
@@ -121,6 +144,16 @@ struct elemsclr
   double ***rho;
   double ***mu;
 };
+
+void allocator1(double **p, int x)
+{
+  *p = (double *)malloc(x * sizeof(double));
+}
+
+void deallocator1(double **p, int x)
+{
+  free(*p);
+}
 
 void allocator(double ***p, int x, int y)
 {

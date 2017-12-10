@@ -14,188 +14,176 @@
 #ifndef OUTPUT_H
 #define OUTPUT_H
 
-void output(struct elemsclr sclr,int iter)
+void output_xml(struct elemsclr sclr,int iter)
 {
-
-    double sum=0;
-    for(int i=1; i<xelem-1; i++)
+  int i,j,k;
+  char* dirpath;
+  dirpath = concat(getexepath(), "/output/");
+  char buf_dir[12];
+  snprintf(buf_dir,12,"%d",iter);
+  dirpath = concat(dirpath,buf_dir);
+  DIR* dir = opendir("dirpath");
+  if(dir)
     {
-        for(int j=1; j<yelem-1; j++)
-        {
-            double exact=2400*yc[i][j]*(0.01-yc[i][j]);
-            double err=(sclr.u[i][j][0]-exact)/exact;
-            sum=sum+pow(err,2.0)*vol[i][j];
-        }
+      closedir(dir);
     }
-    double error=sqrt(sum);
-
-
-    FILE *out = fopen("output.dat","w");
-    if(out == NULL)
-      {
-	printf("Error opening output.dat!\n");
-	exit(0);
-      }
-    
-    fprintf(out,"variables = x, y, u, v, p, phi\n");
-    fprintf(out,"zone i=%d j=%d f=point\n",xnode-2,ynode-2);
-    for (int j=1;j<ynode-1;j++)
+  else if(ENOENT == errno)
     {
-        for (int i=1;i<xnode-1;i++)
-        {
-            double unode=0.5*(sclr.u[i-1][j][0]+sclr.u[i-1][j-1][0]);
-            double vnode=0.5*(sclr.v[i-1][j-1][0] + sclr.v[i][j-1][0]);
-            //double vnode=0.25*(v[i][j]+v[i+1][j]+v[i+1][j+1]+v[i][j+1]);
-            double pnode=0.25*(sclr.p[i][j][0]+sclr.p[i-1][j][0]+sclr.p[i-1][j-1][0]+sclr.p[i][j-1][0]);
-            double phinode=0.25*(sclr.phi[i][j][0]+sclr.phi[i-1][j][0]+sclr.phi[i-1][j-1][0]+sclr.phi[i][j-1][0]);
-	    fprintf(out,"%.6f %.6f %.6f %.6f %.6f %.6f\n",x[i][j],y[i][j],unode,vnode,pnode,phinode);
-
-
-        }
+      mkdir(dirpath, S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
     }
-    fclose(out);
-    //ofstream output2;
-    //output2.open("info.txt",ios::trunc);
-    if(solnread == 0)
+  free(dirpath);
+
+
+  FILE *out;
+  FILE *out1;
+  //if(myrank == master)
+  //{
+  if(myrank == master)
     {
-      FILE *soln = fopen("steady_state_sol.txt","w");
-       if(soln == NULL)
-      {
-	printf("Error opening output.dat!\n");
-	exit(0);
-      }
-        for(int j=0; j<yelem; j++)
-        {
-            for(int i=0; i<xelem ; i++)
-            {
-	      fprintf(soln,"%.6f %.6f %.6f\n",sclr.u[i][j][0],sclr.v[i][j][0],sclr.p[i][j][0]);
-            }
-        }
-	fclose(soln);
+      char* path1;
+      path1 = concat(getexepath(),"/output/out_00");
+      char buffer0[12];
+      snprintf(buffer0,12,"%d",iter);
+      path1 = concat(path1,buffer0);
+      path1 = concat(path1,".pvts");
+      out1 = fopen(path1,"w");
+      free(path1);
+
+      fprintf(out1,"<VTKFile type=\"PStructuredGrid\" version=\"0.1\" byte_order=\"LittleEndian\">\n");
+      fprintf(out1,"<PStructuredGrid WholeExtent=\"%d %d %d %d %d %d\" GhostLevel=\"1\">\n",1,io_info[nprocs-1][1]+1,1,io_info[nprocs-1][3]+1,0,0);
+      fprintf(out1,"<PPoints>\n");
+      fprintf(out1,"<PDataArray NumberOfComponents=\"3\" format=\"ascii\" type =\"Float32\" Name=\"mesh\"/>\n");
+      fprintf(out1,"</PPoints>\n");
+      fprintf(out1,"<PPointData>\n");
+      fprintf(out1,"<PDataArray NumberOfComponents=\"1\" format=\"ascii\" type =\"Float32\" Name=\"phi\"/>\n");
+      fprintf(out1,"<PDataArray NumberOfComponents=\"1\" format=\"ascii\" type =\"Float32\" Name=\"u\"/>\n");
+      fprintf(out1,"<PDataArray NumberOfComponents=\"1\" format=\"ascii\" type =\"Float32\" Name=\"v\"/>\n");
+      fprintf(out1,"<PDataArray NumberOfComponents=\"1\" format=\"ascii\" type =\"Float32\" Name=\"mu\"/>\n");
+      fprintf(out1,"<PDataArray NumberOfComponents=\"1\" format=\"ascii\" type =\"Float32\" Name=\"rho\"/>\n");
+      fprintf(out1,"<PDataArray NumberOfComponents=\"1\" format=\"ascii\" type =\"Float32\" Name=\"p\"/>\n");
+      fprintf(out1,"</PPointData>\n");
+      for(i=0;i<nprocs; i++)
+	{
+	  fprintf(out1,"<Piece Extent=\"%d %d %d %d %d %d\" Source=\"%d/out.%d.vts\"/>\n",io_info[i][0],io_info[i][1]+1,io_info[i][2],io_info[i][3]+1,0,0,iter,i);
+	}
+      fprintf(out1,"</PStructuredGrid>\n");
+      fprintf(out1,"</VTKFile>\n");
+      fclose(out1);
     }
-
-    printf("Total Iterations for Convergence = %d\n",iter);
-    //<<"Total Iterations for Convergence = "<<iter<<endl;
-
-    printf("2-norm of Error = %.6f\n",error);
-    //<<"2-Norm of Error  = "<<error<<endl;
-    printf("Overall Order = %.6f\n",-log10(fabs(error)));
-	   //<<"Overall Order = "<<-log10(fabs(error))<<endl;
-    //output2.close();
-}
-
-
-
-void output_vtk(struct elemsclr sclr,int iter)//, 
-{
-  char* path;
-  char buffer[12];
-  path = concat(getexepath(), "/output/out_00");
-  snprintf(buffer,12,"%d",iter);
-  path = concat(path,buffer);
-  path = concat(path,".vts");
   
-  FILE *out = fopen(path,"w");
-  free(path);
-   if(out == NULL)
-      {
-	printf("Error opening output.dat!\n");
-	exit(0);
-      }
+      char* path;
+      char buffer1[12];
+      char buffer2[12];
+      path = concat(getexepath(), "/output/");
+      snprintf(buffer1,12,"%d",iter);
+      path = concat(path,buffer1);
+      path = concat(path,"/out.");
+      snprintf(buffer2,12,"%d",myrank);
+      path = concat(path,buffer2);
+      path = concat(path,".vts");
+  
+  
+      out = fopen(path,"w");
+      free(path);
+      if(out == NULL)
+	{
+	  printf("Error opening output.dat!\n");
+	  exit(0);
+	}
     //Write Headers
-  fprintf(out,"# vtk DataFile Version 3.0\n");
-  fprintf(out,"vtk output\n");
-  fprintf(out,"ASCII\n");
-  fprintf(out,"DATASET STRUCTURED_GRID\n");
-  fprintf(out,"DIMENSIONS %d %d 1\n",xnode-2,ynode-2);
-  fprintf(out,"POINTS %d double\n",(xnode-2)*(ynode-2));
+      fprintf(out,"<VTKFile type=\"StructuredGrid\" version=\"0.1\" byte_order=\"LittleEndian\">\n");
+      fprintf(out,"<StructuredGrid WholeExtent=\"%d %d %d %d %d %d\">\n",1,io_info[nprocs-1][1]+1,1,io_info[nprocs-1][3]+1,0,0);
+      fprintf(out,"<Piece Extent=\"%d %d %d %d %d %d\">\n",io_info[myrank][0],io_info[myrank][1]+1,io_info[myrank][2],io_info[myrank][3]+1,0,0);
+      fprintf(out,"<PointData></PointData>\n");
+      fprintf(out,"<CellData></CellData>\n");
+      fprintf(out,"<Points>\n");
+      fprintf(out,"<DataArray NumberOfComponents=\"3\" format=\"ascii\" type =\"Float32\" Name=\"mesh\">\n");
+      for(j=1; j<ynode-1; j++)
+	{
+	  for(i=1; i<xnode-1; i++)
+	    {
+	      fprintf(out,"%.6f %.6f 0.0\n",x[i][j],y[i][j]);
+	    }
+	}
+      fprintf(out,"</DataArray>");
+      fprintf(out,"</Points>\n");
+      fprintf(out,"<PointData>\n");
+      fprintf(out,"<DataArray NumberOfComponents=\"1\" format=\"ascii\" type =\"Float32\" Name=\"phi\">\n");
+      for(j=1; j<ynode-1; j++)
+	{
+	  for(i=1; i<xnode-1; i++)
+	    {
+	      double phinode=0.25*(sclr.phi[i][j][0]+sclr.phi[i-1][j][0]+sclr.phi[i-1][j-1][0]+sclr.phi[i][j-1][0]);
+	      fprintf(out,"%.6f\n",phinode);
+	    }
+	}
 
-    for(int j=1; j<ynode-1; j++)
-    {
-        for(int i=1; i<xnode-1; i++)
-        {
-	  fprintf(out,"%.6f %.6f 0.0\n",x[i][j],y[i][j]);
-        }
-    }
+      fprintf(out,"</DataArray>\n");
+      fprintf(out,"<DataArray NumberOfComponents=\"1\" format=\"ascii\" type =\"Float32\" Name=\"u\">\n");
+      for(j=1; j<ynode-1; j++)
+	{
+	  for(i=1; i<xnode-1; i++)
+	    {
+	      
+	      double unode=0.5*(sclr.u[i-1][j][0]+sclr.u[i-1][j-1][0]);
+	      fprintf(out,"%.6f\n",unode);
+	    }
+	}
 
-    fprintf(out,"POINT_DATA %d\n",(xnode-2)*(ynode-2));
-    fprintf(out,"SCALARS u double\n");
-    fprintf(out,"LOOKUP_TABLE default\n");
+      fprintf(out,"</DataArray>\n");
+      fprintf(out,"<DataArray NumberOfComponents=\"1\" format=\"ascii\" type =\"Float32\" Name=\"v\">\n");
+      for(j=1; j<ynode-1; j++)
+	{
+	  for(i=1; i<xnode-1; i++)
+	    {
+	      
+	      double vnode=0.5*(sclr.v[i-1][j][0]+sclr.v[i-1][j-1][0]);
+	      fprintf(out,"%.6f\n",vnode);
+	    }
+	}
+      fprintf(out,"</DataArray>\n");
 
-    for(int j=1; j<ynode-1; j++)
-    {
-        for(int i=1; i<xnode-1; i++)
-        {
+      fprintf(out,"<DataArray NumberOfComponents=\"1\" format=\"ascii\" type =\"Float32\" Name=\"mu\">\n");
+      for(j=1; j<ynode-1; j++)
+	{
+	  for(i=1; i<xnode-1; i++)
+	    {
+	       double munode=0.25*(sclr.mu[i][j][0]+sclr.mu[i-1][j][0]+sclr.mu[i-1][j-1][0]+sclr.mu[i][j-1][0]);
+	       fprintf(out,"%.6f\n",munode);
+	      
+	    }
+	}
+      fprintf(out,"</DataArray>\n");
 
-            double unode=0.5*(sclr.u[i-1][j][0]+sclr.u[i-1][j-1][0]);
-	    fprintf(out,"%.6f\n",unode);
-        }
-    }
-    fprintf(out,"SCALARS v double\n");
-    fprintf(out,"LOOKUP_TABLE default\n");
+      fprintf(out,"<DataArray NumberOfComponents=\"1\" format=\"ascii\" type =\"Float32\" Name=\"rho\">\n");
+      for(j=1; j<ynode-1; j++)
+	{
+	  for(i=1; i<xnode-1; i++)
+	    {
+	      
+	      double rhonode=0.25*(sclr.rho[i][j][0]+sclr.rho[i-1][j][0]+sclr.rho[i-1][j-1][0]+sclr.rho[i][j-1][0]);
+	      fprintf(out,"%.6f\n",rhonode);
+	    }
+	}
+      fprintf(out,"</DataArray>\n");
 
-    for(int j=1; j<ynode-1; j++)
-    {
-        for(int i=1; i<xnode-1; i++)
-        {
-
-            double vnode=0.5*(sclr.v[i-1][j][0]+sclr.v[i-1][j-1][0]);
-	     fprintf(out,"%.6f\n",vnode);
-        }
-    }
-
-    fprintf(out,"SCALARS p double\n");
-    fprintf(out,"LOOKUP_TABLE default\n");
-
-    for(int j=1; j<ynode-1; j++)
-    {
-        for(int i=1; i<xnode-1; i++)
-        {
-            double pnode=0.25*(sclr.p[i][j][0]+sclr.p[i-1][j][0]+sclr.p[i-1][j-1][0]+sclr.p[i][j-1][0]);
-	     fprintf(out,"%.6f\n",pnode);
-        }
-    }
-
-    fprintf(out,"SCALARS phi double\n");
-    fprintf(out,"LOOKUP_TABLE default\n");
-
-    for(int j=1; j<ynode-1; j++)
-    {
-        for(int i=1; i<xnode-1; i++)
-        {
-            double phinode=0.25*(sclr.phi[i][j][0]+sclr.phi[i-1][j][0]+sclr.phi[i-1][j-1][0]+sclr.phi[i][j-1][0]);
-             fprintf(out,"%.6f\n",phinode);
-        }
-    }
-
-    fprintf(out,"SCALARS rho double\n");
-    fprintf(out,"LOOKUP_TABLE default\n");
-
-    for(int j=1; j<ynode-1; j++)
-    {
-        for(int i=1; i<xnode-1; i++)
-        {
-            double rhonode=0.25*(sclr.rho[i][j][0]+sclr.rho[i-1][j][0]+sclr.rho[i-1][j-1][0]+sclr.rho[i][j-1][0]);
-            fprintf(out,"%.6f\n",rhonode);
-        }
-    }
-
-    fprintf(out,"SCALARS mu double\n");
-    fprintf(out,"LOOKUP_TABLE default\n");
-
-    for(int j=1; j<ynode-1; j++)
-    {
-        for(int i=1; i<xnode-1; i++)
-        {
-            double munode=0.25*(sclr.mu[i][j][0]+sclr.mu[i-1][j][0]+sclr.mu[i-1][j-1][0]+sclr.mu[i][j-1][0]);
-            fprintf(out,"%.6f\n",munode);
-        }
-    }
-
-   
-    fprintf(out,"CELL_DATA %d\n",(xelem-2)*(yelem-2));
-    fclose(out);
-
+      fprintf(out,"<DataArray NumberOfComponents=\"1\" format=\"ascii\" type =\"Float32\" Name=\"p\">\n");
+      for(j=1; j<ynode-1; j++)
+	{
+	  for(i=1; i<xnode-1; i++)
+	    {
+	      
+	      double pnode=0.25*(sclr.p[i][j][0]+sclr.p[i-1][j][0]+sclr.p[i-1][j-1][0]+sclr.p[i][j-1][0]);
+	      fprintf(out,"%.6f\n",pnode);
+	    }
+	}
+      fprintf(out,"</DataArray>\n");
+      fprintf(out,"</PointData>\n");
+      fprintf(out,"</Piece>\n");
+      fprintf(out,"</StructuredGrid>\n");
+      fprintf(out,"</VTKFile>\n");
+      fclose(out);
+      //}
 }
 #endif /* OUTPUT_H */
 

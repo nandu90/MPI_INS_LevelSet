@@ -17,12 +17,13 @@
 
 void hyperbolic(struct elemsclr sclr)
 {
+  int i,j;
     /***Store phi values in a separate matrix***/
   double ***phi2;
   allocator3(&phi2, xelem, yelem, zelem);
-    for(int i=0; i< xelem; i++)
+    for(i=0; i< xelem; i++)
     {
-        for(int j=0; j< yelem; j++)
+        for(j=0; j< yelem; j++)
         {
             phi2[i][j][0] = sclr.phi[i][j][0];
         }
@@ -48,18 +49,20 @@ void hyperbolic(struct elemsclr sclr)
     grad_func(grad_phi, sclr.phi);
     
     
-    
-    for(int iter=0; iter < re_loops; iter++)
+    int iter;
+    if(myrank == master)printf("\n");
+    for(iter=0; iter < re_loops; iter++)
     {
+      if(myrank == master)printf("    Re-dist iter = %d\n",iter+1);
       double ***lambda;
       allocator3(&lambda, xelem, yelem, zelem);
 
       double ***temp_phi2;
        allocator3(&temp_phi2, xelem, yelem, zelem);
        
-        for(int i=1;i<xelem-1;i++)
+        for(i=1;i<xelem-1;i++)
         {
-            for(int j=1;j<yelem-1;j++)
+            for(j=1;j<yelem-1;j++)
             {
                 temp_phi2[i][j][0]=phi2[i][j][0];
             }
@@ -76,9 +79,9 @@ void hyperbolic(struct elemsclr sclr)
         double ***phistar;
 	allocator3(&phistar, xelem, yelem, zelem);
         
-        for(int i=1; i<xelem-1; i++) 
+        for(i=1; i<xelem-1; i++) 
         {
-            for(int j=1; j<yelem-1; j++)
+            for(j=1; j<yelem-1; j++)
             {
                 phistar[i][j][0] = phi2[i][j][0] + deltat * (rhs[i][j]);
             }
@@ -91,6 +94,7 @@ void hyperbolic(struct elemsclr sclr)
         }
         
         //bothscalarBC(phistar);
+	commu(phistar);
         level_setBC(phistar);
 
 	double **rhstar;
@@ -99,9 +103,9 @@ void hyperbolic(struct elemsclr sclr)
         //Calculate the star fluxes
         rhs_redist2(rhstar, phistar, sclr.phi);
         
-        for(int i=1; i<xelem-1; i++)
+        for(i=1; i<xelem-1; i++)
         {
-            for(int j=1; j<yelem-1; j++)
+            for(j=1; j<yelem-1; j++)
             {
                 phi2[i][j][0] = phistar[i][j][0] + 0.5*deltat *(rhs[i][j] + rhstar[i][j]);
                 //<<" "<<phi[i][j][0]<<endl;
@@ -113,6 +117,7 @@ void hyperbolic(struct elemsclr sclr)
         {
             vol_contraint(phi2, sclr.phi, grad_phi, delta, deltat);
         }
+	commu(phi2);
         level_setBC(phi2);
         
         //bothscalarBC(phistar);
@@ -136,9 +141,9 @@ void hyperbolic(struct elemsclr sclr)
     
     
     /*Reassign values*/
-    for(int i=0; i< xelem; i++)
+    for(i=0; i< xelem; i++)
     {
-        for(int j=0; j< yelem; j++)
+        for(j=0; j< yelem; j++)
         {
             sclr.phi[i][j][0] = phi2[i][j][0];
         }

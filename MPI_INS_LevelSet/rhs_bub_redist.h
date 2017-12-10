@@ -16,13 +16,14 @@
 
 void rhs_redist(double **rhsx, double **rhsy, double ***ucen, double ***vcen, double ***phi)
 {
+  int i,j;
     /*First of, find the value of phi at cell edges and store it*/
   double **gradx, **grady;
   allocator(&gradx, xelem, yelem);
   allocator(&grady, xelem, yelem);
-    for (int i=0; i < xelem-1; i++)
+    for (i=0; i < xelem-1; i++)
     {
-        for(int j=1; j < yelem-1; j++)
+        for(j=1; j < yelem-1; j++)
         {
            //<<i<<" "<<j<<endl;
             double phicen, phiL, phiLL, phiLLL, phiR, phiRR, phiRRR;
@@ -101,9 +102,9 @@ void rhs_redist(double **rhsx, double **rhsy, double ***ucen, double ***vcen, do
     }
 
 
-    for (int i=1; i < xelem-1; i++)
+    for (i=1; i < xelem-1; i++)
     {
-        for(int j=0; j < yelem-1; j++)
+        for(j=0; j < yelem-1; j++)
         {
            //<<i<<" "<<j<<endl;
             double phicen, phiT, phiTT, phiTTT, phiB, phiBB, phiBBB;
@@ -180,9 +181,9 @@ void rhs_redist(double **rhsx, double **rhsy, double ***ucen, double ***vcen, do
     }
 
 
-    for (int i=1; i<xelem-1; i++)
+    for (i=1; i<xelem-1; i++)
     {
-        for (int j=1; j< yelem-1; j++)
+        for (j=1; j< yelem-1; j++)
         {
             rhsx[i][j] = -(0.5*(ucen[i][j][0] + ucen[i+1][j][0])*gradx[i][j]*area[i][j][0][0] - 0.5*(ucen[i][j][0] + ucen[i-1][j][0])*gradx[i-1][j]*area[i-1][j][0][0])/vol[i][j];
             rhsy[i][j] = -(0.5*(vcen[i][j][0] + vcen[i][j+1][0])*grady[i][j]*area[i][j][1][1] - 0.5*(vcen[i][j][0] + vcen[i][j-1][0])*grady[i][j-1]*area[i][j-1][0][0])/vol[i][j];
@@ -219,10 +220,11 @@ void rhs_redist2(double **rhs, double ***phi2, double ***phi)
     double dxbarminus[xelem][yelem];
     double dxbar[xelem][yelem];
 
-    #pragma omp parallel for schedule(dynamic)
-    for(int i=1; i<xelem-1; i++)
+    int i,j;
+
+    for(i=1; i<xelem-1; i++)
     {
-        for(int j=1; j<yelem-1; j++)
+        for(j=1; j<yelem-1; j++)
         {
             double temp_phi[5];
             if(i == 1)
@@ -289,10 +291,9 @@ void rhs_redist2(double **rhs, double ***phi2, double ***phi)
     double dybarminus[xelem][yelem];
     double dybar[xelem][yelem];
 
-    #pragma omp parallel for schedule(dynamic)
-    for(int i=1; i<xelem-1; i++)
+    for(i=1; i<xelem-1; i++)
     {
-        for(int j=1; j<yelem-1; j++)
+        for(j=1; j<yelem-1; j++)
         {
             double temp_phi[5];
             if(j == 1)
@@ -357,10 +358,9 @@ void rhs_redist2(double **rhs, double ***phi2, double ***phi)
 
 
     double eps = epsilon*max(xlen/(xelem-2), ylen/(yelem-2));
-    #pragma omp parallel for schedule(dynamic)
-    for(int i=1; i < xelem-1; i++)
+    for(i=1; i < xelem-1; i++)
     {
-        for(int j=1; j < yelem-1; j++)
+        for(j=1; j < yelem-1; j++)
         {
             double sign_phi;
             if(phi[i][j][0] >= eps)

@@ -17,4 +17,4 @@ main: main.c
 	$(CC) $(CPPFLAGS) main.o -o main -lm
 
 clean:
-	rm -f *.o main
+	rm -rf *.o main output
