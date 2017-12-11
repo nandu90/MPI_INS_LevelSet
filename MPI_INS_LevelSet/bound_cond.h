@@ -176,7 +176,7 @@ void pressureBC(double ***scalar)
     for( j=0; j<yelem; j++)
     {
         if(iBC[1][j] == 2)scalar[1][j][0] = scalar[2][j][0];//scalar[1][j][0] + 4800.0*area[1][j][1][1];
-        if(iBC[1][xelem-1] == 2)scalar[xelem-2][j][0] = scalar[xelem-3][j][0];
+        if(iBC[xelem-2][j] == 2)scalar[xelem-2][j][0] = scalar[xelem-3][j][0];
         
     }
     

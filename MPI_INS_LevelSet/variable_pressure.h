@@ -19,6 +19,7 @@
 void variable_pressure(double ***ustar, double ***vstar, double ***p, double deltat, double ***rho, double ***stx, double ***sty)
 {
   int i,j;
+ 
     /****Calculate the RHS of matrix****/
   double **b;
   allocator(&b, xelem, yelem);
@@ -56,6 +57,17 @@ void variable_pressure(double ***ustar, double ***vstar, double ***p, double del
         }
     }
     
+    /*if(myrank == master)
+      {
+	for(i=2; i<xelem-2; i++)
+	  {
+	    for(j=2; j<yelem-2; j++)
+	      {
+		printf("%d %d %.6f\n",i-1,j-1,b[i][j]);
+	      }
+	  }
+	  }*/
+
     /*Create a matrix to store the rho values at all 4 faces of CV*/
     double elem_rho[xelem][yelem][4];
     for(i=2; i < xelem-2; i++)
@@ -86,6 +98,7 @@ void variable_pressure(double ***ustar, double ***vstar, double ***p, double del
             a[i][j][4] = hy*hy*elem_rho[i][j][1]*elem_rho[i][j][2]*elem_rho[i][j][3]/den;
         }
     }
+    
     
     gs_solver(a,b,p);
     deallocator3(&a, xelem, yelem, 5);

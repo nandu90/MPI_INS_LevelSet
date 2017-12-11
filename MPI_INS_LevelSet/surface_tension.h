@@ -16,6 +16,7 @@
 
 void surface(struct elemsclr sclr, double ***st_forcex, double ***st_forcey)
 {
+  //commu2(sclr.phi);
   int i,j,k;
     /**Compute eps based on grid size*/
     double eps=epsilon*max(xlen/(gxelem), ylen/(gyelem));
@@ -86,6 +87,8 @@ void surface(struct elemsclr sclr, double ***st_forcex, double ***st_forcey)
              }
          }
 
+	 
+
          for(j=2; j<yelem-2; j++)
          {
              for(i=2; i<xelem-2; i++)
@@ -100,6 +103,8 @@ void surface(struct elemsclr sclr, double ***st_forcex, double ***st_forcey)
          }
          //exit(0);
          /*Need to impose BC for grad_phix and grad_phiy*/
+	 commu2(grad_phix);
+	 commu2(grad_phiy);
          grad_level_setBC(grad_phix);
          grad_level_setBC(grad_phiy);
 
@@ -168,6 +173,8 @@ void surface(struct elemsclr sclr, double ***st_forcex, double ***st_forcey)
              //<<endl;
          }
          //exit(0);
+	 commu2(st_forcex);
+	 commu2(st_forcey);
          grad_level_setBC(st_forcex);
          grad_level_setBC(st_forcey);
 

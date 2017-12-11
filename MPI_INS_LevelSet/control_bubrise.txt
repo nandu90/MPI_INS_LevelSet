@@ -44,7 +44,7 @@ Variable_density_pressure_solver 2    #0 - off; 1 - constant density; 2 - variab
 Surface_tension 1
 Advect_bubble 1
 Void_fraction_control 0
-Re-distance_method 2               #0 - off; 1 - hyperbolic; 2 - fastmarch; 3 - direct
+Re-distance_method 1               #0 - off; 1 - hyperbolic; 2 - fastmarch; 3 - direct
 
 
 /*************Boundary Conditions*****************/
@@ -52,9 +52,9 @@ Re-distance_method 2               #0 - off; 1 - hyperbolic; 2 - fastmarch; 3 - 
 x-boundary slip
 //x-boundary periodic
 
-//y-boundary no-slip
+y-boundary no-slip
 //y-boundary slip
-y-boundary periodic
+//y-boundary periodic
 
 /*********Time Control*********/
 //Time_control CFL-based

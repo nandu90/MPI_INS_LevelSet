@@ -16,6 +16,7 @@
 
 void gs_solver(double ***a, double **b, double ***p)
 {
+  //printf("%d reached pressure solver\n",myrank);
   int i,j;
   double ***tempp;
   double **delp;
@@ -25,34 +26,26 @@ void gs_solver(double ***a, double **b, double ***p)
   allocator(&d, xelem, yelem);
 
     double ires;
+	double resnorm=0.0;
 
     for(j=0; j<yelem; j++)
     {
         for(i=0; i<xelem; i++)
         {
             tempp[i][j][0] = p[i][j][0];
-            //<<b[i][j]<<" ";
         }
-        //<<endl;
     }
 
-    //exit(0);
     int iter;
     for(iter=0; iter< 10000; iter++)
     {
-        //<<tempp[1][1][0]<<endl;
         for(i=2; i<xelem-2; i++)
         {
             for(j=2; j<yelem-2; j++)
             {
                 double res = b[i][j] - (a[i][j][0]*tempp[i-1][j][0] + a[i][j][1]*tempp[i][j-1][0] + a[i][j][3]*tempp[i][j+1][0] + a[i][j][4]*tempp[i+1][j][0]);
                 delp[i][j] = res/a[i][j][2];
-
             }
-            /*if(i==1)
-            {
-                <<b[1][1]<<" "<<delp[1][1]<<endl;
-            }*/
         }
 
         for(i=2; i<xelem-2; i++)
@@ -62,43 +55,46 @@ void gs_solver(double ***a, double **b, double ***p)
                 tempp[i][j][0] = delp[i][j];
             }
         }
-        //<<tempp[1][1][0]<<endl;
-	commu(tempp);
+	commu2(tempp);
         pressureBC(tempp);
 
-        double resnorm=0.0;
+	double res1=0.0;
+        
+	double buf = 0.0;
         for(i=2; i<xelem-2; i++)
         {
             for(j=2; j<yelem-2; j++)
             {
-                double res = b[i][j] - (a[i][j][0]*tempp[i-1][j][0] + a[i][j][1]*tempp[i][j-1][0] + a[i][j][3]*tempp[i][j+1][0] + a[i][j][4]*tempp[i+1][j][0] + a[i][j][2]*tempp[i][j][0]);
+                res1 = b[i][j] - (a[i][j][0]*tempp[i-1][j][0] + a[i][j][1]*tempp[i][j-1][0] + a[i][j][3]*tempp[i][j+1][0] + a[i][j][4]*tempp[i+1][j][0] + a[i][j][2]*tempp[i][j][0]);
 
-                resnorm = resnorm + pow(res,2.0)*vol[i][j];
+                buf = buf + pow(res1,2.0)*vol[i][j];
             }
         }
 
+	MPI_Allreduce(&buf,&resnorm,1,MPI_DOUBLE,MPI_SUM,MPI_COMM_WORLD);
+	
+	resnorm = sqrt(resnorm);
         if(iter == 0)
         {
             ires = resnorm;
-            //<<"Initial residual "<<ires<<endl;
-            //exit(0);
+            //if(myrank==master)printf("Initial residual %.6f\n",ires);
+            
         }
         else
         {
-            //<<"Pressure Step: "<<iter<<"residual: "<<resnorm/ires<<endl;
+	  //if(myrank == master)printf("Pressure Step: %d residual: %.6f\n",iter,resnorm/ires);
             if(resnorm / ires < ptol)
             {
 	      if(myrank == master)printf("Pressure converged in %d \n",iter);
-	      //<<"Pressure converged in "<<iter<<" "<<endl;
                 break;
             }
         }
     }
 
+    commu2(tempp);
     pressureBC(tempp);
-    commu(tempp);
-    printf("Pressure iterations %d \n",iter);
-    //<<"Pressure iterations "<<iter<<endl;
+
+    if(myrank==master)printf("Pressure iterations %d Residual %.2e\n",iter,resnorm/ires);
     for(i=0; i<xelem; i++)
     {
         for(j=0; j<yelem; j++)

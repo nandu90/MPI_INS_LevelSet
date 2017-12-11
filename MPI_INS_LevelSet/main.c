@@ -41,13 +41,13 @@ Notes:
 #include "output.h"
 /*  #include "read_write.h"*/
 #include "bound_cond.h"
-/*#include "pressure_solver.h"
-  #include "variable_pressure.h"*/
+#include "pressure_solver.h"
+#include "variable_pressure.h"
 #include "heavy_delta.h"
 #include "initial_conditions.h"
-/*#include "surface_tension.h"
+#include "surface_tension.h"
 #include "body_force.h"
-#include "rhs.h"*/
+#include "rhs.h"
 #include "functions.h"
 #include "rhs_bub.h"
 #include "bub_advect.h"
@@ -103,6 +103,7 @@ int main(int argc, char **argv)
     yelem=yelem+4; //Include 2 ghost cells on each side
     xnode=xelem+1; //
     ynode=yelem+1; //
+    zelem = gzelem;
     
     ///Resize the vectors and initialize data structures//
     allocator(&x,xnode,ynode);
@@ -137,9 +138,11 @@ int main(int argc, char **argv)
     allocator3(&sclr.rho,xelem,yelem,zelem);
     allocator3(&sclr.mu,xelem,yelem,zelem);
     
+    
+
     initialize(sclr);
     
-    
+   
     
     //Read from file is startstep != 0/
     //prevfileread(sclr);
@@ -169,8 +172,8 @@ int main(int argc, char **argv)
         }
     }
     
+    
     //fast_march(sclr);
-    debug = 0;
     double *ires = (double *) malloc(3 * sizeof(double));
     bool exitflag = false;
     int iter=0;
@@ -189,12 +192,22 @@ int main(int argc, char **argv)
 	  }
       }
 
+    if(myrank == master)printf("Starting Solver...\n");
+
     
+
     for(iter=startstep; iter<itermax; iter++)
       {
+	
+	if(myrank == master)
+	    {
+	      printf("Step: %d\n",iter+1);
+	      fprintf(out,"Step: %d\n",iter+1);
+	    }
 
-	/*if(flow_solve == 1)
+	if(flow_solve == 1)
         {
+	  
 	  double ***utemp;
 	  allocator3(&utemp,xelem,yelem,zelem);
 	  double ***vtemp;
@@ -213,6 +226,16 @@ int main(int argc, char **argv)
 	  allocator(&rhsy,xelem,yelem);
 	  rhscalc(sclr, rhsx, rhsy, iter, exitflag);
 
+	  /*if(myrank == master)
+	    {
+	      for(i=2; i<xelem-2; i++)
+		{
+		  for(j=2; j<yelem-2; j++)
+		    {
+		      printf("%d %d %.6f %.6f\n",i-1,j-1,rhsx[i][j],rhsy[i][j]);
+		    }
+		}
+		}*/
 	  double ***ustar;
 	  allocator3(&ustar,xelem,yelem,zelem);
 	  double ***vstar;
@@ -227,8 +250,19 @@ int main(int argc, char **argv)
                 }
             }
 
-	  commu(ustar);
-	  commu(vstar);
+	  /*if(myrank == master)
+	    {
+	      for(i=2; i<xelem-2; i++)
+		{
+		  for(j=2; j<yelem-2; j++)
+		    {
+		      printf("%d %d %.6f %.6f\n",i-1,j-1,ustar[i][j][0],vstar[i][j][0]);
+		    }
+		}
+		}*/
+
+	  commu2(ustar);
+	  commu2(vstar);
 	  vel_BC(ustar, vstar);
 	  
             ///Calculate contribution from source term - Surface tension force
@@ -241,6 +275,17 @@ int main(int argc, char **argv)
 
 	  surface(sclr,st_forcex, st_forcey);
 	  body(sclr,st_forcex,st_forcey);
+	  /*if(myrank == master)
+	    {
+	      for(i=2; i<xelem-2; i++)
+		{
+		  for(j=2; j<yelem-2; j++)
+		    {
+		      printf("%d %d %.6f %.6f\n",i-1,j-1,st_forcex[i][j][0],st_forcey[i][j][0]);
+		    }
+		}
+		}*/
+	  
 	  
 	  if(p_solver == 1)
             {
@@ -249,6 +294,7 @@ int main(int argc, char **argv)
             }
 	  else if(p_solver == 2)
             {
+	      
 	      variable_pressure(ustar, vstar, sclr.p, deltat, sclr.rho, st_forcex, st_forcey);
             }
 
@@ -264,15 +310,11 @@ int main(int argc, char **argv)
                 }
             }
 
-	  commu(sclr.u);
-	  commu(sclr.v);
+	  commu2(sclr.u);
+	  commu2(sclr.v);
 	  vel_BC(sclr.u, sclr.v);
 
-	  if(myrank == master)
-	    {
-	      printf("Step: %d\n",iter+1);
-	      fprintf(out,"Step: %d\n",iter+1);
-	    }
+	  
 	  if(exitflag == false && sol_type == 0)
             {
 	      monitor_res(ires, &exitflag, iter, sclr,utemp,vtemp);
@@ -292,7 +334,7 @@ int main(int argc, char **argv)
 	  deallocator(&rhsx,xelem,yelem);
 	  deallocator(&rhsy,xelem,yelem);
 	  
-	  }*/
+	  }
 	
 
 	if(flow_solve == 0 && myrank == master)

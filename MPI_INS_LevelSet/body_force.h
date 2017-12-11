@@ -36,6 +36,9 @@ void body(struct elemsclr sclr, double ***st_forcex, double ***st_forcey)
             
         }
     }
+
+    commu2(st_forcex);
+    commu2(st_forcey);
     deallocator3(&H,xelem,yelem,zelem);
 }
 
