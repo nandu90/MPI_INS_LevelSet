@@ -73,7 +73,7 @@ void gs_solver(double ***a, double **b, double ***p)
 
 	MPI_Allreduce(&buf,&resnorm,1,MPI_DOUBLE,MPI_SUM,MPI_COMM_WORLD);
 	
-	resnorm = sqrt(resnorm);
+	
         if(iter == 0)
         {
             ires = resnorm;

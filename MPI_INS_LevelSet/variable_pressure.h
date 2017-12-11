@@ -81,6 +81,17 @@ void variable_pressure(double ***ustar, double ***vstar, double ***p, double del
         }
     }
 
+    /*if(myrank == master)
+      {
+	for(i=2; i<xelem-2; i++)
+	  {
+	    for(j=2; j<yelem-2; j++)
+	      {
+		printf("%d %d %.6f %.6f %.6f %.6f\n",i-1,j-1,elem_rho[i][j][0],elem_rho[i][j][1],elem_rho[i][j][2],elem_rho[i][j][3]);
+	      }
+	  }
+	  }*/
+
     double ***a;
     allocator3(&a, xelem, yelem, 5);
     
@@ -96,9 +107,18 @@ void variable_pressure(double ***ustar, double ***vstar, double ***p, double del
             a[i][j][2] = -(hy*hy*(elem_rho[i][j][1]*elem_rho[i][j][2]*elem_rho[i][j][3] + elem_rho[i][j][0]*elem_rho[i][j][1]*elem_rho[i][j][3]) + hx*hx*(elem_rho[i][j][0]*elem_rho[i][j][2]*elem_rho[i][j][3] + elem_rho[i][j][0]*elem_rho[i][j][1]*elem_rho[i][j][2]) )/den;
             a[i][j][3] = hx*hx*elem_rho[i][j][0]*elem_rho[i][j][2]*elem_rho[i][j][3]/den;
             a[i][j][4] = hy*hy*elem_rho[i][j][1]*elem_rho[i][j][2]*elem_rho[i][j][3]/den;
-        }
+	    //printf("%d %d %.6f %.6f %.6f %.6f %.6f\n",i-1,j-1,a[i][j][0],a[i][j][1],a[i][j][2],a[i][j][3],a[i][j][4]);
+	    //if(myrank==master)printf("%d %d %.6f %.6f %.6f %.6f\n",i-1,j-1,elem_rho[i][j][0],elem_rho[i][j][1],elem_rho[i][j][2],elem_rho[i][j][3]);
+	}
     }
     
+    /*for(i=2; i<xelem-2; i++)
+      {
+	for(j=2; j<yelem-2; j++)
+	  {
+	    if(myrank==master)printf("%d %d %.6f %.6f %.6f %.6f %.6f\n",i-1,j-1,a[i][j][0],a[i][j][1],a[i][j][2],a[i][j][3],a[i][j][4]);
+	  }
+	  }*/
     
     gs_solver(a,b,p);
     deallocator3(&a, xelem, yelem, 5);

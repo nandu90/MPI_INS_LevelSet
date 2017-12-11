@@ -198,7 +198,8 @@ int main(int argc, char **argv)
 
     for(iter=startstep; iter<itermax; iter++)
       {
-	
+	//commu2(sclr.rho);
+	//commu2(sclr.mu);
 	if(myrank == master)
 	    {
 	      printf("Step: %d\n",iter+1);
@@ -286,7 +287,13 @@ int main(int argc, char **argv)
 		}
 		}*/
 	  
-	  
+	    /*for(i=2;i<xelem-2;i++)
+	    {
+	      for(j=2;j<yelem-2; j++)
+		{
+		  printf("%d %d %.6f\n",i-1,j-1,sclr.p[i][j][0]);
+		}
+		}*/
 	  if(p_solver == 1)
             {
 	      pressure(ustar,vstar, sclr.p, deltat);
@@ -297,6 +304,14 @@ int main(int argc, char **argv)
 	      
 	      variable_pressure(ustar, vstar, sclr.p, deltat, sclr.rho, st_forcex, st_forcey);
             }
+
+	  /*for(i=2;i<xelem-2;i++)
+	    {
+	      for(j=2;j<yelem-2; j++)
+		{
+		  printf("%d %d %.6f\n",i-1,j-1,sclr.p[i][j][0]);
+		}
+		}*/
 
             //Projection Step
 	  for(i=2; i<xelem-2; i++)

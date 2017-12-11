@@ -180,16 +180,17 @@ void pressureBC(double ***scalar)
         
     }
     
-    /*for( i=1; i<xelem-1; i++)
+    /*double line = 2.5*2.0*rb_in;
+    for( i=2; i<xelem-2; i++)
     {
-        for( j=1; j<yelem-1; j++)
+        for( j=2; j<yelem-2; j++)
         {
-            if(yc[i][j] >  line)
+            if(yc[i][j] > line)
             {
                 scalar[i][j][0] = 0.0;
             }
         }
-    }*/
+	}*/
 }
 
 void vel_BC(double ***u, double ***v)
