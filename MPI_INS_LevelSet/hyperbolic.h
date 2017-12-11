@@ -17,7 +17,7 @@
 
 void hyperbolic(struct elemsclr sclr)
 {
-  printf("%d is here1\n",myrank);
+  //printf("%d is here1\n",myrank);
   int i,j;
     /***Store phi values in a separate matrix***/
   double ***phi2;
@@ -51,7 +51,7 @@ void hyperbolic(struct elemsclr sclr)
     
     
     int iter;
-    printf("%d is here2\n",myrank);
+    //printf("%d is here2\n",myrank);
     for(iter=0; iter < re_loops; iter++)
     {
       if(myrank == master)printf("    Re-dist iter = %d\n",iter+1);
@@ -93,13 +93,12 @@ void hyperbolic(struct elemsclr sclr)
             vol_contraint(phistar, sclr.phi, grad_phi, delta, deltat);
 	    }*/
         
-	printf("%d is here3\n",myrank);
+	//printf("%d is here3\n",myrank);
         //bothscalarBC(phistar);
-	debug = 1;
 	commu2(phistar);
         level_setBC(phistar);
 
-	printf("%d id here4\n",myrank);
+	//printf("%d id here4\n",myrank);
 	double **rhstar;
 	allocator(&rhstar, xelem, yelem);
 	
@@ -114,7 +113,7 @@ void hyperbolic(struct elemsclr sclr)
                 //<<" "<<phi[i][j][0]<<endl;
             }
         }
-        printf("%d is here5\n",myrank);
+        //printf("%d is here5\n",myrank);
         //level_setBC(phi2);
         if(vf_control == 1)
         {
@@ -122,7 +121,7 @@ void hyperbolic(struct elemsclr sclr)
         }
 	commu2(phi2);
         level_setBC(phi2);
-        printf("%d is here6\n",myrank);
+        //printf("%d is here6\n",myrank);
         //bothscalarBC(phistar);
         /****Apply volume constraint****/
         
@@ -135,7 +134,7 @@ void hyperbolic(struct elemsclr sclr)
             break;
 	    }*/
         
-	printf("%d is here7\n",myrank);
+	//printf("%d is here7\n",myrank);
         deallocator3(&lambda, xelem, yelem, zelem);
 	deallocator3(&temp_phi2, xelem, yelem, zelem);
 	deallocator3(&phistar, xelem, yelem, zelem);

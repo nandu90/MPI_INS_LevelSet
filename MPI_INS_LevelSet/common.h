@@ -96,7 +96,7 @@ double sf_coeff;
 double relax;
 double ptol;
 double re_time;
-double re_loops;
+int re_loops;
 int print_gap;
 int startstep;
 double gx;

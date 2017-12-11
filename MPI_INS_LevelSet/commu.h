@@ -306,7 +306,7 @@ void commu(double ***var)
 
 void commu2(double ***var)
 {
-  if(debug == 1)printf("%d here\n", myrank);
+  //if(debug == 1)printf("%d reached the commu \n", myrank);
   /*
     Starting from the right side of mesh, ghost cell strips are numbered in an anticlockwise number
    */
@@ -400,17 +400,17 @@ void commu2(double ***var)
 		}
 	    }
 
-	  if(debug == 1)printf("%d packd for %d\n",myrank, bhailog[k]);
+	  //if(debug == 1)printf("%d packd for %d\n",myrank, bhailog[k]);
 	}
 
        
     }
 
-    if(myrank == 1 && debug == 1)printf("contents are pakeaged\n");
+    //if(myrank == 1 && debug == 1)printf("contents are pakeaged\n");
 
     MPI_Status status;
     int request;
-    if(myrank == master && debug == 1)printf("here starting sendrecv operations\n");
+    //if(myrank == master && debug == 1)printf("here starting sendrecv operations\n");
       for(k=0; k<4; k++)
 	{
 	  if(k==0)recvk = 2;
@@ -421,14 +421,14 @@ void commu2(double ***var)
 	  
 	  if(bhailog[recvk] >= 0)
 	    {
-	      if(myrank==0 && debug ==1)printf("here recving from %d by %d\n",bhailog[recvk],myrank);
+	      //if(myrank==0 && debug ==1)printf("here recving from %d by %d\n",bhailog[recvk],myrank);
 	      MPI_Recv(recvptr[recvk],size[recvk], MPI_DOUBLE,bhailog[recvk],bhailog[recvk],MPI_COMM_WORLD,&status);
 	      
 	    }
 
 	  if(bhailog[k] >= 0)
 	    {
-	      if(bhailog[k]==0 && debug == 1)printf("here sending from %d to %d\n",myrank,bhailog[k]);
+	      //if(bhailog[k]==0 && debug == 1)printf("here sending from %d to %d\n",myrank,bhailog[k]);
 	      MPI_Isend(sendptr[k], size[k], MPI_DOUBLE, bhailog[k], myrank, MPI_COMM_WORLD,&request);
 	      
 	      MPI_Wait(&request, &status);

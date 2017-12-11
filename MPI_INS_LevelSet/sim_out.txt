@@ -1,0 +1,4001 @@
+Step: 1
+Void Fraction: 5.648402% Error in vf: 0.000000%
+
+
+Step: 2
+Void Fraction: 5.648349% Error in vf: -0.000942%
+
+
+Step: 3
+Void Fraction: 5.648281% Error in vf: -0.002152%
+
+
+Step: 4
+Void Fraction: 5.648202% Error in vf: -0.003543%
+
+
+Step: 5
+Void Fraction: 5.648122% Error in vf: -0.004966%
+
+
+Step: 6
+Void Fraction: 5.648051% Error in vf: -0.006217%
+
+
+Step: 7
+Void Fraction: 5.647995% Error in vf: -0.007215%
+
+
+Step: 8
+Void Fraction: 5.647957% Error in vf: -0.007881%
+
+
+Step: 9
+Void Fraction: 5.647939% Error in vf: -0.008203%
+
+
+Step: 10
+Void Fraction: 5.647940% Error in vf: -0.008188%
+
+
+Step: 11
+Void Fraction: 5.647956% Error in vf: -0.007900%
+
+
+Step: 12
+Void Fraction: 5.647983% Error in vf: -0.007414%
+
+
+Step: 13
+Void Fraction: 5.648018% Error in vf: -0.006805%
+
+
+Step: 14
+Void Fraction: 5.648054% Error in vf: -0.006162%
+
+
+Step: 15
+Void Fraction: 5.648088% Error in vf: -0.005563%
+
+
+Step: 16
+Void Fraction: 5.648116% Error in vf: -0.005074%
+
+
+Step: 17
+Void Fraction: 5.648130% Error in vf: -0.004824%
+
+
+Step: 18
+Void Fraction: 5.648126% Error in vf: -0.004895%
+
+
+Step: 19
+Void Fraction: 5.648100% Error in vf: -0.005356%
+
+
+Step: 20
+Void Fraction: 5.648050% Error in vf: -0.006238%
+
+
+Step: 21
+Void Fraction: 5.647978% Error in vf: -0.007503%
+
+
+Step: 22
+Void Fraction: 5.647883% Error in vf: -0.009185%
+
+
+Step: 23
+Void Fraction: 5.647771% Error in vf: -0.011168%
+
+
+Step: 24
+Void Fraction: 5.647647% Error in vf: -0.013376%
+
+
+Step: 25
+Void Fraction: 5.647514% Error in vf: -0.015726%
+
+
+Step: 26
+Void Fraction: 5.647376% Error in vf: -0.018169%
+
+
+Step: 27
+Void Fraction: 5.647232% Error in vf: -0.020718%
+
+
+Step: 28
+Void Fraction: 5.647083% Error in vf: -0.023351%
+
+
+Step: 29
+Void Fraction: 5.646930% Error in vf: -0.026071%
+
+
+Step: 30
+Void Fraction: 5.646775% Error in vf: -0.028811%
+
+
+Step: 31
+Void Fraction: 5.646622% Error in vf: -0.031515%
+
+
+Step: 32
+Void Fraction: 5.646470% Error in vf: -0.034203%
+
+
+Step: 33
+Void Fraction: 5.646325% Error in vf: -0.036777%
+
+
+Step: 34
+Void Fraction: 5.646191% Error in vf: -0.039156%
+
+
+Step: 35
+Void Fraction: 5.646068% Error in vf: -0.041331%
+
+
+Step: 36
+Void Fraction: 5.645959% Error in vf: -0.043262%
+
+
+Step: 37
+Void Fraction: 5.645865% Error in vf: -0.044913%
+
+
+Step: 38
+Void Fraction: 5.645789% Error in vf: -0.046267%
+
+
+Step: 39
+Void Fraction: 5.645728% Error in vf: -0.047349%
+
+
+Step: 40
+Void Fraction: 5.645680% Error in vf: -0.048195%
+
+
+Step: 41
+Void Fraction: 5.645646% Error in vf: -0.048803%
+
+
+Step: 42
+Void Fraction: 5.645622% Error in vf: -0.049213%
+
+
+Step: 43
+Void Fraction: 5.645608% Error in vf: -0.049475%
+
+
+Step: 44
+Void Fraction: 5.645598% Error in vf: -0.049645%
+
+
+Step: 45
+Void Fraction: 5.645590% Error in vf: -0.049785%
+
+
+Step: 46
+Void Fraction: 5.645581% Error in vf: -0.049942%
+
+
+Step: 47
+Void Fraction: 5.645570% Error in vf: -0.050139%
+
+
+Step: 48
+Void Fraction: 5.645553% Error in vf: -0.050442%
+
+
+Step: 49
+Void Fraction: 5.645526% Error in vf: -0.050924%
+
+
+Step: 50
+Void Fraction: 5.645491% Error in vf: -0.051532%
+
+
+Step: 51
+Void Fraction: 5.645446% Error in vf: -0.052336%
+
+
+Step: 52
+Void Fraction: 5.645388% Error in vf: -0.053369%
+
+
+Step: 53
+Void Fraction: 5.645319% Error in vf: -0.054590%
+
+
+Step: 54
+Void Fraction: 5.645240% Error in vf: -0.055980%
+
+
+Step: 55
+Void Fraction: 5.645149% Error in vf: -0.057604%
+
+
+Step: 56
+Void Fraction: 5.645047% Error in vf: -0.059395%
+
+
+Step: 57
+Void Fraction: 5.644939% Error in vf: -0.061312%
+
+
+Step: 58
+Void Fraction: 5.644828% Error in vf: -0.063271%
+
+
+Step: 59
+Void Fraction: 5.644719% Error in vf: -0.065214%
+
+
+Step: 60
+Void Fraction: 5.644609% Error in vf: -0.067154%
+
+
+Step: 61
+Void Fraction: 5.644501% Error in vf: -0.069061%
+
+
+Step: 62
+Void Fraction: 5.644394% Error in vf: -0.070954%
+
+
+Step: 63
+Void Fraction: 5.644288% Error in vf: -0.072843%
+
+
+Step: 64
+Void Fraction: 5.644182% Error in vf: -0.074712%
+
+
+Step: 65
+Void Fraction: 5.644077% Error in vf: -0.076582%
+
+
+Step: 66
+Void Fraction: 5.643975% Error in vf: -0.078381%
+
+
+Step: 67
+Void Fraction: 5.643877% Error in vf: -0.080116%
+
+
+Step: 68
+Void Fraction: 5.643781% Error in vf: -0.081815%
+
+
+Step: 69
+Void Fraction: 5.643689% Error in vf: -0.083442%
+
+
+Step: 70
+Void Fraction: 5.643599% Error in vf: -0.085042%
+
+
+Step: 71
+Void Fraction: 5.643509% Error in vf: -0.086622%
+
+
+Step: 72
+Void Fraction: 5.643421% Error in vf: -0.088194%
+
+
+Step: 73
+Void Fraction: 5.643334% Error in vf: -0.089736%
+
+
+Step: 74
+Void Fraction: 5.643248% Error in vf: -0.091259%
+
+
+Step: 75
+Void Fraction: 5.643162% Error in vf: -0.092778%
+
+
+Step: 76
+Void Fraction: 5.643078% Error in vf: -0.094264%
+
+
+Step: 77
+Void Fraction: 5.642993% Error in vf: -0.095760%
+
+
+Step: 78
+Void Fraction: 5.642907% Error in vf: -0.097288%
+
+
+Step: 79
+Void Fraction: 5.642818% Error in vf: -0.098869%
+
+
+Step: 80
+Void Fraction: 5.642726% Error in vf: -0.100488%
+
+
+Step: 81
+Void Fraction: 5.642632% Error in vf: -0.102164%
+
+
+Step: 82
+Void Fraction: 5.642534% Error in vf: -0.103893%
+
+
+Step: 83
+Void Fraction: 5.642434% Error in vf: -0.105666%
+
+
+Step: 84
+Void Fraction: 5.642336% Error in vf: -0.107399%
+
+
+Step: 85
+Void Fraction: 5.642240% Error in vf: -0.109103%
+
+
+Step: 86
+Void Fraction: 5.642146% Error in vf: -0.110755%
+
+
+Step: 87
+Void Fraction: 5.642055% Error in vf: -0.112380%
+
+
+Step: 88
+Void Fraction: 5.641969% Error in vf: -0.113901%
+
+
+Step: 89
+Void Fraction: 5.641890% Error in vf: -0.115288%
+
+
+Step: 90
+Void Fraction: 5.641816% Error in vf: -0.116602%
+
+
+Step: 91
+Void Fraction: 5.641750% Error in vf: -0.117779%
+
+
+Step: 92
+Void Fraction: 5.641690% Error in vf: -0.118834%
+
+
+Step: 93
+Void Fraction: 5.641636% Error in vf: -0.119787%
+
+
+Step: 94
+Void Fraction: 5.641591% Error in vf: -0.120585%
+
+
+Step: 95
+Void Fraction: 5.641553% Error in vf: -0.121266%
+
+
+Step: 96
+Void Fraction: 5.641518% Error in vf: -0.121871%
+
+
+Step: 97
+Void Fraction: 5.641487% Error in vf: -0.122420%
+
+
+Step: 98
+Void Fraction: 5.641461% Error in vf: -0.122896%
+
+
+Step: 99
+Void Fraction: 5.641434% Error in vf: -0.123368%
+
+
+Step: 100
+Void Fraction: 5.641407% Error in vf: -0.123835%
+
+
+Step: 101
+Void Fraction: 5.641379% Error in vf: -0.124338%
+
+
+Step: 102
+Void Fraction: 5.641348% Error in vf: -0.124882%
+
+
+Step: 103
+Void Fraction: 5.641313% Error in vf: -0.125515%
+
+
+Step: 104
+Void Fraction: 5.641268% Error in vf: -0.126300%
+
+
+Step: 105
+Void Fraction: 5.641213% Error in vf: -0.127277%
+
+
+Step: 106
+Void Fraction: 5.641149% Error in vf: -0.128409%
+
+
+Step: 107
+Void Fraction: 5.641075% Error in vf: -0.129729%
+
+
+Step: 108
+Void Fraction: 5.640988% Error in vf: -0.131258%
+
+
+Step: 109
+Void Fraction: 5.640889% Error in vf: -0.133019%
+
+
+Step: 110
+Void Fraction: 5.640776% Error in vf: -0.135012%
+
+
+Step: 111
+Void Fraction: 5.640653% Error in vf: -0.137193%
+
+
+Step: 112
+Void Fraction: 5.640519% Error in vf: -0.139568%
+
+
+Step: 113
+Void Fraction: 5.640375% Error in vf: -0.142111%
+
+
+Step: 114
+Void Fraction: 5.640222% Error in vf: -0.144829%
+
+
+Step: 115
+Void Fraction: 5.640105% Error in vf: -0.146900%
+
+
+Step: 116
+Void Fraction: 5.640744% Error in vf: -0.135589%
+
+
+Step: 117
+Void Fraction: 5.640854% Error in vf: -0.133642%
+
+
+Step: 118
+Void Fraction: 5.641169% Error in vf: -0.128057%
+
+
+Step: 119
+Void Fraction: 5.641447% Error in vf: -0.123135%
+
+
+Step: 120
+Void Fraction: 5.639766% Error in vf: -0.152903%
+
+
+Step: 121
+Void Fraction: 5.641144% Error in vf: -0.128493%
+
+
+Step: 122
+Void Fraction: 5.641192% Error in vf: -0.127647%
+
+
+Step: 123
+Void Fraction: 5.639962% Error in vf: -0.149426%
+
+
+Step: 124
+Void Fraction: 5.641741% Error in vf: -0.117937%
+
+
+Step: 125
+Void Fraction: 5.641327% Error in vf: -0.125259%
+
+
+Step: 126
+Void Fraction: 5.642432% Error in vf: -0.105689%
+
+
+Step: 127
+Void Fraction: 5.642550% Error in vf: -0.103601%
+
+
+Step: 128
+Void Fraction: 5.642120% Error in vf: -0.111217%
+
+
+Step: 129
+Void Fraction: 5.642464% Error in vf: -0.105122%
+
+
+Step: 130
+Void Fraction: 5.641469% Error in vf: -0.122754%
+
+
+Step: 131
+Void Fraction: 5.642093% Error in vf: -0.111702%
+
+
+Step: 132
+Void Fraction: 5.645440% Error in vf: -0.052449%
+
+
+Step: 133
+Void Fraction: 5.642526% Error in vf: -0.104033%
+
+
+Step: 134
+Void Fraction: 5.642349% Error in vf: -0.107174%
+
+
+Step: 135
+Void Fraction: 5.644600% Error in vf: -0.067318%
+
+
+Step: 136
+Void Fraction: 5.642332% Error in vf: -0.107459%
+
+
+Step: 137
+Void Fraction: 5.641816% Error in vf: -0.116602%
+
+
+Step: 138
+Void Fraction: 5.645096% Error in vf: -0.058529%
+
+
+Step: 139
+Void Fraction: 5.642723% Error in vf: -0.100554%
+
+
+Step: 140
+Void Fraction: 5.642597% Error in vf: -0.102779%
+
+
+Step: 141
+Void Fraction: 5.640739% Error in vf: -0.135666%
+
+
+Step: 142
+Void Fraction: 5.642166% Error in vf: -0.110411%
+
+
+Step: 143
+Void Fraction: 5.641993% Error in vf: -0.113474%
+
+
+Step: 144
+Void Fraction: 5.642624% Error in vf: -0.102299%
+
+
+Step: 145
+Void Fraction: 5.641475% Error in vf: -0.122646%
+
+
+Step: 146
+Void Fraction: 5.641271% Error in vf: -0.126248%
+
+
+Step: 147
+Void Fraction: 5.640599% Error in vf: -0.138147%
+
+
+Step: 148
+Void Fraction: 5.643106% Error in vf: -0.093760%
+
+
+Step: 149
+Void Fraction: 5.644938% Error in vf: -0.061337%
+
+
+Step: 150
+Void Fraction: 5.643721% Error in vf: -0.082874%
+
+
+Step: 151
+Void Fraction: 5.642786% Error in vf: -0.099433%
+
+
+Step: 152
+Void Fraction: 5.641789% Error in vf: -0.117089%
+
+
+Step: 153
+Void Fraction: 5.641515% Error in vf: -0.121924%
+
+
+Step: 154
+Void Fraction: 5.639193% Error in vf: -0.163035%
+
+
+Step: 155
+Void Fraction: 5.639790% Error in vf: -0.152476%
+
+
+Step: 156
+Void Fraction: 5.642833% Error in vf: -0.098591%
+
+
+Step: 157
+Void Fraction: 5.641409% Error in vf: -0.123813%
+
+
+Step: 158
+Void Fraction: 5.638700% Error in vf: -0.171774%
+
+
+Step: 159
+Void Fraction: 5.641689% Error in vf: -0.118859%
+
+
+Step: 160
+Void Fraction: 5.638232% Error in vf: -0.180053%
+
+
+Step: 161
+Void Fraction: 5.640366% Error in vf: -0.142283%
+
+
+Step: 162
+Void Fraction: 5.638087% Error in vf: -0.182622%
+
+
+Step: 163
+Void Fraction: 5.639824% Error in vf: -0.151878%
+
+
+Step: 164
+Void Fraction: 5.638521% Error in vf: -0.174936%
+
+
+Step: 165
+Void Fraction: 5.638684% Error in vf: -0.172059%
+
+
+Step: 166
+Void Fraction: 5.638513% Error in vf: -0.175088%
+
+
+Step: 167
+Void Fraction: 5.638640% Error in vf: -0.172831%
+
+
+Step: 168
+Void Fraction: 5.637674% Error in vf: -0.189935%
+
+
+Step: 169
+Void Fraction: 5.638223% Error in vf: -0.180212%
+
+
+Step: 170
+Void Fraction: 5.637946% Error in vf: -0.185113%
+
+
+Step: 171
+Void Fraction: 5.636544% Error in vf: -0.209946%
+
+
+Step: 172
+Void Fraction: 5.639580% Error in vf: -0.156193%
+
+
+Step: 173
+Void Fraction: 5.641248% Error in vf: -0.126667%
+
+
+Step: 174
+Void Fraction: 5.640904% Error in vf: -0.132757%
+
+
+Step: 175
+Void Fraction: 5.641743% Error in vf: -0.117900%
+
+
+Step: 176
+Void Fraction: 5.638985% Error in vf: -0.166723%
+
+
+Step: 177
+Void Fraction: 5.637364% Error in vf: -0.195430%
+
+
+Step: 178
+Void Fraction: 5.638828% Error in vf: -0.169503%
+
+
+Step: 179
+Void Fraction: 5.639607% Error in vf: -0.155704%
+
+
+Step: 180
+Void Fraction: 5.637691% Error in vf: -0.189639%
+
+
+Step: 181
+Void Fraction: 5.636896% Error in vf: -0.203701%
+
+
+Step: 182
+Void Fraction: 5.640781% Error in vf: -0.134927%
+
+
+Step: 183
+Void Fraction: 5.641280% Error in vf: -0.126085%
+
+
+Step: 184
+Void Fraction: 5.640435% Error in vf: -0.141055%
+
+
+Step: 185
+Void Fraction: 5.637827% Error in vf: -0.187232%
+
+
+Step: 186
+Void Fraction: 5.636402% Error in vf: -0.212455%
+
+
+Step: 187
+Void Fraction: 5.635665% Error in vf: -0.225493%
+
+
+Step: 188
+Void Fraction: 5.636830% Error in vf: -0.204875%
+
+
+Step: 189
+Void Fraction: 5.637613% Error in vf: -0.191009%
+
+
+Step: 190
+Void Fraction: 5.639631% Error in vf: -0.155283%
+
+
+Step: 191
+Void Fraction: 5.637546% Error in vf: -0.192202%
+
+
+Step: 192
+Void Fraction: 5.636254% Error in vf: -0.215081%
+
+
+Step: 193
+Void Fraction: 5.636173% Error in vf: -0.216512%
+
+
+Step: 194
+Void Fraction: 5.637547% Error in vf: -0.192181%
+
+
+Step: 195
+Void Fraction: 5.635574% Error in vf: -0.227106%
+
+
+Step: 196
+Void Fraction: 5.634332% Error in vf: -0.249096%
+
+
+Step: 197
+Void Fraction: 5.633699% Error in vf: -0.260314%
+
+
+Step: 198
+Void Fraction: 5.635050% Error in vf: -0.236386%
+
+
+Step: 199
+Void Fraction: 5.636983% Error in vf: -0.202160%
+
+
+Step: 200
+Void Fraction: 5.637042% Error in vf: -0.201122%
+
+
+Step: 201
+Void Fraction: 5.635116% Error in vf: -0.235212%
+
+
+Step: 202
+Void Fraction: 5.636009% Error in vf: -0.219408%
+
+
+Step: 203
+Void Fraction: 5.634928% Error in vf: -0.238555%
+
+
+Step: 204
+Void Fraction: 5.637152% Error in vf: -0.199177%
+
+
+Step: 205
+Void Fraction: 5.635228% Error in vf: -0.233232%
+
+
+Step: 206
+Void Fraction: 5.633976% Error in vf: -0.255410%
+
+
+Step: 207
+Void Fraction: 5.633218% Error in vf: -0.268824%
+
+
+Step: 208
+Void Fraction: 5.632730% Error in vf: -0.277457%
+
+
+Step: 209
+Void Fraction: 5.633227% Error in vf: -0.268662%
+
+
+Step: 210
+Void Fraction: 5.634182% Error in vf: -0.251751%
+
+
+Step: 211
+Void Fraction: 5.633129% Error in vf: -0.270407%
+
+
+Step: 212
+Void Fraction: 5.632422% Error in vf: -0.282917%
+
+
+Step: 213
+Void Fraction: 5.632104% Error in vf: -0.288544%
+
+
+Step: 214
+Void Fraction: 5.631654% Error in vf: -0.296507%
+
+
+Step: 215
+Void Fraction: 5.636967% Error in vf: -0.202457%
+
+
+Step: 216
+Void Fraction: 5.635445% Error in vf: -0.229394%
+
+
+Step: 217
+Void Fraction: 5.634123% Error in vf: -0.252803%
+
+
+Step: 218
+Void Fraction: 5.633222% Error in vf: -0.268749%
+
+
+Step: 219
+Void Fraction: 5.632642% Error in vf: -0.279012%
+
+
+Step: 220
+Void Fraction: 5.635395% Error in vf: -0.230277%
+
+
+Step: 221
+Void Fraction: 5.633981% Error in vf: -0.255322%
+
+
+Step: 222
+Void Fraction: 5.633197% Error in vf: -0.269188%
+
+
+Step: 223
+Void Fraction: 5.632418% Error in vf: -0.282994%
+
+
+Step: 224
+Void Fraction: 5.632044% Error in vf: -0.289599%
+
+
+Step: 225
+Void Fraction: 5.631455% Error in vf: -0.300043%
+
+
+Step: 226
+Void Fraction: 5.630981% Error in vf: -0.308420%
+
+
+Step: 227
+Void Fraction: 5.630641% Error in vf: -0.314449%
+
+
+Step: 228
+Void Fraction: 5.630383% Error in vf: -0.319018%
+
+
+Step: 229
+Void Fraction: 5.634483% Error in vf: -0.246425%
+
+
+Step: 230
+Void Fraction: 5.633135% Error in vf: -0.270285%
+
+
+Step: 231
+Void Fraction: 5.632334% Error in vf: -0.284470%
+
+
+Step: 232
+Void Fraction: 5.631566% Error in vf: -0.298076%
+
+
+Step: 233
+Void Fraction: 5.631479% Error in vf: -0.299611%
+
+
+Step: 234
+Void Fraction: 5.630841% Error in vf: -0.310905%
+
+
+Step: 235
+Void Fraction: 5.630586% Error in vf: -0.315416%
+
+
+Step: 236
+Void Fraction: 5.630097% Error in vf: -0.324086%
+
+
+Step: 237
+Void Fraction: 5.630248% Error in vf: -0.321408%
+
+
+Step: 238
+Void Fraction: 5.629759% Error in vf: -0.330064%
+
+
+Step: 239
+Void Fraction: 5.629370% Error in vf: -0.336949%
+
+
+Step: 240
+Void Fraction: 5.630397% Error in vf: -0.318774%
+
+
+Step: 241
+Void Fraction: 5.629710% Error in vf: -0.330929%
+
+
+Step: 242
+Void Fraction: 5.629187% Error in vf: -0.340185%
+
+
+Step: 243
+Void Fraction: 5.630371% Error in vf: -0.319220%
+
+
+Step: 244
+Void Fraction: 5.629539% Error in vf: -0.333959%
+
+
+Step: 245
+Void Fraction: 5.628910% Error in vf: -0.345085%
+
+
+Step: 246
+Void Fraction: 5.629234% Error in vf: -0.339348%
+
+
+Step: 247
+Void Fraction: 5.628668% Error in vf: -0.349368%
+
+
+Step: 248
+Void Fraction: 5.628256% Error in vf: -0.356663%
+
+
+Step: 249
+Void Fraction: 5.627959% Error in vf: -0.361922%
+
+
+Step: 250
+Void Fraction: 5.627659% Error in vf: -0.367244%
+
+
+Step: 251
+Void Fraction: 5.627600% Error in vf: -0.368277%
+
+
+Step: 252
+Void Fraction: 5.627379% Error in vf: -0.372189%
+
+
+Step: 253
+Void Fraction: 5.627119% Error in vf: -0.376809%
+
+
+Step: 254
+Void Fraction: 5.626919% Error in vf: -0.380349%
+
+
+Step: 255
+Void Fraction: 5.626967% Error in vf: -0.379491%
+
+
+Step: 256
+Void Fraction: 5.626749% Error in vf: -0.383351%
+
+
+Step: 257
+Void Fraction: 5.626576% Error in vf: -0.386410%
+
+
+Step: 258
+Void Fraction: 5.626463% Error in vf: -0.388417%
+
+
+Step: 259
+Void Fraction: 5.626367% Error in vf: -0.390121%
+
+
+Step: 260
+Void Fraction: 5.626399% Error in vf: -0.389541%
+
+
+Step: 261
+Void Fraction: 5.626294% Error in vf: -0.391411%
+
+
+Step: 262
+Void Fraction: 5.626761% Error in vf: -0.383135%
+
+
+Step: 263
+Void Fraction: 5.627394% Error in vf: -0.371924%
+
+
+Step: 264
+Void Fraction: 5.627058% Error in vf: -0.377878%
+
+
+Step: 265
+Void Fraction: 5.626784% Error in vf: -0.382735%
+
+
+Step: 266
+Void Fraction: 5.626558% Error in vf: -0.386739%
+
+
+Step: 267
+Void Fraction: 5.626383% Error in vf: -0.389828%
+
+
+Step: 268
+Void Fraction: 5.626423% Error in vf: -0.389118%
+
+
+Step: 269
+Void Fraction: 5.626206% Error in vf: -0.392967%
+
+
+Step: 270
+Void Fraction: 5.627645% Error in vf: -0.367482%
+
+
+Step: 271
+Void Fraction: 5.627314% Error in vf: -0.373355%
+
+
+Step: 272
+Void Fraction: 5.626984% Error in vf: -0.379189%
+
+
+Step: 273
+Void Fraction: 5.626671% Error in vf: -0.384726%
+
+
+Step: 274
+Void Fraction: 5.626387% Error in vf: -0.389763%
+
+
+Step: 275
+Void Fraction: 5.626486% Error in vf: -0.388012%
+
+
+Step: 276
+Void Fraction: 5.626149% Error in vf: -0.393981%
+
+
+Step: 277
+Void Fraction: 5.625834% Error in vf: -0.399556%
+
+
+Step: 278
+Void Fraction: 5.625795% Error in vf: -0.400232%
+
+
+Step: 279
+Void Fraction: 5.625426% Error in vf: -0.406777%
+
+
+Step: 280
+Void Fraction: 5.625098% Error in vf: -0.412572%
+
+
+Step: 281
+Void Fraction: 5.624811% Error in vf: -0.417655%
+
+
+Step: 282
+Void Fraction: 5.624557% Error in vf: -0.422153%
+
+
+Step: 283
+Void Fraction: 5.624722% Error in vf: -0.419230%
+
+
+Step: 284
+Void Fraction: 5.624440% Error in vf: -0.424223%
+
+
+Step: 285
+Void Fraction: 5.624173% Error in vf: -0.428959%
+
+
+Step: 286
+Void Fraction: 5.623927% Error in vf: -0.433313%
+
+
+Step: 287
+Void Fraction: 5.623681% Error in vf: -0.437661%
+
+
+Step: 288
+Void Fraction: 5.623451% Error in vf: -0.441735%
+
+
+Step: 289
+Void Fraction: 5.623262% Error in vf: -0.445085%
+
+
+Step: 290
+Void Fraction: 5.623052% Error in vf: -0.448806%
+
+
+Step: 291
+Void Fraction: 5.622977% Error in vf: -0.450127%
+
+
+Step: 292
+Void Fraction: 5.622830% Error in vf: -0.452741%
+
+
+Step: 293
+Void Fraction: 5.622690% Error in vf: -0.455207%
+
+
+Step: 294
+Void Fraction: 5.622625% Error in vf: -0.456367%
+
+
+Step: 295
+Void Fraction: 5.622560% Error in vf: -0.457506%
+
+
+Step: 296
+Void Fraction: 5.622463% Error in vf: -0.459234%
+
+
+Step: 297
+Void Fraction: 5.622384% Error in vf: -0.460637%
+
+
+Step: 298
+Void Fraction: 5.622323% Error in vf: -0.461702%
+
+
+Step: 299
+Void Fraction: 5.622280% Error in vf: -0.462462%
+
+
+Step: 300
+Void Fraction: 5.622350% Error in vf: -0.461239%
+
+
+Step: 301
+Void Fraction: 5.622332% Error in vf: -0.461554%
+
+
+Step: 302
+Void Fraction: 5.622321% Error in vf: -0.461750%
+
+
+Step: 303
+Void Fraction: 5.622320% Error in vf: -0.461760%
+
+
+Step: 304
+Void Fraction: 5.622345% Error in vf: -0.461315%
+
+
+Step: 305
+Void Fraction: 5.622354% Error in vf: -0.461165%
+
+
+Step: 306
+Void Fraction: 5.622364% Error in vf: -0.460992%
+
+
+Step: 307
+Void Fraction: 5.622365% Error in vf: -0.460970%
+
+
+Step: 308
+Void Fraction: 5.622374% Error in vf: -0.460810%
+
+
+Step: 309
+Void Fraction: 5.622375% Error in vf: -0.460784%
+
+
+Step: 310
+Void Fraction: 5.622326% Error in vf: -0.461648%
+
+
+Step: 311
+Void Fraction: 5.622261% Error in vf: -0.462808%
+
+
+Step: 312
+Void Fraction: 5.622179% Error in vf: -0.464267%
+
+
+Step: 313
+Void Fraction: 5.622078% Error in vf: -0.466055%
+
+
+Step: 314
+Void Fraction: 5.622036% Error in vf: -0.466798%
+
+
+Step: 315
+Void Fraction: 5.621881% Error in vf: -0.469530%
+
+
+Step: 316
+Void Fraction: 5.621842% Error in vf: -0.470222%
+
+
+Step: 317
+Void Fraction: 5.621643% Error in vf: -0.473751%
+
+
+Step: 318
+Void Fraction: 5.621438% Error in vf: -0.477379%
+
+
+Step: 319
+Void Fraction: 5.621235% Error in vf: -0.480969%
+
+
+Step: 320
+Void Fraction: 5.621032% Error in vf: -0.484574%
+
+
+Step: 321
+Void Fraction: 5.620829% Error in vf: -0.488157%
+
+
+Step: 322
+Void Fraction: 5.620633% Error in vf: -0.491621%
+
+
+Step: 323
+Void Fraction: 5.620457% Error in vf: -0.494754%
+
+
+Step: 324
+Void Fraction: 5.620275% Error in vf: -0.497974%
+
+
+Step: 325
+Void Fraction: 5.620100% Error in vf: -0.501071%
+
+
+Step: 326
+Void Fraction: 5.619936% Error in vf: -0.503971%
+
+
+Step: 327
+Void Fraction: 5.619788% Error in vf: -0.506591%
+
+
+Step: 328
+Void Fraction: 5.619662% Error in vf: -0.508819%
+
+
+Step: 329
+Void Fraction: 5.619547% Error in vf: -0.510852%
+
+
+Step: 330
+Void Fraction: 5.619457% Error in vf: -0.512457%
+
+
+Step: 331
+Void Fraction: 5.619391% Error in vf: -0.513620%
+
+
+Step: 332
+Void Fraction: 5.619338% Error in vf: -0.514557%
+
+
+Step: 333
+Void Fraction: 5.619394% Error in vf: -0.513559%
+
+
+Step: 334
+Void Fraction: 5.619360% Error in vf: -0.514170%
+
+
+Step: 335
+Void Fraction: 5.619347% Error in vf: -0.514390%
+
+
+Step: 336
+Void Fraction: 5.619347% Error in vf: -0.514404%
+
+
+Step: 337
+Void Fraction: 5.619357% Error in vf: -0.514212%
+
+
+Step: 338
+Void Fraction: 5.619375% Error in vf: -0.513896%
+
+
+Step: 339
+Void Fraction: 5.619401% Error in vf: -0.513441%
+
+
+Step: 340
+Void Fraction: 5.619422% Error in vf: -0.513066%
+
+
+Step: 341
+Void Fraction: 5.619448% Error in vf: -0.512607%
+
+
+Step: 342
+Void Fraction: 5.619465% Error in vf: -0.512309%
+
+
+Step: 343
+Void Fraction: 5.619480% Error in vf: -0.512039%
+
+
+Step: 344
+Void Fraction: 5.619490% Error in vf: -0.511864%
+
+
+Step: 345
+Void Fraction: 5.619491% Error in vf: -0.511847%
+
+
+Step: 346
+Void Fraction: 5.619481% Error in vf: -0.512027%
+
+
+Step: 347
+Void Fraction: 5.619463% Error in vf: -0.512348%
+
+
+Step: 348
+Void Fraction: 5.619430% Error in vf: -0.512919%
+
+
+Step: 349
+Void Fraction: 5.619383% Error in vf: -0.513753%
+
+
+Step: 350
+Void Fraction: 5.619320% Error in vf: -0.514868%
+
+
+Step: 351
+Void Fraction: 5.619248% Error in vf: -0.516146%
+
+
+Step: 352
+Void Fraction: 5.619159% Error in vf: -0.517730%
+
+
+Step: 353
+Void Fraction: 5.619059% Error in vf: -0.519500%
+
+
+Step: 354
+Void Fraction: 5.618949% Error in vf: -0.521449%
+
+
+Step: 355
+Void Fraction: 5.618830% Error in vf: -0.523543%
+
+
+Step: 356
+Void Fraction: 5.618705% Error in vf: -0.525769%
+
+
+Step: 357
+Void Fraction: 5.618572% Error in vf: -0.528114%
+
+
+Step: 358
+Void Fraction: 5.618432% Error in vf: -0.530591%
+
+
+Step: 359
+Void Fraction: 5.618289% Error in vf: -0.533131%
+
+
+Step: 360
+Void Fraction: 5.618146% Error in vf: -0.535659%
+
+
+Step: 361
+Void Fraction: 5.618004% Error in vf: -0.538170%
+
+
+Step: 362
+Void Fraction: 5.617871% Error in vf: -0.540530%
+
+
+Step: 363
+Void Fraction: 5.617735% Error in vf: -0.542936%
+
+
+Step: 364
+Void Fraction: 5.617600% Error in vf: -0.545326%
+
+
+Step: 365
+Void Fraction: 5.617468% Error in vf: -0.547671%
+
+
+Step: 366
+Void Fraction: 5.617339% Error in vf: -0.549949%
+
+
+Step: 367
+Void Fraction: 5.617214% Error in vf: -0.552167%
+
+
+Step: 368
+Void Fraction: 5.617092% Error in vf: -0.554321%
+
+
+Step: 369
+Void Fraction: 5.616975% Error in vf: -0.556387%
+
+
+Step: 370
+Void Fraction: 5.616865% Error in vf: -0.558335%
+
+
+Step: 371
+Void Fraction: 5.616761% Error in vf: -0.560188%
+
+
+Step: 372
+Void Fraction: 5.616661% Error in vf: -0.561953%
+
+
+Step: 373
+Void Fraction: 5.616568% Error in vf: -0.563601%
+
+
+Step: 374
+Void Fraction: 5.616477% Error in vf: -0.565212%
+
+
+Step: 375
+Void Fraction: 5.616392% Error in vf: -0.566704%
+
+
+Step: 376
+Void Fraction: 5.616318% Error in vf: -0.568014%
+
+
+Step: 377
+Void Fraction: 5.616250% Error in vf: -0.569229%
+
+
+Step: 378
+Void Fraction: 5.616187% Error in vf: -0.570339%
+
+
+Step: 379
+Void Fraction: 5.616127% Error in vf: -0.571396%
+
+
+Step: 380
+Void Fraction: 5.616069% Error in vf: -0.572436%
+
+
+Step: 381
+Void Fraction: 5.616010% Error in vf: -0.573483%
+
+
+Step: 382
+Void Fraction: 5.615951% Error in vf: -0.574526%
+
+
+Step: 383
+Void Fraction: 5.615890% Error in vf: -0.575606%
+
+
+Step: 384
+Void Fraction: 5.615829% Error in vf: -0.576682%
+
+
+Step: 385
+Void Fraction: 5.615768% Error in vf: -0.577765%
+
+
+Step: 386
+Void Fraction: 5.615706% Error in vf: -0.578861%
+
+
+Step: 387
+Void Fraction: 5.615646% Error in vf: -0.579921%
+
+
+Step: 388
+Void Fraction: 5.615587% Error in vf: -0.580966%
+
+
+Step: 389
+Void Fraction: 5.615530% Error in vf: -0.581977%
+
+
+Step: 390
+Void Fraction: 5.615478% Error in vf: -0.582887%
+
+
+Step: 391
+Void Fraction: 5.615431% Error in vf: -0.583735%
+
+
+Step: 392
+Void Fraction: 5.615386% Error in vf: -0.584527%
+
+
+Step: 393
+Void Fraction: 5.615344% Error in vf: -0.585270%
+
+
+Step: 394
+Void Fraction: 5.615308% Error in vf: -0.585910%
+
+
+Step: 395
+Void Fraction: 5.615276% Error in vf: -0.586472%
+
+
+Step: 396
+Void Fraction: 5.615246% Error in vf: -0.586997%
+
+
+Step: 397
+Void Fraction: 5.615219% Error in vf: -0.587477%
+
+
+Step: 398
+Void Fraction: 5.615194% Error in vf: -0.587924%
+
+
+Step: 399
+Void Fraction: 5.615171% Error in vf: -0.588328%
+
+
+Step: 400
+Void Fraction: 5.615149% Error in vf: -0.588722%
+
+
+Step: 401
+Void Fraction: 5.615127% Error in vf: -0.589108%
+
+
+Step: 402
+Void Fraction: 5.615102% Error in vf: -0.589552%
+
+
+Step: 403
+Void Fraction: 5.615071% Error in vf: -0.590093%
+
+
+Step: 404
+Void Fraction: 5.615036% Error in vf: -0.590727%
+
+
+Step: 405
+Void Fraction: 5.614996% Error in vf: -0.591423%
+
+
+Step: 406
+Void Fraction: 5.614951% Error in vf: -0.592216%
+
+
+Step: 407
+Void Fraction: 5.614899% Error in vf: -0.593150%
+
+
+Step: 408
+Void Fraction: 5.614836% Error in vf: -0.594257%
+
+
+Step: 409
+Void Fraction: 5.614762% Error in vf: -0.595575%
+
+
+Step: 410
+Void Fraction: 5.614678% Error in vf: -0.597060%
+
+
+Step: 411
+Void Fraction: 5.614586% Error in vf: -0.598688%
+
+
+Step: 412
+Void Fraction: 5.614487% Error in vf: -0.600433%
+
+
+Step: 413
+Void Fraction: 5.614383% Error in vf: -0.602288%
+
+
+Step: 414
+Void Fraction: 5.614272% Error in vf: -0.604248%
+
+
+Step: 415
+Void Fraction: 5.614152% Error in vf: -0.606374%
+
+
+Step: 416
+Void Fraction: 5.614029% Error in vf: -0.608542%
+
+
+Step: 417
+Void Fraction: 5.613906% Error in vf: -0.610733%
+
+
+Step: 418
+Void Fraction: 5.613784% Error in vf: -0.612883%
+
+
+Step: 419
+Void Fraction: 5.613667% Error in vf: -0.614962%
+
+
+Step: 420
+Void Fraction: 5.613556% Error in vf: -0.616925%
+
+
+Step: 421
+Void Fraction: 5.613453% Error in vf: -0.618747%
+
+
+Step: 422
+Void Fraction: 5.613359% Error in vf: -0.620413%
+
+
+Step: 423
+Void Fraction: 5.613275% Error in vf: -0.621899%
+
+
+Step: 424
+Void Fraction: 5.613203% Error in vf: -0.623177%
+
+
+Step: 425
+Void Fraction: 5.613146% Error in vf: -0.624179%
+
+
+Step: 426
+Void Fraction: 5.613108% Error in vf: -0.624850%
+
+
+Step: 427
+Void Fraction: 5.613088% Error in vf: -0.625207%
+
+
+Step: 428
+Void Fraction: 5.613085% Error in vf: -0.625260%
+
+
+Step: 429
+Void Fraction: 5.613098% Error in vf: -0.625037%
+
+
+Step: 430
+Void Fraction: 5.613124% Error in vf: -0.624573%
+
+
+Step: 431
+Void Fraction: 5.613164% Error in vf: -0.623866%
+
+
+Step: 432
+Void Fraction: 5.613213% Error in vf: -0.623000%
+
+
+Step: 433
+Void Fraction: 5.613272% Error in vf: -0.621956%
+
+
+Step: 434
+Void Fraction: 5.613341% Error in vf: -0.620736%
+
+
+Step: 435
+Void Fraction: 5.613417% Error in vf: -0.619390%
+
+
+Step: 436
+Void Fraction: 5.613496% Error in vf: -0.617992%
+
+
+Step: 437
+Void Fraction: 5.613575% Error in vf: -0.616588%
+
+
+Step: 438
+Void Fraction: 5.613650% Error in vf: -0.615258%
+
+
+Step: 439
+Void Fraction: 5.613717% Error in vf: -0.614077%
+
+
+Step: 440
+Void Fraction: 5.613769% Error in vf: -0.613148%
+
+
+Step: 441
+Void Fraction: 5.613804% Error in vf: -0.612533%
+
+
+Step: 442
+Void Fraction: 5.613820% Error in vf: -0.612254%
+
+
+Step: 443
+Void Fraction: 5.613815% Error in vf: -0.612340%
+
+
+Step: 444
+Void Fraction: 5.613789% Error in vf: -0.612803%
+
+
+Step: 445
+Void Fraction: 5.613742% Error in vf: -0.613627%
+
+
+Step: 446
+Void Fraction: 5.613677% Error in vf: -0.614785%
+
+
+Step: 447
+Void Fraction: 5.613595% Error in vf: -0.616231%
+
+
+Step: 448
+Void Fraction: 5.613499% Error in vf: -0.617923%
+
+
+Step: 449
+Void Fraction: 5.613393% Error in vf: -0.619812%
+
+
+Step: 450
+Void Fraction: 5.613273% Error in vf: -0.621937%
+
+
+Step: 451
+Void Fraction: 5.613143% Error in vf: -0.624230%
+
+
+Step: 452
+Void Fraction: 5.613004% Error in vf: -0.626686%
+
+
+Step: 453
+Void Fraction: 5.612863% Error in vf: -0.629190%
+
+
+Step: 454
+Void Fraction: 5.612717% Error in vf: -0.631782%
+
+
+Step: 455
+Void Fraction: 5.612566% Error in vf: -0.634451%
+
+
+Step: 456
+Void Fraction: 5.612412% Error in vf: -0.637180%
+
+
+Step: 457
+Void Fraction: 5.612256% Error in vf: -0.639943%
+
+
+Step: 458
+Void Fraction: 5.612098% Error in vf: -0.642726%
+
+
+Step: 459
+Void Fraction: 5.611940% Error in vf: -0.645539%
+
+
+Step: 460
+Void Fraction: 5.611780% Error in vf: -0.648367%
+
+
+Step: 461
+Void Fraction: 5.611621% Error in vf: -0.651184%
+
+
+Step: 462
+Void Fraction: 5.611464% Error in vf: -0.653966%
+
+
+Step: 463
+Void Fraction: 5.611312% Error in vf: -0.656645%
+
+
+Step: 464
+Void Fraction: 5.611168% Error in vf: -0.659196%
+
+
+Step: 465
+Void Fraction: 5.611033% Error in vf: -0.661585%
+
+
+Step: 466
+Void Fraction: 5.610909% Error in vf: -0.663778%
+
+
+Step: 467
+Void Fraction: 5.610798% Error in vf: -0.665747%
+
+
+Step: 468
+Void Fraction: 5.610704% Error in vf: -0.667418%
+
+
+Step: 469
+Void Fraction: 5.610627% Error in vf: -0.668783%
+
+
+Step: 470
+Void Fraction: 5.610568% Error in vf: -0.669828%
+
+
+Step: 471
+Void Fraction: 5.610525% Error in vf: -0.670589%
+
+
+Step: 472
+Void Fraction: 5.610498% Error in vf: -0.671052%
+
+
+Step: 473
+Void Fraction: 5.610486% Error in vf: -0.671273%
+
+
+Step: 474
+Void Fraction: 5.610487% Error in vf: -0.671253%
+
+
+Step: 475
+Void Fraction: 5.610499% Error in vf: -0.671035%
+
+
+Step: 476
+Void Fraction: 5.610521% Error in vf: -0.670645%
+
+
+Step: 477
+Void Fraction: 5.610549% Error in vf: -0.670151%
+
+
+Step: 478
+Void Fraction: 5.610581% Error in vf: -0.669585%
+
+
+Step: 479
+Void Fraction: 5.610620% Error in vf: -0.668893%
+
+
+Step: 480
+Void Fraction: 5.610661% Error in vf: -0.668170%
+
+
+Step: 481
+Void Fraction: 5.610707% Error in vf: -0.667367%
+
+
+Step: 482
+Void Fraction: 5.610749% Error in vf: -0.666624%
+
+
+Step: 483
+Void Fraction: 5.610784% Error in vf: -0.665989%
+
+
+Step: 484
+Void Fraction: 5.610817% Error in vf: -0.665415%
+
+
+Step: 485
+Void Fraction: 5.610845% Error in vf: -0.664920%
+
+
+Step: 486
+Void Fraction: 5.610870% Error in vf: -0.664482%
+
+
+Step: 487
+Void Fraction: 5.610890% Error in vf: -0.664114%
+
+
+Step: 488
+Void Fraction: 5.610908% Error in vf: -0.663810%
+
+
+Step: 489
+Void Fraction: 5.610923% Error in vf: -0.663542%
+
+
+Step: 490
+Void Fraction: 5.610935% Error in vf: -0.663317%
+
+
+Step: 491
+Void Fraction: 5.610944% Error in vf: -0.663167%
+
+
+Step: 492
+Void Fraction: 5.610947% Error in vf: -0.663107%
+
+
+Step: 493
+Void Fraction: 5.610944% Error in vf: -0.663169%
+
+
+Step: 494
+Void Fraction: 5.610932% Error in vf: -0.663379%
+
+
+Step: 495
+Void Fraction: 5.610912% Error in vf: -0.663737%
+
+
+Step: 496
+Void Fraction: 5.610886% Error in vf: -0.664185%
+
+
+Step: 497
+Void Fraction: 5.610856% Error in vf: -0.664728%
+
+
+Step: 498
+Void Fraction: 5.610817% Error in vf: -0.665407%
+
+
+Step: 499
+Void Fraction: 5.610771% Error in vf: -0.666220%
+
+
+Step: 500
+Void Fraction: 5.610716% Error in vf: -0.667195%
+
+
+Step: 501
+Void Fraction: 5.610657% Error in vf: -0.668254%
+
+
+Step: 502
+Void Fraction: 5.610592% Error in vf: -0.669405%
+
+
+Step: 503
+Void Fraction: 5.610524% Error in vf: -0.670607%
+
+
+Step: 504
+Void Fraction: 5.610456% Error in vf: -0.671803%
+
+
+Step: 505
+Void Fraction: 5.610389% Error in vf: -0.672991%
+
+
+Step: 506
+Void Fraction: 5.610322% Error in vf: -0.674184%
+
+
+Step: 507
+Void Fraction: 5.610257% Error in vf: -0.675321%
+
+
+Step: 508
+Void Fraction: 5.610195% Error in vf: -0.676417%
+
+
+Step: 509
+Void Fraction: 5.610136% Error in vf: -0.677474%
+
+
+Step: 510
+Void Fraction: 5.610079% Error in vf: -0.678472%
+
+
+Step: 511
+Void Fraction: 5.610026% Error in vf: -0.679423%
+
+
+Step: 512
+Void Fraction: 5.609976% Error in vf: -0.680303%
+
+
+Step: 513
+Void Fraction: 5.609932% Error in vf: -0.681081%
+
+
+Step: 514
+Void Fraction: 5.609896% Error in vf: -0.681725%
+
+
+Step: 515
+Void Fraction: 5.609867% Error in vf: -0.682236%
+
+
+Step: 516
+Void Fraction: 5.609846% Error in vf: -0.682608%
+
+
+Step: 517
+Void Fraction: 5.609835% Error in vf: -0.682804%
+
+
+Step: 518
+Void Fraction: 5.609834% Error in vf: -0.682817%
+
+
+Step: 519
+Void Fraction: 5.609840% Error in vf: -0.682702%
+
+
+Step: 520
+Void Fraction: 5.609856% Error in vf: -0.682422%
+
+
+Step: 521
+Void Fraction: 5.609882% Error in vf: -0.681966%
+
+
+Step: 522
+Void Fraction: 5.609913% Error in vf: -0.681416%
+
+
+Step: 523
+Void Fraction: 5.609950% Error in vf: -0.680756%
+
+
+Step: 524
+Void Fraction: 5.609990% Error in vf: -0.680051%
+
+
+Step: 525
+Void Fraction: 5.610030% Error in vf: -0.679352%
+
+
+Step: 526
+Void Fraction: 5.610068% Error in vf: -0.678667%
+
+
+Step: 527
+Void Fraction: 5.610104% Error in vf: -0.678035%
+
+
+Step: 528
+Void Fraction: 5.610129% Error in vf: -0.677589%
+
+
+Step: 529
+Void Fraction: 5.610147% Error in vf: -0.677271%
+
+
+Step: 530
+Void Fraction: 5.610156% Error in vf: -0.677109%
+
+
+Step: 531
+Void Fraction: 5.610157% Error in vf: -0.677091%
+
+
+Step: 532
+Void Fraction: 5.610146% Error in vf: -0.677298%
+
+
+Step: 533
+Void Fraction: 5.610124% Error in vf: -0.677683%
+
+
+Step: 534
+Void Fraction: 5.610089% Error in vf: -0.678310%
+
+
+Step: 535
+Void Fraction: 5.610041% Error in vf: -0.679149%
+
+
+Step: 536
+Void Fraction: 5.609982% Error in vf: -0.680198%
+
+
+Step: 537
+Void Fraction: 5.609914% Error in vf: -0.681393%
+
+
+Step: 538
+Void Fraction: 5.609843% Error in vf: -0.682653%
+
+
+Step: 539
+Void Fraction: 5.609767% Error in vf: -0.683995%
+
+
+Step: 540
+Void Fraction: 5.609688% Error in vf: -0.685398%
+
+
+Step: 541
+Void Fraction: 5.609606% Error in vf: -0.686851%
+
+
+Step: 542
+Void Fraction: 5.609521% Error in vf: -0.688349%
+
+
+Step: 543
+Void Fraction: 5.609435% Error in vf: -0.689873%
+
+
+Step: 544
+Void Fraction: 5.609352% Error in vf: -0.691358%
+
+
+Step: 545
+Void Fraction: 5.609271% Error in vf: -0.692792%
+
+
+Step: 546
+Void Fraction: 5.609194% Error in vf: -0.694152%
+
+
+Step: 547
+Void Fraction: 5.609123% Error in vf: -0.695407%
+
+
+Step: 548
+Void Fraction: 5.609058% Error in vf: -0.696552%
+
+
+Step: 549
+Void Fraction: 5.609002% Error in vf: -0.697541%
+
+
+Step: 550
+Void Fraction: 5.608953% Error in vf: -0.698411%
+
+
+Step: 551
+Void Fraction: 5.608906% Error in vf: -0.699240%
+
+
+Step: 552
+Void Fraction: 5.608861% Error in vf: -0.700049%
+
+
+Step: 553
+Void Fraction: 5.608814% Error in vf: -0.700877%
+
+
+Step: 554
+Void Fraction: 5.608767% Error in vf: -0.701714%
+
+
+Step: 555
+Void Fraction: 5.608718% Error in vf: -0.702576%
+
+
+Step: 556
+Void Fraction: 5.608670% Error in vf: -0.703422%
+
+
+Step: 557
+Void Fraction: 5.608623% Error in vf: -0.704248%
+
+
+Step: 558
+Void Fraction: 5.608578% Error in vf: -0.705059%
+
+
+Step: 559
+Void Fraction: 5.608534% Error in vf: -0.705824%
+
+
+Step: 560
+Void Fraction: 5.608494% Error in vf: -0.706531%
+
+
+Step: 561
+Void Fraction: 5.608458% Error in vf: -0.707186%
+
+
+Step: 562
+Void Fraction: 5.608424% Error in vf: -0.707775%
+
+
+Step: 563
+Void Fraction: 5.608396% Error in vf: -0.708272%
+
+
+Step: 564
+Void Fraction: 5.608372% Error in vf: -0.708693%
+
+
+Step: 565
+Void Fraction: 5.608352% Error in vf: -0.709050%
+
+
+Step: 566
+Void Fraction: 5.608338% Error in vf: -0.709307%
+
+
+Step: 567
+Void Fraction: 5.608329% Error in vf: -0.709457%
+
+
+Step: 568
+Void Fraction: 5.608330% Error in vf: -0.709450%
+
+
+Step: 569
+Void Fraction: 5.608338% Error in vf: -0.709302%
+
+
+Step: 570
+Void Fraction: 5.608354% Error in vf: -0.709015%
+
+
+Step: 571
+Void Fraction: 5.608378% Error in vf: -0.708602%
+
+
+Step: 572
+Void Fraction: 5.608408% Error in vf: -0.708069%
+
+
+Step: 573
+Void Fraction: 5.608444% Error in vf: -0.707431%
+
+
+Step: 574
+Void Fraction: 5.608483% Error in vf: -0.706730%
+
+
+Step: 575
+Void Fraction: 5.608528% Error in vf: -0.705946%
+
+
+Step: 576
+Void Fraction: 5.608576% Error in vf: -0.705083%
+
+
+Step: 577
+Void Fraction: 5.608632% Error in vf: -0.704105%
+
+
+Step: 578
+Void Fraction: 5.608690% Error in vf: -0.703067%
+
+
+Step: 579
+Void Fraction: 5.608751% Error in vf: -0.701982%
+
+
+Step: 580
+Void Fraction: 5.608812% Error in vf: -0.700905%
+
+
+Step: 581
+Void Fraction: 5.608873% Error in vf: -0.699823%
+
+
+Step: 582
+Void Fraction: 5.608934% Error in vf: -0.698758%
+
+
+Step: 583
+Void Fraction: 5.608992% Error in vf: -0.697731%
+
+
+Step: 584
+Void Fraction: 5.609042% Error in vf: -0.696840%
+
+
+Step: 585
+Void Fraction: 5.609084% Error in vf: -0.696097%
+
+
+Step: 586
+Void Fraction: 5.609116% Error in vf: -0.695530%
+
+
+Step: 587
+Void Fraction: 5.609136% Error in vf: -0.695178%
+
+
+Step: 588
+Void Fraction: 5.609144% Error in vf: -0.695026%
+
+
+Step: 589
+Void Fraction: 5.609144% Error in vf: -0.695035%
+
+
+Step: 590
+Void Fraction: 5.609134% Error in vf: -0.695209%
+
+
+Step: 591
+Void Fraction: 5.609114% Error in vf: -0.695565%
+
+
+Step: 592
+Void Fraction: 5.609084% Error in vf: -0.696089%
+
+
+Step: 593
+Void Fraction: 5.609045% Error in vf: -0.696789%
+
+
+Step: 594
+Void Fraction: 5.608995% Error in vf: -0.697661%
+
+
+Step: 595
+Void Fraction: 5.608938% Error in vf: -0.698688%
+
+
+Step: 596
+Void Fraction: 5.608871% Error in vf: -0.699859%
+
+
+Step: 597
+Void Fraction: 5.608798% Error in vf: -0.701160%
+
+
+Step: 598
+Void Fraction: 5.608718% Error in vf: -0.702581%
+
+
+Step: 599
+Void Fraction: 5.608633% Error in vf: -0.704077%
+
+
+Step: 600
+Void Fraction: 5.608547% Error in vf: -0.705600%
+
+
+Step: 601
+Void Fraction: 5.608462% Error in vf: -0.707108%
+
+
+Step: 602
+Void Fraction: 5.608379% Error in vf: -0.708567%
+
+
+Step: 603
+Void Fraction: 5.608299% Error in vf: -0.709995%
+
+
+Step: 604
+Void Fraction: 5.608221% Error in vf: -0.711369%
+
+
+Step: 605
+Void Fraction: 5.608148% Error in vf: -0.712671%
+
+
+Step: 606
+Void Fraction: 5.608079% Error in vf: -0.713883%
+
+
+Step: 607
+Void Fraction: 5.608018% Error in vf: -0.714974%
+
+
+Step: 608
+Void Fraction: 5.607964% Error in vf: -0.715921%
+
+
+Step: 609
+Void Fraction: 5.607920% Error in vf: -0.716706%
+
+
+Step: 610
+Void Fraction: 5.607885% Error in vf: -0.717329%
+
+
+Step: 611
+Void Fraction: 5.607858% Error in vf: -0.717805%
+
+
+Step: 612
+Void Fraction: 5.607838% Error in vf: -0.718151%
+
+
+Step: 613
+Void Fraction: 5.607825% Error in vf: -0.718380%
+
+
+Step: 614
+Void Fraction: 5.607822% Error in vf: -0.718431%
+
+
+Step: 615
+Void Fraction: 5.607829% Error in vf: -0.718320%
+
+
+Step: 616
+Void Fraction: 5.607839% Error in vf: -0.718131%
+
+
+Step: 617
+Void Fraction: 5.607851% Error in vf: -0.717931%
+
+
+Step: 618
+Void Fraction: 5.607862% Error in vf: -0.717736%
+
+
+Step: 619
+Void Fraction: 5.607872% Error in vf: -0.717547%
+
+
+Step: 620
+Void Fraction: 5.607885% Error in vf: -0.717319%
+
+
+Step: 621
+Void Fraction: 5.607900% Error in vf: -0.717054%
+
+
+Step: 622
+Void Fraction: 5.607913% Error in vf: -0.716827%
+
+
+Step: 623
+Void Fraction: 5.607924% Error in vf: -0.716631%
+
+
+Step: 624
+Void Fraction: 5.607933% Error in vf: -0.716470%
+
+
+Step: 625
+Void Fraction: 5.607940% Error in vf: -0.716349%
+
+
+Step: 626
+Void Fraction: 5.607946% Error in vf: -0.716241%
+
+
+Step: 627
+Void Fraction: 5.607952% Error in vf: -0.716130%
+
+
+Step: 628
+Void Fraction: 5.607959% Error in vf: -0.716012%
+
+
+Step: 629
+Void Fraction: 5.607968% Error in vf: -0.715857%
+
+
+Step: 630
+Void Fraction: 5.607978% Error in vf: -0.715676%
+
+
+Step: 631
+Void Fraction: 5.607991% Error in vf: -0.715444%
+
+
+Step: 632
+Void Fraction: 5.608009% Error in vf: -0.715130%
+
+
+Step: 633
+Void Fraction: 5.608031% Error in vf: -0.714744%
+
+
+Step: 634
+Void Fraction: 5.608058% Error in vf: -0.714264%
+
+
+Step: 635
+Void Fraction: 5.608090% Error in vf: -0.713691%
+
+
+Step: 636
+Void Fraction: 5.608128% Error in vf: -0.713019%
+
+
+Step: 637
+Void Fraction: 5.608171% Error in vf: -0.712257%
+
+
+Step: 638
+Void Fraction: 5.608219% Error in vf: -0.711416%
+
+
+Step: 639
+Void Fraction: 5.608269% Error in vf: -0.710525%
+
+
+Step: 640
+Void Fraction: 5.608319% Error in vf: -0.709636%
+
+
+Step: 641
+Void Fraction: 5.608367% Error in vf: -0.708793%
+
+
+Step: 642
+Void Fraction: 5.608408% Error in vf: -0.708054%
+
+
+Step: 643
+Void Fraction: 5.608443% Error in vf: -0.707451%
+
+
+Step: 644
+Void Fraction: 5.608466% Error in vf: -0.707037%
+
+
+Step: 645
+Void Fraction: 5.608476% Error in vf: -0.706854%
+
+
+Step: 646
+Void Fraction: 5.608474% Error in vf: -0.706891%
+
+
+Step: 647
+Void Fraction: 5.608460% Error in vf: -0.707149%
+
+
+Step: 648
+Void Fraction: 5.608433% Error in vf: -0.707615%
+
+
+Step: 649
+Void Fraction: 5.608396% Error in vf: -0.708274%
+
+
+Step: 650
+Void Fraction: 5.608352% Error in vf: -0.709056%
+
+
+Step: 651
+Void Fraction: 5.608304% Error in vf: -0.709904%
+
+
+Step: 652
+Void Fraction: 5.608255% Error in vf: -0.710780%
+
+
+Step: 653
+Void Fraction: 5.608205% Error in vf: -0.711663%
+
+
+Step: 654
+Void Fraction: 5.608156% Error in vf: -0.712519%
+
+
+Step: 655
+Void Fraction: 5.608111% Error in vf: -0.713323%
+
+
+Step: 656
+Void Fraction: 5.608069% Error in vf: -0.714059%
+
+
+Step: 657
+Void Fraction: 5.608033% Error in vf: -0.714693%
+
+
+Step: 658
+Void Fraction: 5.608003% Error in vf: -0.715224%
+
+
+Step: 659
+Void Fraction: 5.607980% Error in vf: -0.715635%
+
+
+Step: 660
+Void Fraction: 5.607965% Error in vf: -0.715911%
+
+
+Step: 661
+Void Fraction: 5.607957% Error in vf: -0.716042%
+
+
+Step: 662
+Void Fraction: 5.607957% Error in vf: -0.716044%
+
+
+Step: 663
+Void Fraction: 5.607967% Error in vf: -0.715875%
+
+
+Step: 664
+Void Fraction: 5.607982% Error in vf: -0.715597%
+
+
+Step: 665
+Void Fraction: 5.608001% Error in vf: -0.715271%
+
+
+Step: 666
+Void Fraction: 5.608021% Error in vf: -0.714913%
+
+
+Step: 667
+Void Fraction: 5.608042% Error in vf: -0.714543%
+
+
+Step: 668
+Void Fraction: 5.608063% Error in vf: -0.714169%
+
+
+Step: 669
+Void Fraction: 5.608083% Error in vf: -0.713812%
+
+
+Step: 670
+Void Fraction: 5.608101% Error in vf: -0.713498%
+
+
+Step: 671
+Void Fraction: 5.608115% Error in vf: -0.713245%
+
+
+Step: 672
+Void Fraction: 5.608127% Error in vf: -0.713038%
+
+
+Step: 673
+Void Fraction: 5.608136% Error in vf: -0.712871%
+
+
+Step: 674
+Void Fraction: 5.608144% Error in vf: -0.712742%
+
+
+Step: 675
+Void Fraction: 5.608146% Error in vf: -0.712692%
+
+
+Step: 676
+Void Fraction: 5.608145% Error in vf: -0.712723%
+
+
+Step: 677
+Void Fraction: 5.608141% Error in vf: -0.712784%
+
+
+Step: 678
+Void Fraction: 5.608138% Error in vf: -0.712846%
+
+
+Step: 679
+Void Fraction: 5.608133% Error in vf: -0.712929%
+
+
+Step: 680
+Void Fraction: 5.608129% Error in vf: -0.712997%
+
+
+Step: 681
+Void Fraction: 5.608127% Error in vf: -0.713042%
+
+
+Step: 682
+Void Fraction: 5.608126% Error in vf: -0.713055%
+
+
+Step: 683
+Void Fraction: 5.608128% Error in vf: -0.713025%
+
+
+Step: 684
+Void Fraction: 5.608131% Error in vf: -0.712961%
+
+
+Step: 685
+Void Fraction: 5.608139% Error in vf: -0.712818%
+
+
+Step: 686
+Void Fraction: 5.608152% Error in vf: -0.712598%
+
+
+Step: 687
+Void Fraction: 5.608168% Error in vf: -0.712303%
+
+
+Step: 688
+Void Fraction: 5.608188% Error in vf: -0.711956%
+
+
+Step: 689
+Void Fraction: 5.608210% Error in vf: -0.711562%
+
+
+Step: 690
+Void Fraction: 5.608234% Error in vf: -0.711151%
+
+
+Step: 691
+Void Fraction: 5.608257% Error in vf: -0.710737%
+
+
+Step: 692
+Void Fraction: 5.608280% Error in vf: -0.710323%
+
+
+Step: 693
+Void Fraction: 5.608300% Error in vf: -0.709970%
+
+
+Step: 694
+Void Fraction: 5.608321% Error in vf: -0.709601%
+
+
+Step: 695
+Void Fraction: 5.608338% Error in vf: -0.709299%
+
+
+Step: 696
+Void Fraction: 5.608352% Error in vf: -0.709060%
+
+
+Step: 697
+Void Fraction: 5.608361% Error in vf: -0.708894%
+
+
+Step: 698
+Void Fraction: 5.608367% Error in vf: -0.708786%
+
+
+Step: 699
+Void Fraction: 5.608368% Error in vf: -0.708763%
+
+
+Step: 700
+Void Fraction: 5.608366% Error in vf: -0.708810%
+
+
+Step: 701
+Void Fraction: 5.608361% Error in vf: -0.708901%
+
+
+Step: 702
+Void Fraction: 5.608353% Error in vf: -0.709039%
+
+
+Step: 703
+Void Fraction: 5.608344% Error in vf: -0.709188%
+
+
+Step: 704
+Void Fraction: 5.608336% Error in vf: -0.709330%
+
+
+Step: 705
+Void Fraction: 5.608332% Error in vf: -0.709403%
+
+
+Step: 706
+Void Fraction: 5.608333% Error in vf: -0.709385%
+
+
+Step: 707
+Void Fraction: 5.608343% Error in vf: -0.709214%
+
+
+Step: 708
+Void Fraction: 5.608362% Error in vf: -0.708878%
+
+
+Step: 709
+Void Fraction: 5.608391% Error in vf: -0.708372%
+
+
+Step: 710
+Void Fraction: 5.608426% Error in vf: -0.707742%
+
+
+Step: 711
+Void Fraction: 5.608466% Error in vf: -0.707035%
+
+
+Step: 712
+Void Fraction: 5.608511% Error in vf: -0.706239%
+
+
+Step: 713
+Void Fraction: 5.608559% Error in vf: -0.705392%
+
+
+Step: 714
+Void Fraction: 5.608605% Error in vf: -0.704576%
+
+
+Step: 715
+Void Fraction: 5.608647% Error in vf: -0.703829%
+
+
+Step: 716
+Void Fraction: 5.608683% Error in vf: -0.703195%
+
+
+Step: 717
+Void Fraction: 5.608712% Error in vf: -0.702680%
+
+
+Step: 718
+Void Fraction: 5.608735% Error in vf: -0.702271%
+
+
+Step: 719
+Void Fraction: 5.608752% Error in vf: -0.701964%
+
+
+Step: 720
+Void Fraction: 5.608765% Error in vf: -0.701741%
+
+
+Step: 721
+Void Fraction: 5.608776% Error in vf: -0.701539%
+
+
+Step: 722
+Void Fraction: 5.608786% Error in vf: -0.701376%
+
+
+Step: 723
+Void Fraction: 5.608790% Error in vf: -0.701291%
+
+
+Step: 724
+Void Fraction: 5.608790% Error in vf: -0.701291%
+
+
+Step: 725
+Void Fraction: 5.608788% Error in vf: -0.701336%
+
+
+Step: 726
+Void Fraction: 5.608784% Error in vf: -0.701400%
+
+
+Step: 727
+Void Fraction: 5.608781% Error in vf: -0.701454%
+
+
+Step: 728
+Void Fraction: 5.608780% Error in vf: -0.701475%
+
+
+Step: 729
+Void Fraction: 5.608782% Error in vf: -0.701445%
+
+
+Step: 730
+Void Fraction: 5.608788% Error in vf: -0.701342%
+
+
+Step: 731
+Void Fraction: 5.608797% Error in vf: -0.701167%
+
+
+Step: 732
+Void Fraction: 5.608811% Error in vf: -0.700930%
+
+
+Step: 733
+Void Fraction: 5.608829% Error in vf: -0.700610%
+
+
+Step: 734
+Void Fraction: 5.608852% Error in vf: -0.700197%
+
+
+Step: 735
+Void Fraction: 5.608881% Error in vf: -0.699683%
+
+
+Step: 736
+Void Fraction: 5.608914% Error in vf: -0.699096%
+
+
+Step: 737
+Void Fraction: 5.608947% Error in vf: -0.698513%
+
+
+Step: 738
+Void Fraction: 5.608975% Error in vf: -0.698025%
+
+
+Step: 739
+Void Fraction: 5.608995% Error in vf: -0.697675%
+
+
+Step: 740
+Void Fraction: 5.609006% Error in vf: -0.697481%
+
+
+Step: 741
+Void Fraction: 5.609006% Error in vf: -0.697467%
+
+
+Step: 742
+Void Fraction: 5.608995% Error in vf: -0.697674%
+
+
+Step: 743
+Void Fraction: 5.608972% Error in vf: -0.698069%
+
+
+Step: 744
+Void Fraction: 5.608941% Error in vf: -0.698626%
+
+
+Step: 745
+Void Fraction: 5.608900% Error in vf: -0.699345%
+
+
+Step: 746
+Void Fraction: 5.608848% Error in vf: -0.700280%
+
+
+Step: 747
+Void Fraction: 5.608788% Error in vf: -0.701343%
+
+
+Step: 748
+Void Fraction: 5.608725% Error in vf: -0.702451%
+
+
+Step: 749
+Void Fraction: 5.608661% Error in vf: -0.703578%
+
+
+Step: 750
+Void Fraction: 5.608601% Error in vf: -0.704639%
+
+
+Step: 751
+Void Fraction: 5.608547% Error in vf: -0.705607%
+
+
+Step: 752
+Void Fraction: 5.608499% Error in vf: -0.706451%
+
+
+Step: 753
+Void Fraction: 5.608457% Error in vf: -0.707193%
+
+
+Step: 754
+Void Fraction: 5.608425% Error in vf: -0.707762%
+
+
+Step: 755
+Void Fraction: 5.608405% Error in vf: -0.708114%
+
+
+Step: 756
+Void Fraction: 5.608398% Error in vf: -0.708243%
+
+
+Step: 757
+Void Fraction: 5.608405% Error in vf: -0.708111%
+
+
+Step: 758
+Void Fraction: 5.608427% Error in vf: -0.707724%
+
+
+Step: 759
+Void Fraction: 5.608467% Error in vf: -0.707022%
+
+
+Step: 760
+Void Fraction: 5.608523% Error in vf: -0.706034%
+
+
+Step: 761
+Void Fraction: 5.608589% Error in vf: -0.704856%
+
+
+Step: 762
+Void Fraction: 5.608665% Error in vf: -0.703506%
+
+
+Step: 763
+Void Fraction: 5.608751% Error in vf: -0.701987%
+
+
+Step: 764
+Void Fraction: 5.608846% Error in vf: -0.700299%
+
+
+Step: 765
+Void Fraction: 5.608948% Error in vf: -0.698500%
+
+
+Step: 766
+Void Fraction: 5.609053% Error in vf: -0.696638%
+
+
+Step: 767
+Void Fraction: 5.609158% Error in vf: -0.694782%
+
+
+Step: 768
+Void Fraction: 5.609260% Error in vf: -0.692975%
+
+
+Step: 769
+Void Fraction: 5.609356% Error in vf: -0.691279%
+
+
+Step: 770
+Void Fraction: 5.609443% Error in vf: -0.689744%
+
+
+Step: 771
+Void Fraction: 5.609519% Error in vf: -0.688395%
+
+
+Step: 772
+Void Fraction: 5.609584% Error in vf: -0.687242%
+
+
+Step: 773
+Void Fraction: 5.609638% Error in vf: -0.686280%
+
+
+Step: 774
+Void Fraction: 5.609682% Error in vf: -0.685507%
+
+
+Step: 775
+Void Fraction: 5.609716% Error in vf: -0.684909%
+
+
+Step: 776
+Void Fraction: 5.609741% Error in vf: -0.684461%
+
+
+Step: 777
+Void Fraction: 5.609758% Error in vf: -0.684157%
+
+
+Step: 778
+Void Fraction: 5.609769% Error in vf: -0.683972%
+
+
+Step: 779
+Void Fraction: 5.609773% Error in vf: -0.683900%
+
+
+Step: 780
+Void Fraction: 5.609772% Error in vf: -0.683921%
+
+
+Step: 781
+Void Fraction: 5.609766% Error in vf: -0.684022%
+
+
+Step: 782
+Void Fraction: 5.609758% Error in vf: -0.684160%
+
+
+Step: 783
+Void Fraction: 5.609750% Error in vf: -0.684302%
+
+
+Step: 784
+Void Fraction: 5.609743% Error in vf: -0.684428%
+
+
+Step: 785
+Void Fraction: 5.609738% Error in vf: -0.684523%
+
+
+Step: 786
+Void Fraction: 5.609734% Error in vf: -0.684578%
+
+
+Step: 787
+Void Fraction: 5.609735% Error in vf: -0.684571%
+
+
+Step: 788
+Void Fraction: 5.609742% Error in vf: -0.684449%
+
+
+Step: 789
+Void Fraction: 5.609757% Error in vf: -0.684177%
+
+
+Step: 790
+Void Fraction: 5.609781% Error in vf: -0.683755%
+
+
+Step: 791
+Void Fraction: 5.609813% Error in vf: -0.683195%
+
+
+Step: 792
+Void Fraction: 5.609849% Error in vf: -0.682544%
+
+
+Step: 793
+Void Fraction: 5.609893% Error in vf: -0.681763%
+
+
+Step: 794
+Void Fraction: 5.609944% Error in vf: -0.680874%
+
+
+Step: 795
+Void Fraction: 5.609998% Error in vf: -0.679906%
+
+
+Step: 796
+Void Fraction: 5.610056% Error in vf: -0.678890%
+
+
+Step: 797
+Void Fraction: 5.610114% Error in vf: -0.677867%
+
+
+Step: 798
+Void Fraction: 5.610170% Error in vf: -0.676872%
+
+
+Step: 799
+Void Fraction: 5.610223% Error in vf: -0.675929%
+
+
+Step: 800
+Void Fraction: 5.610273% Error in vf: -0.675052%
+
+
+Step: 801
+Void Fraction: 5.610319% Error in vf: -0.674226%
+
+
+Step: 802
+Void Fraction: 5.610362% Error in vf: -0.673460%
+
+
+Step: 803
+Void Fraction: 5.610402% Error in vf: -0.672759%
+
+
+Step: 804
+Void Fraction: 5.610438% Error in vf: -0.672123%
+
+
+Step: 805
+Void Fraction: 5.610472% Error in vf: -0.671517%
+
+
+Step: 806
+Void Fraction: 5.610505% Error in vf: -0.670934%
+
+
+Step: 807
+Void Fraction: 5.610535% Error in vf: -0.670413%
+
+
+Step: 808
+Void Fraction: 5.610560% Error in vf: -0.669960%
+
+
+Step: 809
+Void Fraction: 5.610580% Error in vf: -0.669613%
+
+
+Step: 810
+Void Fraction: 5.610592% Error in vf: -0.669391%
+
+
+Step: 811
+Void Fraction: 5.610596% Error in vf: -0.669318%
+
+
+Step: 812
+Void Fraction: 5.610594% Error in vf: -0.669366%
+
+
+Step: 813
+Void Fraction: 5.610586% Error in vf: -0.669508%
+
+
+Step: 814
+Void Fraction: 5.610574% Error in vf: -0.669719%
+
+
+Step: 815
+Void Fraction: 5.610557% Error in vf: -0.670011%
+
+
+Step: 816
+Void Fraction: 5.610539% Error in vf: -0.670337%
+
+
+Step: 817
+Void Fraction: 5.610520% Error in vf: -0.670673%
+
+
+Step: 818
+Void Fraction: 5.610501% Error in vf: -0.671012%
+
+
+Step: 819
+Void Fraction: 5.610480% Error in vf: -0.671378%
+
+
+Step: 820
+Void Fraction: 5.610463% Error in vf: -0.671681%
+
+
+Step: 821
+Void Fraction: 5.610449% Error in vf: -0.671924%
+
+
+Step: 822
+Void Fraction: 5.610440% Error in vf: -0.672085%
+
+
+Step: 823
+Void Fraction: 5.610438% Error in vf: -0.672118%
+
+
+Step: 824
+Void Fraction: 5.610445% Error in vf: -0.671994%
+
+
+Step: 825
+Void Fraction: 5.610462% Error in vf: -0.671702%
+
+
+Step: 826
+Void Fraction: 5.610488% Error in vf: -0.671245%
+
+
+Step: 827
+Void Fraction: 5.610521% Error in vf: -0.670645%
+
+
+Step: 828
+Void Fraction: 5.610563% Error in vf: -0.669908%
+
+
+Step: 829
+Void Fraction: 5.610613% Error in vf: -0.669028%
+
+
+Step: 830
+Void Fraction: 5.610668% Error in vf: -0.668056%
+
+
+Step: 831
+Void Fraction: 5.610725% Error in vf: -0.667049%
+
+
+Step: 832
+Void Fraction: 5.610783% Error in vf: -0.666012%
+
+
+Step: 833
+Void Fraction: 5.610844% Error in vf: -0.664930%
+
+
+Step: 834
+Void Fraction: 5.610904% Error in vf: -0.663871%
+
+
+Step: 835
+Void Fraction: 5.610964% Error in vf: -0.662813%
+
+
+Step: 836
+Void Fraction: 5.611023% Error in vf: -0.661760%
+
+
+Step: 837
+Void Fraction: 5.611084% Error in vf: -0.660679%
+
+
+Step: 838
+Void Fraction: 5.611147% Error in vf: -0.659570%
+
+
+Step: 839
+Void Fraction: 5.611210% Error in vf: -0.658447%
+
+
+Step: 840
+Void Fraction: 5.611275% Error in vf: -0.657302%
+
+
+Step: 841
+Void Fraction: 5.611341% Error in vf: -0.656134%
+
+
+Step: 842
+Void Fraction: 5.611409% Error in vf: -0.654941%
+
+
+Step: 843
+Void Fraction: 5.611477% Error in vf: -0.653735%
+
+
+Step: 844
+Void Fraction: 5.611545% Error in vf: -0.652521%
+
+
+Step: 845
+Void Fraction: 5.611614% Error in vf: -0.651295%
+
+
+Step: 846
+Void Fraction: 5.611685% Error in vf: -0.650052%
+
+
+Step: 847
+Void Fraction: 5.611754% Error in vf: -0.648818%
+
+
+Step: 848
+Void Fraction: 5.611823% Error in vf: -0.647610%
+
+
+Step: 849
+Void Fraction: 5.611889% Error in vf: -0.646441%
+
+
+Step: 850
+Void Fraction: 5.611952% Error in vf: -0.645311%
+
+
+Step: 851
+Void Fraction: 5.612015% Error in vf: -0.644195%
+
+
+Step: 852
+Void Fraction: 5.612077% Error in vf: -0.643113%
+
+
+Step: 853
+Void Fraction: 5.612133% Error in vf: -0.642116%
+
+
+Step: 854
+Void Fraction: 5.612182% Error in vf: -0.641239%
+
+
+Step: 855
+Void Fraction: 5.612223% Error in vf: -0.640529%
+
+
+Step: 856
+Void Fraction: 5.612250% Error in vf: -0.640035%
+
+
+Step: 857
+Void Fraction: 5.612265% Error in vf: -0.639779%
+
+
+Step: 858
+Void Fraction: 5.612265% Error in vf: -0.639777%
+
+
+Step: 859
+Void Fraction: 5.612252% Error in vf: -0.640000%
+
+
+Step: 860
+Void Fraction: 5.612228% Error in vf: -0.640440%
+
+
+Step: 861
+Void Fraction: 5.612193% Error in vf: -0.641051%
+
+
+Step: 862
+Void Fraction: 5.612149% Error in vf: -0.641828%
+
+
+Step: 863
+Void Fraction: 5.612100% Error in vf: -0.642699%
+
+
+Step: 864
+Void Fraction: 5.612049% Error in vf: -0.643596%
+
+
+Step: 865
+Void Fraction: 5.612001% Error in vf: -0.644456%
+
+
+Step: 866
+Void Fraction: 5.611957% Error in vf: -0.645235%
+
+
+Step: 867
+Void Fraction: 5.611920% Error in vf: -0.645891%
+
+
+Step: 868
+Void Fraction: 5.611891% Error in vf: -0.646396%
+
+
+Step: 869
+Void Fraction: 5.611871% Error in vf: -0.646748%
+
+
+Step: 870
+Void Fraction: 5.611861% Error in vf: -0.646928%
+
+
+Step: 871
+Void Fraction: 5.611861% Error in vf: -0.646932%
+
+
+Step: 872
+Void Fraction: 5.611872% Error in vf: -0.646740%
+
+
+Step: 873
+Void Fraction: 5.611894% Error in vf: -0.646348%
+
+
+Step: 874
+Void Fraction: 5.611926% Error in vf: -0.645778%
+
+
+Step: 875
+Void Fraction: 5.611966% Error in vf: -0.645078%
+
+
+Step: 876
+Void Fraction: 5.612011% Error in vf: -0.644270%
+
+
+Step: 877
+Void Fraction: 5.612063% Error in vf: -0.643356%
+
+
+Step: 878
+Void Fraction: 5.612118% Error in vf: -0.642381%
+
+
+Step: 879
+Void Fraction: 5.612176% Error in vf: -0.641355%
+
+
+Step: 880
+Void Fraction: 5.612236% Error in vf: -0.640292%
+
+
+Step: 881
+Void Fraction: 5.612298% Error in vf: -0.639197%
+
+
+Step: 882
+Void Fraction: 5.612361% Error in vf: -0.638077%
+
+
+Step: 883
+Void Fraction: 5.612423% Error in vf: -0.636973%
+
+
+Step: 884
+Void Fraction: 5.612484% Error in vf: -0.635908%
+
+
+Step: 885
+Void Fraction: 5.612539% Error in vf: -0.634930%
+
+
+Step: 886
+Void Fraction: 5.612587% Error in vf: -0.634080%
+
+
+Step: 887
+Void Fraction: 5.612629% Error in vf: -0.633331%
+
+
+Step: 888
+Void Fraction: 5.612665% Error in vf: -0.632693%
+
+
+Step: 889
+Void Fraction: 5.612693% Error in vf: -0.632192%
+
+
+Step: 890
+Void Fraction: 5.612715% Error in vf: -0.631810%
+
+
+Step: 891
+Void Fraction: 5.612731% Error in vf: -0.631527%
+
+
+Step: 892
+Void Fraction: 5.612742% Error in vf: -0.631328%
+
+
+Step: 893
+Void Fraction: 5.612751% Error in vf: -0.631174%
+
+
+Step: 894
+Void Fraction: 5.612758% Error in vf: -0.631052%
+
+
+Step: 895
+Void Fraction: 5.612763% Error in vf: -0.630969%
+
+
+Step: 896
+Void Fraction: 5.612761% Error in vf: -0.631002%
+
+
+Step: 897
+Void Fraction: 5.612754% Error in vf: -0.631122%
+
+
+Step: 898
+Void Fraction: 5.612742% Error in vf: -0.631337%
+
+
+Step: 899
+Void Fraction: 5.612719% Error in vf: -0.631742%
+
+
+Step: 900
+Void Fraction: 5.612687% Error in vf: -0.632310%
+
+
+Step: 901
+Void Fraction: 5.612643% Error in vf: -0.633083%
+
+
+Step: 902
+Void Fraction: 5.612592% Error in vf: -0.633985%
+
+
+Step: 903
+Void Fraction: 5.612529% Error in vf: -0.635111%
+
+
+Step: 904
+Void Fraction: 5.612455% Error in vf: -0.636421%
+
+
+Step: 905
+Void Fraction: 5.612370% Error in vf: -0.637916%
+
+
+Step: 906
+Void Fraction: 5.612278% Error in vf: -0.639553%
+
+
+Step: 907
+Void Fraction: 5.612176% Error in vf: -0.641350%
+
+
+Step: 908
+Void Fraction: 5.612070% Error in vf: -0.643233%
+
+
+Step: 909
+Void Fraction: 5.611961% Error in vf: -0.645167%
+
+
+Step: 910
+Void Fraction: 5.611852% Error in vf: -0.647084%
+
+
+Step: 911
+Void Fraction: 5.611748% Error in vf: -0.648929%
+
+
+Step: 912
+Void Fraction: 5.611649% Error in vf: -0.650675%
+
+
+Step: 913
+Void Fraction: 5.611559% Error in vf: -0.652281%
+
+
+Step: 914
+Void Fraction: 5.611476% Error in vf: -0.653746%
+
+
+Step: 915
+Void Fraction: 5.611404% Error in vf: -0.655022%
+
+
+Step: 916
+Void Fraction: 5.611342% Error in vf: -0.656122%
+
+
+Step: 917
+Void Fraction: 5.611296% Error in vf: -0.656941%
+
+
+Step: 918
+Void Fraction: 5.611268% Error in vf: -0.657422%
+
+
+Step: 919
+Void Fraction: 5.611262% Error in vf: -0.657530%
+
+
+Step: 920
+Void Fraction: 5.611277% Error in vf: -0.657261%
+
+
+Step: 921
+Void Fraction: 5.611313% Error in vf: -0.656625%
+
+
+Step: 922
+Void Fraction: 5.611369% Error in vf: -0.655648%
+
+
+Step: 923
+Void Fraction: 5.611444% Error in vf: -0.654320%
+
+
+Step: 924
+Void Fraction: 5.611538% Error in vf: -0.652647%
+
+
+Step: 925
+Void Fraction: 5.611652% Error in vf: -0.650629%
+
+
+Step: 926
+Void Fraction: 5.611785% Error in vf: -0.648280%
+
+
+Step: 927
+Void Fraction: 5.611933% Error in vf: -0.645657%
+
+
+Step: 928
+Void Fraction: 5.612096% Error in vf: -0.642770%
+
+
+Step: 929
+Void Fraction: 5.612270% Error in vf: -0.639686%
+
+
+Step: 930
+Void Fraction: 5.612449% Error in vf: -0.636519%
+
+
+Step: 931
+Void Fraction: 5.612629% Error in vf: -0.633338%
+
+
+Step: 932
+Void Fraction: 5.612805% Error in vf: -0.630221%
+
+
+Step: 933
+Void Fraction: 5.612974% Error in vf: -0.627227%
+
+
+Step: 934
+Void Fraction: 5.613132% Error in vf: -0.624422%
+
+
+Step: 935
+Void Fraction: 5.613273% Error in vf: -0.621925%
+
+
+Step: 936
+Void Fraction: 5.613394% Error in vf: -0.619784%
+
+
+Step: 937
+Void Fraction: 5.613495% Error in vf: -0.618010%
+
+
+Step: 938
+Void Fraction: 5.613574% Error in vf: -0.616610%
+
+
+Step: 939
+Void Fraction: 5.613632% Error in vf: -0.615570%
+
+
+Step: 940
+Void Fraction: 5.613671% Error in vf: -0.614877%
+
+
+Step: 941
+Void Fraction: 5.613690% Error in vf: -0.614546%
+
+
+Step: 942
+Void Fraction: 5.613689% Error in vf: -0.614558%
+
+
+Step: 943
+Void Fraction: 5.613670% Error in vf: -0.614896%
+
+
+Step: 944
+Void Fraction: 5.613634% Error in vf: -0.615539%
+
+
+Step: 945
+Void Fraction: 5.613581% Error in vf: -0.616472%
+
+
+Step: 946
+Void Fraction: 5.613513% Error in vf: -0.617687%
+
+
+Step: 947
+Void Fraction: 5.613430% Error in vf: -0.619149%
+
+
+Step: 948
+Void Fraction: 5.613335% Error in vf: -0.620833%
+
+
+Step: 949
+Void Fraction: 5.613228% Error in vf: -0.622724%
+
+
+Step: 950
+Void Fraction: 5.613111% Error in vf: -0.624791%
+
+
+Step: 951
+Void Fraction: 5.612988% Error in vf: -0.626975%
+
+
+Step: 952
+Void Fraction: 5.612862% Error in vf: -0.629216%
+
+
+Step: 953
+Void Fraction: 5.612734% Error in vf: -0.631470%
+
+
+Step: 954
+Void Fraction: 5.612608% Error in vf: -0.633705%
+
+
+Step: 955
+Void Fraction: 5.612485% Error in vf: -0.635886%
+
+
+Step: 956
+Void Fraction: 5.612364% Error in vf: -0.638032%
+
+
+Step: 957
+Void Fraction: 5.612245% Error in vf: -0.640139%
+
+
+Step: 958
+Void Fraction: 5.612128% Error in vf: -0.642203%
+
+
+Step: 959
+Void Fraction: 5.612014% Error in vf: -0.644216%
+
+
+Step: 960
+Void Fraction: 5.611905% Error in vf: -0.646155%
+
+
+Step: 961
+Void Fraction: 5.611801% Error in vf: -0.647986%
+
+
+Step: 962
+Void Fraction: 5.611706% Error in vf: -0.649680%
+
+
+Step: 963
+Void Fraction: 5.611619% Error in vf: -0.651218%
+
+
+Step: 964
+Void Fraction: 5.611544% Error in vf: -0.652539%
+
+
+Step: 965
+Void Fraction: 5.611483% Error in vf: -0.653613%
+
+
+Step: 966
+Void Fraction: 5.611438% Error in vf: -0.654420%
+
+
+Step: 967
+Void Fraction: 5.611408% Error in vf: -0.654952%
+
+
+Step: 968
+Void Fraction: 5.611391% Error in vf: -0.655257%
+
+
+Step: 969
+Void Fraction: 5.611386% Error in vf: -0.655346%
+
+
+Step: 970
+Void Fraction: 5.611392% Error in vf: -0.655238%
+
+
+Step: 971
+Void Fraction: 5.611407% Error in vf: -0.654976%
+
+
+Step: 972
+Void Fraction: 5.611432% Error in vf: -0.654518%
+
+
+Step: 973
+Void Fraction: 5.611469% Error in vf: -0.653877%
+
+
+Step: 974
+Void Fraction: 5.611512% Error in vf: -0.653105%
+
+
+Step: 975
+Void Fraction: 5.611561% Error in vf: -0.652235%
+
+
+Step: 976
+Void Fraction: 5.611615% Error in vf: -0.651291%
+
+
+Step: 977
+Void Fraction: 5.611669% Error in vf: -0.650332%
+
+
+Step: 978
+Void Fraction: 5.611720% Error in vf: -0.649423%
+
+
+Step: 979
+Void Fraction: 5.611767% Error in vf: -0.648597%
+
+
+Step: 980
+Void Fraction: 5.611806% Error in vf: -0.647898%
+
+
+Step: 981
+Void Fraction: 5.611837% Error in vf: -0.647356%
+
+
+Step: 982
+Void Fraction: 5.611857% Error in vf: -0.646992%
+
+
+Step: 983
+Void Fraction: 5.611867% Error in vf: -0.646830%
+
+
+Step: 984
+Void Fraction: 5.611866% Error in vf: -0.646843%
+
+
+Step: 985
+Void Fraction: 5.611855% Error in vf: -0.647030%
+
+
+Step: 986
+Void Fraction: 5.611836% Error in vf: -0.647366%
+
+
+Step: 987
+Void Fraction: 5.611810% Error in vf: -0.647825%
+
+
+Step: 988
+Void Fraction: 5.611778% Error in vf: -0.648400%
+
+
+Step: 989
+Void Fraction: 5.611741% Error in vf: -0.649054%
+
+
+Step: 990
+Void Fraction: 5.611701% Error in vf: -0.649764%
+
+
+Step: 991
+Void Fraction: 5.611659% Error in vf: -0.650515%
+
+
+Step: 992
+Void Fraction: 5.611614% Error in vf: -0.651307%
+
+
+Step: 993
+Void Fraction: 5.611567% Error in vf: -0.652138%
+
+
+Step: 994
+Void Fraction: 5.611519% Error in vf: -0.652991%
+
+
+Step: 995
+Void Fraction: 5.611470% Error in vf: -0.653855%
+
+
+Step: 996
+Void Fraction: 5.611423% Error in vf: -0.654679%
+
+
+Step: 997
+Void Fraction: 5.611380% Error in vf: -0.655442%
+
+
+Step: 998
+Void Fraction: 5.611341% Error in vf: -0.656134%
+
+
+Step: 999
+Void Fraction: 5.611307% Error in vf: -0.656733%
+
+
+Step: 1000
+Void Fraction: 5.611280% Error in vf: -0.657213%
+
+
+Total run time: 41.860850 secs
