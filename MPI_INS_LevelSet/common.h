@@ -17,6 +17,7 @@
 
 //MPI relevant variables
 //MPI_STATUS status;
+int debug;
 int myrank;
 int master;
 int nprocs;

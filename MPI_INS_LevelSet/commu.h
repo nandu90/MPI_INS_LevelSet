@@ -147,7 +147,7 @@ void genibc()
 
 void commu(double ***var)
 {
-  
+  //if(myrank == master)printf("\nhere\n");
   /*
     Starting from the right side of mesh, ghost cell strips are numbered in an anticlockwise number
    */
@@ -196,7 +196,7 @@ void commu(double ***var)
   jmax[3][1] = 0;
   size[3] = 2*xelem;
 
-  //if(myrank == master)printf("here\n");
+  //if(myrank == master)printf("here starting to send\n");
   /*for(i=0; i<yelem; i++)
     {
       if(myrank == master)printf("%.f\n",bhai.sendrbuf[i]);
@@ -244,22 +244,23 @@ void commu(double ***var)
 	  //sendptr[0] array is sent to the processor on the right... and so on
 	  //tag is specified to be myrank
 	   MPI_Send(sendptr[k], size[k], MPI_DOUBLE, bhailog[k], myrank, MPI_COMM_WORLD);
-	   
+	   //if(bhailog[k]==0)printf("here sent from %d to %d\n",myrank,bhailog[k]);
 	}
       
     }
 
-    
+    //if(myrank == master)printf("here sent\n");
     
   //Recv OPeration
-  for(k=0; k<4; k++)
+  for(k=3; k>=0; k--)
     {
       if(bhailog[k] >= 0)
 	{
 	  //The tag = bhailog[k] ensures that this receive is from the correct processor
 	  //eg if bhailog[0] = 1. This means that thr processor to the right of this processor is 1.
-	  
+	  //if(myrank == master)printf("here about to recv from %d\n",bhailog[k]);
 	  MPI_Recv(recvptr[k],size[k], MPI_DOUBLE,bhailog[k],bhailog[k],MPI_COMM_WORLD,MPI_STATUS_IGNORE);
+	  //if(myrank == master)printf("here recv from %d by %d\n",bhailog[k],myrank);
 	  int mulx, muly;
 	  if(k == 0)
 	    {
@@ -297,8 +298,190 @@ void commu(double ***var)
 		}
 	    }
 	}
-      
+      //if(myrank == master)printf("received %d\n",k);
     }
+  //if(myrank == master)printf("here final\n");
+}
+
+
+void commu2(double ***var)
+{
+  if(debug == 1)printf("%d here\n", myrank);
+  /*
+    Starting from the right side of mesh, ghost cell strips are numbered in an anticlockwise number
+   */
+  int i,j,k,strip;
+  int index;
+  int imin[4][2], imax[4][2];  //Here 4 refers to the number of ghost cell strips
+  int jmin[4][2], jmax[4][2];
+  int size[4];
+  imin[0][0] = xelem-3;
+  imax[0][0] = xelem-3;
+  jmin[0][0] = 0;
+  jmax[0][0] = yelem-1;
+  imin[0][1] = xelem-1;
+  imax[0][1] = xelem-1;
+  jmin[0][1] = 0;
+  jmax[0][1] = yelem-1;
+  size[0] = 2*yelem;
+
+  imin[1][0] = 0;
+  imax[1][0] = xelem-1;
+  jmin[1][0] = yelem-3;
+  jmax[1][0] = yelem-3;
+  imin[1][1] = 0;
+  imax[1][1] = xelem-1;
+  jmin[1][1] = yelem-1;
+  jmax[1][1] = yelem-1;
+  size[1] = 2*xelem;
+
+  imin[2][0] = 2;
+  imax[2][0] = 2;
+  jmin[2][0] = 0;
+  jmax[2][0] = yelem-1;
+  imin[2][1] = 0;
+  imax[2][1] = 0;
+  jmin[2][1] = 0;
+  jmax[2][1] = yelem-1;
+  size[2] = 2*yelem;
+
+  imin[3][0] = 0;
+  imax[3][0] = xelem-1;
+  jmin[3][0] = 2;
+  jmax[3][0] = 2;
+  imin[3][1] = 0;
+  imax[3][1] = xelem-1;
+  jmin[3][1] = 0;
+  jmax[3][1] = 0;
+  size[3] = 2*xelem;
+
+  
+ 
+
+  int recvk;
+
+  //Package contents
+    for(k=0; k<4; k++) //Loop over ghost cell strips starting from right and then antic
+    {
+      if(bhailog[k] >= 0)
+	{
+	  //Package contents to send
+	  int smulx, smuly;
+	  if(k == 0)
+	    {
+	      smulx = -1;
+	      smuly = 0;
+	    }
+	  else if(k==2)
+	    {
+	      smulx = 1;
+	      smuly =0;
+	    }
+	  else if(k==1)
+	    {
+	      smulx = 0;
+	      smuly = -1;
+	    }
+	  else
+	    {
+	      smulx = 0;
+	      smuly = 1;
+	    }
+	  index=0;
+	  for(strip=1; strip>=0; strip--)
+	    {
+	      for(i=imin[k][0]+(strip*smulx); i<=imax[k][0]+(strip*smulx); i++)  //loop over i index of ghost node. e.g. for right strip imin = imax = xelem-1
+		{
+		  for(j=jmin[k][0]+(strip*smuly); j<=jmax[k][0]+(strip*smuly); j++) //loop over j index of ghost node. e.g. for right strip jmin = 0 and jmax = yelem-1
+		    {
+		      sendptr[k][index] = var[i][j][0]; //fill up the send ptr array
+		      index++;
+		    }
+		}
+	    }
+
+	  if(debug == 1)printf("%d packd for %d\n",myrank, bhailog[k]);
+	}
+
+       
+    }
+
+    if(myrank == 1 && debug == 1)printf("contents are pakeaged\n");
+
+    MPI_Status status;
+    int request;
+    if(myrank == master && debug == 1)printf("here starting sendrecv operations\n");
+      for(k=0; k<4; k++)
+	{
+	  if(k==0)recvk = 2;
+	  if(k==1)recvk = 3;
+	  if(k==2)recvk = 0;
+	  if(k==3)recvk = 1;
+	   
+	  
+	  if(bhailog[recvk] >= 0)
+	    {
+	      if(myrank==0 && debug ==1)printf("here recving from %d by %d\n",bhailog[recvk],myrank);
+	      MPI_Recv(recvptr[recvk],size[recvk], MPI_DOUBLE,bhailog[recvk],bhailog[recvk],MPI_COMM_WORLD,&status);
+	      
+	    }
+
+	  if(bhailog[k] >= 0)
+	    {
+	      if(bhailog[k]==0 && debug == 1)printf("here sending from %d to %d\n",myrank,bhailog[k]);
+	      MPI_Isend(sendptr[k], size[k], MPI_DOUBLE, bhailog[k], myrank, MPI_COMM_WORLD,&request);
+	      
+	      MPI_Wait(&request, &status);
+	    }
+	}
+
+
+      //Unpack contents
+      for(recvk=0; recvk<4; recvk++)
+	{
+	  if(bhailog[recvk] >= 0)
+	    {
+	  
+	      int rmulx, rmuly;
+	      if(recvk == 0)
+		{
+		  rmulx = -1;
+		  rmuly = 0;
+		}
+	      else if(recvk==2)
+		{
+		  rmulx = 1;
+		  rmuly =0;
+		}
+	      else if(recvk==1)
+		{
+		  rmulx = 0;
+		  rmuly = -1;
+		}
+	      else
+		{
+		  rmulx = 0;
+		  rmuly = 1;
+		}
+	      
+	      //unpack the contents of recvptr and place in the correct location. e.g. if k=0. this means the contents go on the right ghost strip
+	      index=0;
+	      for(strip = 0; strip<=1; strip++)
+		{
+		  for(i=imin[recvk][1]+(strip*rmulx); i<=imax[recvk][1]+(strip*rmulx); i++)
+		    {
+		      for(j=jmin[recvk][1]+(strip*rmuly); j<=jmax[recvk][1]+(strip*rmuly); j++)
+				{
+				var[i][j][0] = recvptr[recvk][index];
+				index++;
+				}
+			}
+		}
+	}
+	  
+	}
+
+    
   
 }
 
@@ -372,4 +555,7 @@ void destroycommu()
       deallocator1(&bhai.recvdbuf,2*xelem);
     }
 }
+
+
+
 #endif

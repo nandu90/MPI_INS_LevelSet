@@ -18,13 +18,14 @@
 
 void variable_pressure(double ***ustar, double ***vstar, double ***p, double deltat, double ***rho, double ***stx, double ***sty)
 {
+  int i,j;
     /****Calculate the RHS of matrix****/
   double **b;
   allocator(&b, xelem, yelem);
     
-    for(int i=1; i<xelem-1; i++)
+    for(i=2; i<xelem-2; i++)
     {
-        for(int j=1; j<yelem-1; j++)
+        for(j=2; j<yelem-2; j++)
         {
             double hx = area[i][j][1][1];
             double hy = area[i][j][0][0];
@@ -37,18 +38,18 @@ void variable_pressure(double ***ustar, double ***vstar, double ***p, double del
     /**First calculate the force at the faces***/
     double stx_face[xelem][yelem];
     double sty_face[xelem][yelem];
-    for(int i=0; i<xelem-1; i++)
+    for(i=1; i<xelem-2; i++)
     {
-        for(int j=0; j<yelem-1; j++)
+        for(j=1; j<yelem-2; j++)
         {
             stx_face[i][j] = 0.5*(stx[i][j][0] + stx[i+1][j][0]);
             sty_face[i][j] = 0.5*(sty[i][j][0] + sty[i][j+1][0]);
         }
     }
     /**Now calculate and add the contribution from force**/
-    for(int i=1; i<xelem-1; i++)
+    for(i=2; i<xelem-2; i++)
     {
-        for(int j=1; j<yelem-1; j++)
+        for(j=2; j<yelem-2; j++)
         {
             double volume = vol[i][j];
             b[i][j] -= (1.0/rho[i][j][0]) * volume*((stx_face[i][j]-stx_face[i-1][j])/area[i][j][1][1] + (sty_face[i][j]-sty_face[i][j-1])/area[i][j][0][0]);
@@ -57,9 +58,9 @@ void variable_pressure(double ***ustar, double ***vstar, double ***p, double del
     
     /*Create a matrix to store the rho values at all 4 faces of CV*/
     double elem_rho[xelem][yelem][4];
-    for(int i=1; i < xelem-1; i++)
+    for(i=2; i < xelem-2; i++)
     {
-        for(int j=1; j< yelem-1; j++)
+        for(j=2; j< yelem-2; j++)
         {
             elem_rho[i][j][0] = 0.5*(rho[i+1][j][0] + rho[i][j][0]);
             elem_rho[i][j][1] = 0.5*(rho[i][j+1][0] + rho[i][j][0]);
@@ -71,9 +72,9 @@ void variable_pressure(double ***ustar, double ***vstar, double ***p, double del
     double ***a;
     allocator3(&a, xelem, yelem, 5);
     
-    for(int i=1; i<xelem-1; i++)
+    for(i=2; i<xelem-2; i++)
     {
-        for(int j=1; j<yelem-1; j++)
+        for(j=2; j<yelem-2; j++)
         {
             double hx = area[i][j][1][1];
             double hy = area[i][j][0][0];

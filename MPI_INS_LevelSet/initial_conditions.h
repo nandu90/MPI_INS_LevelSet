@@ -182,7 +182,7 @@ void initialize(struct elemsclr sclr)
       
     initialize_phi(sclr.phi);
     level_setBC(sclr.phi);
-    double eps = epsilon*max(xlen/(xelem-2), ylen/(yelem-2));
+    double eps=epsilon*max(xlen/(gxelem), ylen/(gyelem));
 
     double ***H;
     allocator3(&H, xelem, yelem, zelem);

@@ -216,18 +216,22 @@ double signof(double a)
 
 void rhs_redist2(double **rhs, double ***phi2, double ***phi)
 {
-    double dxbarplus[xelem][yelem];
-    double dxbarminus[xelem][yelem];
-    double dxbar[xelem][yelem];
+    double ***dxbarplus;
+    double ***dxbarminus;
+    double ***dxbar;
+
+    allocator3(&dxbarplus, xelem, yelem,zelem);
+    allocator3(&dxbarminus, xelem, yelem,zelem);
+    allocator3(&dxbar, xelem, yelem,zelem);
 
     int i,j;
 
-    for(i=1; i<xelem-1; i++)
+    for(i=2; i<xelem-2; i++)
     {
-        for(j=1; j<yelem-1; j++)
+        for(j=2; j<yelem-2; j++)
         {
             double temp_phi[5];
-            if(i == 1)
+            if(i == 2)
             {
                 temp_phi[2] = phi2[i][j][0];
                 temp_phi[3] = phi2[i+1][j][0];
@@ -235,7 +239,14 @@ void rhs_redist2(double **rhs, double ***phi2, double ***phi)
                 temp_phi[1] = phi2[i-1][j][0];
                 if(x_bound == 1 || x_bound ==2)
                 {
-                    temp_phi[0] = temp_phi[1];
+		  if(iBC[i-1][j]==2)
+		    {
+		      temp_phi[0] = temp_phi[1];
+		    }
+		  else
+		    {
+		      temp_phi[0] = phi2[i-2][j][0];
+		    }
                 }
                 else if(x_bound ==3)
                 {
@@ -243,13 +254,20 @@ void rhs_redist2(double **rhs, double ***phi2, double ***phi)
                 }
 
             }
-            else if (i == xelem-2)
+            else if (i == xelem-3)
             {
                 temp_phi[2] = phi2[i][j][0];
                 temp_phi[3] = phi2[i+1][j][0];
                 if(x_bound == 1 || x_bound ==2)
                 {
-                    temp_phi[4] = temp_phi[3];
+		  if(iBC[i+1][j]==2)
+		    {
+		      temp_phi[4] = temp_phi[3];
+		    }
+		  else
+		    {
+		      temp_phi[4] = phi2[i+2][j][0];
+		    }
                 }
                 else if(x_bound ==3)
                 {
@@ -268,35 +286,39 @@ void rhs_redist2(double **rhs, double ***phi2, double ***phi)
                 temp_phi[0] = phi2[i-2][j][0];
             }
 
-            dxbarplus[i][j] = dplus(temp_phi, 2) -0.5*minmod(dplus(temp_phi,2) - dplus(temp_phi,1) , dplus(temp_phi,3) - dplus(temp_phi,2));
-            dxbarminus[i][j] = dminus(temp_phi, 2) +0.5*minmod(dplus(temp_phi,2) - dplus(temp_phi,1) , dplus(temp_phi,1) - dplus(temp_phi,0));
+            dxbarplus[i][j][0] = dplus(temp_phi, 2) -0.5*minmod(dplus(temp_phi,2) - dplus(temp_phi,1) , dplus(temp_phi,3) - dplus(temp_phi,2));
+            dxbarminus[i][j][0] = dminus(temp_phi, 2) +0.5*minmod(dplus(temp_phi,2) - dplus(temp_phi,1) , dplus(temp_phi,1) - dplus(temp_phi,0));
 
            if(signof(phi[i][j][0])*dplus(temp_phi,2) < 0.0  && signof(phi[i][j][0])*dminus(temp_phi,2) < -signof(phi[i][j][0])*dplus(temp_phi,2))
            {
-               dxbar[i][j] = dxbarplus[i][j];
+               dxbar[i][j][0] = dxbarplus[i][j][0];
            }
            else if(signof(phi[i][j][0])*dminus(temp_phi,2) > 0.0  && signof(phi[i][j][0])*dplus(temp_phi,2) > -signof(phi[i][j][0])*dminus(temp_phi,2))
            {
-               dxbar[i][j] = dxbarminus[i][j];
+               dxbar[i][j][0] = dxbarminus[i][j][0];
            }
            else
            {
-               dxbar[i][j] = 0.5*(dxbarplus[i][j] + dxbarminus[i][j]);
+               dxbar[i][j][0] = 0.5*(dxbarplus[i][j][0] + dxbarminus[i][j][0]);
            }
         }
 
     }
 
-    double dybarplus[xelem][yelem];
-    double dybarminus[xelem][yelem];
-    double dybar[xelem][yelem];
+    double ***dybarplus;
+    double ***dybarminus;
+    double ***dybar;
 
-    for(i=1; i<xelem-1; i++)
+    allocator3(&dybarplus, xelem, yelem,zelem);
+    allocator3(&dybarminus, xelem, yelem,zelem);
+    allocator3(&dybar, xelem, yelem,zelem);
+
+    for(i=2; i<xelem-2; i++)
     {
-        for(j=1; j<yelem-1; j++)
+        for(j=2; j<yelem-2; j++)
         {
             double temp_phi[5];
-            if(j == 1)
+            if(j == 2)
             {
                 temp_phi[2] = phi2[i][j][0];
                 temp_phi[3] = phi2[i][j+1][0];
@@ -304,7 +326,14 @@ void rhs_redist2(double **rhs, double ***phi2, double ***phi)
                 temp_phi[1] = phi2[i][j-1][0];
                 if(y_bound == 1 || y_bound ==2)
                 {
-                    temp_phi[0] = phi2[i][j-1][0];
+		  if(iBC[i][j-1]==2)
+		    {
+		      temp_phi[0] = phi2[i][j-1][0];
+		    }
+		  else
+		    {
+		      temp_phi[0] = phi2[i][j-2][0];
+		    }
                 }
                 else if(y_bound ==3)
                 {
@@ -312,13 +341,20 @@ void rhs_redist2(double **rhs, double ***phi2, double ***phi)
                 }
 
             }
-            else if (j == yelem-2)
+            else if (j == yelem-3)
             {
                 temp_phi[2] = phi2[i][j][0];
                 temp_phi[3] = phi2[i][j+1][0];
                 if(y_bound == 1 || y_bound ==2)
                 {
+		  if(iBC[i][j+1]==2)
+		    {
                     temp_phi[4] = phi2[i][j+1][0];
+		    }
+		  else
+		    {
+		      temp_phi[4] = phi2[i][j+2][0];
+		    }
                 }
                 else if(y_bound ==3)
                 {
@@ -337,30 +373,31 @@ void rhs_redist2(double **rhs, double ***phi2, double ***phi)
                 temp_phi[0] = phi2[i][j-2][0];
             }
 
-            dybarplus[i][j] = dplus(temp_phi, 2) -0.5*minmod(dplus(temp_phi,2) - dplus(temp_phi,1) , dplus(temp_phi,3) - dplus(temp_phi,2));
-            dybarminus[i][j] = dminus(temp_phi, 2) +0.5*minmod(dplus(temp_phi,2) - dplus(temp_phi,1) , dplus(temp_phi,1) - dplus(temp_phi,0));
+            dybarplus[i][j][0] = dplus(temp_phi, 2) -0.5*minmod(dplus(temp_phi,2) - dplus(temp_phi,1) , dplus(temp_phi,3) - dplus(temp_phi,2));
+            dybarminus[i][j][0] = dminus(temp_phi, 2) +0.5*minmod(dplus(temp_phi,2) - dplus(temp_phi,1) , dplus(temp_phi,1) - dplus(temp_phi,0));
 
            if(signof(phi[i][j][0])*dplus(temp_phi,2) < 0.0  && signof(phi[i][j][0])*dminus(temp_phi,2) < -signof(phi[i][j][0])*dplus(temp_phi,2))
            {
-               dybar[i][j] = dybarplus[i][j];
+               dybar[i][j][0] = dybarplus[i][j][0];
            }
            else if(signof(phi[i][j][0])*dminus(temp_phi,2) > 0.0  && signof(phi[i][j][0])*dplus(temp_phi,2) > -signof(phi[i][j][0])*dminus(temp_phi,2))
            {
-               dybar[i][j] = dybarminus[i][j];
+               dybar[i][j][0] = dybarminus[i][j][0];
            }
            else
            {
-               dybar[i][j] = 0.5*(dybarplus[i][j] + dybarminus[i][j]);
+               dybar[i][j][0] = 0.5*(dybarplus[i][j][0] + dybarminus[i][j][0]);
            }
         }
 
     }
 
+    
 
-    double eps = epsilon*max(xlen/(xelem-2), ylen/(yelem-2));
-    for(i=1; i < xelem-1; i++)
+    double eps=epsilon*max(xlen/(gxelem), ylen/(gyelem));
+    for(i=2; i < xelem-2; i++)
     {
-        for(j=1; j < yelem-1; j++)
+        for(j=2; j < yelem-2; j++)
         {
             double sign_phi;
             if(phi[i][j][0] >= eps)
@@ -376,9 +413,16 @@ void rhs_redist2(double **rhs, double ***phi2, double ***phi)
                 sign_phi = (phi[i][j][0]/ eps) - (1.0/PI)*sin(PI*phi[i][j][0]/eps);
             }
 
-            rhs[i][j] = sign_phi*(1-sqrt(pow(dxbar[i][j]/area[i][j][1][1],2.0) + pow(dybar[i][j]/area[i][j][0][0],2.0)));
+            rhs[i][j] = sign_phi*(1-sqrt(pow(dxbar[i][j][0]/area[i][j][1][1],2.0) + pow(dybar[i][j][0]/area[i][j][0][0],2.0)));
         }
     }
+
+    deallocator3(&dxbarplus, xelem, yelem,zelem);
+    deallocator3(&dxbarminus, xelem, yelem,zelem);
+    deallocator3(&dxbar, xelem, yelem,zelem);
+    deallocator3(&dybarplus, xelem, yelem,zelem);
+    deallocator3(&dybarminus, xelem, yelem,zelem);
+    deallocator3(&dybar, xelem, yelem,zelem);
 }
 
 #endif /* RHS_BUB_REDIST_H */

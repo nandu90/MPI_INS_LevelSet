@@ -378,8 +378,8 @@ void rhs_bub(double **rhsx, double **rhsy, double ***ucen, double ***vcen, doubl
 
     }
 
-    commu(gradx);
-    commu(grady);
+    commu2(gradx);
+    commu2(grady);
     /*Now calculate the fluxes at the faces. Note v velocity is not yet regarded*/
     for (i=2; i<xelem-2; i++)
     {

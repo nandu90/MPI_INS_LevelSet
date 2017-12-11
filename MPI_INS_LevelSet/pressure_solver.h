@@ -18,15 +18,16 @@
 
 void pressure(double ***ustar, double ***vstar, double ***p, double deltat)
 {
+  int i,j;
     double rho=1.0;
 
     /****Calculate the RHS of matrix****/
     double **b;
     allocator(&b, xelem, yelem);
-    #pragma omp parallel for schedule(dynamic)
-    for(int i=1; i<xelem-1; i++)
+
+    for(i=2; i<xelem-2; i++)
     {
-        for(int j=1; j<yelem-1; j++)
+        for(j=2; j<yelem-2; j++)
         {
             double hx = area[i][j][1][1];
             double hy = area[i][j][0][0];
@@ -37,10 +38,10 @@ void pressure(double ***ustar, double ***vstar, double ***p, double deltat)
 
     double ***a;
     allocator3(&a, xelem, yelem, 5);
-    #pragma omp parallel for schedule(dynamic)
-    for(int i=1; i<xelem-1; i++)
+
+    for(i=2; i<xelem-2; i++)
     {
-        for(int j=1; j<yelem-1; j++)
+        for( j=2; j<yelem-2; j++)
         {
             double hx = area[i][j][1][1];
             double hy = area[i][j][0][0];

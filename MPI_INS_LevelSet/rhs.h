@@ -18,13 +18,13 @@ void flux(double u1R, double u1L, double u1T, double u1B, double u2R, double u2L
 {
     if(dir ==1)
     {
-         *flux1 = pow(u1R + u1L,2.0)/4.0;
-         *flux2 = (u2R +u2L)*0.5 * (u2T + u2B)*0.5;
+      (*flux1) = pow(u1R + u1L,2.0)/4.0;
+      (*flux2) = (u2R +u2L)*0.5 * (u2T + u2B)*0.5;
     }
     else if (dir == 2)
     {
-        *flux1 = (u1R +u1L)*0.5 * (u1T + u1B)*0.5;
-        *flux2 =  pow(u2T + u2B,2.0)/4.0;
+      (*flux1) = (u1R +u1L)*0.5 * (u1T + u1B)*0.5;
+      (*flux2) =  pow(u2T + u2B,2.0)/4.0;
     }
 }
 
@@ -64,7 +64,7 @@ void rhscalc(struct elemsclr sclr, double **rhsx, double **rhsy, int iter, bool 
 {
 
 
-
+  int i,j;
 
 
     //***Calculate contribution from advection
@@ -73,10 +73,9 @@ void rhscalc(struct elemsclr sclr, double **rhsx, double **rhsy, int iter, bool 
   allocator(&advx, xelem, yelem);
   allocator(&advy, xelem, yelem);
 
-    #pragma omp parallel for schedule(dynamic)
-    for(int i=0; i<xelem-1; i++)
+    for(i=1; i<xelem-2; i++)
     {
-        for(int j=1; j<yelem-1; j++)
+        for(j=2; j<yelem-2; j++)
         {
             //Calculate the velocities at the edge centers of CV
             double u1R, u1L;
@@ -98,12 +97,12 @@ void rhscalc(struct elemsclr sclr, double **rhsx, double **rhsy, int iter, bool 
             u2T = sclr.u[i][j+1][0];
             u2B = sclr.u[i][j][0];
 
-            if(i==0)
+            if(i==1)
             {
                 u1LL = sclr.u[xelem-3][j][0];
                 u1RR = sclr.u[i+2][j][0];
             }
-            else if(i==xelem-2)
+            else if(i==xelem-3)
             {
                 u1LL = sclr.u[i-1][j][0];
                 u1RR = sclr.u[2][j][0];
@@ -123,10 +122,9 @@ void rhscalc(struct elemsclr sclr, double **rhsx, double **rhsy, int iter, bool 
         }
     }
 
-    #pragma omp parallel for schedule(dynamic)
-    for (int i=1; i< xelem-1 ;i++)
+    for (i=2; i< xelem-2 ;i++)
     {
-        for (int j=0; j< yelem-1; j++)
+        for (j=1; j< yelem-2; j++)
         {
             double v1R, v1L;
             double v1T, v1B;
@@ -147,12 +145,12 @@ void rhscalc(struct elemsclr sclr, double **rhsx, double **rhsy, int iter, bool 
             v2T = sclr.v[i][j+1][0];
             v2B = sclr.v[i][j][0];
 
-            if(j==0)
+            if(j==1)
             {
                 v2TT = sclr.v[i][j+2][0];
                 v2BB = 0.0;
             }
-            else if(j==yelem-2)
+            else if(j==yelem-3)
             {
                 v2TT = 0.0;
                 v2BB = sclr.v[i][j-1][0];
@@ -176,24 +174,38 @@ void rhscalc(struct elemsclr sclr, double **rhsx, double **rhsy, int iter, bool 
     double **diffx, **diffy;
     allocator(&diffx, xelem, yelem);
     allocator(&diffy, xelem, yelem);
-    #pragma omp parallel for schedule(dynamic)
-    for(int i=0; i<xelem-1; i++)
+
+    for(i=1; i<xelem-2; i++)
     {
-        for(int j=1; j<yelem-1; j++)
+        for(j=2; j<yelem-2; j++)
         {
             //Simple taylor series approximation of second diff is used
             double u, uR, uL, uT, uB;
-            if (i == 0)
+            if (i == 1)
             {
                 u = sclr.u[i][j][0];
                 uR = sclr.u[i+1][j][0];
                 if(x_bound == 1)
                 {
-                    uL = -sclr.u[i+1][j][0];
+		  if(iBC[i][j]==2)
+		    {
+		      uL = -sclr.u[i+1][j][0];
+		    }
+		  else
+		    {
+		      uL = sclr.u[i-1][j][0];
+		    }
                 }
                 else if(x_bound == 2)
                 {
-                    uL = sclr.u[i+1][j][0];
+		  if(iBC[i][j]==2)
+		    {
+		      uL = sclr.u[i+1][j][0];
+		    }
+		  else
+		    {
+		      uL = sclr.u[i-1][j][0];
+		    }
                 }
                 else if(x_bound == 3)
                 {
@@ -216,14 +228,13 @@ void rhscalc(struct elemsclr sclr, double **rhsx, double **rhsy, int iter, bool 
         }
     }
 
-    #pragma omp parallel for schedule(dynamic)
-    for(int i=1; i<xelem-1; i++)
+    for(i=2; i<xelem-2; i++)
     {
-        for(int j=0; j<yelem-1; j++)
+        for(j=1; j<yelem-2; j++)
         {
             //Simple taylor series approximation of second diff is used
             double v, vR, vL, vT, vB;
-            if (j == 0)
+            if (j == 1)
             {
                 v = sclr.v[i][j][0];
                 vR = sclr.v[i+1][j][0];
@@ -231,12 +242,27 @@ void rhscalc(struct elemsclr sclr, double **rhsx, double **rhsy, int iter, bool 
                 vT = sclr.v[i][j+1][0];
                 if(y_bound == 1)
                 {
-                    vB = -vT;
-                    //vB = 0.0;
+		  if(iBC[i][j]==2)
+		    {
+		      vB = -vT;
+		      //vB = 0.0;
+		    }
+		  else
+		    {
+		      vB = sclr.v[i][j-1][0];
+		    }
                 }
                 else if(y_bound == 2)
                 {
-                    vB = vT;
+                    if(iBC[i][j]==2)
+		    {
+		      vB = vT;
+		      //vB = 0.0;
+		    }
+		  else
+		    {
+		      vB = sclr.v[i][j-1][0];
+		    }
                 }
                 else if(y_bound == 3)
                 {
@@ -260,10 +286,9 @@ void rhscalc(struct elemsclr sclr, double **rhsx, double **rhsy, int iter, bool 
 
 
 
-    #pragma omp parallel for schedule(dynamic)
-    for(int j=1; j<yelem-1; j++)
+    for(j=2; j<yelem-2; j++)
     {
-        for(int i=1; i<xelem-1; i++)
+        for(i=2; i<xelem-2; i++)
         {
             rhsx[i][j]=diffx[i][j]-(advx[i][j]-advx[i-1][j]);
             rhsy[i][j]=diffy[i][j]-(advy[i][j]-advy[i][j-1]);

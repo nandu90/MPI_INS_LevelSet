@@ -16,8 +16,9 @@
 
 void surface(struct elemsclr sclr, double ***st_forcex, double ***st_forcey)
 {
+  int i,j,k;
     /**Compute eps based on grid size*/
-    double eps = epsilon*max(xlen/(xelem-2), ylen/(yelem-2));
+    double eps=epsilon*max(xlen/(gxelem), ylen/(gyelem));
     
     /**Compute Heavyside function**/
     double ***H;
@@ -34,9 +35,9 @@ void surface(struct elemsclr sclr, double ***st_forcex, double ***st_forcey)
     {
       double ***delta;
       allocator3(&delta, xelem, yelem, zelem);
-        for(int i=1; i<xelem-1; i++)
+        for(i=2; i<xelem-2; i++)
         {
-            for(int j=1; j<yelem-1; j++)
+            for(j=2; j<yelem-2; j++)
             {
                 if(fabs(sclr.phi[i][j][0]) > eps)
                 {
@@ -56,9 +57,9 @@ void surface(struct elemsclr sclr, double ***st_forcex, double ***st_forcey)
 	allocator3(&del_scaling, xelem, yelem, zelem);
 
          //This is equivalent to marker function
-         for(int i=1 ; i<xelem-1; i++)
+         for(i=2 ; i<xelem-2; i++)
          {
-             for(int j=1; j<yelem-1; j++)
+             for(j=2; j<yelem-2; j++)
              {
                  del_scaling[i][j][0] = 2.0*H[i][j][0]*delta[i][j][0];
                  //<<del_scaling[i][j][0]<<" ";
@@ -76,18 +77,18 @@ void surface(struct elemsclr sclr, double ***st_forcex, double ***st_forcey)
 	 allocator3(&phiTface, xelem, yelem, zelem);
 	 allocator3(&grad_phiy, xelem, yelem, zelem);
 	 allocator3(&grad_phix, xelem, yelem, zelem);
-         for(int i=0; i<xelem-1; i++)
+         for(i=1; i<xelem-2; i++)
          {
-             for(int j=0; j<yelem-1; j++)
+             for(j=1; j<yelem-2; j++)
              {
                  phiRface[i][j][0] = 0.5*(sclr.phi[i+1][j][0] + sclr.phi[i][j][0]);
                  phiTface[i][j][0] = 0.5*(sclr.phi[i][j+1][0] + sclr.phi[i][j][0]);
              }
          }
 
-         for(int j=1; j<yelem-1; j++)
+         for(j=2; j<yelem-2; j++)
          {
-             for(int i=1; i<xelem-1; i++)
+             for(i=2; i<xelem-2; i++)
              {
                  grad_phix[i][j][0] = (phiRface[i][j][0] - phiRface[i-1][j][0])/area[i][j][1][1];
                  grad_phiy[i][j][0] = (phiRface[i][j][0] - phiRface[i][j-1][0])/area[i][j][0][0];
@@ -116,9 +117,9 @@ void surface(struct elemsclr sclr, double ***st_forcex, double ***st_forcey)
 	 allocator3(&phiyTface, xelem, yelem, zelem);
 	 allocator3(&phixTface, xelem, yelem, zelem);
 
-         for(int i=0; i<xelem - 1; i++)
+         for(i=1; i<xelem - 2; i++)
          {
-             for(int j=0; j<yelem-1; j++)
+             for(j=1; j<yelem-2; j++)
              {
                  phixRface[i][j][0] = 0.5*(grad_phix[i][j][0] + grad_phix[i+1][j][0]);
                  phiyTface[i][j][0] = 0.5*(grad_phiy[i][j][0] + grad_phiy[i][j+1][0]);
@@ -126,9 +127,9 @@ void surface(struct elemsclr sclr, double ***st_forcex, double ***st_forcey)
              }
          }
 
-         for(int i=1; i<xelem-1; i++)
+         for(i=2; i<xelem-2; i++)
          {
-             for(int j=1; j<yelem-1; j++)
+             for(j=2; j<yelem-2; j++)
              {
                  grad_phixx[i][j][0] = (phixRface[i][j][0] - phixRface[i-1][j][0])/area[i][j][1][1];
                  grad_phiyy[i][j][0] = (phiyTface[i][j][0] - phiyTface[i][j-1][0])/area[i][j][0][0];
@@ -139,9 +140,9 @@ void surface(struct elemsclr sclr, double ***st_forcex, double ***st_forcey)
 	 allocator3(&curvature, xelem, yelem, zelem);
 
 
-         for(int j=1; j<yelem-1; j++)
+         for(j=2; j<yelem-2; j++)
          {
-             for(int i=1; i<xelem-1; i++)
+             for(i=2; i<xelem-2; i++)
              {
                  //<<i<<" "<<j<<endl;
                  curvature[i][j][0] = (pow(grad_phiy[i][j][0],2.0)*grad_phixx[i][j][0] + pow(grad_phix[i][j][0],2.0)*grad_phiyy[i][j][0] - 2.0*grad_phix[i][j][0]*grad_phiy[i][j][0]*grad_phixy[i][j][0]);
@@ -156,9 +157,9 @@ void surface(struct elemsclr sclr, double ***st_forcex, double ***st_forcey)
          }
          //exit(0);
 
-         for(int j=1; j<yelem-1; j++)
+         for(j=2; j<yelem-2; j++)
          {
-             for(int i=1; i<xelem-1; i++)
+             for(i=2; i<xelem-2; i++)
              {
                  st_forcex[i][j][0] = sf_coeff*curvature[i][j][0]*del_scaling[i][j][0]*grad_phix[i][j][0];
                  st_forcey[i][j][0] = sf_coeff*curvature[i][j][0]*del_scaling[i][j][0]*grad_phiy[i][j][0];

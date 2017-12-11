@@ -16,6 +16,7 @@
 
 void gs_solver(double ***a, double **b, double ***p)
 {
+  int i,j;
   double ***tempp;
   double **delp;
   double **d;
@@ -25,9 +26,9 @@ void gs_solver(double ***a, double **b, double ***p)
 
     double ires;
 
-    for(int j=0; j<yelem; j++)
+    for(j=0; j<yelem; j++)
     {
-        for(int i=0; i<xelem; i++)
+        for(i=0; i<xelem; i++)
         {
             tempp[i][j][0] = p[i][j][0];
             //<<b[i][j]<<" ";
@@ -40,10 +41,9 @@ void gs_solver(double ***a, double **b, double ***p)
     for(iter=0; iter< 10000; iter++)
     {
         //<<tempp[1][1][0]<<endl;
-        #pragma omp parallel for schedule(dynamic)
-        for(int i=1; i<xelem-1; i++)
+        for(i=2; i<xelem-2; i++)
         {
-            for(int j=1; j<yelem-1; j++)
+            for(j=2; j<yelem-2; j++)
             {
                 double res = b[i][j] - (a[i][j][0]*tempp[i-1][j][0] + a[i][j][1]*tempp[i][j-1][0] + a[i][j][3]*tempp[i][j+1][0] + a[i][j][4]*tempp[i+1][j][0]);
                 delp[i][j] = res/a[i][j][2];
@@ -55,20 +55,21 @@ void gs_solver(double ***a, double **b, double ***p)
             }*/
         }
 
-        for(int i=1; i<xelem-1; i++)
+        for(i=2; i<xelem-2; i++)
         {
-            for(int j=1; j<yelem-1; j++)
+            for(j=2; j<yelem-2; j++)
             {
                 tempp[i][j][0] = delp[i][j];
             }
         }
         //<<tempp[1][1][0]<<endl;
+	commu(tempp);
         pressureBC(tempp);
 
         double resnorm=0.0;
-        for(int i=1; i<xelem-1; i++)
+        for(i=2; i<xelem-2; i++)
         {
-            for(int j=1; j<yelem-1; j++)
+            for(j=2; j<yelem-2; j++)
             {
                 double res = b[i][j] - (a[i][j][0]*tempp[i-1][j][0] + a[i][j][1]*tempp[i][j-1][0] + a[i][j][3]*tempp[i][j+1][0] + a[i][j][4]*tempp[i+1][j][0] + a[i][j][2]*tempp[i][j][0]);
 
@@ -87,7 +88,7 @@ void gs_solver(double ***a, double **b, double ***p)
             //<<"Pressure Step: "<<iter<<"residual: "<<resnorm/ires<<endl;
             if(resnorm / ires < ptol)
             {
-	      printf("Pressure converged in %d \n",iter);
+	      if(myrank == master)printf("Pressure converged in %d \n",iter);
 	      //<<"Pressure converged in "<<iter<<" "<<endl;
                 break;
             }
@@ -95,11 +96,12 @@ void gs_solver(double ***a, double **b, double ***p)
     }
 
     pressureBC(tempp);
+    commu(tempp);
     printf("Pressure iterations %d \n",iter);
     //<<"Pressure iterations "<<iter<<endl;
-    for(int i=0; i<xelem; i++)
+    for(i=0; i<xelem; i++)
     {
-        for(int j=0; j<yelem; j++)
+        for(j=0; j<yelem; j++)
         {
             p[i][j][0] = tempp[i][j][0];
         }

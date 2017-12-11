@@ -37,8 +37,8 @@ void bub_advect(struct elemsclr sclr, int iter, double deltat)
         }
     }
     
-    commu(ucen);
-    commu(vcen);
+    commu2(ucen);
+    commu2(vcen);
     cell_center_vel_BC(ucen,vcen);
 
     
@@ -70,7 +70,7 @@ void bub_advect(struct elemsclr sclr, int iter, double deltat)
         }
     }
 
-    commu(phistar);
+    commu2(phistar);
     level_setBC(phistar);
 
     double **rhstarx;
@@ -90,7 +90,7 @@ void bub_advect(struct elemsclr sclr, int iter, double deltat)
         }
     }
 
-    commu(sclr.phi);
+    commu2(sclr.phi);
     level_setBC(sclr.phi);
 
     deallocator(&rhstarx, xelem, yelem);

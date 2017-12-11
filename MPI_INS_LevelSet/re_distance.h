@@ -67,7 +67,7 @@ void re_distance(struct elemsclr sclr)
     
    
     /**Compute eps based on grid size*/
-    double eps = epsilon*max(xlen/(xelem-2), ylen/(yelem-2));
+    double eps=epsilon*max(xlen/(gxelem), ylen/(gyelem));
     
      double deltat=re_time;
     

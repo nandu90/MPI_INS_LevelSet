@@ -16,7 +16,12 @@
 
 void control()
 {
-  FILE *controlfile = fopen("control.txt","r");
+  
+
+  if(myrank == master)
+    {
+      FILE *controlfile;
+  controlfile = fopen("control.txt","r");
   if(controlfile == NULL)
       {
 	printf("Error opening control.txt!\n");
@@ -160,7 +165,7 @@ void control()
 	  if(strcmp(word,"Re_distance_loops") == 0)
 	    {
 	      word = strtok(NULL,delim);
-	      re_loops = atof(word);
+	      re_loops = atoi(word);
 	    }
 	  if(strcmp(word,"print_gap") == 0)
 	    {
@@ -320,9 +325,69 @@ void control()
 
     free(word);
     free(line);
+    }
+
+  MPI_Bcast(&xlen,1,MPI_DOUBLE,master,MPI_COMM_WORLD);
+  MPI_Bcast(&ylen,1,MPI_DOUBLE,master,MPI_COMM_WORLD);
+  MPI_Bcast(&zlen,1,MPI_DOUBLE,master,MPI_COMM_WORLD);
+
+  MPI_Bcast(&gxelem,1,MPI_INT,master,MPI_COMM_WORLD);
+  MPI_Bcast(&gyelem,1,MPI_INT,master,MPI_COMM_WORLD);
+  MPI_Bcast(&gzelem,1,MPI_INT,master,MPI_COMM_WORLD);
+
+  MPI_Bcast(&itermax,1,MPI_INT,master,MPI_COMM_WORLD);
+  MPI_Bcast(&nu,1,MPI_DOUBLE,master,MPI_COMM_WORLD);
+
+  MPI_Bcast(&rb_in,1,MPI_DOUBLE,master,MPI_COMM_WORLD);
+  MPI_Bcast(&xb_in,1,MPI_DOUBLE,master,MPI_COMM_WORLD);
+  MPI_Bcast(&yb_in,1,MPI_DOUBLE,master,MPI_COMM_WORLD);
+
+  MPI_Bcast(&advect_steps,1,MPI_INT,master,MPI_COMM_WORLD);
+  MPI_Bcast(&advect_deltat,1,MPI_DOUBLE,master,MPI_COMM_WORLD);
+
+  MPI_Bcast(&solnread,1,MPI_INT,master,MPI_COMM_WORLD);
+  
+  MPI_Bcast(&rhof,1,MPI_DOUBLE,master,MPI_COMM_WORLD);
+  MPI_Bcast(&rhog,1,MPI_DOUBLE,master,MPI_COMM_WORLD);
+  MPI_Bcast(&muf,1,MPI_DOUBLE,master,MPI_COMM_WORLD);
+  MPI_Bcast(&mug,1,MPI_DOUBLE,master,MPI_COMM_WORLD);
+
+  MPI_Bcast(&epsilon,1,MPI_DOUBLE,master,MPI_COMM_WORLD);
+  MPI_Bcast(&sf_coeff,1,MPI_DOUBLE,master,MPI_COMM_WORLD);
+
+  MPI_Bcast(&relax,1,MPI_DOUBLE,master,MPI_COMM_WORLD);
+  MPI_Bcast(&ptol,1,MPI_DOUBLE,master,MPI_COMM_WORLD);
+
+  MPI_Bcast(&re_time,1,MPI_DOUBLE,master,MPI_COMM_WORLD);
+  MPI_Bcast(&re_loops,1,MPI_INT,master,MPI_COMM_WORLD);
+  
+  MPI_Bcast(&print_gap,1,MPI_INT,master,MPI_COMM_WORLD);
+  MPI_Bcast(&startstep,1,MPI_INT,master,MPI_COMM_WORLD);
+  MPI_Bcast(&sf_toggle,1,MPI_INT,master,MPI_COMM_WORLD);
+  MPI_Bcast(&flow_solve,1,MPI_INT,master,MPI_COMM_WORLD);
+  MPI_Bcast(&p_solver,1,MPI_INT,master,MPI_COMM_WORLD);
+  MPI_Bcast(&advect_solve,1,MPI_INT,master,MPI_COMM_WORLD);
+  MPI_Bcast(&vf_control,1,MPI_INT,master,MPI_COMM_WORLD);
+  MPI_Bcast(&redist_method,1,MPI_INT,master,MPI_COMM_WORLD);
+  
+  MPI_Bcast(&max_cfl,1,MPI_DOUBLE,master,MPI_COMM_WORLD);
+  MPI_Bcast(&gx,1,MPI_DOUBLE,master,MPI_COMM_WORLD);
+  MPI_Bcast(&gy,1,MPI_DOUBLE,master,MPI_COMM_WORLD);
+
+  MPI_Bcast(&bub_conv_scheme,1,MPI_INT,master,MPI_COMM_WORLD);
+  MPI_Bcast(&x_bound,1,MPI_INT,master,MPI_COMM_WORLD);
+  MPI_Bcast(&y_bound,1,MPI_INT,master,MPI_COMM_WORLD);
+  MPI_Bcast(&sol_type,1,MPI_INT,master,MPI_COMM_WORLD);
+  MPI_Bcast(&time_control,1,MPI_INT,master,MPI_COMM_WORLD);
+  MPI_Bcast(&case_tog,1,MPI_INT,master,MPI_COMM_WORLD);
+  
+
+  
     // printf("%d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d\n",xelem, yelem, zelem, advect_steps, solnread, bub_conv_scheme, print_gap, startstep, sf_toggle, flow_solve, p_solver, x_bound, y_bound, advect_solve, sol_type, vf_control, time_control, redist_method, case_tog);
 
     //printf("%f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f",nu, cfl, tol, xlen, ylen, zlen, rb_in, xb_in, yb_in, advect_deltat, rhof, rhog, muf, mug, epsilon, sf_coeff, relax, ptol, re_time, re_loops, gx, gy, max_cfl);
+    //printf("Value of redist_method on %d id %d\n",myrank,redist_method);
+    
 }
 
 #endif /* CONTROL_H */

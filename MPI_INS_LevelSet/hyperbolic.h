@@ -17,6 +17,7 @@
 
 void hyperbolic(struct elemsclr sclr)
 {
+  printf("%d is here1\n",myrank);
   int i,j;
     /***Store phi values in a separate matrix***/
   double ***phi2;
@@ -31,7 +32,7 @@ void hyperbolic(struct elemsclr sclr)
     
    
     /**Compute eps based on grid size*/
-    double eps = epsilon*max(xlen/(xelem-2), ylen/(yelem-2));
+    double eps=epsilon*max(xlen/(gxelem), ylen/(gyelem));
     
      double deltat=re_time;
     
@@ -50,7 +51,7 @@ void hyperbolic(struct elemsclr sclr)
     
     
     int iter;
-    if(myrank == master)printf("\n");
+    printf("%d is here2\n",myrank);
     for(iter=0; iter < re_loops; iter++)
     {
       if(myrank == master)printf("    Re-dist iter = %d\n",iter+1);
@@ -60,9 +61,9 @@ void hyperbolic(struct elemsclr sclr)
       double ***temp_phi2;
        allocator3(&temp_phi2, xelem, yelem, zelem);
        
-        for(i=1;i<xelem-1;i++)
+        for(i=2;i<xelem-2;i++)
         {
-            for(j=1;j<yelem-1;j++)
+            for(j=2;j<yelem-2;j++)
             {
                 temp_phi2[i][j][0]=phi2[i][j][0];
             }
@@ -79,59 +80,62 @@ void hyperbolic(struct elemsclr sclr)
         double ***phistar;
 	allocator3(&phistar, xelem, yelem, zelem);
         
-        for(i=1; i<xelem-1; i++) 
+        for(i=2; i<xelem-2; i++) 
         {
-            for(j=1; j<yelem-1; j++)
+            for(j=2; j<yelem-2; j++)
             {
                 phistar[i][j][0] = phi2[i][j][0] + deltat * (rhs[i][j]);
             }
         }
         
-        
-        if(vf_control == 1)
+        /*if(vf_control == 1)
         {
             vol_contraint(phistar, sclr.phi, grad_phi, delta, deltat);
-        }
+	    }*/
         
+	printf("%d is here3\n",myrank);
         //bothscalarBC(phistar);
-	commu(phistar);
+	debug = 1;
+	commu2(phistar);
         level_setBC(phistar);
 
+	printf("%d id here4\n",myrank);
 	double **rhstar;
 	allocator(&rhstar, xelem, yelem);
 	
         //Calculate the star fluxes
         rhs_redist2(rhstar, phistar, sclr.phi);
         
-        for(i=1; i<xelem-1; i++)
+        for(i=2; i<xelem-2; i++)
         {
-            for(j=1; j<yelem-1; j++)
+            for(j=2; j<yelem-2; j++)
             {
                 phi2[i][j][0] = phistar[i][j][0] + 0.5*deltat *(rhs[i][j] + rhstar[i][j]);
                 //<<" "<<phi[i][j][0]<<endl;
             }
         }
-        
+        printf("%d is here5\n",myrank);
         //level_setBC(phi2);
         if(vf_control == 1)
         {
             vol_contraint(phi2, sclr.phi, grad_phi, delta, deltat);
         }
-	commu(phi2);
+	commu2(phi2);
         level_setBC(phi2);
-        
+        printf("%d is here6\n",myrank);
         //bothscalarBC(phistar);
         /****Apply volume constraint****/
         
-        if(exitflag == false)
+        /*if(exitflag == false)
         {
             monitor_res_redist(&ires, &exitflag, iter,  phi2,  temp_phi2);
         }
         else
         {
             break;
-        }
+	    }*/
         
+	printf("%d is here7\n",myrank);
         deallocator3(&lambda, xelem, yelem, zelem);
 	deallocator3(&temp_phi2, xelem, yelem, zelem);
 	deallocator3(&phistar, xelem, yelem, zelem);
@@ -149,9 +153,12 @@ void hyperbolic(struct elemsclr sclr)
         }
     }
 
+    commu2(sclr.phi);
+    level_setBC(sclr.phi);
     deallocator3(&H, xelem, yelem, zelem);
     deallocator3(&delta, xelem, yelem, zelem);
-    deallocator3(&grad_phi, xelem, yelem, zelem);    
+    deallocator3(&grad_phi, xelem, yelem, zelem); 
+    deallocator3(&phi2,xelem,yelem,zelem);
 }
 
 #endif /* RE_DISTANCE2_H */

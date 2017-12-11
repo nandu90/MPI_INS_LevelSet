@@ -16,8 +16,9 @@
 
 void body(struct elemsclr sclr, double ***st_forcex, double ***st_forcey)
 {
+  int i,j;
      /**Compute eps based on grid size*/
-    double eps = epsilon*max(xlen/(xelem-2), ylen/(yelem-2));
+     double eps=epsilon*max(xlen/(gxelem), ylen/(gyelem));
     
     /**Compute Heavyside function**/
     double ***H;
@@ -26,9 +27,9 @@ void body(struct elemsclr sclr, double ***st_forcex, double ***st_forcey)
     heavy_func(H, sclr.phi, eps);
     double line = 2.5*2.0*rb_in;
     
-    for(int i=0; i<xelem; i++)
+    for(i=0; i<xelem; i++)
     {
-        for(int j=0; j<yelem; j++)
+        for(j=0; j<yelem; j++)
         {
             st_forcex[i][j][0] += (min(sclr.phi[i][j][0],0.0)/sclr.phi[i][j][0])*sclr.rho[i][j][0]*vol[i][j]*gx;
             st_forcey[i][j][0] += (min(sclr.phi[i][j][0],0.0)/sclr.phi[i][j][0])*sclr.rho[i][j][0]*vol[i][j]*gy;

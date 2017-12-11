@@ -42,7 +42,7 @@ Notes:
 /*  #include "read_write.h"*/
 #include "bound_cond.h"
 /*#include "pressure_solver.h"
-#include "variable_pressure.h"*/
+  #include "variable_pressure.h"*/
 #include "heavy_delta.h"
 #include "initial_conditions.h"
 /*#include "surface_tension.h"
@@ -170,7 +170,7 @@ int main(int argc, char **argv)
     }
     
     //fast_march(sclr);
-    
+    debug = 0;
     double *ires = (double *) malloc(3 * sizeof(double));
     bool exitflag = false;
     int iter=0;
@@ -200,99 +200,104 @@ int main(int argc, char **argv)
 	  double ***vtemp;
 	  allocator3(&vtemp,xelem,yelem,zelem);
 	  
-            for(int i=1;i<xelem-1;i++)
+	  for(i=2;i<xelem-2;i++)
             {
-                for(int j=1;j<yelem-1;j++)
+	      for(j=2;j<yelem-2;j++)
                 {
-                    utemp[i][j][0]=sclr.u[i][j][0];
-                    vtemp[i][j][0]=sclr.v[i][j][0];
+		  utemp[i][j][0]=sclr.u[i][j][0];
+		  vtemp[i][j][0]=sclr.v[i][j][0];
                 }
             }
-	    double **rhsx, **rhsy;
-	    allocator(&rhsx,xelem,yelem);
-	    allocator(&rhsy,xelem,yelem);
-            rhscalc(sclr, rhsx, rhsy, iter, exitflag);
+	  double **rhsx, **rhsy;
+	  allocator(&rhsx,xelem,yelem);
+	  allocator(&rhsy,xelem,yelem);
+	  rhscalc(sclr, rhsx, rhsy, iter, exitflag);
 
-           double ***ustar;
+	  double ***ustar;
 	  allocator3(&ustar,xelem,yelem,zelem);
 	  double ***vstar;
 	  allocator3(&vstar,xelem,yelem,zelem);
             //Predictor Step
-            #pragma omp parallel for schedule(dynamic)
-            for(int i=1; i<xelem-1; i++)
+	  for(i=2; i<xelem-2; i++)
             {
-                for(int j=1; j<yelem-1; j++)
+	      for(j=2; j<yelem-2; j++)
                 {
-                    ustar[i][j][0] = sclr.u[i][j][0]+deltat*rhsx[i][j];
-                    vstar[i][j][0] = sclr.v[i][j][0]+deltat*rhsy[i][j];
+		  ustar[i][j][0] = sclr.u[i][j][0]+deltat*rhsx[i][j];
+		  vstar[i][j][0] = sclr.v[i][j][0]+deltat*rhsy[i][j];
                 }
             }
 
-            vel_BC(ustar, vstar);
-
+	  commu(ustar);
+	  commu(vstar);
+	  vel_BC(ustar, vstar);
+	  
             ///Calculate contribution from source term - Surface tension force
             //Note that surface tension force is calculated at the centre of cell at i,j (where p and phi are stored)/
-            double ***st_forcex;
+	  double ***st_forcex;
 	  allocator3(&st_forcex,xelem,yelem,zelem);
 	  double ***st_forcey;
 	  allocator3(&st_forcey,xelem,yelem,zelem);
 
 
-            surface(sclr,st_forcex, st_forcey);
-            body(sclr,st_forcex,st_forcey);
-
-            if(p_solver == 1)
+	  surface(sclr,st_forcex, st_forcey);
+	  body(sclr,st_forcex,st_forcey);
+	  
+	  if(p_solver == 1)
             {
-                pressure(ustar,vstar, sclr.p, deltat);
-
+	      pressure(ustar,vstar, sclr.p, deltat);
+	      
             }
-            else if(p_solver == 2)
+	  else if(p_solver == 2)
             {
-                variable_pressure(ustar, vstar, sclr.p, deltat, sclr.rho, st_forcex, st_forcey);
+	      variable_pressure(ustar, vstar, sclr.p, deltat, sclr.rho, st_forcex, st_forcey);
             }
 
             //Projection Step
-            #pragma omp parallel for schedule(dynamic)
-            for(int i=1; i<xelem-1; i++)
+	  for(i=2; i<xelem-2; i++)
             {
-                for(int j=1; j<yelem-1; j++)
+	      for(j=2; j<yelem-2; j++)
                 {
-
+		  
                     sclr.u[i][j][0] = ustar[i][j][0] - deltat*((2.0/(sclr.rho[i][j][0]+sclr.rho[i+1][j][0]))*((sclr.p[i+1][j][0]-sclr.p[i][j][0])/area[i][j][1][1] + 0.5*(st_forcex[i+1][j][0]+st_forcex[i][j][0])));
                     sclr.v[i][j][0] = vstar[i][j][0] - deltat*((2.0/(sclr.rho[i][j][0]+sclr.rho[i][j+1][0]))*((sclr.p[i][j+1][0]-sclr.p[i][j][0])/area[i][j][0][0] + 0.5*(st_forcey[i][j+1][0]+st_forcey[i][j][0])));
 
                 }
             }
 
-            vel_BC(sclr.u, sclr.v);
+	  commu(sclr.u);
+	  commu(sclr.v);
+	  vel_BC(sclr.u, sclr.v);
 
-	    printf("Step: %d\n",iter+1);
-	    fprintf(out,"Step: %d\n",iter+1);
-            if(exitflag == false && sol_type == 0)
+	  if(myrank == master)
+	    {
+	      printf("Step: %d\n",iter+1);
+	      fprintf(out,"Step: %d\n",iter+1);
+	    }
+	  if(exitflag == false && sol_type == 0)
             {
-                monitor_res(ires, &exitflag, iter, sclr,utemp,vtemp);
+	      monitor_res(ires, &exitflag, iter, sclr,utemp,vtemp);
             }
-            if(exitflag == true && sol_type == 0)
+	  if(exitflag == true && sol_type == 0)
             {
-	      printf("Flow solution converged\n");
-                break;
+	      if(myrank==master) printf("Flow solution converged\n");
+	      break;
             }
-
-	    deallocator3(&utemp,xelem,yelem,zelem);
-	    deallocator3(&vtemp,xelem,yelem,zelem);
-	    deallocator3(&ustar,xelem,yelem,zelem);
-	    deallocator3(&vstar,xelem,yelem,zelem);
-	    deallocator3(&st_forcex,xelem,yelem,zelem);
-	    deallocator3(&st_forcey,xelem,yelem,zelem);
-	    deallocator(&rhsx,xelem,yelem);
-	    deallocator(&rhsy,xelem,yelem);
-	    
-	    }*/
-
+	  
+	  deallocator3(&utemp,xelem,yelem,zelem);
+	  deallocator3(&vtemp,xelem,yelem,zelem);
+	  deallocator3(&ustar,xelem,yelem,zelem);
+	  deallocator3(&vstar,xelem,yelem,zelem);
+	  deallocator3(&st_forcex,xelem,yelem,zelem);
+	  deallocator3(&st_forcey,xelem,yelem,zelem);
+	  deallocator(&rhsx,xelem,yelem);
+	  deallocator(&rhsy,xelem,yelem);
+	  
+	  }*/
+	
 
 	if(flow_solve == 0 && myrank == master)
 	  {
-	    printf("Step: %d",iter+1);
+	    printf("Step: %d\n",iter+1);
 	    fprintf(out,"Step: %d\n",iter+1);
 	  }
         //Bubble Advection and re-distance solvers/
@@ -300,9 +305,11 @@ int main(int argc, char **argv)
 	  {
 	    bub_advect(sclr, iter, deltat);
             //re_distance(sclr);
+	    //printf("Value of redist_method on %d id %d\n",myrank,redist_method);
             if(redist_method == 1)
 	      {
-                hyperbolic(sclr);
+		//printf("%d calls hyperbolic\n",myrank);
+		hyperbolic(sclr);
 	      }
             else if(redist_method == 2)
 	      {
@@ -336,7 +343,7 @@ int main(int argc, char **argv)
         if(time_control == 1)
         {
             double cfl;
-            //timestep_calc(sclr, &deltat, &cfl);
+            timestep_calc(sclr, &deltat, &cfl);
 	    if(myrank == master)
 	      {
 		printf("CFL number: %.6f time step: %.6f\n",cfl,deltat);
@@ -348,7 +355,7 @@ int main(int argc, char **argv)
         //Determine Void Fraction/
         double vf = 0.0;
         double err = 0.0;
-        //calc_vf(sclr.phi, &init_vf, &vf, &err);
+        calc_vf(sclr.phi, &init_vf, &vf, &err);
 	if(myrank == master)
 	  {
 	    printf("Void Fraction: %.6f%% Error in vf: %.6f%%\n\n",vf ,err);
@@ -358,7 +365,7 @@ int main(int argc, char **argv)
 	    fprintf(out,"\n");
 	  }
     
-    }
+      }
 
 
 
@@ -398,5 +405,5 @@ int main(int argc, char **argv)
     free(sendptr);
     free(recvptr);
     MPI_Finalize();
-}
-
+ }
+      

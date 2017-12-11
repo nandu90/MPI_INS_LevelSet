@@ -17,22 +17,23 @@
 void calc_vf(double ***phi, double *init_vf, double *vf, double *err)
 {
   int i,j;
-    double eps=epsilon*max(xlen/(xelem-2), ylen/(yelem-2));
+    double eps=epsilon*max(xlen/(gxelem), ylen/(gyelem));
     double ***H;
     allocator3(&H,xelem,yelem, zelem);
     
     heavy_func(H,  phi, eps);
     
-    for(i=1; i<xelem-1; i++)
+    double localvf;
+    (*vf)=0.0;
+    for(i=2; i<xelem-2; i++)
     {
-        for(j=1; j<yelem-1; j++)
+        for(j=2; j<yelem-2; j++)
         {
-	  (*vf) += (1.0 - H[i][j][0])*area[i][j][0][0]*area[i][j][1][1];
+	  localvf += (1.0 - H[i][j][0])*area[i][j][0][0]*area[i][j][1][1];
         }
     }
     
     double totvol = xlen*ylen;
-    double localvf = (*vf);
     MPI_Allreduce(&localvf,vf,1,MPI_DOUBLE,MPI_SUM,MPI_COMM_WORLD);
     (*vf) = (*vf)*100.0/totvol;
     
@@ -40,10 +41,10 @@ void calc_vf(double ***phi, double *init_vf, double *vf, double *err)
     {
       (*init_vf) = (*vf);
     }
-    
+    //if(myrank==master)printf("\n%.6f %.6f %.6f\n",(*init_vf),(*vf),eps);
     (*err) = ((*vf) - (*init_vf))*100.0/(*init_vf);
     
-    
+    deallocator3(&H,xelem,yelem, zelem);
 }
 
 #endif /* CALC_VF_H */

@@ -46,19 +46,24 @@ void monitor_res(double *ires, bool *exitflag, int iter, struct elemsclr sclr, d
 {
   int i,j,k;
   double res[3];
+  double temp1 = 0.0;
+  double temp2 = 0.0;
   for (i=0; i<3; i++)
     {
       res[i] = 0.0;
     }
-    for(i=1; i<xelem-1; i++)
+    for(i=2; i<xelem-2; i++)
     {
-        for(j=1; j<yelem-1; j++)
+        for(j=2; j<yelem-2; j++)
         {
-            res[0]=res[0] + pow(sclr.u[i][j][0]-utemp[i][j][0],2.0)*vol[i][j];
-            res[1]=res[1] + pow(sclr.v[i][j][0]-vtemp[i][j][0],2.0)*vol[i][j];
+            temp1 =+ pow(sclr.u[i][j][0]-utemp[i][j][0],2.0)*vol[i][j];
+            temp2 =+ pow(sclr.v[i][j][0]-vtemp[i][j][0],2.0)*vol[i][j];
         }
     }
     
+    MPI_Allreduce(&temp1,&res[1],1,MPI_DOUBLE,MPI_SUM,MPI_COMM_WORLD);
+    MPI_Allreduce(&temp2,&res[2],1,MPI_DOUBLE,MPI_SUM,MPI_COMM_WORLD);
+
     for(i=0; i<3; i++)
     {
         res[i]=sqrt(res[i]);
@@ -93,9 +98,9 @@ void timestep_calc(struct elemsclr sclr, double *deltat, double *cfl)
   int i,j,k;
   (*cfl) = 0.0;
     int reqi, reqj;
-    for(i=1; i<xelem-1; i++)
+    for(i=2; i<xelem-2; i++)
     {
-        for(j=1; j<yelem-1; j++)
+        for(j=2; j<yelem-2; j++)
         {
             double surf_int = area[i][j][0][0]* (fabs(sclr.u[i][j][0]) + fabs(sclr.u[i-1][j][0]));
             surf_int = surf_int + area[i][j][1][1]* (fabs(sclr.v[i][j][0]) + fabs(sclr.v[i][j-1][0]));
@@ -150,7 +155,7 @@ void timestep_calc(struct elemsclr sclr, double *deltat, double *cfl)
     /*double surf_int = area[reqi][reqj][0][0]* (fabs(sclr.u[reqi][reqj][0] - sclr.u[reqi-1][reqj][0]));
     surf_int = surf_int + area[reqi][reqj][1][1]* (fabs(sclr.v[reqi][reqj][0] - sclr.v[reqi][reqj-1][0]));*/
     
-    (*deltat) = *cfl * area[reqi][reqj][0][0]*area[reqi][reqj][1][1]/surf_int;
+    (*deltat) = (*cfl) * area[reqi][reqj][0][0]*area[reqi][reqj][1][1]/surf_int;
 
     MPI_Bcast(deltat,1,MPI_DOUBLE,out.loc,MPI_COMM_WORLD);
     
