@@ -171,7 +171,7 @@ void partition()
 		  io_info[i][1] = io_info[i-mp][1];
 		  io_info[i][2] = io_info[i-mp][3]+1;
 		  io_info[i][3] = io_info[i-mp][3] + recv[1];
-		  j=1;
+		  j=0;
 		}
 	      j++;
 	    }
