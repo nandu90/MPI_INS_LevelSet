@@ -425,7 +425,7 @@ int main(int argc, char **argv)
       }
 
 
-
+	output_xml(sclr,iter);
     
     
     free(ires);

@@ -1,4 +1,4 @@
-
+parallel.tar.gz
 MPI_INS_LevelSet/main
 MPI_INS_LevelSet/main.o
 MPI_INS_LevelSet/output
@@ -8,3 +8,5 @@ C_INS_LevelSet/main
 C_INS_LevelSet/main.o
 C_INS_LevelSet/output
 C_INS_LevelSet/laststep
+serial.tar.gz
+serial
